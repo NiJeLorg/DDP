@@ -9,6 +9,10 @@ module.exports = {
     },
     module: {
       loaders: [{
+          test: /\.css$/,
+          include: /node_modules/,
+          loader:  'style!css'
+      },{
         exclude: /node_modules/,
         loader: 'babel',
         query: {
@@ -21,7 +25,9 @@ module.exports = {
     },
     devServer: {
       historyApiFallback: true,
-      contentBase: './'
-    }
+      contentBase: './',
+      port: 8008
+    },
+    devtool: 'source-map'
   };
   

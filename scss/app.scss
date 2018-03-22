@@ -1,0 +1,295 @@
+.navbar {
+  display: flex;
+  /* top nav: */
+  background: #13294B;
+  /* Stroke 1: */
+  border: 1px solid #FFFFFF;
+  align-items: center;
+  /* Fill 18: */
+  padding: 10px 34px 10px 34px;
+  justify-content: space-between;
+
+  .menu {
+    display: flex;
+    list-style-type: none;
+    .menu-item{
+      font-size: 14px;
+      color: #FFFFFF;
+      text-align: left;
+      &:not(last) {
+        margin-right: 40px;
+      }
+    }
+
+  }
+}
+
+.c-stories {
+  display: flex;
+  justify-content: space-between;
+  .c-map {
+    flex-basis: 33%;
+  }
+  .c-story-navigator{
+    flex-basis: 67%;
+    .c-story-header {
+      /* Rectangle 6: */
+      background: rgba(216,216,216,0.20);
+      //flex-grow: 2;
+      padding-top: 20px;
+
+      .story-details{
+        margin-left: 90px;
+        margin-right: 130px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .story-pagination {
+          .btn {
+            height: 30px;
+            position: relative;
+            line-height: 3.0em;
+            padding-left: 1.4em;
+            padding-right: 1.4em;
+            color: #ffffff;
+            font-size: 10px;
+            display: inline-block;
+          }
+          .btn-prev {
+            //transform: rotate(-180deg);
+            background: #D8D8D8;
+            margin-right: 10px;
+          }
+          .btn-prev:before {
+            // the triangle
+            content: "";
+            border-right: 20px solid  #D8D8D8;
+            position: absolute;
+            border-bottom: 15px solid transparent;
+            border-top: 15px solid transparent;
+            height: 0;
+            width: 0;
+            right: 100%;
+          }
+          .btn-prev:hover, .btn-prev:active {
+            background: yellow;
+            color: black;
+            &:before {
+              // triangle hover
+              border-right: 20px solid yellow;
+            }
+          }
+
+          .btn-next {
+            background: #999999;
+          }
+          .btn-next:after {
+            // the triangle
+            content: "";
+            border-left: 20px solid  #999999;
+            position: absolute;
+            border-bottom: 15px solid transparent;
+            border-top: 15px solid transparent;
+            height: 0;
+            width: 0;
+            left: 100%;
+          }
+          .btn-next:hover, .btn-next:active {
+            background: yellow;
+            color: black;
+            &:after {
+              // triangle hover
+              border-left: 20px solid yellow;
+            }
+          }
+
+
+
+        }
+      }
+
+      h4 {
+        font-size: 14px;
+        font-family: 'AvenirLTStd Roman', Avenir;
+        color: #13294B;
+        text-align: left;
+        margin-bottom: 2px;
+        margin-left: 90px;
+        margin-right: 130px;
+        margin-top: 0px;
+      }
+
+      h1 {
+        font-size: 25px;
+        color: #13294B;
+        text-align: left;
+        line-height: 27px;
+        font-family: 'AvenirLTStd Medium', Avenir;
+      }
+
+    }
+  }
+
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url('../fonts/AvenirLTStd Medium.otf') format('opentype' );
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url('../fonts/AvenirLTStd Roman.otf') format('opentype' );
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url('../fonts/AvenirLTStd Light.otf') format('opentype' );
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Avenir;
+  src:url('../fonts/AvenirLTStd Oblique.otf');
+  font-style: oblique;
+}
+@font-face {
+  font-family: ChaletBook;
+  src: url('../fonts/ChaletBook Bold.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: MinionPro;
+  src: url('../fonts/MinionPro Regular.otf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: Verdana;
+  src: url('../fonts/Verdana.ttf');
+}
+@font-face {
+  font-family: Wingdings;
+  src: url('../fonts/Wingdings 3.ttf');
+}
+
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.story-intro{
+  font-family: 'AvenirLTStd Medium', Avenir;
+  font-size: 18px;
+  color: #13294B;
+  text-align: left;
+  line-height: 23px;
+}
+
+.story-content {
+  margin-left: 90px;
+  margin-right: 120px;
+
+  h2{
+    /* EDUCATIONAL ATTAINME: */
+    font-family: 'AvenirLTStd Medium', Avenir;
+    font-size: 16px;
+    color: #13294B;
+    text-align: left;
+  }
+}
+
+.story-map {
+  height: auto;
+  width: 100%;
+}
+body{
+  margin: 0;
+  font-family: 'AvenirLTStd Roman', Avenir;
+  /* Something about work: */
+  //font-family: Avenir-Roman;
+  font-size: 14px;
+  color: #0C0C0C;
+  text-align: left;
+  line-height: 21px;
+}
+
+.btn-drawer-open {
+  //padding:0px 0px 0px 0px;
+  text-align: center;
+  vertical-align: bottom;
+  //margin:0px;
+  width: 190px;
+  height:30px;
+  align-self: center;
+  /* margin-top: 0; */
+  margin-top: -150px;
+  margin-left: -160px;
+  background:#00B3EE;
+  box-shadow: 0 0 4px 0 rgba(19,41,75,0.30);
+  z-index:9999;
+  -moz-transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  transform-origin: bottom right;
+  position: fixed;
+  left: 0;
+}
+
+.btn-drawer-open i {
+  vertical-align: bottom;
+}
+
+.btn-drawer-close i {
+  vertical-align: middle;
+}
+.btn-drawer-open a, .btn-drawer-close a {
+  color:#fff;
+  //display:inline-block;
+  //line-height:40px;
+  //padding-top: 5px;
+  /* DATA DRAWER Copy: */
+  font-family: 'AvenirLTStd Medium', Avenir;;
+  font-size: 14px;
+  color: #FFFFFF;
+
+}
+
+.react-drawer-drawer{
+  top: auto !important;
+  background-color: #ffffff !important;
+  width: 60% !important;
+  z-index: 9999 !important;
+}
+
+.btn-drawer-close {
+  //padding:0px 0px 0px 0px;
+  text-align: center;
+  vertical-align: bottom;
+
+  margin:0;
+  margin-right: -30px; //Should match height property below
+  width: 190px;
+  height:30px;
+  background:#00B3EE;
+  z-index:9999;
+  //border-radius: 5px 5px 0px 0px;
+  -moz-transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  transform-origin: bottom right;
+  position: fixed;
+  right: 0;
+}
+
+.c-drawer {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
