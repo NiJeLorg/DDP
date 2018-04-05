@@ -28,10 +28,10 @@
   display: flex;
   justify-content: space-between;
   .c-map {
-    flex-basis: 33%;
+    flex-basis: 45%;
   }
   .c-story-navigator{
-    flex-basis: 67%;
+    flex-basis: 55%;
     .c-story-header {
       /* Rectangle 6: */
       background: rgba(216,216,216,0.20);
@@ -292,4 +292,69 @@ body{
 
 .hidden {
   display: none;
+}
+
+.highcharts-tooltip:before {
+  content: "";
+  border: none;
+  border-right: 25px solid  rgba(247,247,247,0.85);
+  position: absolute;
+  border-bottom: 52px solid transparent;
+  border-top: 52px solid transparent;
+  height: 0;
+  width: 0;
+  right: 100%;
+}
+.highcharts-tooltip-box {
+  //fill: black;
+  //fill-opacity: 0.6;
+  stroke-width: 0;
+  z-index: 9999;
+}
+
+.chart-container {
+  background: rgba(255,255,255,0.90);
+  box-shadow: 0 0 6px 0 rgba(19,41,75,0.30);
+  padding-top: 35px;
+  .chart{
+    margin-bottom: 40px;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+
+}
+
+.highcharts-credits{
+  display: none;
+}
+
+
+
+.data-bar {
+  /* Rectangle 5: */
+  background: rgba(216,216,216,0.60);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* DOWNLOAD | VIEW DATA: */
+  padding-right: 10px;
+  a {
+    font-family: 'AvenirLTStd Medium', Avenir;
+    font-size: 10px;
+    color: #999999;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.vertical-divider {
+  border-left:1px solid #999999;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.grouped-pie-chart{
+  display: flex;
+  justify-content: space-between;
 }
