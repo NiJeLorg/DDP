@@ -7,7 +7,9 @@ const config = {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
-        type: 'pie'
+        type: 'pie',
+        width: 400,
+        height: 400,
     },
     title: {
         text: null
@@ -68,6 +70,12 @@ class EducationAttainmentPieChart extends Component {
         };
     }
 
+    // componentDidMount() {
+    //     var height = this.tileContainerEl.clientHeight;
+    //     var width = this.tileContainerEl.clientWidth;
+    //     this.chart.setSize(width, height);
+    //     this.chart.reflow();
+    // }
 
     render() {
 

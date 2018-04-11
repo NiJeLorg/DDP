@@ -26,12 +26,16 @@
 
 .c-stories {
   display: flex;
-  justify-content: space-between;
-  .c-map {
-    flex-basis: 45%;
+  flex-wrap: wrap;
+  .map{
+    max-width: 40%;
+    height: auto;
   }
+
   .c-story-navigator{
-    flex-basis: 55%;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
     .c-story-header {
       /* Rectangle 6: */
       background: rgba(216,216,216,0.20);
@@ -129,6 +133,18 @@
       }
 
     }
+    .story-content {
+      padding-left: 90px;
+      padding-right: 120px;
+
+      h2{
+        /* EDUCATIONAL ATTAINME: */
+        font-family: 'AvenirLTStd Medium', Avenir;
+        font-size: 16px;
+        color: #13294B;
+        text-align: left;
+      }
+    }
   }
 
 }
@@ -188,24 +204,11 @@
   line-height: 23px;
 }
 
-.story-content {
-  margin-left: 90px;
-  margin-right: 120px;
 
-  h2{
-    /* EDUCATIONAL ATTAINME: */
-    font-family: 'AvenirLTStd Medium', Avenir;
-    font-size: 16px;
-    color: #13294B;
-    text-align: left;
-  }
-}
 
-.story-map {
-  height: auto;
-  width: 100%;
-}
-body{
+
+body, html{
+  height:100%;
   margin: 0;
   font-family: 'AvenirLTStd Roman', Avenir;
   /* Something about work: */
@@ -316,10 +319,17 @@ body{
   background: rgba(255,255,255,0.90);
   box-shadow: 0 0 6px 0 rgba(19,41,75,0.30);
   padding-top: 35px;
+  display:flex;
+  flex-direction: column;
+
   .chart{
     margin-bottom: 40px;
     margin-right: 25px;
     margin-left: 25px;
+  }
+  .grouped-pie-chart{
+    display: flex;
+    flex-wrap: wrap;
   }
 
 }
@@ -354,7 +364,10 @@ body{
   margin-left: 5px;
   margin-right: 5px;
 }
-.grouped-pie-chart{
-  display: flex;
-  justify-content: space-between;
+
+
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+  margin: 0 auto;
 }

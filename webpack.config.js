@@ -13,6 +13,11 @@ module.exports = {
           include: /node_modules/,
           loader:  'style!css'
       },{
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          include: /node_modules/,
+          loader: 'image-webpack-loader',
+
+      },{
         exclude: /node_modules/,
         loader: 'babel',
         query: {
