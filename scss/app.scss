@@ -94,17 +94,17 @@
   text-align: center;
   vertical-align: bottom;
   width: 190px;
-  height:30px;
+  height: 30px;
   align-self: center;
   margin-top: -300px;
   margin-left: -160px;
-  background:#00B3EE;
-  box-shadow: 0 0 4px 0 rgba(19,41,75,0.30);
-  z-index:9999;
-  -moz-transform:rotate(-90deg);
-  -ms-transform:rotate(-90deg);
-  -o-transform:rotate(-90deg);
-  -webkit-transform:rotate(-90deg);
+  background: #00B3EE;
+  box-shadow: 0 0 4px 0 rgba(19, 41, 75, 0.30);
+  z-index: 9999;
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
   transform-origin: bottom right;
   position: fixed;
   left: 0;
@@ -118,7 +118,7 @@
 //  vertical-align: middle;
 //}
 .btn-drawer-open a, .btn-drawer-close a {
-  color:#fff;
+  color: #fff;
   font-family: 'AvenirLTStd Medium', Avenir;
   font-size: 14px;
   color: #FFFFFF;
@@ -156,13 +156,14 @@
 .c-drawer {
   display: flex;
 }
+
 //
 
 //
 .highcharts-tooltip:before {
   content: "";
   border: none;
-  border-right: 25px solid  rgba(247,247,247,0.85);
+  border-right: 25px solid rgba(247, 247, 247, 0.85);
   position: absolute;
   border-bottom: 52px solid transparent;
   border-top: 52px solid transparent;
@@ -170,18 +171,20 @@
   width: 0;
   right: 100%;
 }
+
 .highcharts-tooltip-box {
   stroke-width: 0;
   z-index: 9999;
 }
+
 //
 
-
-.highcharts-credits{
+.highcharts-credits {
   display: none;
 }
+
 .c-data {
-  background: rgba(216,216,216,0.60);
+  background: rgba(216, 216, 216, 0.60);
   .bar {
     /* Rectangle 5: */
 
@@ -199,11 +202,10 @@
     }
     /* HIDE DATA | DOWNLOAD Copy: */
 
-
   }
   .table {
     margin-left: 30px;
-    td:first-child{
+    td:first-child {
       text-align: left;
     }
     td {
@@ -213,13 +215,12 @@
   }
 }
 
-
 .active-label {
   color: #2A316C !important;
 }
 
 .vertical-divider {
-  border-left:1px solid #999999;
+  border-left: 1px solid #999999;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
@@ -250,10 +251,11 @@ $white-gb: #ffffff;
   }
 }
 
-.c-card--home{
+.c-card--home {
   margin-top: -40px;
 }
-.c-card--no-margin{
+
+.c-card--no-margin {
   margin: 0;
   height: 80%;
   opacity: 0.93;
@@ -263,9 +265,9 @@ $white-gb: #ffffff;
   display: flex;
   height: inherit;
   flex-direction: column;
-  .navbar{
+  .navbar {
     .logo {
-      img{
+      img {
         height: 50px;
       }
     }
@@ -282,13 +284,13 @@ $white-gb: #ffffff;
     margin-bottom: 30px;
     border: 1px solid #E0E060;
   }
-  .chapter-marker{
+  .chapter-marker {
     font-size: 45px;
     color: #E0E060;
     text-align: left;
     margin-right: 10px;
   }
-  .chapter-title{
+  .chapter-title {
     margin-top: 30px;
     font-size: 25px;
     color: #FFFFFF;
@@ -299,18 +301,16 @@ $white-gb: #ffffff;
     height: 100%;
     opacity: 0.83;
     background: #068278; /*fallback*/
-    background:
-            linear-gradient(90deg,  transparent 0px, #068278 0px),
-            linear-gradient(90deg, transparent 0px, #068278 0px),
-            linear-gradient(208deg, transparent 100px, #068278 100px),
-            linear-gradient(90deg, transparent 0px, #068278 0px);
-    background-position:
-            bottom left,
-            top left,
-            top right,
-            bottom right;
+    background: linear-gradient(90deg, transparent 0px, #068278 0px),
+    linear-gradient(90deg, transparent 0px, #068278 0px),
+    linear-gradient(208deg, transparent 100px, #068278 100px),
+    linear-gradient(90deg, transparent 0px, #068278 0px);
+    background-position: bottom left,
+    top left,
+    top right,
+    bottom right;
     background-size: 51% 51%;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     padding: 20px;
   }
 }
@@ -318,6 +318,7 @@ $white-gb: #ffffff;
 .c-story-header {
   height: 250px;
 }
+
 $chapter-marker-bg-hover: #37a9ab;
 $chapter-marker-bg: #D8D8D8;
 .c-chapter-markers {
@@ -328,7 +329,7 @@ $chapter-marker-bg: #D8D8D8;
     text-decoration: none;
   }
 
-  .chapter-card{
+  .chapter-card {
     width: 130px;
     height: 130px;
     padding-right: 10px;
@@ -337,79 +338,77 @@ $chapter-marker-bg: #D8D8D8;
     align-items: center;
     justify-content: center;
     color: #2A316C;
-    &:hover{
+    &:hover {
       .chapter-marker {
         color: yellow;
       }
       color: white;
     }
-    .chapter-marker{
+    .chapter-marker {
       font-size: 30px;
       text-align: left;
       align-self: flex-start;
     }
 
-    .chapter-title{
+    .chapter-title {
       align-self: center;
       margin-left: -25px;
 
     }
   }
 
-  .chapter-card:not(:last-child){
+  .chapter-card:not(:last-child) {
     margin-right: 40px;
   }
 
-
-
   .u-beveled-box-marker {
     background: $chapter-marker-bg;
-    background:
-            linear-gradient(28deg,  transparent 30px, $chapter-marker-bg 30px),
-            linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px),
-            linear-gradient(208deg, transparent 30px, $chapter-marker-bg 30px),
-            linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px);
-    background-position:
-            bottom left,
-            top left,
-            top right,
-            bottom right;
+    background: linear-gradient(28deg, transparent 30px, $chapter-marker-bg 30px),
+    linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px),
+    linear-gradient(208deg, transparent 30px, $chapter-marker-bg 30px),
+    linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px);
+    background-position: bottom left,
+    top left,
+    top right,
+    bottom right;
     background-size: 51% 51%;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     padding: 20px;
   }
 
   .u-beveled-box-marker:hover {
     background: $chapter-marker-bg-hover;
-    background:
-            linear-gradient(28deg,  transparent 30px, $chapter-marker-bg-hover 30px),
-            linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px),
-            linear-gradient(208deg, transparent 30px, $chapter-marker-bg-hover 30px),
-            linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px);
-    background-position:
-            bottom left,
-            top left,
-            top right,
-            bottom right;
+    background: linear-gradient(28deg, transparent 30px, $chapter-marker-bg-hover 30px),
+    linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px),
+    linear-gradient(208deg, transparent 30px, $chapter-marker-bg-hover 30px),
+    linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px);
+    background-position: bottom left,
+    top left,
+    top right,
+    bottom right;
     background-size: 51% 51%;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     padding: 20px;
   }
 }
-.c-card--lg{
+
+.c-card--lg {
   width: 100%;
   height: 80%;
 }
-.c-logo{
+
+.c-logo {
   padding: 40px;
 
 }
+
 .c-card__content {
   margin-left: 70px;
   margin-right: 70px;
   color: #2A316C;
 }
-.c-btn{
+
+.c-btn {
   /* Rectangle: */
   border-radius: 40px;
   text-decoration: none;
@@ -419,19 +418,21 @@ $chapter-marker-bg: #D8D8D8;
   padding-left: 32px;
   padding-right: 32px;
 }
-.c-btn--primary{
+
+.c-btn--primary {
   background: #00B3EE;
   color: #ffffff;
 }
+
 .c-stories {
   display: flex;
   flex: 1;
-  .map{
+  .map {
     max-width: 45%;
     height: auto;
   }
 
-  .story-navigator{
+  .story-navigator {
     max-width: 55%;
     background-color: white;
     z-index: 99999;
@@ -459,20 +460,20 @@ $chapter-marker-bg: #D8D8D8;
       }
 
       .chart-container {
-        background: rgba(255,255,255,0.90);
-        box-shadow: 0 0 6px 0 rgba(19,41,75,0.30);
+        background: rgba(255, 255, 255, 0.90);
+        box-shadow: 0 0 6px 0 rgba(19, 41, 75, 0.30);
         padding-top: 25px;
-        display:flex;
+        display: flex;
         flex-direction: column;
         width: 450px;
         //height: 450px;
 
-        .chart{
+        .chart {
           margin-bottom: 40px;
           margin-right: 25px;
           margin-left: 45px;
         }
-        .grouped-pie-chart{
+        .grouped-pie-chart {
           display: flex;
           flex-wrap: wrap;
         }
@@ -488,26 +489,27 @@ $chapter-marker-bg: #D8D8D8;
 .hidden {
   display: none;
 }
-.u-caret{
-  background-color:#ffffff;
-  border-radius:50%;
-  display:inline-block;
+
+.u-caret {
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
   text-align: center;
-  height:1.1em;
-  width:1.1em;
+  height: 1.1em;
+  width: 1.1em;
   margin-left: 5px;
   margin-right: 5px;
   vertical-align: middle;
-  .down{
+  .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     margin-bottom: 4px;
   }
 }
+
 .u-center-text {
   text-align: center;
 }
-
 
 .u-bg-cover {
   background-image: url("./../img/home-bg.png");
@@ -516,7 +518,7 @@ $chapter-marker-bg: #D8D8D8;
 
 .u-header-bg-cover {
   background-image: url("./../img/header.png");
-  background-size:cover;
+  background-size: cover;
   background-position: 100px;
 }
 
@@ -534,41 +536,36 @@ $chapter-marker-bg: #D8D8D8;
 .u-top-left {
   justify-content: flex-start;
 }
+
 .u-beveled-box {
   background: $white-gb; /*fallback*/
-  background:
-          linear-gradient(28deg,  transparent 100px, $white-gb 100px),
-          linear-gradient(90deg, transparent 0px, $white-gb 0px),
-          linear-gradient(208deg, transparent 100px, $white-gb 100px),
-          linear-gradient(90deg, transparent 0px, $white-gb 0px);
-  background-position:
-          bottom left,
-          top left,
-          top right,
-          bottom right;
+  background: linear-gradient(28deg, transparent 100px, $white-gb 100px),
+  linear-gradient(90deg, transparent 0px, $white-gb 0px),
+  linear-gradient(208deg, transparent 100px, $white-gb 100px),
+  linear-gradient(90deg, transparent 0px, $white-gb 0px);
+  background-position: bottom left,
+  top left,
+  top right,
+  bottom right;
   background-size: 51% 51%;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   padding: 20px;
 }
 
 .u-beveled-box-bl {
   background: $white-gb; /*fallback*/
-  background:
-          linear-gradient(28deg,  transparent 130px, $white-gb 130px),
-          linear-gradient(90deg, transparent 0px, $white-gb 0px),
-          linear-gradient(90deg, transparent 0px, $white-gb 0px),
-          linear-gradient(90deg, transparent 0px, $white-gb 0px);
-  background-position:
-          bottom left,
-          top left,
-          top right,
-          bottom right;
+  background: linear-gradient(28deg, transparent 130px, $white-gb 130px),
+  linear-gradient(90deg, transparent 0px, $white-gb 0px),
+  linear-gradient(90deg, transparent 0px, $white-gb 0px),
+  linear-gradient(90deg, transparent 0px, $white-gb 0px);
+  background-position: bottom left,
+  top left,
+  top right,
+  bottom right;
   background-size: 51% 51%;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   padding: 20px;
 }
-
-
 
 body, html {
   height: 100%;
@@ -583,17 +580,20 @@ body, html {
   height: 100vh;
 }
 
-.l-col-layout{
+.l-col-layout {
   flex-direction: column;
 }
-.l-top-padding{
+
+.l-top-padding {
   padding-top: 20px;
 }
+
 .l-flex-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 // Typography
 h2 {
   margin: 0;
@@ -621,7 +621,6 @@ hr {
   border: 2px solid #2A316C;
 }
 
-
 .navbar {
   display: flex;
   /* top nav: */
@@ -636,7 +635,7 @@ hr {
   .menu {
     display: flex;
     list-style-type: none;
-    .menu-item{
+    .menu-item {
       font-size: 14px;
       color: #FFFFFF;
       text-align: left;
@@ -653,4 +652,52 @@ hr {
 
 .app {
   height: 100%;
+}
+
+//leaflet overriden styles
+
+.leaflet-control-layers-toggle:after {
+  content: "LAYERS";
+  color: #fff;
+  /* LAYERS: */
+  opacity: 0.9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.leaflet-control-layers-toggle {
+  background: rgba(0, 179, 238, 0.70);
+  border: none !important;
+  width: 100px !important;
+  height: 34px !important;
+  padding-top: 5px;
+  border-radius: 40px;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.leaflet-control-layers {
+  //width:auto;
+  //background-position:3px 50% ;
+  /* Rectangle: */
+  background: transparent;
+  border: none !important;
+  width: 100px;
+}
+
+.leaflet-control-layers-expanded {
+  .leaflet-control-layers-toggle{
+    display: block !important;
+  }
+  .leaflet-control-layers-list {
+    background-color: #909DAC !important;
+    color: #ffffff !important;
+    margin-top: 5px;
+  }
+
+}
+
+.leaflet-control-layers-selector {
+  visibility: hidden !important;
 }
