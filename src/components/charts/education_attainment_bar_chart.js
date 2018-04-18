@@ -42,6 +42,9 @@ const config = {
         itemWidth: 100,
         align: 'left',
         y: -25,
+        itemStyle: {
+          textOverflow: null
+        },
         itemMarginBottom: 4,
         backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
         symbolRadius: 0
