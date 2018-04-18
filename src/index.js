@@ -21,13 +21,11 @@ class App extends Component {
     render() {
 
         return (
-            <div>
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/chapters' component={Chapters}/>
                     <Route path='/story' component={StoryBoard}/>
                 </Switch>
-            </div>
 
         );
     }

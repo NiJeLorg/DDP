@@ -85,13 +85,14 @@
 
 .c-card {
   background: #ffffff;
-  width: 650px;
-  height: 650px; }
+  width: 600px;
+  height: 600px; }
+  .c-card h2 {
+    font-size: 30px; }
   .c-card p {
     /* Lorem ipsum dolor am: */
-    font-size: 22px;
-    color: #383636;
-    text-align: left; }
+    font-size: 18px;
+    color: #383636; }
 
 .c-card--no-margin {
   margin: 0;
@@ -100,6 +101,7 @@
 
 .c-story-board {
   display: flex;
+  height: inherit;
   flex-direction: column; }
   .c-story-board .navbar .logo img {
     height: 50px; }
@@ -209,18 +211,20 @@
 
 .c-stories {
   display: flex;
-  flex-wrap: wrap; }
+  flex: 1; }
   .c-stories .map {
     max-width: 45%;
     height: auto; }
   .c-stories .story-navigator {
     max-width: 55%;
-    margin-bottom: 20px;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    overflow-y: scroll; }
     .c-stories .story-navigator .story-content {
-      margin-right: 40px;
-      margin-left: 40px; }
+      padding-right: 80px;
+      padding-left: 80px;
+      padding-bottom: 30px;
+      padding-top: 40px; }
       .c-stories .story-navigator .story-content h1 {
         /* I. EDUCATIONAL ATTAI: */
         font-family: Avenir-Black;
@@ -367,3 +371,6 @@ hr {
       text-align: left; }
       .navbar .menu .menu-item:not(last) {
         margin-right: 40px; }
+
+.app {
+  height: 100%; }

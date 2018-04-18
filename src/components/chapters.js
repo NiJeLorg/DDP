@@ -31,18 +31,18 @@ const Chapters = () => {
                                     <h3 className="u-center-text">Coming Soon</h3>
                                 </div>
                             </Link>
-                            <Link to="/story" className="chapter-card u-beveled-box-marker">
-                                <span className="chapter-marker">03</span>
-                                <div className="chapter-title">
-                                    <h3 className="u-center-text">Coming Soon</h3>
-                                </div>
-                            </Link>
-                            <Link to="/story" className="chapter-card u-beveled-box-marker">
-                                <span className="chapter-marker">03</span>
-                                <div className="chapter-title">
-                                    <h3 className="u-center-text">Coming Soon</h3>
-                                </div>
-                            </Link>
+                            {/*<Link to="/story" className="chapter-card u-beveled-box-marker">*/}
+                                {/*<span className="chapter-marker">03</span>*/}
+                                {/*<div className="chapter-title">*/}
+                                    {/*<h3 className="u-center-text">Coming Soon</h3>*/}
+                                {/*</div>*/}
+                            {/*</Link>*/}
+                            {/*<Link to="/story" className="chapter-card u-beveled-box-marker">*/}
+                                {/*<span className="chapter-marker">03</span>*/}
+                                {/*<div className="chapter-title">*/}
+                                    {/*<h3 className="u-center-text">Coming Soon</h3>*/}
+                                {/*</div>*/}
+                            {/*</Link>*/}
                         </div>
 
 

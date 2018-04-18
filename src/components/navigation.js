@@ -2,7 +2,6 @@ import React from 'react';
 
 const Navigation = () => {
     return (
-            <div>
                 <nav className="navbar">
                     <div className="logo">
                         <img src="../../img/logo.svg" alt=""/>
@@ -12,7 +11,6 @@ const Navigation = () => {
                         <li className="menu-item">Contact</li>
                     </ul>
                 </nav>
-            </div>
     );
 };
 
