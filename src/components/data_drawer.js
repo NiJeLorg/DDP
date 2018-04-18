@@ -41,32 +41,17 @@ class DataDrawer extends Component {
     render() {
         let openDrawerBtnClasses = classNames({
             'btn-drawer-open': true,
-            'hidden': this.state.open
+            // 'hidden': this.state.open
         });
         return (
             <div className="c-drawer">
                 <div className={openDrawerBtnClasses}>
                     <a onClick={this.toggleDrawer}
                        disabled={this.state.open && !this.state.noOverlay}>
-                        DATA DRAWER <i className="fa fa-caret-down fa-2x"></i>
+                        DATA DRAWER
                     </a>
 
                 </div>
-                <ReactDrawer
-                    className="data-drawer"
-                    open={this.state.open}
-                    position={this.state.position}
-                    onClose={this.onDrawerClose}
-                    noOverlay={this.state.noOverlay}>
-                    <i onClick={this.closeDrawer} className="icono-cross"></i>
-                    <h2>Data Drawer Stuff here</h2>
-                    <div className="btn-drawer-close">
-                        <a onClick={this.toggleDrawer}
-                           disabled={this.state.open && !this.state.noOverlay}>
-                            DATA DRAWER <i className="fa fa-caret-up fa-2x"></i>
-                        </a>
-                    </div>
-                </ReactDrawer>
             </div>
         );
 

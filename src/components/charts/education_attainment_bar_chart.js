@@ -9,7 +9,12 @@ const config = {
         categories: ['DETROIT', 'CHICAGO', 'PITTSBURGH', 'BALTIMORE']
     },
     chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
         type: 'column',
+        width: 400,
+        height: 250,
     },
     title:{
         text: null
@@ -33,7 +38,11 @@ const config = {
     },
     legend: {
         verticalAlign: 'top',
+        itemDistance: 10,
+        itemWidth: 100,
+        align: 'left',
         y: -25,
+        itemMarginBottom: 4,
         backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
         symbolRadius: 0
     },

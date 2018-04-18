@@ -4,8 +4,7 @@ import StoryOne from  './stories/story_one';
 
 const StoryNavigator = () => {
     return (
-       <div className={"c-story-navigator"}>
-           <StoryHeader />
+       <div className={"story-navigator"}>
            <StoryOne />
        </div>
     );

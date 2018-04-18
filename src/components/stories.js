@@ -5,7 +5,7 @@ import DataDrawer from './data_drawer';
 const Stories = () => {
     return (
         <div className="c-stories">
-            {/*<DataDrawer />*/}
+            <DataDrawer />
             <StoryNavigator />
             <GeoMap />
 

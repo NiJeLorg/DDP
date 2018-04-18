@@ -7,24 +7,26 @@ const config = {
         type: 'area'
     },
     title: {
-        text: 'DOWNTOWN DIVERSITY'
+        text: 'Downtown Diversity',
+        align: 'left'
     },
     xAxis: {
         categories: ['0-20', '20-40', '40-60', '60-80', '80-100'],
         // tickmarkPlacement: 'on',
-        min: 0,
+        // min: 0,
+        startOnTick: true,
         title: {
-            enabled: false
+            text: 'Age'
         }
     },
     yAxis: {
         title: {
-            text: 'Billions'
+            text: 'People'
         },
         min: 0,
         labels: {
             formatter: function () {
-                return this.value / 1000;
+                return this.value/1000 + 'K';
             }
         }
     },
@@ -61,7 +63,7 @@ const config = {
     }],
     legend: {
         verticalAlign: 'top',
-        y: -25,
+        y: -20,
         backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
         symbolRadius: 0
     },

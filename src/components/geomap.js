@@ -17,8 +17,8 @@ class GeoMap extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.map = L.map(this.container, {
-                center: [40, 30],
-                zoom: 5,
+                center: [this.state.lat, this.state.lng],
+                zoom: this.state.zoom,
                 maxZoom: 18,
                 layers: new L.TileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png')
             }, 100)
