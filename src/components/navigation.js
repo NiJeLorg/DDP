@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Navigation = () => {
     return (
                 <nav className="navbar">
-                    <div className="logo">
+                    <Link to="/" className="logo">
                         <img src="../../img/logo.svg" alt=""/>
-                    </div>
+                    </Link>
                     <ul className="menu" role="navigation">
                         <li className="menu-item">Stories</li>
                         <li className="menu-item">Contact</li>

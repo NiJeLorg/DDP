@@ -398,6 +398,10 @@ $chapter-marker-bg: #D8D8D8;
 }
 .c-logo{
   padding: 40px;
+  a& {
+    text-decoration: none;
+  }
+
 }
 .c-card__content {
   margin-left: 70px;
