@@ -126,12 +126,11 @@
     color: #FFFFFF;
     text-align: left; }
   .c-story-board .u-beveled-box-bl {
-    width: 55%;
-    height: 87%;
+    width: 60%;
     opacity: 0.88;
     background: #37a9ab;
     /*fallback*/
-    background: linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(208deg, transparent 130px, #37a9ab 130px), linear-gradient(90deg, transparent 0px, #37a9ab 0px);
+    background: linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(208deg, transparent 100px, #37a9ab 100px), linear-gradient(90deg, transparent 0px, #37a9ab 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
@@ -278,7 +277,8 @@
 
 .u-header-bg-cover {
   background-image: url("./../img/header.png");
-  background-size: cover; }
+  background-size: cover;
+  background-position: 100px; }
 
 .u-center-item {
   display: flex;
