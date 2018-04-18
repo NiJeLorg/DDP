@@ -133,7 +133,7 @@
     /*fallback*/
     background: linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(208deg, transparent 130px, #37a9ab 130px), linear-gradient(90deg, transparent 0px, #37a9ab 0px);
     background-position: bottom left, top left, top right, bottom right;
-    background-size: 50% 50%;
+    background-size: 51% 51%;
     background-repeat: no-repeat;
     padding: 20px; }
 
@@ -172,14 +172,14 @@
     background: #D8D8D8;
     background: linear-gradient(28deg, transparent 30px, #D8D8D8 30px), linear-gradient(90deg, transparent 0px, #D8D8D8 0px), linear-gradient(208deg, transparent 30px, #D8D8D8 30px), linear-gradient(90deg, transparent 0px, #D8D8D8 0px);
     background-position: bottom left, top left, top right, bottom right;
-    background-size: 50% 50%;
+    background-size: 51% 51%;
     background-repeat: no-repeat;
     padding: 20px; }
   .c-chapter-markers .u-beveled-box-marker:hover {
     background: #37a9ab;
     background: linear-gradient(28deg, transparent 30px, #37a9ab 30px), linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(208deg, transparent 30px, #37a9ab 30px), linear-gradient(90deg, transparent 0px, #37a9ab 0px);
     background-position: bottom left, top left, top right, bottom right;
-    background-size: 50% 50%;
+    background-size: 51% 51%;
     background-repeat: no-repeat;
     padding: 20px; }
 
@@ -297,7 +297,7 @@
   /*fallback*/
   background: linear-gradient(28deg, transparent 130px, #ffffff 130px), linear-gradient(90deg, transparent 0px, #ffffff 0px), linear-gradient(208deg, transparent 130px, #ffffff 130px), linear-gradient(90deg, transparent 0px, #ffffff 0px);
   background-position: bottom left, top left, top right, bottom right;
-  background-size: 50% 50%;
+  background-size: 51% 51%;
   background-repeat: no-repeat;
   padding: 20px; }
 
@@ -306,7 +306,7 @@
   /*fallback*/
   background: linear-gradient(28deg, transparent 130px, #ffffff 130px), linear-gradient(90deg, transparent 0px, #ffffff 0px), linear-gradient(90deg, transparent 0px, #ffffff 0px), linear-gradient(90deg, transparent 0px, #ffffff 0px);
   background-position: bottom left, top left, top right, bottom right;
-  background-size: 50% 50%;
+  background-size: 51% 51%;
   background-repeat: no-repeat;
   padding: 20px; }
 
