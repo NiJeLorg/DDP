@@ -107,7 +107,7 @@
     height: 50px; }
   .c-story-board p, .c-story-board hr {
     width: 70%;
-    font-size: 18px;
+    font-size: 16px;
     color: #FFFFFF;
     text-align: left; }
   .c-story-board hr {
@@ -127,6 +127,7 @@
     text-align: left; }
   .c-story-board .u-beveled-box-bl {
     width: 60%;
+    height: 100%;
     opacity: 0.88;
     background: #37a9ab;
     /*fallback*/
@@ -137,7 +138,7 @@
     padding: 20px; }
 
 .c-story-header {
-  height: 300px; }
+  height: 250px; }
 
 .c-chapter-markers {
   display: flex;
@@ -216,14 +217,16 @@
     height: auto; }
   .c-stories .story-navigator {
     max-width: 55%;
+    background-color: white;
+    z-index: 99999;
     display: flex;
     flex-direction: column;
     overflow-y: scroll; }
     .c-stories .story-navigator .story-content {
       padding-right: 80px;
       padding-left: 80px;
-      padding-bottom: 30px;
-      padding-top: 40px; }
+      padding-bottom: 5px;
+      padding-top: 10px; }
       .c-stories .story-navigator .story-content h1 {
         /* I. EDUCATIONAL ATTAI: */
         font-family: Avenir-Black;
@@ -232,7 +235,7 @@
         text-align: left; }
       .c-stories .story-navigator .story-content p {
         font-family: PTSerif-Regular;
-        font-size: 18px;
+        font-size: 16px;
         color: #383636;
         text-align: justify; }
       .c-stories .story-navigator .story-content .chart-container {
