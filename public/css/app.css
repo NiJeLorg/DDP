@@ -85,14 +85,17 @@
 
 .c-card {
   background: #ffffff;
-  width: 600px;
-  height: 600px; }
+  width: 500px;
+  height: 500px; }
   .c-card h2 {
     font-size: 30px; }
   .c-card p {
     /* Lorem ipsum dolor am: */
     font-size: 18px;
     color: #383636; }
+
+.c-card--home {
+  margin-top: -40px; }
 
 .c-card--no-margin {
   margin: 0;
@@ -298,7 +301,7 @@
 .u-beveled-box {
   background: #ffffff;
   /*fallback*/
-  background: linear-gradient(28deg, transparent 130px, #ffffff 130px), linear-gradient(90deg, transparent 0px, #ffffff 0px), linear-gradient(208deg, transparent 130px, #ffffff 130px), linear-gradient(90deg, transparent 0px, #ffffff 0px);
+  background: linear-gradient(28deg, transparent 100px, #ffffff 100px), linear-gradient(90deg, transparent 0px, #ffffff 0px), linear-gradient(208deg, transparent 100px, #ffffff 100px), linear-gradient(90deg, transparent 0px, #ffffff 0px);
   background-position: bottom left, top left, top right, bottom right;
   background-size: 51% 51%;
   background-repeat: no-repeat;

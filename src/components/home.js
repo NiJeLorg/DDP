@@ -8,7 +8,7 @@ const Home = () => {
                 <img src="./../img/logo.svg" alt=""/>
             </div>
             <div className="u-center-item">
-                <div className="c-card u-beveled-box u-center-item">
+                <div className="c-card c-card--home u-beveled-box u-center-item">
                     <div className="c-card__content l-col-layout
                 ">
                         <h2>Downtown is Happening</h2>

@@ -237,8 +237,8 @@ $white-gb: #ffffff;
 
 .c-card {
   background: #ffffff;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   h2 {
     font-size: 30px;
   }
@@ -248,6 +248,10 @@ $white-gb: #ffffff;
     color: #383636;
     //text-align: left;
   }
+}
+
+.c-card--home{
+  margin-top: -40px;
 }
 .c-card--no-margin{
   margin: 0;
@@ -533,9 +537,9 @@ $chapter-marker-bg: #D8D8D8;
 .u-beveled-box {
   background: $white-gb; /*fallback*/
   background:
-          linear-gradient(28deg,  transparent 130px, $white-gb 130px),
+          linear-gradient(28deg,  transparent 100px, $white-gb 100px),
           linear-gradient(90deg, transparent 0px, $white-gb 0px),
-          linear-gradient(208deg, transparent 130px, $white-gb 130px),
+          linear-gradient(208deg, transparent 100px, $white-gb 100px),
           linear-gradient(90deg, transparent 0px, $white-gb 0px);
   background-position:
           bottom left,
