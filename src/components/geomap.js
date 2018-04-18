@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import L from 'leaflet';
 class GeoMap extends Component {
     state = {
         lat: 42.331427,
