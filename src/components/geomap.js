@@ -29,11 +29,13 @@ class GeoMap extends Component {
             this.map = L.map(this.container, {
                 center: [this.state.lat, this.state.lng],
                 zoom: this.state.zoom,
+                fullscreenControl: true,
                 maxZoom: 18,
                 layers: [streets, outdoors]
             }, 100);
 
             L.control.layers(baseMaps).addTo(this.map);
+            // this.map.addControl(new L.Control.fullscreen());
 
         });
 
