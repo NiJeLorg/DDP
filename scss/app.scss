@@ -293,13 +293,13 @@ $white-gb: #ffffff;
   .u-beveled-box-bl {
     width: 60%;
     height: 100%;
-    opacity: 0.88;
-    background: #37a9ab; /*fallback*/
+    opacity: 0.83;
+    background: #068278; /*fallback*/
     background:
-            linear-gradient(90deg,  transparent 0px, #37a9ab 0px),
-            linear-gradient(90deg, transparent 0px, #37a9ab 0px),
-            linear-gradient(208deg, transparent 100px, #37a9ab 100px),
-            linear-gradient(90deg, transparent 0px, #37a9ab 0px);
+            linear-gradient(90deg,  transparent 0px, #068278 0px),
+            linear-gradient(90deg, transparent 0px, #068278 0px),
+            linear-gradient(208deg, transparent 100px, #068278 100px),
+            linear-gradient(90deg, transparent 0px, #068278 0px);
     background-position:
             bottom left,
             top left,
@@ -398,9 +398,6 @@ $chapter-marker-bg: #D8D8D8;
 }
 .c-logo{
   padding: 40px;
-  a& {
-    text-decoration: none;
-  }
 
 }
 .c-card__content {
@@ -640,7 +637,10 @@ hr {
       color: #FFFFFF;
       text-align: left;
       &:not(last) {
-        margin-right: 40px;
+        padding-right: 40px;
+      }
+      &:hover, &:focus {
+        color: #E0E060;
       }
     }
 

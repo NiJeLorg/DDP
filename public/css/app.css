@@ -128,10 +128,10 @@
   .c-story-board .u-beveled-box-bl {
     width: 60%;
     height: 100%;
-    opacity: 0.88;
-    background: #37a9ab;
+    opacity: 0.83;
+    background: #068278;
     /*fallback*/
-    background: linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(208deg, transparent 100px, #37a9ab 100px), linear-gradient(90deg, transparent 0px, #37a9ab 0px);
+    background: linear-gradient(90deg, transparent 0px, #068278 0px), linear-gradient(90deg, transparent 0px, #068278 0px), linear-gradient(208deg, transparent 100px, #068278 100px), linear-gradient(90deg, transparent 0px, #068278 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
@@ -189,8 +189,6 @@
 
 .c-logo {
   padding: 40px; }
-  .c-logoa {
-    text-decoration: none; }
 
 .c-card__content {
   margin-left: 70px;
@@ -375,7 +373,9 @@ hr {
       color: #FFFFFF;
       text-align: left; }
       .navbar .menu .menu-item:not(last) {
-        margin-right: 40px; }
+        padding-right: 40px; }
+      .navbar .menu .menu-item:hover, .navbar .menu .menu-item:focus {
+        color: #E0E060; }
 
 .app {
   height: 100%; }

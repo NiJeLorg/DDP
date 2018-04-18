@@ -7,7 +7,7 @@ const Navigation = () => {
                         <img src="../../img/logo.svg" alt=""/>
                     </Link>
                     <ul className="menu" role="navigation">
-                        <li className="menu-item">Stories</li>
+                        <li className="menu-item">Chapters</li>
                         <li className="menu-item">Contact</li>
                     </ul>
                 </nav>
