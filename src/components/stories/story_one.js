@@ -5,7 +5,7 @@ const StoryOne = () => {
     return (
         <div className={'story-content'}>
             <EducationAttainment />
-            <EducationAttainment />
+            {/*<EducationAttainment />*/}
         </div>
 
     );
