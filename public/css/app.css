@@ -113,11 +113,28 @@
     font-size: 16px;
     color: #FFFFFF;
     text-align: left; }
-  .c-story-board .chapter-info .chapter-marker {
+  .c-story-board .chapter-marker {
     font-size: 45px;
     color: #E0E060;
     text-align: left;
     margin-right: 10px; }
+  .c-story-board .chapter-info ul.story-page-indicator {
+    margin: 0;
+    padding-left: 55px; }
+    .c-story-board .chapter-info ul.story-page-indicator li {
+      text-indent: 0;
+      display: inline-block;
+      margin: 0 2px;
+      width: 8px;
+      height: 8px;
+      border: solid rgba(255, 255, 255, 0) 1px;
+      border-radius: 100%;
+      line-height: 5px;
+      color: #fff;
+      background-color: #079287;
+      transition: all 0.25s ease; }
+      .c-story-board .chapter-info ul.story-page-indicator li.active {
+        background-color: rgba(255, 255, 255, 0.8); }
   .c-story-board .chapter-info .chapter-title {
     margin-top: 30px;
     font-size: 25px;
@@ -127,7 +144,7 @@
   .c-story-board .chapter-info p {
     padding-left: 90px; }
   .c-story-board .chapter-info hr {
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 30px;
     border: 1px solid #E0E060;
     width: auto;

@@ -8,6 +8,12 @@ const StoryHeader = () => {
                     <div className="chapter-title">
                         <span className="chapter-marker">01</span>
                         Downtown in Context
+                        <ul className="story-page-indicator">
+                            <li className="active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
                     </div>
 
                     <p>
