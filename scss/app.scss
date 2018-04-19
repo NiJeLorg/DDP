@@ -1,95 +1,3 @@
-//.navbar {
-//  display: flex;
-//  /* top nav: */
-//  background: #13294B;
-//  /* Stroke 1: */
-//  border: 1px solid #FFFFFF;
-//  align-items: center;
-//  /* Fill 18: */
-//  padding: 10px 34px 10px 34px;
-//  justify-content: space-between;
-//
-//  .menu {
-//    display: flex;
-//    list-style-type: none;
-//    .menu-item{
-//      font-size: 14px;
-//      color: #FFFFFF;
-//      text-align: left;
-//      &:not(last) {
-//        margin-right: 40px;
-//      }
-//    }
-//
-//  }
-//}
-//
-
-//
-//@font-face {
-//  font-family: Avenir;
-//  src: url('../fonts/AvenirLTStd Medium.otf') format('opentype' );
-//  font-weight: 500;
-//}
-//
-//@font-face {
-//  font-family: Avenir;
-//  src: url('../fonts/AvenirLTStd Roman.otf') format('opentype' );
-//}
-//
-//@font-face {
-//  font-family: Avenir;
-//  src: url('../fonts/AvenirLTStd Light.otf') format('opentype' );
-//  font-weight: 300;
-//}
-//
-//@font-face {
-//  font-family: Avenir;
-//  src:url('../fonts/AvenirLTStd Oblique.otf');
-//  font-style: oblique;
-//}
-//@font-face {
-//  font-family: ChaletBook;
-//  src: url('../fonts/ChaletBook Bold.otf');
-//  font-weight: bold;
-//}
-//@font-face {
-//  font-family: MinionPro;
-//  src: url('../fonts/MinionPro Regular.otf');
-//  font-weight: normal;
-//}
-//@font-face {
-//  font-family: Verdana;
-//  src: url('../fonts/Verdana.ttf');
-//}
-//@font-face {
-//  font-family: Wingdings;
-//  src: url('../fonts/Wingdings 3.ttf');
-//}
-//
-//
-//.justify {
-//  text-align: justify;
-//  text-justify: inter-word;
-//}
-//
-
-//
-//
-//
-//
-//body, html{
-//  height:100%;
-//  margin: 0;
-//  font-family: 'AvenirLTStd Roman', Avenir;
-//  /* Something about work: */
-//  //font-family: Avenir-Roman;
-//  font-size: 14px;
-//  color: #0C0C0C;
-//  text-align: left;
-//  line-height: 21px;
-//}
-//
 .btn-drawer-open {
   text-align: center;
   vertical-align: bottom;
@@ -444,6 +352,10 @@ $chapter-marker-bg: #D8D8D8;
       padding-left: 40px;
       padding-bottom: 5px;
       padding-top: 10px;
+      .chapter-marker {
+        font-size: 20px;
+        margin-right: 4px;
+      }
       h1 {
         /* I. EDUCATIONAL ATTAI: */
         font-family: Avenir-Black;

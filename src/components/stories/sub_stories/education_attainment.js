@@ -6,7 +6,7 @@ import DataBar from './../../charts/data_bar';
 const EducationAttainment = () => {
     return (
         <div>
-            <h1>EDUCATIONAL ATTAINMENT</h1>
+            <h1> <span className="chapter-marker">1.</span>EDUCATIONAL ATTAINMENT</h1>
             <p>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
             <div>
                 <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
