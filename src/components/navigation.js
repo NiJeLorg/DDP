@@ -4,7 +4,7 @@ const Navigation = () => {
     return (
                 <nav className="navbar">
                     <Link to="/" className="logo">
-                        <img src="../../img/logo.svg" alt=""/>
+                        <img src="../../img/logo-white.svg" alt=""/>
                     </Link>
                     <ul className="menu" role="navigation">
                         <li className="menu-item">Chapters</li>
