@@ -1,3 +1,45 @@
+@font-face {
+  font-family: "Avenir-Light";
+  src: url('../assets/fonts/AvenirLTStd_Light.otf');
+}
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url('../assets/fonts/AvenirLTStd_Medium.otf');
+}
+
+@font-face {
+  font-family: "Avenir-Roman";
+  src: url('../assets/fonts/AvenirLTStd_Roman.otf');
+}
+
+@font-face {
+  font-family: "Avenir-Oblique";
+  src: url('../assets/fonts/AvenirLTStd_Oblique.otf');
+}
+
+@font-face {
+  font-family: "ChaletBook-Bold";
+  src: url('../assets/fonts/ChaletBook_Bold.otf');
+}
+
+@font-face {
+  font-family: "MinionPro";
+  src: url('../assets/fonts/MinionPro_Regular.otf');
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url('../assets/fonts/Verdana.ttf');
+}
+
+@font-face {
+  font-family: 'Wingdings';
+  src: url('../assets/fonts/Wingdings_3.ttf')
+}
+
+
+
 .btn-drawer-open {
   text-align: center;
   vertical-align: bottom;
@@ -6,8 +48,8 @@
   align-self: center;
   margin-top: -300px;
   margin-left: -160px;
-  background: #00B3EE;
-  box-shadow: 0 0 4px 0 rgba(19, 41, 75, 0.30);
+  background: #00b3ee;
+  box-shadow: 0 0 4px 0 rgba(19, 41, 75, 0.3);
   z-index: 9999;
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -25,12 +67,12 @@
 //.btn-drawer-close i {
 //  vertical-align: middle;
 //}
-.btn-drawer-open a, .btn-drawer-close a {
+.btn-drawer-open a,
+.btn-drawer-close a {
   color: #fff;
-  font-family: 'AvenirLTStd Medium', Avenir;
+  font-family: "AvenirLTStd Medium", Avenir;
   font-size: 14px;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 //.react-drawer-drawer{
@@ -92,7 +134,7 @@
 }
 
 .c-data {
-  background: rgba(216, 216, 216, 0.60);
+  background: rgba(216, 216, 216, 0.6);
   .bar {
     /* Rectangle 5: */
 
@@ -102,14 +144,13 @@
     /* DOWNLOAD | VIEW DATA: */
     padding-right: 10px;
     a {
-      font-family: 'AvenirLTStd Medium', Avenir;
+      font-family: "AvenirLTStd Medium", Avenir;
       font-size: 10px;
       color: #999999;
       text-align: center;
       text-decoration: none;
     }
     /* HIDE DATA | DOWNLOAD Copy: */
-
   }
   .table {
     margin-left: 30px;
@@ -124,7 +165,7 @@
 }
 
 .active-label {
-  color: #2A316C !important;
+  color: #2a316c !important;
 }
 
 .vertical-divider {
@@ -180,20 +221,20 @@ $white-gb: #ffffff;
       }
     }
   }
-  p, hr {
+  p,
+  hr {
     width: 70%;
     font-size: 16px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: left;
   }
   .chapter-marker {
     font-size: 45px;
-    color: #E0E060;
+    color: #e0e060;
     text-align: left;
     margin-right: 10px;
   }
   .chapter-info {
-
     ul.story-page-indicator {
       margin: 0;
       padding-left: 55px;
@@ -217,17 +258,17 @@ $white-gb: #ffffff;
     .chapter-title {
       margin-top: 30px;
       font-size: 25px;
-      color: #FFFFFF;
+      color: #ffffff;
       text-align: left;
       padding-left: 40px;
     }
-    p{
+    p {
       padding-left: 90px;
     }
     hr {
       margin-top: 15px;
       margin-bottom: 30px;
-      border: 1px solid #E0E060;
+      border: 1px solid #e0e060;
       width: auto;
       margin-left: -110px;
     }
@@ -239,13 +280,10 @@ $white-gb: #ffffff;
     opacity: 0.83;
     background: #068278; /*fallback*/
     background: linear-gradient(90deg, transparent 0px, #068278 0px),
-    linear-gradient(90deg, transparent 0px, #068278 0px),
-    linear-gradient(208deg, transparent 100px, #068278 100px),
-    linear-gradient(90deg, transparent 0px, #068278 0px);
-    background-position: bottom left,
-    top left,
-    top right,
-    bottom right;
+      linear-gradient(90deg, transparent 0px, #068278 0px),
+      linear-gradient(208deg, transparent 100px, #068278 100px),
+      linear-gradient(90deg, transparent 0px, #068278 0px);
+    background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
     padding: 20px;
@@ -257,7 +295,7 @@ $white-gb: #ffffff;
 }
 
 $chapter-marker-bg-hover: #37a9ab;
-$chapter-marker-bg: #D8D8D8;
+$chapter-marker-bg: #d8d8d8;
 .c-chapter-markers {
   display: flex;
   margin-top: 30px;
@@ -274,7 +312,7 @@ $chapter-marker-bg: #D8D8D8;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #2A316C;
+    color: #2a316c;
     &:hover {
       .chapter-marker {
         color: yellow;
@@ -290,7 +328,6 @@ $chapter-marker-bg: #D8D8D8;
     .chapter-title {
       align-self: center;
       margin-left: -25px;
-
     }
   }
 
@@ -300,14 +337,15 @@ $chapter-marker-bg: #D8D8D8;
 
   .u-beveled-box-marker {
     background: $chapter-marker-bg;
-    background: linear-gradient(28deg, transparent 30px, $chapter-marker-bg 30px),
-    linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px),
-    linear-gradient(208deg, transparent 30px, $chapter-marker-bg 30px),
-    linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px);
-    background-position: bottom left,
-    top left,
-    top right,
-    bottom right;
+    background: linear-gradient(
+        28deg,
+        transparent 30px,
+        $chapter-marker-bg 30px
+      ),
+      linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px),
+      linear-gradient(208deg, transparent 30px, $chapter-marker-bg 30px),
+      linear-gradient(90deg, transparent 0px, $chapter-marker-bg 0px);
+    background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
     padding: 20px;
@@ -315,14 +353,15 @@ $chapter-marker-bg: #D8D8D8;
 
   .u-beveled-box-marker:hover {
     background: $chapter-marker-bg-hover;
-    background: linear-gradient(28deg, transparent 30px, $chapter-marker-bg-hover 30px),
-    linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px),
-    linear-gradient(208deg, transparent 30px, $chapter-marker-bg-hover 30px),
-    linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px);
-    background-position: bottom left,
-    top left,
-    top right,
-    bottom right;
+    background: linear-gradient(
+        28deg,
+        transparent 30px,
+        $chapter-marker-bg-hover 30px
+      ),
+      linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px),
+      linear-gradient(208deg, transparent 30px, $chapter-marker-bg-hover 30px),
+      linear-gradient(90deg, transparent 0px, $chapter-marker-bg-hover 0px);
+    background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
     padding: 20px;
@@ -336,13 +375,12 @@ $chapter-marker-bg: #D8D8D8;
 
 .c-logo {
   padding: 40px;
-
 }
 
 .c-card__content {
   margin-left: 70px;
   margin-right: 70px;
-  color: #2A316C;
+  color: #2a316c;
 }
 
 .c-btn {
@@ -357,7 +395,7 @@ $chapter-marker-bg: #D8D8D8;
 }
 
 .c-btn--primary {
-  background: #00B3EE;
+  background: #00b3ee;
   color: #ffffff;
 }
 
@@ -397,12 +435,11 @@ $chapter-marker-bg: #D8D8D8;
         font-size: 16px;
         color: #383636;
         text-align: justify;
-
       }
 
       .chart-container {
-        background: rgba(255, 255, 255, 0.90);
-        box-shadow: 0 0 6px 0 rgba(19, 41, 75, 0.30);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 6px 0 rgba(19, 41, 75, 0.3);
         padding-top: 25px;
         display: flex;
         flex-direction: column;
@@ -418,11 +455,9 @@ $chapter-marker-bg: #D8D8D8;
           display: flex;
           flex-wrap: wrap;
         }
-
       }
     }
   }
-
 }
 
 // Utilities
@@ -481,13 +516,10 @@ $chapter-marker-bg: #D8D8D8;
 .u-beveled-box {
   background: $white-gb; /*fallback*/
   background: linear-gradient(28deg, transparent 100px, $white-gb 100px),
-  linear-gradient(90deg, transparent 0px, $white-gb 0px),
-  linear-gradient(208deg, transparent 100px, $white-gb 100px),
-  linear-gradient(90deg, transparent 0px, $white-gb 0px);
-  background-position: bottom left,
-  top left,
-  top right,
-  bottom right;
+    linear-gradient(90deg, transparent 0px, $white-gb 0px),
+    linear-gradient(208deg, transparent 100px, $white-gb 100px),
+    linear-gradient(90deg, transparent 0px, $white-gb 0px);
+  background-position: bottom left, top left, top right, bottom right;
   background-size: 51% 51%;
   background-repeat: no-repeat;
   padding: 20px;
@@ -496,23 +528,21 @@ $chapter-marker-bg: #D8D8D8;
 .u-beveled-box-bl {
   background: $white-gb; /*fallback*/
   background: linear-gradient(28deg, transparent 130px, $white-gb 130px),
-  linear-gradient(90deg, transparent 0px, $white-gb 0px),
-  linear-gradient(90deg, transparent 0px, $white-gb 0px),
-  linear-gradient(90deg, transparent 0px, $white-gb 0px);
-  background-position: bottom left,
-  top left,
-  top right,
-  bottom right;
+    linear-gradient(90deg, transparent 0px, $white-gb 0px),
+    linear-gradient(90deg, transparent 0px, $white-gb 0px),
+    linear-gradient(90deg, transparent 0px, $white-gb 0px);
+  background-position: bottom left, top left, top right, bottom right;
   background-size: 51% 51%;
   background-repeat: no-repeat;
   padding: 20px;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   font-size: 12px;
-  color: #0C0C0C;
+  color: #0c0c0c;
   line-height: 21px;
 }
 
@@ -550,24 +580,23 @@ h3 {
 }
 
 i {
-  border: solid #00B3EE;
+  border: solid #00b3ee;
   border-width: 0 1px 1px 0;
   display: inline-block;
   padding: 3px;
-
 }
 
 hr {
   /* Line: */
-  border: 2px solid #2A316C;
+  border: 2px solid #2a316c;
 }
 
 .navbar {
   display: flex;
   /* top nav: */
-  background: #13294B;
+  background: #13294b;
   /* Stroke 1: */
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   align-items: center;
   /* Fill 18: */
   padding: 10px 34px 10px 34px;
@@ -578,16 +607,16 @@ hr {
     list-style-type: none;
     .menu-item {
       font-size: 14px;
-      color: #FFFFFF;
+      color: #ffffff;
       text-align: left;
       &:not(last) {
         padding-right: 40px;
       }
-      &:hover, &:focus {
-        color: #E0E060;
+      &:hover,
+      &:focus {
+        color: #e0e060;
       }
     }
-
   }
 }
 
@@ -607,7 +636,7 @@ hr {
 }
 
 .leaflet-control-layers-toggle {
-  background: rgba(0, 179, 238, 0.70);
+  background: rgba(0, 179, 238, 0.7);
   border: none !important;
   width: 100px !important;
   height: 34px !important;
@@ -615,7 +644,6 @@ hr {
   border-radius: 40px;
   text-align: center;
   text-decoration: none;
-
 }
 
 .leaflet-control-layers {
@@ -628,17 +656,21 @@ hr {
 }
 
 .leaflet-control-layers-expanded {
-  .leaflet-control-layers-toggle{
+  .leaflet-control-layers-toggle {
     display: block !important;
   }
   .leaflet-control-layers-list {
-    background-color: #909DAC !important;
+    background-color: #909dac !important;
     color: #ffffff !important;
     margin-top: 5px;
   }
-
 }
 
 .leaflet-control-layers-selector {
   visibility: hidden !important;
+}
+
+.main-heading {
+  font-size: 40px;
+  font-weight: bold;
 }
