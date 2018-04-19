@@ -9,8 +9,9 @@ const StoryHeader = () => {
                         <span className="chapter-marker">01</span>
                         Downtown in Context
                     </div>
-                    <hr/>
+
                     <p>
+                        <hr/>
                         Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra.
                     </p>
                 </div>
