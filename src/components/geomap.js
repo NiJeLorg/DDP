@@ -1,50 +1,76 @@
 import React, {Component} from 'react';
 import L from 'leaflet';
+import mapConfig from '../utils/maps';
+import _ from 'lodash';
+require('leaflet-choropleth');
+
 class GeoMap extends Component {
-    state = {
-        lat: 42.334165,
-        lng: -83.048754,
-        zoom: 13,
-    };
+  state = {
+    lat: mapConfig.DETROIT_POSITION.lat,
+    lng: mapConfig.DETROIT_POSITION.lng,
+    zoom: mapConfig.ZOOM_LEVEL,
+  };
 
-    render() {
-        return (
-                <div className="map"
-                     ref={ ref => this.container = ref } />
+  render() {
+    return (
+      <div className="map" ref={ref => this.container = ref}/>
+    )
+  }
 
-        )
-    }
+  componentDidMount() {
 
-    componentDidMount() {
-        const accessToken = 'pk.eyJ1Ijoia2FzaGJvc3MiLCJhIjoiY2pjYnZiOXNyMG1iMjMzbzJlaTQ3dGFqbyJ9.Fe3wRj0zktbL6zxsTNk2DQ';
-        const mapboxUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}';
-        const mapboxAttribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>';
-        const streets  = L.tileLayer(mapboxUrl, {id: 'mapbox.streets', attribution: mapboxAttribution, accessToken:accessToken}),
-            outdoors   = L.tileLayer(mapboxUrl, {id: 'mapbox.outdoors', attribution: mapboxAttribution, accessToken:accessToken});
-        const baseMaps = {
-            "Outdoors": outdoors,
-            "Streets": streets
-        };
-        setTimeout(() => {
-            this.map = L.map(this.container, {
-                center: [this.state.lat, this.state.lng],
-                zoom: this.state.zoom,
-                fullscreenControl: true,
-                maxZoom: 18,
-                layers: [streets, outdoors]
-            }, 100);
+    const streets = L.tileLayer(mapConfig.MAPBOX_URL, {
+        id: 'mapbox.streets',
+        attribution: mapConfig.MAPBOX_ATTRIBUTION,
+      });
 
-            L.control.layers(baseMaps).addTo(this.map);
-            // this.map.addControl(new L.Control.fullscreen());
+    const geoJson = fetch(mapConfig.EDUCATION_ATTAINMENT_GEO_API).then(function (response) {
+      return response.json()
+    });
+    const apiData = fetch(mapConfig.EDUCATION_ATTAINMENT_DATA_API).then(function (response) {
+      return response.json()
+    });
 
-        });
+    Promise.all([geoJson, apiData]).then(([geoJsonData, apiData]) => {
+      setTimeout(() => {
+        this.map = L.map(this.container, {
+          center: [this.state.lat, this.state.lng],
+          zoom: this.state.zoom,
+          fullscreenControl: true,
+          maxZoom: 18,
+          layers: [streets]
+        }, 100);
+        geoJsonData = mapConfig.addEducationAttainmentDataToGeoJson(geoJsonData, apiData);
+
+        const geoJsonObj = L.choropleth(geoJsonData, {
+          valueProperty: (feature) => { return feature.properties.bachelors_population/parseFloat(feature.properties.total_population) * 100}, // which property in the features to use
+          scale: ['white', 'green'], // chroma.js scale - include as many as you like
+          steps: 5, // number of breaks or steps in range
+          mode: 'q', // q for quantile, e for equidistant, k for k-means
+          style: {
+            color: '#fff', // border color
+            weight: 2,
+            fillOpacity: 0.8
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindTooltip(() => {
+              const percentage = feature.properties.bachelors_population/parseFloat(feature.properties.total_population) * 100;
+              return feature.properties.name + '<br/>' + `Population with Bachelor's Degeree: ${_.floor(percentage, 2)}%`
+            });
+          }
+        }).addTo(this.map);
+      })
+
+    }).catch((err) => {
+      console.log(err);
+    });
+
+  }
 
 
-    }
-
-    componentWillUnmount() {
-        this.map.remove()
-    }
+  componentWillUnmount() {
+    this.map.remove()
+  }
 }
 
 
