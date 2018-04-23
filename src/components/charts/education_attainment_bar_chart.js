@@ -25,6 +25,18 @@ const config = {
   xAxis: {
     categories: Object.keys(REGIONS)
   },
+  exporting: {
+    chartOptions: { // specific options for the exported image
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      }
+    },
+    fallbackToExportServer: false
+  },
   chart: {
     plotBackgroundColor: null,
     plotBorderWidth: null,
@@ -130,7 +142,7 @@ class EducationAttainmentBarChart extends Component {
 
     return (
       <div>
-        <ReactHighcharts config={this.state.config}/>
+        <ReactHighcharts config={this.state.config} ref="chart"/>
       </div>
 
     );
