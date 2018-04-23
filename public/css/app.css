@@ -26,21 +26,6 @@
 .c-drawer {
   display: flex; }
 
-.highcharts-tooltip:before {
-  content: "";
-  border: none;
-  border-right: 25px solid rgba(247, 247, 247, 0.85);
-  position: absolute;
-  border-bottom: 52px solid transparent;
-  border-top: 52px solid transparent;
-  height: 0;
-  width: 0;
-  right: 100%; }
-
-.highcharts-tooltip-box {
-  stroke-width: 0;
-  z-index: 9999; }
-
 .highcharts-credits {
   display: none; }
 

@@ -20,7 +20,7 @@ const Home = () => {
 
                         <Link className="c-btn c-btn--primary" to="/chapters"> View Chapters
                             <span className="u-caret">
-                            <i class="down"></i>
+                            <i className="down"></i>
                         </span>
                         </Link>
                     </div>
