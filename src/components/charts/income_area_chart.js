@@ -17,6 +17,7 @@ class IncomeAreaChart extends Component {
     if(nextProps.data !== undefined){
       let config = {...this.state.config};
       config.title.text =`${nextProps.title}`;
+      config.colors = [nextProps.color];
       config.series = [{
         showInLegend: false,
         name: nextProps.title,

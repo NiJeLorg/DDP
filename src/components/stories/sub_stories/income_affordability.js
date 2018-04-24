@@ -81,6 +81,7 @@ class IncomeAffordability extends Component {
     let btn3 = classNames({
       'active': this.state.activeCategory === 'RENT'
     });
+    // #ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'
     return (
       <div>
         <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
@@ -92,10 +93,10 @@ class IncomeAffordability extends Component {
             <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>RENT</Link>
           </div>
           <div className={"grouped"}>
-            <IncomeAreaChart data={this.state.detroit} title={"DETROIT"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.denver} title={"DENVER"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.baltimore} title={"BALTIMORE"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.pittsburgh} title={"PITTSBURGH"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.detroit} title={"DETROIT"} color={"#00A0DF"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.denver} title={"DENVER"} color={"#FF9E15"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.baltimore} title={"BALTIMORE"} color={"#009382"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.pittsburgh} title={"PITTSBURGH"} color={"#D5D654"} className={'chart'}/>
           </div>
 
         </div>

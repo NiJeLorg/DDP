@@ -82,6 +82,7 @@ const AREA_CHART_CONFIG = {
   plotOptions: {
     area: {
       pointStart: 2011,
+      fillOpacity: 0.3
     }
   },
   series: []
