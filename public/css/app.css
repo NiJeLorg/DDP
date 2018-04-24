@@ -256,7 +256,11 @@
         padding-top: 25px;
         display: flex;
         flex-direction: column;
-        width: 450px; }
+        width: 550px; }
+        .c-stories .story-navigator .story-content .chart-container .grouped {
+          width: 550px;
+          display: flex;
+          flex-wrap: wrap; }
         .c-stories .story-navigator .story-content .chart-container .chart {
           margin-bottom: 40px;
           margin-right: 25px;
@@ -426,3 +430,23 @@ hr {
 
 .leaflet-control-layers-selector {
   visibility: hidden !important; }
+
+.btn-switcher {
+  align-self: center;
+  margin-bottom: 20px; }
+  .btn-switcher a {
+    height: 33px;
+    border: solid 2px #13294B;
+    text-decoration: none;
+    color: #13294B;
+    padding: 5px; }
+    .btn-switcher a:not(last) {
+      border-right: none; }
+    .btn-switcher a:last-child {
+      border-right: solid 2px #13294B; }
+    .btn-switcher a:hover {
+      background-color: #13294B;
+      color: white; }
+  .btn-switcher a.active {
+    background-color: #13294B;
+    color: white; }
