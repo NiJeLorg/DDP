@@ -35,6 +35,7 @@ class IncomeAffordability extends Component {
       .then((result) => {
         console.log(result);
         this.setState({data: result});
+        this.updateAreaCharts(this.state.data[categories[this.state.activeCategory]]);
       })
       .catch((err) => {
         console.log(err.message);
