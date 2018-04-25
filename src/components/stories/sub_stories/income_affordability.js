@@ -5,6 +5,7 @@ import gsjson from 'google-spreadsheet-to-json';
 import _ from 'lodash';
 import IncomeAreaChart from './../../charts/income_area_chart';
 import {Link} from 'react-router-dom';
+import IncomeBarChart from './../../charts/income_bar_chart';
 const categories = {
   "MEDIAN HOUSEHOLD INCOME": 0,
   "OWNER VALUE": 1,
@@ -99,6 +100,12 @@ class IncomeAffordability extends Component {
             <IncomeAreaChart data={this.state.pittsburgh} title={"PITTSBURGH"} color={"#D5D654"} className={'chart'}/>
           </div>
 
+        </div>
+        <p>Something about workers educational attainment Waistcoat normcore trust fund cloud bread asymmetrical
+          neutra. Tacos kickstarter neutra fixie air plant mixtape, raw denim hoodie helvetica offal direct trade.</p>
+        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
+        <div className="chart-container">
+          <IncomeBarChart />
         </div>
 
       </div>
