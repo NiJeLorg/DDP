@@ -68,24 +68,24 @@
 //
 
 //
-.highcharts-tooltip:before {
-  content: "";
-  border: none;
-  border-right: 25px solid rgba(247, 247, 247, 0.85);
-  position: absolute;
-  border-bottom: 52px solid transparent;
-  border-top: 52px solid transparent;
-  height: 0;
-  width: 0;
-  right: 100%;
-}
-
-.highcharts-tooltip-box {
-  stroke-width: 0;
-  z-index: 9999;
-}
-
+//.highcharts-tooltip:before {
+//  content: "";
+//  border: none;
+//  border-right: 25px solid rgba(247, 247, 247, 0.85);
+//  position: absolute;
+//  border-bottom: 52px solid transparent;
+//  border-top: 52px solid transparent;
+//  height: 0;
+//  width: 0;
+//  right: 100%;
+//}
 //
+//.highcharts-tooltip-box {
+//  stroke-width: 0;
+//  z-index: 9999;
+//}
+
+
 
 .highcharts-credits {
   display: none;
@@ -406,13 +406,21 @@ $chapter-marker-bg: #D8D8D8;
         padding-top: 25px;
         display: flex;
         flex-direction: column;
-        width: 450px;
-        //height: 450px;
+        //max-width: 550px;
+        width: 550px;
+        //height: 550px;
+
+        .grouped {
+          width: 550px;
+          display: flex;
+          flex-wrap: wrap;
+        }
 
         .chart {
           margin-bottom: 40px;
           margin-right: 25px;
           margin-left: 45px;
+
         }
         .grouped-pie-chart {
           display: flex;
@@ -597,48 +605,35 @@ hr {
 
 //leaflet overriden styles
 
-.leaflet-control-layers-toggle:after {
-  content: "LAYERS";
-  color: #fff;
-  /* LAYERS: */
-  opacity: 0.9;
-  font-size: 14px;
-  text-align: center;
-}
+.btn-switcher {
+  align-self: center;
+  margin-bottom: 20px;
+  a {
+    height: 33px;
+    border: solid 2px #13294B ;
+    text-decoration: none;
+    color: #13294B;
+    padding: 5px;
+    &:not(last) {
+      border-right: none;
+    }
+    &:last-child {
+      border-right: solid 2px #13294B ;
+    }
 
-.leaflet-control-layers-toggle {
-  background: rgba(0, 179, 238, 0.70);
-  border: none !important;
-  width: 100px !important;
-  height: 34px !important;
-  padding-top: 5px;
-  border-radius: 40px;
-  text-align: center;
-  text-decoration: none;
+    &:hover {
+      background-color: #13294B;
+      color: white;
+    }
 
-}
 
-.leaflet-control-layers {
-  //width:auto;
-  //background-position:3px 50% ;
-  /* Rectangle: */
-  background: transparent;
-  border: none !important;
-  width: 100px;
-}
-
-.leaflet-control-layers-expanded {
-  .leaflet-control-layers-toggle{
-    display: block !important;
-  }
-  .leaflet-control-layers-list {
-    background-color: #909DAC !important;
-    color: #ffffff !important;
-    margin-top: 5px;
   }
 
-}
+  a.active {
+    background-color: #13294B;
+    color: white;
+  }
 
-.leaflet-control-layers-selector {
-  visibility: hidden !important;
+
+
 }

@@ -3,27 +3,32 @@ import ReactHighcharts from 'react-highcharts';
 import Highcharts from 'highcharts';
 import _ from 'lodash';
 
-const REGIONS = {
-  "DETROIT": ["14000US26163520700", "14000US26163517200", "14000US26163520800"],
-  "DENVER": ["14000US08031001702", "14000US08031001701"],
-  "PITTSBURGH": ["14000US42003020100"],
-  "BALTIMORE": ["14000US24510040100", "14000US24510220100"]
-};
-const PREFIX = 'B15003';
 const DATA_CATEGORIES = {
-  "No Degree": ['016'],
-  "High School": ['017', '018'],
-  "Some College": ['019', '020'],
-  "Bachelor's": ['022'],
-  "Post Grad": ['023', '024', '025'],
+  // "Less than 20,000": {0: ["004", "026"], 1: ["005", "027"], 2: ["006", "028"]},
+  "20,000 - 34,999": {0: ["008", "030"], 1: ["009", "031"], 2: ["010", "032"]},
+  "35,000 - 49,999": {0: ["012", "034"], 1: ["013", "035"], 2: ["014", "036"]},
+  "50,000 - 74,999": {0: ["016", "038"], 1: ["017", "039"], 2: ["018", "040"]},
+  "75,000 or more": {0: ["020", "042"], 1: ["021", "043"], 2: ["022", "044"]}
 };
-const geoIds = _.flatten(Object.values(REGIONS));
-const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B15003&geo_ids=${geoIds}`;
+
+const ORDERED_CATEGORIES = ["20,000 - 34,999", "35,000 - 49,999", "50,000 - 74,999", "75,000 or more"];
+const labels = {
+  0: "Less than 20%",
+  1: "20-29%",
+  2: "30% or more",
+};
+
+const REGIONS = {
+  "DETROIT": ["14000US26163520700", "14000US26163517200", "14000US26163520800"]
+};
+const PREFIX = 'B25106';
+
+const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B25106&geo_ids=14000US26163520700,14000US26163517200,14000US26163520800`;
 
 const config = {
   colors: ['#ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'],
   xAxis: {
-    categories: Object.keys(REGIONS)
+    categories: ORDERED_CATEGORIES
   },
   exporting: {
     chartOptions: { // specific options for the exported image
@@ -93,7 +98,7 @@ const config = {
   series: []
 };
 
-class EducationAttainmentBarChart extends Component {
+class IncomeBarChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,25 +121,30 @@ class EducationAttainmentBarChart extends Component {
     let regionData = {};
     _.forEach(REGIONS, (tracts, region) => {
       regionData[region] = {};
-      _.forEach(DATA_CATEGORIES, (codes, category) => {
-        regionData[region][category] = 0;
+      _.forEach(DATA_CATEGORIES, (series, category) => {
+        regionData[region][category] = {};
         _.forEach(tracts, (tract) => {
           let tractData = data.data[tract][PREFIX]['estimate'];
-          _.forEach(codes, (code) => {
-            regionData[region][category] = _.add(regionData[region][category], tractData[PREFIX + code]);
-          })
-
+          _.forEach(series, (codes, key) => {
+            _.forEach(codes, (code)=> {
+              regionData[region][category][key]= _.add(tractData[PREFIX+code])
+            });
+          });
         });
       });
     });
+
     console.log(regionData);
-    const seriesData = Object.keys(DATA_CATEGORIES).map(category => {
-      let data = Object.keys(REGIONS).map(region => {
-        return regionData[region][category];
+    let seriesData = [];
+
+    _.forEach(Object.keys(labels).sort(), (key) => {
+
+      let series = { name: labels[key], data: []};
+      _.forEach(ORDERED_CATEGORIES, (category) => {
+        series.data.push(regionData['DETROIT'][category][key]);
       });
-      return {name: category, data: data};
+      seriesData.push(series);
     });
-    console.log(seriesData);
     return seriesData;
   }
 
@@ -151,4 +161,4 @@ class EducationAttainmentBarChart extends Component {
 
 }
 
-export default EducationAttainmentBarChart;
+export default IncomeBarChart;

@@ -26,21 +26,6 @@
 .c-drawer {
   display: flex; }
 
-.highcharts-tooltip:before {
-  content: "";
-  border: none;
-  border-right: 25px solid rgba(247, 247, 247, 0.85);
-  position: absolute;
-  border-bottom: 52px solid transparent;
-  border-top: 52px solid transparent;
-  height: 0;
-  width: 0;
-  right: 100%; }
-
-.highcharts-tooltip-box {
-  stroke-width: 0;
-  z-index: 9999; }
-
 .highcharts-credits {
   display: none; }
 
@@ -271,7 +256,11 @@
         padding-top: 25px;
         display: flex;
         flex-direction: column;
-        width: 450px; }
+        width: 550px; }
+        .c-stories .story-navigator .story-content .chart-container .grouped {
+          width: 550px;
+          display: flex;
+          flex-wrap: wrap; }
         .c-stories .story-navigator .story-content .chart-container .chart {
           margin-bottom: 40px;
           margin-right: 25px;
@@ -407,37 +396,22 @@ hr {
 .app {
   height: 100%; }
 
-.leaflet-control-layers-toggle:after {
-  content: "LAYERS";
-  color: #fff;
-  /* LAYERS: */
-  opacity: 0.9;
-  font-size: 14px;
-  text-align: center; }
-
-.leaflet-control-layers-toggle {
-  background: rgba(0, 179, 238, 0.7);
-  border: none !important;
-  width: 100px !important;
-  height: 34px !important;
-  padding-top: 5px;
-  border-radius: 40px;
-  text-align: center;
-  text-decoration: none; }
-
-.leaflet-control-layers {
-  /* Rectangle: */
-  background: transparent;
-  border: none !important;
-  width: 100px; }
-
-.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
-  display: block !important; }
-
-.leaflet-control-layers-expanded .leaflet-control-layers-list {
-  background-color: #909DAC !important;
-  color: #ffffff !important;
-  margin-top: 5px; }
-
-.leaflet-control-layers-selector {
-  visibility: hidden !important; }
+.btn-switcher {
+  align-self: center;
+  margin-bottom: 20px; }
+  .btn-switcher a {
+    height: 33px;
+    border: solid 2px #13294B;
+    text-decoration: none;
+    color: #13294B;
+    padding: 5px; }
+    .btn-switcher a:not(last) {
+      border-right: none; }
+    .btn-switcher a:last-child {
+      border-right: solid 2px #13294B; }
+    .btn-switcher a:hover {
+      background-color: #13294B;
+      color: white; }
+  .btn-switcher a.active {
+    background-color: #13294B;
+    color: white; }

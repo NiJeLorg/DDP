@@ -34,7 +34,7 @@ class DataBar extends Component {
                 <div className="bar">
                     <a href="#" className={actionLabel} onClick={this.toggleDataTable}>{this.state.actionLabel}</a>
                     <div className="vertical-divider"></div>
-                    <a href="">DOWNLOAD</a>
+                    <a href="#">DOWNLOAD</a>
 
                 </div>
                 <div className={openDataTableClasses}>
