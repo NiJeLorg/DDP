@@ -605,53 +605,6 @@ hr {
 
 //leaflet overriden styles
 
-.leaflet-control-layers-toggle:after {
-  content: "LAYERS";
-  color: #fff;
-  /* LAYERS: */
-  opacity: 0.9;
-  font-size: 14px;
-  text-align: center;
-}
-
-.leaflet-control-layers-toggle {
-  background: rgba(0, 179, 238, 0.70);
-  border: none !important;
-  width: 100px !important;
-  height: 34px !important;
-  padding-top: 5px;
-  border-radius: 40px;
-  text-align: center;
-  text-decoration: none;
-
-}
-
-.leaflet-control-layers {
-  //width:auto;
-  //background-position:3px 50% ;
-  /* Rectangle: */
-  background: transparent;
-  border: none !important;
-  width: 100px;
-}
-
-.leaflet-control-layers-expanded {
-  .leaflet-control-layers-toggle{
-    display: block !important;
-  }
-  .leaflet-control-layers-list {
-    background-color: #909DAC !important;
-    color: #ffffff !important;
-    margin-top: 5px;
-  }
-
-}
-
-.leaflet-control-layers-selector {
-  visibility: hidden !important;
-}
-
-
 .btn-switcher {
   align-self: center;
   margin-bottom: 20px;

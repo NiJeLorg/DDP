@@ -82,7 +82,6 @@ class IncomeAffordability extends Component {
     let btn3 = classNames({
       'active': this.state.activeCategory === 'RENT'
     });
-    // #ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'
     return (
       <div>
         <h1> <span className="chapter-marker">3.</span>INCOME/AFFORDABILITY/TENURE/HOUSING</h1>
