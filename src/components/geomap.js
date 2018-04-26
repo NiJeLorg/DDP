@@ -63,7 +63,7 @@ class GeoMap extends Component {
 
   educationAttainmentToolTip(feature, layer) {
     layer.bindTooltip(() => {
-      let percentage = feature.properties.CD04 / parseFloat(feature.properties.C000) * 100;
+      let percentage = feature.properties.bachelors_population / parseFloat(feature.properties.total_population) * 100;
       return `Workers with Bachelor's Degeree: ${_.floor(percentage, 2)}%`
     });
   }
@@ -85,7 +85,7 @@ class GeoMap extends Component {
 
   workersDowntownToolTip(feature, layer) {
     layer.bindTooltip(() => {
-      return `Total workers downtown: ${feature.properties.C000}%`
+      return `Total workers downtown: ${feature.properties.C000}`
     });
   }
 
