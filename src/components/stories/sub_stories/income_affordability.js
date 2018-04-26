@@ -85,6 +85,8 @@ class IncomeAffordability extends Component {
     // #ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'
     return (
       <div>
+        <h1> <span className="chapter-marker">3.</span>INCOME/AFFORDABILITY/TENURE/HOUSING</h1>
+        <p>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
         <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
         <div className="chart-container">
           <div className={"btn-switcher"}>
