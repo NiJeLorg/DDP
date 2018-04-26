@@ -56,6 +56,41 @@ const PIE_CHART_CONFIG = {
   }]
 };
 
+const AREA_CHART_CONFIG = {
+  chart: {
+    type: 'area',
+    width: 250,
+    height: 250,
+  },
+  title: {
+    text: ''
+  },
+
+  xAxis: {
+    allowDecimals: false,
+  },
+  yAxis: {
+    title: {
+      text: ''
+    },
+    labels: {
+      formatter: function () {
+        return this.value / 1000 + 'k';
+      }
+    }
+  },
+  plotOptions: {
+    area: {
+      pointStart: 2011,
+      fillOpacity: 0.3
+    }
+  },
+  series: []
+};
+
+
+
 export default {
   PIE_CHART_CONFIG,
+  AREA_CHART_CONFIG
 };
