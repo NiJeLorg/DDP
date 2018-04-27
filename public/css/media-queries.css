@@ -1,0 +1,155 @@
+@media (max-width: 768px) {
+  .main-text {
+    font-size: 18px; }
+  .main-heading {
+    font-size: 30px; }
+  .c-card__home {
+    width: 500px;
+    height: 500px; }
+  .c-main-logo img {
+    width: 150px; }
+  .c-btn--primary {
+    font-size: 16px; } }
+
+@media (max-width: 425px) {
+  .main-heading {
+    font-size: 22px; }
+  .main-text {
+    font-size: 14px; }
+  .main-number-heading {
+    font-size: 20px; }
+  .c-main-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; }
+    .c-main-logo img {
+      width: 103px; }
+  .c-btn--primary {
+    display: none; }
+    .c-btn--primary__mobile {
+      display: block;
+      margin-top: 40px; }
+  .c-drawer-container__open {
+    display: none; }
+  .c-card__home {
+    width: 100%;
+    height: 375px; }
+    .c-card__home .main-heading {
+      text-align: center; }
+  .c-card__chapters-card {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: block; }
+    .c-card__chapters-card .c-card__content {
+      width: 100%; }
+      .c-card__chapters-card .c-card__content .main-heading {
+        padding-top: 20px; }
+      .c-card__chapters-card .c-card__content .main-heading__purple:after {
+        width: 40%; }
+  .c-chapter-markers {
+    flex-direction: column; }
+    .c-chapter-markers .chapter-card {
+      display: flex;
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      justify-content: flex-start; }
+      .c-chapter-markers .chapter-card .sub-heading {
+        padding: 0;
+        width: auto; }
+      .c-chapter-markers .chapter-card .chapter-marker {
+        flex-basis: 15%; }
+      .c-chapter-markers .chapter-card .chapter-title {
+        margin-left: 0; }
+    .c-chapter-markers .chapter-card:not(:last-child) {
+      margin: 0 auto;
+      margin-bottom: 20px; }
+  .c-main-jumbotron {
+    background-position: center; }
+  .c-bevelled-box {
+    background: linear-gradient(30deg, transparent 70px, rgba(255, 255, 255, 0.9) 10px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(210deg, transparent 70px, rgba(255, 255, 255, 0.9) 10px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px);
+    background-position: bottom left, top left, top right, bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    padding: 20px; }
+    .c-bevelled-box__chapters {
+      background: #fff;
+      /*fallback*/
+      background: linear-gradient(0deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(210deg, transparent 60px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px);
+      background-position: bottom left, top left, top right, bottom right;
+      background-size: 50% 50%;
+      background-repeat: no-repeat; }
+    .c-bevelled-box__chapter-card {
+      background: rgba(216, 216, 216, 0.5);
+      background: linear-gradient(30deg, transparent 10px, rgba(216, 216, 216, 0.5) 10px), linear-gradient(90deg, transparent 0px, rgba(216, 216, 216, 0.5) 0px), linear-gradient(210deg, transparent 10px, rgba(216, 216, 216, 0.5) 10px), linear-gradient(90deg, transparent 0px, rgba(216, 216, 216, 0.5) 0px);
+      background-position: bottom left, top left, top right, bottom right;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      padding: 20px; }
+      .c-bevelled-box__chapter-card:hover {
+        background: #37a9ab;
+        background: linear-gradient(30deg, transparent 10px, #37a9ab 10px), linear-gradient(90deg, transparent 0px, #37a9ab 0px), linear-gradient(210deg, transparent 10px, #37a9ab 10px), linear-gradient(90deg, transparent 0px, #37a9ab 0px);
+        background-position: bottom left, top left, top right, bottom right;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        padding: 20px; }
+      .c-bevelled-box__chapter-card:nth-child(3) {
+        background: rgba(39, 39, 39, 0.2);
+        background: linear-gradient(30deg, transparent 10px, rgba(39, 39, 39, 0.2) 10px), linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px), linear-gradient(210deg, transparent 10px, rgba(39, 39, 39, 0.2) 10px), linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px);
+        background-position: bottom left, top left, top right, bottom right;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        padding: 20px; }
+    .c-bevelled-box__story-header {
+      width: 80%;
+      height: 100%;
+      opacity: 0.83;
+      background: #068278;
+      /*fallback*/
+      background: linear-gradient(90deg, transparent 0px, #068278 0px), linear-gradient(90deg, transparent 0px, #068278 0px), linear-gradient(230deg, transparent 50px, #068278 10px), linear-gradient(90deg, transparent 0px, #068278 0px);
+      background-position: bottom left, top left, top right, bottom right;
+      background-size: 50% 50%;
+      background-repeat: no-repeat; }
+  .c-navbar {
+    padding: 10px 15px; }
+    .c-navbar img {
+      width: 65px;
+      height: auto; }
+    .c-navbar .menu {
+      display: none; }
+    .c-navbar .menu__mobile {
+      display: block; }
+  .c-story-header {
+    height: 200px;
+    background-position-y: -50px;
+    background-position-x: 100px; }
+  .c-chapter-card {
+    padding: 10px 0 0 10px; }
+    .c-chapter-card header:after {
+      display: none; }
+    .c-chapter-card .chapter-title {
+      padding-left: 0;
+      flex-direction: column;
+      align-items: flex-start; }
+      .c-chapter-card .chapter-title .main-number-heading {
+        margin-bottom: 5px; }
+    .c-chapter-card p {
+      width: 100%; }
+    .c-chapter-card .u-invisible-element {
+      display: none; }
+  .c-stories {
+    flex-direction: column; }
+    .c-stories .c-story-navigator {
+      max-width: inherit;
+      width: 100%;
+      overflow-y: inherit;
+      padding: 10px 15px; }
+    .c-stories .map {
+      max-width: inherit;
+      height: 100%;
+      width: 100%; }
+  .l-flex-center-center {
+    flex-direction: column; } }

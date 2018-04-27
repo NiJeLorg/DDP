@@ -14,9 +14,6 @@ class EducationAttainmentPieChart extends Component {
     }
     props.config.title.text = props.title;
 
-
-
-    console.log(props.series, "PROP VALUE");
     this.state = {
       config: props.config
     };

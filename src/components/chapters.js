@@ -1,57 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 const Chapters = () => {
-    return (
-        <div className="u-bg-cover l-full-height l-flex-row">
-            <div className="c-logo">
-                <img src="./../img/logo.svg" alt=""/>
-            </div>
-            <div className="u-top-right">
-                <div className="c-card c-card--lg c-card--no-margin u-beveled-box-bl u-center-item">
-                    <div className="c-card__content l-col-layout
-                ">
-                        <h2>Chapters</h2>
-                        <hr/>
-                        <div className="c-chapter-markers">
-                            <Link to="/story" className="chapter-card u-beveled-box-marker">
-                                <span className="chapter-marker">01</span>
-                                <div className="chapter-title">
-                                    <h3 className="u-center-text">Downtown in Context</h3>
-                                </div>
-                            </Link>
-                            <Link to="/story" className="chapter-card u-beveled-box-marker">
-                                <span className="chapter-marker">02</span>
-                                <div className="chapter-title">
-                                    <h3 className="u-center-text">Public Life</h3>
-                                </div>
-                            </Link>
-                            <Link to="/story" className="chapter-card u-beveled-box-marker">
-                                <span className="chapter-marker">03</span>
-                                <div className="chapter-title">
-                                    <h3 className="u-center-text">Coming Soon</h3>
-                                </div>
-                            </Link>
-                            {/*<Link to="/story" className="chapter-card u-beveled-box-marker">*/}
-                                {/*<span className="chapter-marker">03</span>*/}
-                                {/*<div className="chapter-title">*/}
-                                    {/*<h3 className="u-center-text">Coming Soon</h3>*/}
-                                {/*</div>*/}
-                            {/*</Link>*/}
-                            {/*<Link to="/story" className="chapter-card u-beveled-box-marker">*/}
-                                {/*<span className="chapter-marker">03</span>*/}
-                                {/*<div className="chapter-title">*/}
-                                    {/*<h3 className="u-center-text">Coming Soon</h3>*/}
-                                {/*</div>*/}
-                            {/*</Link>*/}
-                        </div>
-
-
-                    </div>
+  return (
+    <div className="ul-height-100">
+      <div className="c-main-logo">
+        <img src="./../img/logo.svg" alt="" />
+      </div>
+      <div className="c-main-jumbotron l-flex-flex-end">
+        <div className="c-card__chapters-card c-bevelled-box__chapters l-flex-center-center">
+          <div className="c-card__content">
+            <h2 className="main-heading__purple">
+              Chapters
+            </h2>
+            <div className="c-chapter-markers">
+              <Link
+                to="/story"
+                className="chapter-card c-bevelled-box__chapter-card"
+              >
+                <span className="chapter-marker">01</span>
+                <div className="chapter-title">
+                  <h3 className='sub-heading'>Downtown in Context</h3>
                 </div>
+              </Link>
+              <Link
+                to="/story"
+                className="chapter-card c-bevelled-box__chapter-card"
+              >
+                <span className="chapter-marker">02</span>
+                <div className="chapter-title">
+                  <h3 className='sub-heading'>Public Life</h3>
+                </div>
+              </Link>
+              <div className="chapter-card c-bevelled-box__chapter-card">
+                <span className="chapter-marker">03</span>
+                <div className="chapter-title">
+                  <h3 className='sub-heading'>Coming Soon</h3>
+                </div>
+              </div>
             </div>
-
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Chapters;
