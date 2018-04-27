@@ -12,7 +12,8 @@ class GeoMap extends Component {
     zoom: mapConfig.ZOOM_LEVEL,
     educationAttainmentGeoJson: {},
     wacGeoJson: {},
-    workersDowntownGeoData: {}
+    workersDowntownGeoData: {},
+    map: {}
   };
 
   render() {
@@ -114,6 +115,7 @@ class GeoMap extends Component {
           "Worker - Downtown": workerDowntownLayer,
         };
         L.control.layers('', overlayMaps).addTo(this.map);
+        this.setState({map: this.map});
       })
     }).catch((err) => {
       console.log(err);
@@ -122,7 +124,7 @@ class GeoMap extends Component {
   }
 
   componentWillUnmount() {
-    this.map.remove()
+    this.state.map.remove()
   }
 }
 
