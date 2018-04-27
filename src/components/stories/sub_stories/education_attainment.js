@@ -6,16 +6,16 @@ import DataBar from './../../charts/data_bar';
 const EducationAttainment = () => {
     return (
         <div>
-            <h1> <span className="chapter-marker">1.</span>EDUCATIONAL ATTAINMENT</h1>
-            <p>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
-            <div>
+            <h1 className='sub-sub-heading__purple'><span className='ul-yellow-color'>1.</span>EDUCATIONAL ATTAINMENT</h1>
+            <p className='main-text__black'>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
+            {/* <div>
                 <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
                 <div className="chart-container">
                     <EducationAttainmentBarChart className={'chart'}/>
                     <DataBar/>
                 </div>
 
-            </div>
+            </div> */}
             {/*<p>Something about workers educational attainment Waistcoat normcore trust fund cloud bread asymmetrical*/}
                 {/*neutra. Tacos kickstarter neutra fixie air plant mixtape, raw denim hoodie helvetica offal direct trade.*/}
                 {/*Pug blog vexillologist ugh, paleo hoodie yr jianbing. Air plant activated charcoal hoodie waistcoat*/}

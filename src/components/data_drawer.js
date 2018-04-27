@@ -1,62 +1,74 @@
-import React, {Component} from 'react';
-import ReactDrawer from 'react-drawer';
-import 'react-drawer/lib/react-drawer.css';
-import classNames from 'classnames';
+import React, { Component } from "react";
+import ReactDrawer from "react-drawer";
+import "react-drawer/lib/react-drawer.css";
+import classNames from "classnames";
 
 class DataDrawer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-            position: 'left',
-            noOverlay: true
-        };
-        this.toggleDrawer = this.toggleDrawer.bind(this);
-        this.closeDrawer = this.closeDrawer.bind(this);
-        this.onDrawerClose = this.onDrawerClose.bind(this);
-        this.setPosition = this.setPosition.bind(this);
-        this.setNoOverlay = this.setNoOverlay.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+    this.toggleDrawer = this.toggleDrawer.bind(this);
+  }
 
-    setPosition(e) {
-        this.setState({position: e.target.value});
-    }
+  toggleDrawer() {
+    this.setState({ open: !this.state.open });
+  }
 
-    setNoOverlay(e) {
-        this.setState({noOverlay: e.target.checked});
-    }
+  render() {
+    let openDrawerBtnClasses = classNames({
+      "btn-drawer-open": true
+      // 'hidden': this.state.open
+    });
 
-    toggleDrawer() {
-        this.setState({open: !this.state.open});
-    }
-
-    closeDrawer() {
-        this.setState({open: false});
-    }
-
-    onDrawerClose() {
-        this.setState({open: false});
-    }
-
-    render() {
-        let openDrawerBtnClasses = classNames({
-            'btn-drawer-open': true,
-            // 'hidden': this.state.open
-        });
-        return (
-            <div className="c-drawer">
-                <div className={openDrawerBtnClasses}>
-                    <a onClick={this.toggleDrawer}
-                       disabled={this.state.open && !this.state.noOverlay}>
-                        DATA DRAWER
-                    </a>
-
-                </div>
+    return (
+      <div className="ul-height-100">
+        <div
+          className={`c-drawer-container__${
+            this.state.open ? "closed" : "open"
+          }`}
+        >
+          <a
+            onClick={this.toggleDrawer}
+            disabled={this.state.open && !this.state.noOverlay}
+          className='c-drawer-button'>
+            DATA DRAWER
+          </a>
+        </div>
+        <div
+          className={`c-data-drawer-nav__${
+            this.state.open ? "open" : "closed"
+          }`}
+        >
+          <div className="l-flex-flex-end">
+            <button onClick={this.toggleDrawer} className="c-cancel-button">
+              X
+            </button>
+          </div>
+          <h2 className="sub-heading">Data Drawer</h2>
+          <div className="menu-container">
+            <div className="menu-item">
+              <h4>Detroit In Context</h4>
+              <ul className="sub-menu">
+                <li>Education Attainment</li>
+                <li>Diversity</li>
+                <li>Employment</li>
+                <li>Housing</li>
+                <li>Crime</li>
+              </ul>
             </div>
-        );
-
-    }
-
+            <div className="menu-item">
+              <h4>Public Life</h4>
+              <ul className="sub-menu">
+                <li>Another Category</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default DataDrawer;
