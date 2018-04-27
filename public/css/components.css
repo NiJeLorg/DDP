@@ -36,21 +36,23 @@
         border-bottom: 2px solid #252a65; }
 
 .c-bevelled-box {
-  background: linear-gradient(30deg, transparent 100px, rgba(255, 255, 255, 0.9) 10px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(210deg, transparent 100px, rgba(255, 255, 255, 0.9) 10px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px);
+  background: linear-gradient(30deg, transparent 100px, white 10px), linear-gradient(90deg, transparent 0px, white 0px), linear-gradient(210deg, transparent 100px, white 10px), linear-gradient(90deg, transparent 0px, white 0px);
   background-position: bottom left, top left, top right, bottom right;
-  background-size: 50% 50%;
+  background-size: 51% 51%;
   background-repeat: no-repeat;
-  padding: 20px; }
+  padding: 20px;
+  opacity: 0.9; }
   .c-bevelled-box__chapters {
     background: #fff;
     /*fallback*/
-    background: linear-gradient(28deg, transparent 130px, rgba(255, 255, 255, 0.9) 130px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px), linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px);
+    background: linear-gradient(28deg, transparent 130px, white 130px), linear-gradient(90deg, transparent 0px, white 0px), linear-gradient(90deg, transparent 0px, white 0px), linear-gradient(90deg, transparent 0px, white 0px);
     background-position: bottom left, top left, top right, bottom right;
-    background-size: 50% 50%;
-    background-repeat: no-repeat; }
+    background-size: 51% 51%;
+    background-repeat: no-repeat;
+    opacity: 0.8; }
   .c-bevelled-box__chapter-card {
-    background: rgba(216, 216, 216, 0.5);
-    background: linear-gradient(28deg, transparent 30px, rgba(216, 216, 216, 0.5) 30px), linear-gradient(90deg, transparent 0px, rgba(216, 216, 216, 0.5) 0px), linear-gradient(208deg, transparent 30px, rgba(216, 216, 216, 0.5) 30px), linear-gradient(90deg, transparent 0px, rgba(216, 216, 216, 0.5) 0px);
+    background: #d8d8d8;
+    background: linear-gradient(28deg, transparent 30px, #d8d8d8 30px), linear-gradient(90deg, transparent 0px, #d8d8d8 0px), linear-gradient(208deg, transparent 30px, #d8d8d8 30px), linear-gradient(90deg, transparent 0px, #d8d8d8 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 50% 50%;
     background-repeat: no-repeat;
@@ -61,7 +63,8 @@
       background-position: bottom left, top left, top right, bottom right;
       background-size: 50% 50%;
       background-repeat: no-repeat;
-      padding: 20px; }
+      padding: 20px;
+      opacity: 1; }
     .c-bevelled-box__chapter-card:nth-child(3) {
       cursor: auto;
       background: rgba(216, 216, 216, 0.2);
@@ -208,17 +211,21 @@
 
 .c-drawer-button {
   font-size: 20px;
+  text-align: center;
+  padding: 15px 0;
   margin: 0;
   color: #fff;
   background: #00adf2;
+  width: 250px;
+  margin-left: -200px;
+  cursor: pointer;
   font-family: "AvenirLTPro-Black", sans-serif;
-  display: flex; }
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform-origin: bottom right; }
   .c-drawer-button p {
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform-origin: bottom right;
     margin: 0; }
 
 .c-data-drawer-nav, .c-data-drawer-nav__closed, .c-data-drawer-nav__open {
@@ -265,10 +272,10 @@
   display: flex;
   flex: 1; }
   .c-stories .map {
-    max-width: 45%;
+    width: 45%;
     height: auto; }
   .c-stories .c-story-navigator {
-    max-width: 55%;
+    width: 55%;
     padding: 40px 30px;
     background-color: white;
     z-index: 1;
@@ -282,14 +289,22 @@
       padding-top: 25px;
       display: flex;
       flex-direction: column;
-      width: 450px; }
+      width: 100%; }
+      .c-stories .c-story-navigator .story-content .chart-container .grouped {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+      .c-stories .c-story-navigator .story-content .chart-container .grouped > * {
+        flex-basis: 50%; }
       .c-stories .c-story-navigator .story-content .chart-container .chart {
         margin-bottom: 40px;
         margin-right: 25px;
         margin-left: 45px; }
       .c-stories .c-story-navigator .story-content .chart-container .grouped-pie-chart {
         display: flex;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; }
 
 .c-mobile-nav-story-map {
   padding: 15px 0;

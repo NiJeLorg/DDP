@@ -53,40 +53,42 @@
   background: linear-gradient(
       30deg,
       transparent 100px,
-      rgba(255, 255, 255, 0.9) 10px
+      rgb(255, 255, 255) 10px
     ),
-    linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px),
-    linear-gradient(210deg, transparent 100px, rgba(255, 255, 255, 0.9) 10px),
-    linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px);
+    linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px),
+    linear-gradient(210deg, transparent 100px, rgb(255, 255, 255) 10px),
+    linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px);
   background-position: bottom left, top left, top right, bottom right;
-  background-size: 50% 50%;
+  background-size: 51% 51%;
   background-repeat: no-repeat;
   padding: 20px;
+  opacity: 0.9;
   &__chapters {
     background: #fff;
     /*fallback*/
     background: linear-gradient(
         28deg,
         transparent 130px,
-        rgba(255, 255, 255, 0.9) 130px
+        rgb(255, 255, 255) 130px
       ),
-      linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px),
-      linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px),
-      linear-gradient(90deg, transparent 0px, rgba(255, 255, 255, 0.9) 0px);
+      linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px),
+      linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px),
+      linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px);
     background-position: bottom left, top left, top right, bottom right;
-    background-size: 50% 50%;
+    background-size: 51% 51%;
     background-repeat: no-repeat;
+    opacity: 0.8;
   }
   &__chapter-card {
-    background: rgba(216, 216, 216, 0.5);
+    background: rgb(216, 216, 216);
     background: linear-gradient(
         28deg,
         transparent 30px,
-        rgba(216, 216, 216, 0.5) 30px
+        rgb(216, 216, 216) 30px
       ),
-      linear-gradient(90deg, transparent 0px, rgba(216, 216, 216, 0.5) 0px),
-      linear-gradient(208deg, transparent 30px, rgba(216, 216, 216, 0.5) 30px),
-      linear-gradient(90deg, transparent 0px, rgba(216, 216, 216, 0.5) 0px);
+      linear-gradient(90deg, transparent 0px, rgb(216, 216, 216) 0px),
+      linear-gradient(208deg, transparent 30px, rgb(216, 216, 216) 30px),
+      linear-gradient(90deg, transparent 0px, rgb(216, 216, 216) 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 50% 50%;
     background-repeat: no-repeat;
@@ -101,6 +103,7 @@
       background-size: 50% 50%;
       background-repeat: no-repeat;
       padding: 20px;
+      opacity: 1;
     }
     &:nth-child(3) {
       cursor: auto;
@@ -317,7 +320,7 @@
   height: 100%;
   &__open {
     @extend .c-drawer-container;
-    display: flex;
+    display:    flex;
   }
   &__closed {
     @extend .c-drawer-container;
@@ -327,17 +330,22 @@
 
 .c-drawer-button {
   font-size: 20px;
+  text-align: center;
+  padding: 15px 0;
   margin: 0;
   color: #fff;
   background: #00adf2;
+  width: 250px;
+  margin-left: -200px;
+  cursor: pointer;
   font-family: "AvenirLTPro-Black", sans-serif;
-  display: flex;
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform-origin: bottom right;
   p {
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform-origin: bottom right;
+   
     margin: 0;
   }
 }
@@ -404,15 +412,18 @@
   display: flex;
   flex: 1;
   .map {
-    max-width: 45%;
+    width: 45%;
     height: auto;
   }
   .c-story-navigator {
-    max-width: 55%;
+    width: 55%;
     padding: 40px 30px;
     background-color: white;
     z-index: 1;
     overflow-y: scroll;
+    .sub-sub-heading__purple {
+        // margin-top: 20px;
+    }
     .story-content {
       .chapter-marker {
         font-size: 20px;
@@ -424,7 +435,15 @@
         padding-top: 25px;
         display: flex;
         flex-direction: column;
-        width: 450px; //height: 450px;
+        width: 100%; //height: 450px;
+        .grouped {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .grouped > * {
+            flex-basis: 50%;
+        }
         .chart {
           margin-bottom: 40px;
           margin-right: 25px;
@@ -433,6 +452,8 @@
         .grouped-pie-chart {
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
