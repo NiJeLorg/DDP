@@ -2,8 +2,8 @@ const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoia2FzaGJvc3MiLCJhIjoiY2pjYnZiOXNyMG1iMjMz
 const MAPBOX_URL = `https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${MAPBOX_ACCESS_TOKEN}`;
 const MAPBOX_ATTRIBUTION = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>';
 
-const WAC_GEO_API = 'https://services2.arcgis.com/HsXtOCMp1Nis1Ogr/arcgis/rest/services/WorkerAreaCharacteristics_2015_DetroitMSA_20180409/FeatureServer/0/query?outFields=C000,CD04&where=1=1&returnGeometry=true&outSR=4326&f=geojson';
-const WORKERS_DOWNTOWN_GEO_API = 'https://services2.arcgis.com/HsXtOCMp1Nis1Ogr/arcgis/rest/services/WorkerAreaCharacteristics_2015_DetroitMSA_20180409/FeatureServer/0/query?outFields=C000&where=1=1&returnGeometry=true&outSR=4326&f=geojson';
+const WAC_GEO_API = 'https://services2.arcgis.com/HsXtOCMp1Nis1Ogr/arcgis/rest/services/WorkerAreaCharacteristics_2015_DetroitMSA_20180409/FeatureServer/0/query?outFields=C000,CD04&where=DtownFlag=1&returnGeometry=true&outSR=4326&f=geojson\n';
+const WORKERS_DOWNTOWN_GEO_API = 'https://services2.arcgis.com/HsXtOCMp1Nis1Ogr/arcgis/rest/services/WorkerAreaCharacteristics_2015_DetroitMSA_20180409/FeatureServer/0/query?outFields=C000&where=DtownFlag=1&returnGeometry=true&outSR=4326&f=geojson';
 
 const ZOOM_LEVEL = 13;
 const DETROIT_POSITION = {

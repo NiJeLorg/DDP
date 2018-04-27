@@ -12,11 +12,33 @@ class GeoMap extends Component {
     zoom: mapConfig.ZOOM_LEVEL,
     educationAttainmentGeoJson: {},
     wacGeoJson: {},
-    workersDowntownGeoData: {}
+    workersDowntownGeoData: {},
+    map : {}
   };
 
   render() {
-    return (<div className="map" ref={ref => this.container = ref}/>)
+    return (
+      <div className={"map-holder"}>
+        {/*<select className={"layer-switcher"} onChange={event => this.switchLayer(event.target.value)}>*/}
+          {/*<option value="Education Attainment">Education Attainment</option>*/}
+          {/*<option value="Worker - Bachelor's">Worker - Bachelor's</option>*/}
+          {/*<option value="Worker - Downtown">Worker - Downtown</option>*/}
+        {/*</select>*/}
+        <button className={"layer-switcher"}>LAYERS</button>
+        <div className="map" ref={ref => this.container = ref}/>
+      </div>
+
+    )
+  }
+
+  switchLayer(layer) {
+    _.forEach(this.state.overlayMaps, (l, k)=>{
+      if(k !== layer){
+        this.state.overlayMaps[k].remove();
+      }
+    });
+    this.state.overlayMaps[layer].addTo(this.state.map);
+    this.setState({overlay: {layer: this.state.overlayMaps[layer]}})
   }
 
   getMapData() {
@@ -53,8 +75,10 @@ class GeoMap extends Component {
         weight: 2,
         fillOpacity: 0.8
       },
+      overlayMaps: {},
+      overlay: {},
       onEachFeature: toolTip
-    }).addTo(map);
+    });
   }
 
   educationAttainmentValProperty(feature) {
@@ -108,12 +132,15 @@ class GeoMap extends Component {
 
         const wacLayer = this.addChoroplethLayer(this.state.wacGeoJson, this.wacValProperty, this.wacToolTip, this.map);
         const workerDowntownLayer = this.addChoroplethLayer(this.state.workersDowntownGeoData, this.workersDowntownProperty, this.workersDowntownToolTip, this.map);
-        let overlayMaps = {
+        const  overlayMaps = {
           "Education Attainment": educationAttainmentLayer,
           "Worker - Bachelor's": wacLayer,
           "Worker - Downtown": workerDowntownLayer,
         };
-        L.control.layers('', overlayMaps).addTo(this.map);
+        this.setState({overlayMaps});
+
+        // const layerControl = L.control.layers('', this.state.overlay).addTo(this.map);
+        this.setState({map: this.map});
       })
     }).catch((err) => {
       console.log(err);

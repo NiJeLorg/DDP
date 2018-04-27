@@ -221,9 +221,12 @@
 .c-stories {
   display: flex;
   flex: 1; }
-  .c-stories .map {
-    max-width: 45%;
+  .c-stories .map-holder {
+    width: 100%;
     height: auto; }
+    .c-stories .map-holder .map {
+      width: 100%;
+      height: 90%; }
   .c-stories .story-navigator {
     max-width: 55%;
     background-color: white;
@@ -415,3 +418,14 @@ hr {
   .btn-switcher a.active {
     background-color: #13294B;
     color: white; }
+
+.layer-switcher {
+  z-index: 99999;
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 80px;
+  /* Rectangle: */
+  background: rgba(0, 179, 238, 0.7);
+  border-radius: 40px;
+  color: white; }
