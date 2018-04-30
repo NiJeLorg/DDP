@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDrawer from "react-drawer";
 import "react-drawer/lib/react-drawer.css";
-import classNames from "classnames";
 
 class DataDrawer extends Component {
   constructor(props) {
@@ -17,11 +16,6 @@ class DataDrawer extends Component {
   }
 
   render() {
-    let openDrawerBtnClasses = classNames({
-      "btn-drawer-open": true
-      // 'hidden': this.state.open
-    });
-
     return (
       <div className="ul-height-100">
         <div
@@ -32,7 +26,8 @@ class DataDrawer extends Component {
           <a
             onClick={this.toggleDrawer}
             disabled={this.state.open && !this.state.noOverlay}
-          className='c-drawer-button'>
+            className="c-drawer-button"
+          >
             DATA DRAWER
           </a>
         </div>

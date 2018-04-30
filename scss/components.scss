@@ -1,10 +1,6 @@
 .c-main-logo {
   position: absolute;
   padding: 30px 40px;
-  img {
-    //   width: 180px;
-    //   height: auto;
-  }
 }
 
 .c-main-jumbotron {
@@ -13,6 +9,7 @@
   background-position-y: 60%;
   height: 100%;
 }
+
 .c-card {
   background: #fff;
   display: flex;
@@ -50,11 +47,7 @@
 }
 
 .c-bevelled-box {
-  background: linear-gradient(
-      30deg,
-      transparent 100px,
-      rgb(255, 255, 255) 10px
-    ),
+  background: linear-gradient(30deg, transparent 100px, rgb(255, 255, 255) 10px),
     linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px),
     linear-gradient(210deg, transparent 100px, rgb(255, 255, 255) 10px),
     linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px);
@@ -126,7 +119,6 @@
     height: 100%;
     opacity: 0.83;
     background: #068278;
-    /*fallback*/
     background: linear-gradient(90deg, transparent 0px, #068278 0px),
       linear-gradient(90deg, transparent 0px, #068278 0px),
       linear-gradient(208deg, transparent 100px, #068278 100px),
@@ -217,11 +209,10 @@
   justify-content: space-between;
   .menu {
     display: flex;
-    list-style-type: none;
-    text-transform: uppercase;
-    font-family: "Avenir", sans-serif;
     .menu-item {
       font-family: "AvenirLTPro-Black", sans-serif;
+      margin: 0;
+      text-transform: uppercase;
       font-size: 14px;
       color: #ffffff;
       text-align: left;
@@ -234,16 +225,28 @@
         color: #e0e060;
       }
     }
-    .sub-menu {
-      margin-top: 5px;
-      text-transform: initial;
-      li {
-        font-family: "Avenir-Medium", sans-serif;
-        padding-top: 10px;
-        &:focus {
-          color: #fff;
-        }
-      }
+  }
+  .sub-menu {
+    margin-top: 5px;
+    display: none;
+    text-transform: initial;
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+    li {
+      font-family: "Avenir-Medium", sans-serif;
+      color: #fff;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+    &__closed {
+      @extend .sub-menu;
+      display: none;
+    }
+    &__open {
+      @extend .sub-menu;
+      display: block;
     }
   }
   .menu__mobile {
@@ -319,7 +322,7 @@
   height: 100%;
   &__open {
     @extend .c-drawer-container;
-    display:    flex;
+    display: flex;
   }
   &__closed {
     @extend .c-drawer-container;
@@ -344,7 +347,6 @@
   -webkit-transform: rotate(-90deg);
   transform-origin: bottom right;
   p {
-   
     margin: 0;
   }
 }
@@ -421,7 +423,7 @@
     z-index: 1;
     overflow-y: scroll;
     .sub-sub-heading__purple {
-        // margin-top: 20px;
+      // margin-top: 20px;
     }
     .story-content {
       .chapter-marker {
@@ -436,12 +438,12 @@
         flex-direction: column;
         width: 100%; //height: 450px;
         .grouped {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
         .grouped > * {
-            flex-basis: 50%;
+          flex-basis: 50%;
         }
         .chart {
           margin-bottom: 40px;
