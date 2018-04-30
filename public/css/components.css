@@ -44,15 +44,14 @@
   opacity: 0.9; }
   .c-bevelled-box__chapters {
     background: #fff;
-    /*fallback*/
     background: linear-gradient(28deg, transparent 130px, white 130px), linear-gradient(90deg, transparent 0px, white 0px), linear-gradient(90deg, transparent 0px, white 0px), linear-gradient(90deg, transparent 0px, white 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
-    opacity: 0.8; }
+    opacity: 0.92; }
   .c-bevelled-box__chapter-card {
-    background: #d8d8d8;
-    background: linear-gradient(28deg, transparent 30px, #d8d8d8 30px), linear-gradient(90deg, transparent 0px, #d8d8d8 0px), linear-gradient(208deg, transparent 30px, #d8d8d8 30px), linear-gradient(90deg, transparent 0px, #d8d8d8 0px);
+    background: #c8c8c8;
+    background: linear-gradient(28deg, transparent 30px, #c8c8c8 30px), linear-gradient(90deg, transparent 0px, #c8c8c8 0px), linear-gradient(208deg, transparent 30px, #c8c8c8 30px), linear-gradient(90deg, transparent 0px, #c8c8c8 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 50% 50%;
     background-repeat: no-repeat;
@@ -67,8 +66,8 @@
       opacity: 1; }
     .c-bevelled-box__chapter-card:nth-child(3) {
       cursor: auto;
-      background: rgba(216, 216, 216, 0.2);
-      background: linear-gradient(28deg, transparent 30px, rgba(39, 39, 39, 0.2) 30px), linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px), linear-gradient(208deg, transparent 30px, rgba(39, 39, 39, 0.2) 30px), linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px);
+      background: rgba(180, 180, 180, 0.2);
+      background: linear-gradient(28deg, transparent 30px, rgba(180, 180, 180, 0.2) 30px), linear-gradient(90deg, transparent 0px, rgba(180, 180, 180, 0.2) 0px), linear-gradient(208deg, transparent 30px, rgba(180, 180, 180, 0.2) 30px), linear-gradient(90deg, transparent 0px, rgba(180, 180, 180, 0.2) 0px);
       background-position: bottom left, top left, top right, bottom right;
       background-size: 50% 50%;
       background-repeat: no-repeat;

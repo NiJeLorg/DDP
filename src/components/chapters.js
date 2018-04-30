@@ -32,9 +32,9 @@ const Chapters = () => {
                 </div>
               </Link>
               <div className="chapter-card c-bevelled-box__chapter-card">
-                <span className="chapter-marker">03</span>
+                <span className="chapter-marker ul-greyedout-text">03</span>
                 <div className="chapter-title">
-                  <h3 className='sub-heading'>Coming Soon</h3>
+                  <h3 className='sub-heading ul-greyedout-text'>Coming Soon</h3>
                 </div>
               </div>
             </div>
