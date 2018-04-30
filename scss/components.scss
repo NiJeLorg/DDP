@@ -319,7 +319,6 @@
 
 .c-drawer-container {
   align-items: center;
-  height: 100%;
   &__open {
     @extend .c-drawer-container;
     display: flex;
@@ -412,6 +411,7 @@
   min-height: 850px;
   display: flex;
   flex: 1;
+  height: 100vh;
   .map {
     width: 45%;
     height: auto;
@@ -422,9 +422,7 @@
     background-color: white;
     z-index: 1;
     overflow-y: scroll;
-    .sub-sub-heading__purple {
-      // margin-top: 20px;
-    }
+    height: 100vh;
     .story-content {
       .chapter-marker {
         font-size: 20px;

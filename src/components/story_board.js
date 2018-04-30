@@ -7,7 +7,7 @@ const StoryBoard = () => {
         <div className="c-story-board">
             <Navigation />
             <StoryHeader />
-            {/* <Stories /> */}
+            <Stories />
         </div>
     );
 };

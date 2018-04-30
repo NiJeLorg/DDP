@@ -206,8 +206,7 @@
   color: #fff; }
 
 .c-drawer-container, .c-drawer-container__open, .c-drawer-container__closed {
-  align-items: center;
-  height: 100%; }
+  align-items: center; }
   .c-drawer-container__open {
     display: flex; }
   .c-drawer-container__closed {
@@ -274,7 +273,8 @@
   position: relative;
   min-height: 850px;
   display: flex;
-  flex: 1; }
+  flex: 1;
+  height: 100vh; }
   .c-stories .map {
     width: 45%;
     height: auto; }
@@ -283,7 +283,8 @@
     padding: 40px 30px;
     background-color: white;
     z-index: 1;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    height: 100vh; }
     .c-stories .c-story-navigator .story-content .chapter-marker {
       font-size: 20px;
       margin-right: 4px; }
