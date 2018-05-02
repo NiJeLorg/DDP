@@ -85,6 +85,12 @@ const AREA_CHART_CONFIG = {
       fillOpacity: 0.3
     }
   },
+  tooltip: {
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>${point.y:,.0f}</b>',
+    useHTML: true,
+    borderColor: null,
+    followPointer: true,
+  },
   series: []
 };
 
