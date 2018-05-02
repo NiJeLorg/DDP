@@ -11,7 +11,13 @@ const categories = {
   "OWNER VALUE": 1,
   "RENT": 2
 };
+const category_scale = {
+  "MEDIAN HOUSEHOLD INCOME": 150,
+  "OWNER VALUE": 450,
+  "RENT": 1.5
+};
 
+const DEFAULT_MAX_SCALE = 150;
 class IncomeAffordability extends Component {
 
 
@@ -23,7 +29,8 @@ class IncomeAffordability extends Component {
       baltimore: [],
       pittsburgh: [],
       data: [],
-      activeCategory: 'MEDIAN HOUSEHOLD INCOME'
+      activeCategory: 'MEDIAN HOUSEHOLD INCOME',
+      maxYScale: DEFAULT_MAX_SCALE
     };
   }
 
@@ -67,6 +74,7 @@ class IncomeAffordability extends Component {
 
   switchCategory(category) {
     this.setState({activeCategory: category});
+    this.setState({maxYScale: category_scale[category]});
     this.updateAreaCharts(this.state.data[categories[category]]);
   }
 
@@ -95,10 +103,10 @@ class IncomeAffordability extends Component {
             <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>RENT</Link>
           </div>
           <div className={"grouped"}>
-            <IncomeAreaChart data={this.state.detroit} title={"DETROIT"} color={"#00A0DF"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.denver} title={"DENVER"} color={"#FF9E15"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.baltimore} title={"BALTIMORE"} color={"#009382"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.pittsburgh} title={"PITTSBURGH"} color={"#D5D654"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.detroit} yScale={this.state.maxYScale} title={"DETROIT"} color={"#00A0DF"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.denver}   yScale={this.state.maxYScale} title={"DENVER"} color={"#FF9E15"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.baltimore} yScale={this.state.maxYScale} title={"BALTIMORE"} color={"#009382"} className={'chart'}/>
+            <IncomeAreaChart data={this.state.pittsburgh} yScale={this.state.maxYScale} title={"PITTSBURGH"} color={"#D5D654"} className={'chart'}/>
           </div>
 
         </div>
