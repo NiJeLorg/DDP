@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import L from 'leaflet';
 import mapConfig from '../utils/maps';
 import _ from 'lodash';
+import L from 'leaflet';
+require('leaflet-fullscreen');
 require('leaflet-choropleth');
 
-
+const  southWest = L.latLng(43.2459282765, -82.3634857961),
+  northEast = L.latLng(41.9394285862,-84.2834646531);
 class GeoMap extends Component {
   state = {
     lat: mapConfig.DETROIT_POSITION.lat,
@@ -13,18 +15,22 @@ class GeoMap extends Component {
     educationAttainmentGeoJson: {},
     wacGeoJson: {},
     workersDowntownGeoData: {},
-    map : {}
+    map : {},
+    bounds : L.latLngBounds(southWest, northEast)
   };
 
   render() {
     return (
       <div className={"map-holder"}>
-        {/*<select className={"layer-switcher"} onChange={event => this.switchLayer(event.target.value)}>*/}
-          {/*<option value="Education Attainment">Education Attainment</option>*/}
-          {/*<option value="Worker - Bachelor's">Worker - Bachelor's</option>*/}
-          {/*<option value="Worker - Downtown">Worker - Downtown</option>*/}
-        {/*</select>*/}
-        <button className={"layer-switcher"}>LAYERS</button>
+        <div className={"c-map-controls"}>
+          <select onChange={event => this.switchLayer(event.target.value)}>
+          <option value="">Layers</option>
+          <option value="Education Attainment">Education Attainment</option>
+          <option value="Worker - Bachelor's">Worker - Bachelor's</option>
+          <option value="Worker - Downtown">Worker - Downtown</option>
+          </select>
+          {/*<button onClick={event => this.toggleFullScreenMap(event)}>Toggle Fullscreen</button>*/}
+        </div>
         <div className="map" ref={ref => this.container = ref}/>
       </div>
 
@@ -37,9 +43,23 @@ class GeoMap extends Component {
         this.state.overlayMaps[k].remove();
       }
     });
-    this.state.overlayMaps[layer].addTo(this.state.map);
-    this.setState({overlay: {layer: this.state.overlayMaps[layer]}})
+    if(layer){
+      if(layer !== 'Education Attainment' ) {
+        this.state.map.setZoom(14);
+      }else{
+        this.state.map.setZoom(12);
+      }
+      this.state.overlayMaps[layer].addTo(this.state.map);
+      this.setState({overlay: {layer: this.state.overlayMaps[layer]}});
+    }
+
+
   }
+
+  // toggleFullScreenMap(event) {
+  //   console.log(this.state.map);
+  //   this.state.map.fullscreenControl.toggleFullScreen();
+  // }
 
   getMapData() {
     const educationAttainmentGeoReq = fetch(mapConfig.EDUCATION_ATTAINMENT_GEO_API).then(function (response) {
@@ -123,9 +143,11 @@ class GeoMap extends Component {
         this.map = L.map(this.container, {
           center: [this.state.lat, this.state.lng],
           zoom: this.state.zoom,
-          fullscreenControl: true,
           maxZoom: 18,
-          layers: [streets]
+          minZoom: 8,
+          layers: [streets],
+          maxBounds: this.state.bounds,
+
         }, 100);
 
         const educationAttainmentLayer = this.addChoroplethLayer(this.state.educationAttainmentGeoJson, this.educationAttainmentValProperty, this.educationAttainmentToolTip, this.map);
@@ -139,8 +161,11 @@ class GeoMap extends Component {
         };
         this.setState({overlayMaps});
 
+        this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
+
         // const layerControl = L.control.layers('', this.state.overlay).addTo(this.map);
         this.setState({map: this.map});
+
       })
     }).catch((err) => {
       console.log(err);
