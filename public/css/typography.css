@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Avenir-Light";
+  src: url("../assets/fonts/AvenirLTStd_Light.otf"); }
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url("../assets/fonts/AvenirLTStd_Medium.otf"); }
+
+@font-face {
+  font-family: "Avenir-Roman";
+  src: url("../assets/fonts/AvenirLTStd_Roman.otf"); }
+
+@font-face {
+  font-family: "Avenir-Oblique";
+  src: url("../assets/fonts/AvenirLTStd_Oblique.otf"); }
+
+@font-face {
+  font-family: "ChaletBook-Bold";
+  src: url("../assets/fonts/ChaletBook_Bold.otf"); }
+
+@font-face {
+  font-family: "MinionPro";
+  src: url("../assets/fonts/MinionPro_Regular.otf"); }
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../assets/fonts/Verdana.ttf"); }
+
+@font-face {
+  font-family: "Wingdings";
+  src: url("../assets/fonts/Wingdings_3.ttf"); }
+
+@font-face {
+  font-family: "AvenirLTPro-Black";
+  src: url("../assets/fonts/367086_0_0.eot");
+  src: url("../assets/fonts/367086_0_0.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/367086_0_0.woff2") format("woff2"), url("../assets/fonts/367086_0_0.woff") format("woff"), url("../assets/fonts/367086_0_0.ttf") format("truetype"); }
+
+.main-heading, .main-heading__purple, .main-heading__white {
+  font-family: "AvenirLTPro-Black";
+  font-size: 35px; }
+  .main-heading__purple {
+    color: #24356d; }
+  .main-heading__white {
+    color: #fff; }
+
+.sub-heading {
+  font-family: "AvenirLTPro-Black";
+  font-size: 22px; }
+
+.sub-sub-heading, .sub-sub-heading__purple {
+  font-family: "AvenirLTPro-Black";
+  font-size: 20px; }
+  .sub-sub-heading__purple {
+    color: #13294b; }
+
+.main-text, .main-text__black, .main-text__white {
+  font-family: "PTSerif-Regular", serif;
+  font-size: 20px;
+  line-height: 1.3; }
+  .main-text__black {
+    color: #312f2f; }
+  .main-text__white {
+    color: #fff; }
+
+.main-number-heading {
+  font-family: "AvenirLTPro-Black", sans-serif;
+  color: #dbdd3a;
+  margin: 0;
+  font-size: 55px; }

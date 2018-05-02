@@ -174,7 +174,7 @@ class GeoMap extends Component {
   }
 
   componentWillUnmount() {
-    this.map.remove()
+    this.state.map.remove()
   }
 }
 

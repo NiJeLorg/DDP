@@ -47,8 +47,6 @@ const config = {
     plotBorderWidth: null,
     plotShadow: false,
     type: 'column',
-    width: 400,
-    height: 250,
   },
   title: {
     text: null

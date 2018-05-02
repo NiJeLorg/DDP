@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 23.9998 0 23.9998 24 0 24"></polygon>
+    </defs>
+    <g id="Intro-Screen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-799.000000, -659.000000)">
+        <g id="Page-1" transform="translate(799.000000, 659.000000)">
+            <g id="Group">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M18.0498,10 L12.5498,16 C12.2688,16.304 11.7938,16.321 11.4898,16.04 C11.4758,16.027 11.4628,16.014 11.4498,16 L5.9998,10 C5.7648,9.659 5.8508,9.192 6.1918,8.957 C6.4688,8.765 6.8418,8.783 7.0998,9 L12.0998,14.4 L16.9998,9 C17.3528,8.783 17.8148,8.894 18.0308,9.247 C18.1728,9.476 18.1798,9.764 18.0498,10 M11.9998,0 C5.3728,0 -0.0002,5.373 -0.0002,12 C-0.0002,18.627 5.3728,24 11.9998,24 C18.6268,24 23.9998,18.627 23.9998,12 C23.9998,5.373 18.6268,0 11.9998,0" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

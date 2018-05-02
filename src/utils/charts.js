@@ -5,8 +5,8 @@ const PIE_CHART_CONFIG = {
     plotBorderWidth: null,
     plotShadow: false,
     type: 'pie',
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
   },
   title: {
     text: ''
