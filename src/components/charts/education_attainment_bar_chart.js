@@ -11,11 +11,11 @@ const REGIONS = {
 };
 const PREFIX = 'B15003';
 const DATA_CATEGORIES = {
-  "No Degree": ['016'],
-  "High School": ['017', '018'],
-  "Some College": ['019', '020'],
-  "Bachelor's": ['022'],
   "Post Grad": ['023', '024', '025'],
+  "Bachelor's": ['022'],
+  "Some College": ['019', '020'],
+  "High School": ['017', '018'],
+  "No Degree": ['016'],
 };
 const geoIds = _.flatten(Object.values(REGIONS));
 const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B15003&geo_ids=${geoIds}`;
