@@ -179,6 +179,9 @@ class DiversityAreaChart extends Component {
         // console.log(aData, "A DATa");
           let series = {
             name: resp.race,
+            marker: {
+              enabled: false
+            },
             data: this.getDataValue(aData)
           }
           seriesData.push(series)
