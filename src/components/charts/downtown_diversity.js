@@ -10,10 +10,10 @@ const PREFIX = 'B01001';
 
 const RACES = {
   "Black or African American Alone": "B",
-  "American Indian and Alaska Native Alone": "C",
+  // "American Indian and Alaska Native Alone": "C",
   "Asian Alone": "D",
-  "Native Hawaiian and Other Pacific Islander Alone": "E",
-  "Some Other Race Alone": "F",
+  // "Native Hawaiian and Other Pacific Islander Alone": "E",
+  // "Some Other Race Alone": "F",
   "Two or More Races": "G",
   "White Alone, Not Hispanic or Latino": "H",
   "Hispanic or Latino": "I",
