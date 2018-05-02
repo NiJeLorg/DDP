@@ -1,10 +1,6 @@
 .c-main-logo {
   position: absolute;
   padding: 30px 40px;
-  img {
-    //   width: 180px;
-    //   height: auto;
-  }
 }
 
 .c-main-jumbotron {
@@ -13,6 +9,7 @@
   background-position-y: 60%;
   height: 100%;
 }
+
 .c-card {
   background: #fff;
   display: flex;
@@ -50,11 +47,7 @@
 }
 
 .c-bevelled-box {
-  background: linear-gradient(
-      30deg,
-      transparent 100px,
-      rgb(255, 255, 255) 10px
-    ),
+  background: linear-gradient(30deg, transparent 100px, rgb(255, 255, 255) 10px),
     linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px),
     linear-gradient(210deg, transparent 100px, rgb(255, 255, 255) 10px),
     linear-gradient(90deg, transparent 0px, rgb(255, 255, 255) 0px);
@@ -65,7 +58,6 @@
   opacity: 0.9;
   &__chapters {
     background: #fff;
-    /*fallback*/
     background: linear-gradient(
         28deg,
         transparent 130px,
@@ -77,18 +69,18 @@
     background-position: bottom left, top left, top right, bottom right;
     background-size: 51% 51%;
     background-repeat: no-repeat;
-    opacity: 0.8;
+    opacity: 0.92;
   }
   &__chapter-card {
-    background: rgb(216, 216, 216);
+    background: rgb(200, 200, 200);
     background: linear-gradient(
         28deg,
         transparent 30px,
-        rgb(216, 216, 216) 30px
+        rgb(200, 200, 200) 30px
       ),
-      linear-gradient(90deg, transparent 0px, rgb(216, 216, 216) 0px),
-      linear-gradient(208deg, transparent 30px, rgb(216, 216, 216) 30px),
-      linear-gradient(90deg, transparent 0px, rgb(216, 216, 216) 0px);
+      linear-gradient(90deg, transparent 0px, rgb(200, 200, 200) 0px),
+      linear-gradient(208deg, transparent 30px, rgb(200, 200, 200) 30px),
+      linear-gradient(90deg, transparent 0px, rgb(200, 200, 200) 0px);
     background-position: bottom left, top left, top right, bottom right;
     background-size: 50% 50%;
     background-repeat: no-repeat;
@@ -107,15 +99,15 @@
     }
     &:nth-child(3) {
       cursor: auto;
-      background: rgba(216, 216, 216, 0.2);
+      background: rgba(180, 180, 180, 0.2);
       background: linear-gradient(
           28deg,
           transparent 30px,
-          rgba(39, 39, 39, 0.2) 30px
+          rgba(180, 180, 180, 0.2) 30px
         ),
-        linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px),
-        linear-gradient(208deg, transparent 30px, rgba(39, 39, 39, 0.2) 30px),
-        linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px);
+        linear-gradient(90deg, transparent 0px, rgba(180, 180, 180, 0.2) 0px),
+        linear-gradient(208deg, transparent 30px, rgba(180, 180, 180, 0.2) 30px),
+        linear-gradient(90deg, transparent 0px, rgba(180, 180, 180, 0.2) 0px);
       background-position: bottom left, top left, top right, bottom right;
       background-size: 50% 50%;
       background-repeat: no-repeat;
@@ -127,13 +119,12 @@
     height: 100%;
     opacity: 0.83;
     background: #068278;
-    /*fallback*/
     background: linear-gradient(90deg, transparent 0px, #068278 0px),
       linear-gradient(90deg, transparent 0px, #068278 0px),
       linear-gradient(208deg, transparent 100px, #068278 100px),
       linear-gradient(90deg, transparent 0px, #068278 0px);
     background-position: bottom left, top left, top right, bottom right;
-    background-size: 50% 50%;
+    background-size: 51% 51%;
     background-repeat: no-repeat;
   }
 }
@@ -218,11 +209,10 @@
   justify-content: space-between;
   .menu {
     display: flex;
-    list-style-type: none;
-    text-transform: uppercase;
-    font-family: "Avenir", sans-serif;
     .menu-item {
       font-family: "AvenirLTPro-Black", sans-serif;
+      margin: 0;
+      text-transform: uppercase;
       font-size: 14px;
       color: #ffffff;
       text-align: left;
@@ -235,16 +225,28 @@
         color: #e0e060;
       }
     }
-    .sub-menu {
-      margin-top: 5px;
-      text-transform: initial;
-      li {
-        font-family: "Avenir-Medium", sans-serif;
-        padding-top: 10px;
-        &:focus {
-          color: #fff;
-        }
-      }
+  }
+  .sub-menu {
+    margin-top: 5px;
+    display: none;
+    text-transform: initial;
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+    li {
+      font-family: "Avenir-Medium", sans-serif;
+      color: #fff;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+    &__closed {
+      @extend .sub-menu;
+      display: none;
+    }
+    &__open {
+      @extend .sub-menu;
+      display: block;
     }
   }
   .menu__mobile {
@@ -317,10 +319,9 @@
 
 .c-drawer-container {
   align-items: center;
-  height: 100%;
   &__open {
     @extend .c-drawer-container;
-    display:    flex;
+    display: flex;
   }
   &__closed {
     @extend .c-drawer-container;
@@ -345,7 +346,6 @@
   -webkit-transform: rotate(-90deg);
   transform-origin: bottom right;
   p {
-   
     margin: 0;
   }
 }
@@ -411,6 +411,7 @@
   min-height: 850px;
   display: flex;
   flex: 1;
+  height: 100vh;
   .map {
     width: 45%;
     height: auto;
@@ -421,9 +422,7 @@
     background-color: white;
     z-index: 1;
     overflow-y: scroll;
-    .sub-sub-heading__purple {
-        // margin-top: 20px;
-    }
+    height: 100vh;
     .story-content {
       .chapter-marker {
         font-size: 20px;
@@ -437,12 +436,12 @@
         flex-direction: column;
         width: 100%; //height: 450px;
         .grouped {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
         .grouped > * {
-            flex-basis: 50%;
+          flex-basis: 50%;
         }
         .chart {
           margin-bottom: 40px;
