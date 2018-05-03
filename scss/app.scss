@@ -225,15 +225,30 @@ hr {
 .u-invisible-element {
   visibility: hidden;
 }
+.leaflet-control-fullscreen {
+  border: none !important;
+}
 .leaflet-control-fullscreen a {
   background:#00B3EE url(./../img/zoom.svg) no-repeat 0 0;
   border-radius: 50% !important;
-  background-size:26px 52px;
+  //background-size:26px 52px;
   background-position: center;
-  width: 50px !important;
-  height: 50px !important;
+  width: 40px !important;
+  height: 40px !important;
+  &:hover {
+    background: #0091c1 url(./../img/zoom.svg) no-repeat 0 0;
+    //background-size:26px 52px;
+    background-position: center;
+  }
+
 
 }
 .leaflet-control-fullscreen-button leaflet-bar-part {
   border-radius: 50% !important;
+}
+
+.map-holder {
+  .leaflet-right {
+    display: flex;
+  }
 }

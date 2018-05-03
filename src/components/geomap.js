@@ -4,6 +4,7 @@ import _ from 'lodash';
 import L from 'leaflet';
 require('leaflet-fullscreen');
 require('leaflet-choropleth');
+require('../utils/Control.OverlaySelect');
 
 const  southWest = L.latLng(43.2459282765, -82.3634857961),
   northEast = L.latLng(41.9394285862,-84.2834646531);
@@ -22,44 +23,20 @@ class GeoMap extends Component {
   render() {
     return (
       <div className={"map-holder"}>
-        <div className={"c-map-controls"}>
-          <select onChange={event => this.switchLayer(event.target.value)}>
-          <option value="">Layers</option>
-          <option value="Education Attainment">Education Attainment</option>
-          <option value="Worker - Bachelor's">Worker - Bachelor's</option>
-          <option value="Worker - Downtown">Worker - Downtown</option>
-          </select>
-          {/*<button onClick={event => this.toggleFullScreenMap(event)}>Toggle Fullscreen</button>*/}
-        </div>
         <div className="map" ref={ref => this.container = ref}/>
       </div>
 
     )
   }
 
-  switchLayer(layer) {
-    _.forEach(this.state.overlayMaps, (l, k)=>{
-      if(k !== layer){
-        this.state.overlayMaps[k].remove();
-      }
-    });
-    if(layer){
-      if(layer !== 'Education Attainment' ) {
-        this.state.map.setZoom(14);
-      }else{
-        this.state.map.setZoom(12);
-      }
-      this.state.overlayMaps[layer].addTo(this.state.map);
-      this.setState({overlay: {layer: this.state.overlayMaps[layer]}});
+  setOverlayLayerZoom(overlayName){
+    if(overlayName !== 'Education Attainment' ) {
+      this.state.map.setZoom(14);
+    }else{
+      this.state.map.setZoom(12);
     }
-
-
   }
 
-  // toggleFullScreenMap(event) {
-  //   console.log(this.state.map);
-  //   this.state.map.fullscreenControl.toggleFullScreen();
-  // }
 
   getMapData() {
     const educationAttainmentGeoReq = fetch(mapConfig.EDUCATION_ATTAINMENT_GEO_API).then(function (response) {
@@ -160,11 +137,14 @@ class GeoMap extends Component {
           "Worker - Downtown": workerDowntownLayer,
         };
         this.setState({overlayMaps});
-
-        this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
-
-        // const layerControl = L.control.layers('', this.state.overlay).addTo(this.map);
         this.setState({map: this.map});
+        this.map.on('overlayChange', () => {
+          this.setOverlayLayerZoom(this.map.selectedOverlayLayerName());
+        });
+        L.control.overlayselect({
+          overlays: overlayMaps
+        }).addTo(this.map);
+        this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
 
       })
     }).catch((err) => {
@@ -175,6 +155,10 @@ class GeoMap extends Component {
 
   componentWillUnmount() {
     this.state.map.remove()
+  }
+
+  layerControl() {
+
   }
 }
 
