@@ -81,7 +81,7 @@ class GeoMap extends Component {
       style: {
         color: '#fff', // border color
         weight: 2,
-        fillOpacity: 0.8
+        fillOpacity: 0.6
       },
       overlayMaps: {},
       overlay: {},
