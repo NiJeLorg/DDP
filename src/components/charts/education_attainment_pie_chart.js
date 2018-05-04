@@ -23,7 +23,7 @@ class EducationAttainmentPieChart extends Component {
     if(nextProps.series.length > 0){
       console.log(nextProps.series, "PROS");
       var config = {...this.state.config};
-      config.subtitle.text =`${nextProps.total} total workers`;
+      config.subtitle.text =`${nextProps.total.toLocaleString()} Total Workers`;
       config.series = [{
         name: 'Education Level',
         colorByPoint: true,

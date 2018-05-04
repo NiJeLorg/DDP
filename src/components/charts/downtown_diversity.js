@@ -10,10 +10,10 @@ const PREFIX = 'B01001';
 
 const RACES = {
   "Black or African American Alone": "B",
-  "American Indian and Alaska Native Alone": "C",
+  // "American Indian and Alaska Native Alone": "C",
   "Asian Alone": "D",
-  "Native Hawaiian and Other Pacific Islander Alone": "E",
-  "Some Other Race Alone": "F",
+  // "Native Hawaiian and Other Pacific Islander Alone": "E",
+  // "Some Other Race Alone": "F",
   "Two or More Races": "G",
   "White Alone, Not Hispanic or Latino": "H",
   "Hispanic or Latino": "I",
@@ -65,7 +65,7 @@ const COLUMNS = [
 
 
 const config = {
-  colors: ['#ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'],
+  colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382', '#ADC8EF'],
   chart: {
     type: 'area'
   },
@@ -179,6 +179,9 @@ class DiversityAreaChart extends Component {
         // console.log(aData, "A DATa");
           let series = {
             name: resp.race,
+            marker: {
+              enabled: false
+            },
             data: this.getDataValue(aData)
           }
           seriesData.push(series)

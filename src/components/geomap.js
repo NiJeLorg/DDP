@@ -1,24 +1,43 @@
 import React, {Component} from 'react';
-import L from 'leaflet';
 import mapConfig from '../utils/maps';
 import _ from 'lodash';
+import L from 'leaflet';
+require('leaflet-fullscreen');
 require('leaflet-choropleth');
+require('../utils/Control.OverlaySelect');
 
-
+const  southWest = L.latLng(43.2459282765, -82.3634857961),
+  northEast = L.latLng(41.9394285862,-84.2834646531);
 class GeoMap extends Component {
   state = {
     lat: mapConfig.DETROIT_POSITION.lat,
     lng: mapConfig.DETROIT_POSITION.lng,
     zoom: mapConfig.ZOOM_LEVEL,
     educationAttainmentGeoJson: {},
+    rentIncomeMedianGeoJson: {},
     wacGeoJson: {},
     workersDowntownGeoData: {},
-    map: {}
+    map : {},
+    bounds : L.latLngBounds(southWest, northEast)
   };
 
   render() {
-    return (<div className="map" ref={ref => this.container = ref}/>)
+    return (
+      <div className={"map-holder"}>
+        <div className="map" ref={ref => this.container = ref}/>
+      </div>
+
+    )
   }
+
+  setOverlayLayerZoom(overlayName){
+    if(overlayName !== 'Education Attainment' ) {
+      this.state.map.setZoom(14);
+    }else{
+      this.state.map.setZoom(12);
+    }
+  }
+
 
   getMapData() {
     const educationAttainmentGeoReq = fetch(mapConfig.EDUCATION_ATTAINMENT_GEO_API).then(function (response) {
@@ -35,9 +54,19 @@ class GeoMap extends Component {
       return response.json()
     });
 
-    return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq, wacGeoReq, workersDowntownGeoReq]).then(([educationAttainmentGeoData, educationAttainmentApiData, wacGeoJson,workersDowntownGeoData]) => {
+    const rentIncomeGeoReq = fetch(mapConfig.RENT_INCOME_GEO_API).then(function (response) {
+      return response.json()
+    });
+
+    const rentIncomeApiReq = fetch(mapConfig.RENT_INCOME_DATA_API).then(function (response) {
+      return response.json()
+    });
+
+    return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq, wacGeoReq, workersDowntownGeoReq, rentIncomeApiReq, rentIncomeGeoReq]).then(([educationAttainmentGeoData, educationAttainmentApiData, wacGeoJson,workersDowntownGeoData, rentIncomeApiData, rentIncomeGeoData]) => {
       const educationAttainmentGeoJson = mapConfig.addEducationAttainmentDataToGeoJson(educationAttainmentGeoData, educationAttainmentApiData);
+      const rentIncomeMedianGeoJson = mapConfig.addRentIncomeDataToGeoJson(rentIncomeGeoData, rentIncomeApiData);
       this.setState({educationAttainmentGeoJson});
+      this.setState({rentIncomeMedianGeoJson});
       this.setState({wacGeoJson});
       this.setState({workersDowntownGeoData});
     })
@@ -54,8 +83,10 @@ class GeoMap extends Component {
         weight: 2,
         fillOpacity: 0.8
       },
+      overlayMaps: {},
+      overlay: {},
       onEachFeature: toolTip
-    }).addTo(map);
+    });
   }
 
   educationAttainmentValProperty(feature) {
@@ -90,6 +121,16 @@ class GeoMap extends Component {
     });
   }
 
+  rentIncomeProperty(feature) {
+    return feature.properties.rent_income_ratio
+  }
+
+  rentIncomeToolTip(feature, layer) {
+    layer.bindTooltip(() => {
+      return `Percentage ratio of rent to median household income: ${_.floor(feature.properties.rent_income_ratio, 2)}%`
+    });
+  }
+
   componentDidMount() {
     const streets = L.tileLayer(mapConfig.MAPBOX_URL, {
       id: 'mapbox.streets',
@@ -100,22 +141,34 @@ class GeoMap extends Component {
         this.map = L.map(this.container, {
           center: [this.state.lat, this.state.lng],
           zoom: this.state.zoom,
-          fullscreenControl: true,
           maxZoom: 18,
-          layers: [streets]
+          minZoom: 8,
+          layers: [streets],
+          maxBounds: this.state.bounds,
+
         }, 100);
 
         const educationAttainmentLayer = this.addChoroplethLayer(this.state.educationAttainmentGeoJson, this.educationAttainmentValProperty, this.educationAttainmentToolTip, this.map);
+        const rentIncomeMedianLayer = this.addChoroplethLayer(this.state.rentIncomeMedianGeoJson, this.rentIncomeProperty, this.rentIncomeToolTip, this.map);
 
         const wacLayer = this.addChoroplethLayer(this.state.wacGeoJson, this.wacValProperty, this.wacToolTip, this.map);
         const workerDowntownLayer = this.addChoroplethLayer(this.state.workersDowntownGeoData, this.workersDowntownProperty, this.workersDowntownToolTip, this.map);
-        let overlayMaps = {
+        const  overlayMaps = {
           "Education Attainment": educationAttainmentLayer,
           "Worker - Bachelor's": wacLayer,
           "Worker - Downtown": workerDowntownLayer,
+          "Affordability": rentIncomeMedianLayer,
         };
-        L.control.layers('', overlayMaps).addTo(this.map);
+        this.setState({overlayMaps});
         this.setState({map: this.map});
+        this.map.on('overlayChange', () => {
+          this.setOverlayLayerZoom(this.map.selectedOverlayLayerName());
+        });
+        L.control.overlayselect({
+          overlays: overlayMaps
+        }).addTo(this.map);
+        this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
+
       })
     }).catch((err) => {
       console.log(err);
@@ -126,6 +179,7 @@ class GeoMap extends Component {
   componentWillUnmount() {
     this.state.map.remove()
   }
+
 }
 
 
