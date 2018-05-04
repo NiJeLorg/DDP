@@ -14,6 +14,7 @@ class GeoMap extends Component {
     lng: mapConfig.DETROIT_POSITION.lng,
     zoom: mapConfig.ZOOM_LEVEL,
     educationAttainmentGeoJson: {},
+    rentIncomeMedianGeoJson: {},
     wacGeoJson: {},
     workersDowntownGeoData: {},
     map : {},
@@ -53,9 +54,19 @@ class GeoMap extends Component {
       return response.json()
     });
 
-    return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq, wacGeoReq, workersDowntownGeoReq]).then(([educationAttainmentGeoData, educationAttainmentApiData, wacGeoJson,workersDowntownGeoData]) => {
+    const rentIncomeGeoReq = fetch(mapConfig.RENT_INCOME_GEO_API).then(function (response) {
+      return response.json()
+    });
+
+    const rentIncomeApiReq = fetch(mapConfig.RENT_INCOME_DATA_API).then(function (response) {
+      return response.json()
+    });
+
+    return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq, wacGeoReq, workersDowntownGeoReq, rentIncomeApiReq, rentIncomeGeoReq]).then(([educationAttainmentGeoData, educationAttainmentApiData, wacGeoJson,workersDowntownGeoData, rentIncomeApiData, rentIncomeGeoData]) => {
       const educationAttainmentGeoJson = mapConfig.addEducationAttainmentDataToGeoJson(educationAttainmentGeoData, educationAttainmentApiData);
+      const rentIncomeMedianGeoJson = mapConfig.addRentIncomeDataToGeoJson(rentIncomeGeoData, rentIncomeApiData);
       this.setState({educationAttainmentGeoJson});
+      this.setState({rentIncomeMedianGeoJson});
       this.setState({wacGeoJson});
       this.setState({workersDowntownGeoData});
     })
@@ -110,6 +121,16 @@ class GeoMap extends Component {
     });
   }
 
+  rentIncomeProperty(feature) {
+    return feature.properties.rent_income_ratio
+  }
+
+  rentIncomeToolTip(feature, layer) {
+    layer.bindTooltip(() => {
+      return `Percentage ratio of rent to median household income: ${_.floor(feature.properties.rent_income_ratio, 2)}%`
+    });
+  }
+
   componentDidMount() {
     const streets = L.tileLayer(mapConfig.MAPBOX_URL, {
       id: 'mapbox.streets',
@@ -128,6 +149,7 @@ class GeoMap extends Component {
         }, 100);
 
         const educationAttainmentLayer = this.addChoroplethLayer(this.state.educationAttainmentGeoJson, this.educationAttainmentValProperty, this.educationAttainmentToolTip, this.map);
+        const rentIncomeMedianLayer = this.addChoroplethLayer(this.state.rentIncomeMedianGeoJson, this.rentIncomeProperty, this.rentIncomeToolTip, this.map);
 
         const wacLayer = this.addChoroplethLayer(this.state.wacGeoJson, this.wacValProperty, this.wacToolTip, this.map);
         const workerDowntownLayer = this.addChoroplethLayer(this.state.workersDowntownGeoData, this.workersDowntownProperty, this.workersDowntownToolTip, this.map);
@@ -135,6 +157,7 @@ class GeoMap extends Component {
           "Education Attainment": educationAttainmentLayer,
           "Worker - Bachelor's": wacLayer,
           "Worker - Downtown": workerDowntownLayer,
+          "Affordability": rentIncomeMedianLayer,
         };
         this.setState({overlayMaps});
         this.setState({map: this.map});
@@ -157,9 +180,6 @@ class GeoMap extends Component {
     this.state.map.remove()
   }
 
-  layerControl() {
-
-  }
 }
 
 

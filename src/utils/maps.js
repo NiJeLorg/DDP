@@ -14,6 +14,9 @@ const DETROIT_POSITION = {
 const EDUCATION_ATTAINMENT_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=150|06000US2616322000';
 const  EDUCATION_ATTAINMENT_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B15003&geo_ids=150%7C06000US2616322000';
 
+const RENT_INCOME_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=150|06000US2616322000';
+const RENT_INCOME_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B19013,B25058&geo_ids=150|06000US2616322000 ';
+
 const addEducationAttainmentDataToGeoJson = (geoJson, data) =>{
   geoJson['features'] = geoJson['features'].map((block) => {
     const geoid = block.properties.geoid;
@@ -26,14 +29,29 @@ const addEducationAttainmentDataToGeoJson = (geoJson, data) =>{
   return geoJson;
 };
 
+const addRentIncomeDataToGeoJson = (geoJson, data) =>{
+  geoJson['features'] = geoJson['features'].map((block) => {
+    const geoid = block.properties.geoid;
+    const medianIncome = data['data'][geoid]['B19013']['estimate']['B19013001'];
+    const medianRent = data['data'][geoid]['B25058']['estimate']['B25058001'];
+    block.properties['rent_income_ratio'] = ((medianRent * 12) / parseFloat(medianIncome)) * 100;
+    return block
+  });
+  return geoJson;
+};
+
+
 export default  {
   MAPBOX_URL,
   MAPBOX_ATTRIBUTION,
   ZOOM_LEVEL,
   DETROIT_POSITION,
   addEducationAttainmentDataToGeoJson,
+  addRentIncomeDataToGeoJson,
   EDUCATION_ATTAINMENT_GEO_API,
   WAC_GEO_API,
   EDUCATION_ATTAINMENT_DATA_API,
-  WORKERS_DOWNTOWN_GEO_API
+  WORKERS_DOWNTOWN_GEO_API,
+  RENT_INCOME_GEO_API,
+  RENT_INCOME_DATA_API
 };
