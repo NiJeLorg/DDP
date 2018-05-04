@@ -92,7 +92,7 @@ class IncomeAffordability extends Component {
     });
     return (
       <div>
-        <h1 className="sub-sub-heading__purple"> <span className='ul-yellow-color'>III.</span>INCOME/AFFORDABILITY/TENURE/HOUSING</h1>
+        <h1 className="sub-sub-heading__purple"> <span className='ul-yellow-color'>IV.</span>INCOME/AFFORDABILITY/TENURE/HOUSING</h1>
         <p className='main-text__black'>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
         <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
         <div className="chart-container">

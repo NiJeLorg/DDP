@@ -82,8 +82,8 @@ const config = {
     symbolRadius: 0
   },
   tooltip: {
-    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-    shared: true,
+    pointFormat: '<span>{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+    // shared: true,
     useHTML: true,
     borderColor: null,
     followPointer: true,
