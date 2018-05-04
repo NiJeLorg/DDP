@@ -26,7 +26,7 @@ const PREFIX = 'B25106';
 const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B25106&geo_ids=14000US26163520700,14000US26163517200,14000US26163520800`;
 
 const config = {
-  colors: ['#ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'],
+  colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382','#ADC8EF'],
   xAxis: {
     categories: ORDERED_CATEGORIES
   },

@@ -65,7 +65,7 @@ const COLUMNS = [
 
 
 const config = {
-  colors: ['#ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'],
+  colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382', '#ADC8EF'],
   chart: {
     type: 'area'
   },
