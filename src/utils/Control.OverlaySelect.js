@@ -7,34 +7,38 @@ L.Control.OverlaySelect = L.Control.extend({
     onOverlayChange: {}
   },
   onAdd: function (map) {
-    let className = 'leaflet-control-layer-select', container, content = '';
-    container = L.DomUtil.create('div', 'leaflet-bar');
-    content = '<option value="">Layers</option>';
-    className += 'layer-select';
+    let className = 'leaflet-control-layer-select', container;
+    container = L.DomUtil.create('div', 'leaflet-bar ' + className);
+    let dropDownContainer = L.DomUtil.create('div', 'dropdown ', container);
+    let button = L.DomUtil.create('button', 'dropbtn', dropDownContainer);
+    button.innerHTML = 'LAYERS';
+    let menuContainer = L.DomUtil.create('div', 'dropdown-content', dropDownContainer);
     for(let overlay in this.options.overlays){
-      content += `<option value="${overlay}">${overlay}</option>`
+     this._createLink(overlay, 'overlay-menu-item', menuContainer, this.overlaySelected, this)
     }
 
-    this._createSelect(this.options.title, className, content, container, this.selectLayer, this);
     return container;
   },
 
-  _createSelect: function (title, className, content, container, fn, context) {
-    this.select = L.DomUtil.create('select', className, container);
-    this.select.innerHTML = content;
-
+  _createLink(title, className, container, fn, context) {
+    this.link = L.DomUtil.create('a', className, container);
+    this.link.innerHTML = title;
     L.DomEvent
-      .addListener(this.select, 'change', L.DomEvent.stopPropagation)
-      .addListener(this.select, 'change', L.DomEvent.preventDefault)
-      .addListener(this.select, 'change', fn, context);
-
-    return this.select;
+      .addListener(this.link, 'click', L.DomEvent.stopPropagation)
+      .addListener(this.link, 'click', L.DomEvent.preventDefault)
+      .addListener(this.link, 'click', fn, context);
+    this.link.setAttribute("data-overlay", title);
+    return this.link
   },
+
   onRemove: function (map) {
     // when removed
   },
-  selectLayer: function (e) {
-    let layerSelected = e.target.value;
+
+  overlaySelected: function (e) {
+    this.updateActiveSelection();
+    let layerSelected = e.target.getAttribute('data-overlay');
+    e.target.classList.add("active-overlay-menu");
     for(let key in this.options.overlays){
       if(key !== layerSelected){
         this.options.overlays[key].remove();
@@ -43,6 +47,13 @@ L.Control.OverlaySelect = L.Control.extend({
     if(layerSelected){
       this.options.overlays[layerSelected].addTo(this._map);
       this._map.setSelectedOverlayName(layerSelected);
+    }
+  },
+
+  updateActiveSelection: function() {
+    let activeMenu = document.getElementsByClassName("active-overlay-menu");
+    for(let element of activeMenu) {
+      element.classList.remove("active-overlay-menu");
     }
   }
 });
@@ -54,13 +65,11 @@ L.Map.include({
 
   setSelectedOverlayName: function(overlayName) {
     this._selectedOverlayLayerName = overlayName;
-    console.log("Firing event");
     this.fire('overlayChange');
   },
 
   _onOverlayChange: function (e) {
     this.fire('overlayChange');
-    console.log("Firing event");
   }
 });
 
@@ -75,7 +84,7 @@ L.Map.addInitHook(function () {
   }
   let overlayChange = 'overlayChange';
   if (overlayChange) {
-    var onOverlayChange = L.bind(this._onOverlayChange, this);
+    const onOverlayChange = L.bind(this._onOverlayChange, this);
 
     this.whenReady(function () {
       L.DomEvent.on(document, overlayChange,onOverlayChange);
