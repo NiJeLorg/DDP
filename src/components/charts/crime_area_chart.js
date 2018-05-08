@@ -48,6 +48,7 @@ const config = {
       }
   }},
   yAxis: {
+    opposite:false,
     title: {
       text: "Incidents"
     }
