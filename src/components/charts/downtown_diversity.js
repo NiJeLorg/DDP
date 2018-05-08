@@ -93,9 +93,6 @@ const config = {
       // }
     }
   },
-  tooltip: {
-    shared: true,
-  },
   plotOptions: {
     area: {
       stacking: 'normal',
