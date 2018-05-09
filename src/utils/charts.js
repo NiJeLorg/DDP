@@ -1,12 +1,12 @@
 const PIE_CHART_CONFIG = {
-  colors: ['#ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'],
+  colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382', '#ADC8EF'],
   chart: {
     plotBackgroundColor: null,
     plotBorderWidth: null,
     plotShadow: false,
     type: 'pie',
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
   },
   title: {
     text: ''
@@ -84,6 +84,12 @@ const AREA_CHART_CONFIG = {
       pointStart: 2011,
       fillOpacity: 0.3
     }
+  },
+  tooltip: {
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>${point.y:,.0f}</b>',
+    useHTML: true,
+    borderColor: null,
+    followPointer: true,
   },
   series: []
 };

@@ -14,9 +14,6 @@ class EducationAttainmentPieChart extends Component {
     }
     props.config.title.text = props.title;
 
-
-
-    console.log(props.series, "PROP VALUE");
     this.state = {
       config: props.config
     };
@@ -24,19 +21,15 @@ class EducationAttainmentPieChart extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.series.length > 0){
-      console.log(nextProps.series, "PROS");
       var config = {...this.state.config};
-      config.subtitle.text =`${nextProps.total} total workers`;
+      config.subtitle.text =`${nextProps.total.toLocaleString()} Total Workers`;
       config.series = [{
         name: 'Education Level',
         colorByPoint: true,
         data:nextProps.series
       }];
       this.setState({config});
-      console.log(config, "NEW CONFIG");
     }
-
-    // this.setState({ data: nextProps.series });
   }
 
 
