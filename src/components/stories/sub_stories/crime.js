@@ -4,6 +4,7 @@ import Moment from 'moment';
 import { extendMoment } from 'moment-range';
 import CrimeAreaChart from '../../charts/crime_area_chart';
 import DataBar from './../../charts/data_bar';
+import { generateDateRanges } from '../../../utils/app';
 
 const moment = extendMoment(Moment);
 const  proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -26,21 +27,12 @@ class Crime extends Component {
     this.getCrimeData();
   }
 
-  generateDateRanges() {
-    const range = moment.range(START_DATE, END_DATE);
-    let ranges = [];
-    for (let month of range.by('month')) {
-      ranges.push(month.format('YYYY-MM-DD'));
-    }
-    return ranges;
-  }
 
   generateFetchReq() {
     let API = "https://mdda.azure-api.net/api/567b-f2cf?$select=census_tract_geo_id,offense_category,Count&$filter=incident_datetime+ge+datetime'$start'+and+incident_datetime+le+datetime'$end'&$groupby=offense_category,census_tract_geo_id";
-    const dateRanges = this.generateDateRanges();
+    const dateRanges = generateDateRanges(START_DATE, END_DATE);
     let API_REQS = [];
     for(let monthStart of dateRanges){
-      console.log("DATE RANGE", monthStart);
       let end = moment(monthStart).endOf('month').format('YYYY-MM-DD');
       API_REQS.push(
         fetch(proxyUrl + API.replace('$start', monthStart).replace('$end', end)).then(function (response) {
@@ -95,7 +87,6 @@ class Crime extends Component {
         showInNavigator: true
       })
     });
-    console.log(formattedSeries, "Formatted");
     return formattedSeries
   }
 

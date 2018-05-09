@@ -94,7 +94,6 @@ class CrimeAreaChart extends Component {
   componentWillReceiveProps(nextProps) {
     if(nextProps.data !== undefined){
       let config = {...this.state.config};
-
       config.series = nextProps.data;
       this.setState({config});
     }

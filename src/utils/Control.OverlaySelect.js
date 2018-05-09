@@ -39,13 +39,7 @@ L.Control.OverlaySelect = L.Control.extend({
     this.updateActiveSelection();
     let layerSelected = e.target.getAttribute('data-overlay');
     e.target.classList.add("active-overlay-menu");
-    for(let key in this.options.overlays){
-      if(key !== layerSelected){
-        this.options.overlays[key].remove();
-      }
-    }
     if(layerSelected){
-      this.options.overlays[layerSelected].addTo(this._map);
       this._map.setSelectedOverlayName(layerSelected);
     }
   },
