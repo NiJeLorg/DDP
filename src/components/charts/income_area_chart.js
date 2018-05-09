@@ -18,10 +18,6 @@ class IncomeAreaChart extends Component {
       let config = {...this.state.config};
       config.title.text =`${nextProps.title}`;
       config.colors = [nextProps.color];
-      if( nextProps.yScale > 0){
-        config.yAxis['max'] = nextProps.yScale * 1000;
-      }
-
       config.series = [{
         showInLegend: false,
         name: nextProps.title,
@@ -29,6 +25,8 @@ class IncomeAreaChart extends Component {
       }];
       this.setState({config});
     }
+
+    // this.setState({ data: nextProps.series });
   }
 
   getValuesSortedByKey (data) {
