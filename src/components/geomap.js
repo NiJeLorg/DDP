@@ -17,6 +17,7 @@ class GeoMap extends Component {
     rentIncomeMedianGeoJson: {},
     wacGeoJson: {},
     workersDowntownGeoData: {},
+    diversityIndexGeoJson: {},
     map : {},
     bounds : L.latLngBounds(southWest, northEast)
   };
@@ -62,11 +63,21 @@ class GeoMap extends Component {
       return response.json()
     });
 
-    return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq, wacGeoReq, workersDowntownGeoReq, rentIncomeApiReq, rentIncomeGeoReq]).then(([educationAttainmentGeoData, educationAttainmentApiData, wacGeoJson,workersDowntownGeoData, rentIncomeApiData, rentIncomeGeoData]) => {
+    const diversityApiReq = fetch(mapConfig.DIVERSITY_DATA_API).then(function (response) {
+      return response.json()
+    });
+    const diversityGeoReq = fetch(mapConfig.DIVERSITY_GEO_API).then(function (response) {
+      return response.json()
+    });
+
+    return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq, wacGeoReq, workersDowntownGeoReq, rentIncomeApiReq, rentIncomeGeoReq, diversityApiReq, diversityGeoReq]).then(([educationAttainmentGeoData, educationAttainmentApiData, wacGeoJson,workersDowntownGeoData, rentIncomeApiData, rentIncomeGeoData, diversityApiData, diversityGeoData]) => {
       const educationAttainmentGeoJson = mapConfig.addEducationAttainmentDataToGeoJson(educationAttainmentGeoData, educationAttainmentApiData);
       const rentIncomeMedianGeoJson = mapConfig.addRentIncomeDataToGeoJson(rentIncomeGeoData, rentIncomeApiData);
+      const diversityIndexGeoJson = mapConfig.addDiversityIndexToGeoJSon(diversityGeoData, diversityApiData);
+      console.log(diversityIndexGeoJson, "Diversity Index");
       this.setState({educationAttainmentGeoJson});
       this.setState({rentIncomeMedianGeoJson});
+      this.setState({diversityIndexGeoJson});
       this.setState({wacGeoJson});
       this.setState({workersDowntownGeoData});
     })
@@ -131,6 +142,16 @@ class GeoMap extends Component {
     });
   }
 
+  diversityIndexProperty(feature) {
+    return feature.properties.diversity_index
+  }
+
+  diversityIndexToolTip(feature, layer) {
+    layer.bindTooltip(() => {
+      return `${feature.properties.name} Diversity Index: ${_.floor(feature.properties.diversity_index, 2)}`
+    });
+  }
+
   componentDidMount() {
     const streets = L.tileLayer(mapConfig.MAPBOX_URL, {
       id: 'mapbox.streets',
@@ -152,12 +173,15 @@ class GeoMap extends Component {
         const rentIncomeMedianLayer = this.addChoroplethLayer(this.state.rentIncomeMedianGeoJson, this.rentIncomeProperty, this.rentIncomeToolTip, this.map);
 
         const wacLayer = this.addChoroplethLayer(this.state.wacGeoJson, this.wacValProperty, this.wacToolTip, this.map);
+        const diversityLayer = this.addChoroplethLayer(this.state.diversityIndexGeoJson, this.diversityIndexProperty, this.diversityIndexToolTip, this.map);
         const workerDowntownLayer = this.addChoroplethLayer(this.state.workersDowntownGeoData, this.workersDowntownProperty, this.workersDowntownToolTip, this.map);
         const  overlayMaps = {
           "Education Attainment": educationAttainmentLayer,
           "Worker - Bachelor's": wacLayer,
           "Worker - Downtown": workerDowntownLayer,
+          "Diversity Index": diversityLayer,
           "Affordability": rentIncomeMedianLayer,
+
         };
         this.setState({overlayMaps});
         this.setState({map: this.map});

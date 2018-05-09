@@ -75,9 +75,6 @@ const config = {
   },
   xAxis: {
     categories: COLUMNS,
-    // tickmarkPlacement: 'on',
-    // min: 0,
-    // startOnTick: true,
     title: {
       text: 'Age'
     }
@@ -86,12 +83,7 @@ const config = {
     title: {
       text: 'People'
     },
-    min: 0,
-    labels: {
-      // formatter: function () {
-      //   return this.value /  + 'K';
-      // }
-    }
+    min: 0
   },
   plotOptions: {
     area: {
@@ -126,7 +118,6 @@ class DiversityAreaChart extends Component {
     let API_REQS = [];
     _.forEach(RACES, (val, key) =>{
       let tableId =  PREFIX + val;
-      // let req = ;
       API_REQS.push(fetch(API.replace('$tableId', tableId)).then(function (response) {
         return response.json();
 
@@ -134,41 +125,8 @@ class DiversityAreaChart extends Component {
         return  {data: data, "race": key, "tableId": tableId}
       }));
     });
-    // const API_ONE_JSON = fetch(API_ONE).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_TWO_JSON = fetch(API_TWO).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_THREE_JSON = fetch(API_THREE).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_FOUR_JSON = fetch(API_FOUR).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_FIVE_JSON = fetch(API_FIVE).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_SIX_JSON = fetch(API_SIX).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_SEVEN_JSON = fetch(API_SEVEN).then(function (response) {
-    //   return response.json()
-    // });
-    // const API_EIGHT_JSON = fetch(API_EIGHT).then(function (response) {
-    //   return response.json()
-    // });
 
     Promise.all(API_REQS).then((API_RESP) => {
-
-      // const aData1 = this.aggregateBlockData(API_ONE_RSP);
-      // const aData2 = this.aggregateBlockData(API_TWO_RSP);
-      // const aData3 = this.aggregateBlockData(API_THREE_RSP);
-      // const aData4 = this.aggregateBlockData(API_FOUR_RSP);
-      // const aData5 = this.aggregateBlockData(API_FIVE_RSP);
-      // const aData6 = this.aggregateBlockData(API_SIX_RSP);
-      // const aData7 = this.aggregateBlockData(API_SEVEN_RSP);
-      // const aData8 = this.aggregateBlockData(API_EIGHT_RSP);
       let seriesData = [];
       _.forEach(API_RESP, (resp) => {
           // console.log(resp.data, "SOME DATa");
@@ -183,48 +141,12 @@ class DiversityAreaChart extends Component {
           }
           seriesData.push(series)
       });
-      console.log(seriesData, "tested");
-      // let seriesData = [
-      //   {
-      //     name: "Black or African American Alone",
-      //     data: this.getDataValue(aData1)
-      //   },
-      //   {
-      //     name: "American Indian and Alaska Native Alone",
-      //     data: this.getDataValue(aData2)
-      //   },
-      //   {
-      //     name: "Asian Alone",
-      //     data: this.getDataValue(aData3)
-      //   },
-      //   {
-      //     name: "Native Hawaiian and Other Pacific Islander Alone",
-      //     data: this.getDataValue(aData4)
-      //   },
-      //   {
-      //     name: "Some Other Race Alone",
-      //     data: this.getDataValue(aData5)
-      //   },
-      //   {
-      //     name: "Two or More Races",
-      //     data: this.getDataValue(aData6)
-      //   },
-      //   {
-      //     name: "White Alone, Not Hispanic or Latino",
-      //     data: this.getDataValue(aData7)
-      //   },
-      //   {
-      //     name: " Hispanic or Latino",
-      //     data: this.getDataValue(aData8)
-      //   },
-      // ];
       let configUpdated = {...this.state.config};
       config.series = seriesData;
       this.setState({config});
     }).catch((err) => {
       console.log(err);
     });
-    // this.generateChartData(data);
   }
 
 
@@ -239,12 +161,6 @@ class DiversityAreaChart extends Component {
     _.forEach(REGIONS, (tracts, region) => {
       regionData[region] = {};
       _.forEach(MALE_DATA_COLS.concat(FEMALE_DATA_COLS), (code) => {
-        // let category = '';
-        // if(_.includes(MALE_DATA_COLS, code)){
-        //   category = 'male';
-        // }else if(_.includes(FEMALE_DATA_COLS, code)){
-        //   category = 'female';
-        // }
         let dataKey = tableId + code.toString().padStart(3, '0');
         let colName = data.tables[tableId]['columns'][dataKey]['name'];
         _.forEach(tracts, (tract) => {
