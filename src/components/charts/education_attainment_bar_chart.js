@@ -127,14 +127,12 @@ class EducationAttainmentBarChart extends Component {
         });
       });
     });
-    console.log(regionData);
     const seriesData = Object.keys(DATA_CATEGORIES).map(category => {
       let data = Object.keys(REGIONS).map(region => {
         return regionData[region][category];
       });
       return {name: category, data: data};
     });
-    console.log(seriesData);
     return seriesData;
   }
 

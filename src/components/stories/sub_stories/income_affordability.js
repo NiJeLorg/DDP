@@ -41,13 +41,11 @@ class IncomeAffordability extends Component {
       // other options...
     })
       .then((result) => {
-        console.log(result);
         this.setState({data: result});
         this.updateAreaCharts(this.state.data[categories[this.state.activeCategory]]);
       })
       .catch((err) => {
-        console.log(err.message);
-        console.log(err.stack);
+        console.log(err);
       });
   }
 

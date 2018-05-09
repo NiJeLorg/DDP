@@ -29,8 +29,6 @@ class IncomeAreaChart extends Component {
       }];
       this.setState({config});
     }
-
-    // this.setState({ data: nextProps.series });
   }
 
   getValuesSortedByKey (data) {

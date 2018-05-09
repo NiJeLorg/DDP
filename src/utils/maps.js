@@ -22,6 +22,12 @@ const RENT_INCOME_DATA_API = 'https://api.censusreporter.org/1.0/data/show/lates
 const DIVERSITY_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=140|06000US2616322000';
 const DIVERSITY_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01001B,B01001C,B01001D,B01001E,B01001F,B01001G,B01001H,B01001I&geo_ids=140|06000US2616322000';
 
+const HTTP_PROXY = 'https://cors-anywhere.herokuapp.com/';
+let CRIME_GEO_API =  HTTP_PROXY + "https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo_id,offense_category,Count&$filter=incident_datetime+ge+datetime'$start'+and+incident_datetime+le+datetime'$end'&$groupby=offense_category,block_geo_id&$format=geojson";
+
+
+const VALID_CRIME_CATEGORIES = ["AGGRAVATED ASSAULT", "ASSAULT", "BURGLARY", "HOMICIDE", "LARCENY", "ROBBERY", "SEXUAL ASSAULT", "STOLEN VEHICLE"];
+
 const addEducationAttainmentDataToGeoJson = (geoJson, data) => {
   geoJson['features'] = geoJson['features'].map((block) => {
     const geoid = block.properties.geoid;
@@ -48,8 +54,7 @@ const addRentIncomeDataToGeoJson = (geoJson, data) => {
 
 const addDiversityIndexToGeoJSon = (geoJson, data) => {
   geoJson['features'] = geoJson['features'].map((block) => {
-    const geoid = block.properties.geoid;
-    const diversityIndex = calculateDiversityIndex(data['data'][geoid]);
+    const diversityIndex = calculateDiversityIndex(data['data'][ block.properties.geoid]);
     block.properties['diversity_index'] = diversityIndex;
     return block
   });
@@ -70,6 +75,105 @@ function calculateDiversityIndex(data) {
   return 1 - sumOfSquares
 }
 
+const addViolentCrimeDataToGeoJson = (geoJson) => {
+  geoJson['data'] = {};
+  geoJson['features'] = geoJson['features'].map((block) => {
+    block.properties['crime'] = aggregateViolentCrimeCount(geoJson['value'], block.properties.geo_id);
+    geoJson['data'][block.properties.geo_id] = block.properties['crime'];
+    return block;
+  });
+  return geoJson;
+};
+
+function aggregateViolentCrimeCount(data, geoid) {
+  let totalCrime = 0;
+  _.forEach(data, (block, index) => {
+    if(block.block_geo_id  === geoid && _.includes(VALID_CRIME_CATEGORIES, block.offense_category)) {
+      totalCrime += block['Count'];
+    }
+  });
+  return totalCrime;
+}
+
+
+
+const wacValProperty = (feature) => {
+  return feature.properties.CD04 / parseFloat(feature.properties.C000) * 100
+};
+const wacToolTip = (feature, layer)=> {
+  layer.bindTooltip(() => {
+    let percentage = feature.properties.CD04 / parseFloat(feature.properties.C000) * 100;
+    return `Workers with Bachelor's Degeree: ${_.floor(percentage, 2)}%`
+  });
+};
+
+const workersDowntownProperty = (feature) => {
+  return feature.properties.C000
+};
+
+const workersDowntownToolTip = (feature, layer)=> {
+  layer.bindTooltip(() => {
+    return `Total workers downtown: ${feature.properties.C000}`
+  });
+}
+
+const rentIncomeProperty = (feature) => {
+  return feature.properties.rent_income_ratio
+};
+
+const rentIncomeToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `Percentage ratio of rent to median household income: ${_.floor(feature.properties.rent_income_ratio, 2)}%`
+  });
+};
+
+const diversityIndexProperty = (feature) => {
+  return feature.properties.diversity_index
+};
+
+const diversityIndexToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.name} Diversity Index: ${_.floor(feature.properties.diversity_index, 2)}`
+  });
+};
+
+const crimeIndexProperty = (feature) => {
+  return feature.properties.crime
+};
+
+const crimeIndexToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `Total Crime: ${feature.properties.crime}`
+  });
+};
+
+const educationAttainmentValProperty = (feature) => {
+  return feature.properties.bachelors_population / parseFloat(feature.properties.total_population) * 100
+};
+
+const educationAttainmentToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    let percentage = feature.properties.bachelors_population / parseFloat(feature.properties.total_population) * 100;
+    return `Workers with Bachelor's Degeree: ${_.floor(percentage, 2)}%`
+  });
+};
+
+
+const aggregateCrimeData = (geoJson) =>{
+    let aggregateGeoJson = {};
+    aggregateGeoJson = geoJson[0];
+    _.forEach(geoJson, (data, index) => {
+      if(index >  0) {
+        aggregateGeoJson['features'] = aggregateGeoJson['features'].map((block) => {
+          block.properties['crime'] +=  data['data'][block.properties.geo_id];
+          return block;
+        });
+      }
+    })
+  return aggregateGeoJson;
+};
+
+
 
 export default {
   MAPBOX_URL,
@@ -79,6 +183,20 @@ export default {
   addEducationAttainmentDataToGeoJson,
   addRentIncomeDataToGeoJson,
   addDiversityIndexToGeoJSon,
+  addViolentCrimeDataToGeoJson,
+  wacToolTip,
+  wacValProperty,
+  workersDowntownProperty,
+  workersDowntownToolTip,
+  rentIncomeProperty,
+  rentIncomeToolTip,
+  diversityIndexProperty,
+  diversityIndexToolTip,
+  crimeIndexProperty,
+  crimeIndexToolTip,
+  educationAttainmentValProperty,
+  educationAttainmentToolTip,
+  aggregateCrimeData,
   EDUCATION_ATTAINMENT_GEO_API,
   WAC_GEO_API,
   EDUCATION_ATTAINMENT_DATA_API,
@@ -86,5 +204,6 @@ export default {
   RENT_INCOME_GEO_API,
   RENT_INCOME_DATA_API,
   DIVERSITY_GEO_API,
-  DIVERSITY_DATA_API
+  DIVERSITY_DATA_API,
+  CRIME_GEO_API
 };
