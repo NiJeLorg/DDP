@@ -26,7 +26,7 @@ const PREFIX = 'B25106';
 const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B25106&geo_ids=14000US26163520700,14000US26163517200,14000US26163520800`;
 
 const config = {
-  colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382','#ADC8EF'],
+  colors: ['#ADC8EF', '#D5D654', '#FF9E15', '#009382', '#00A0DF'],
   xAxis: {
     categories: ORDERED_CATEGORIES
   },
@@ -47,6 +47,8 @@ const config = {
     plotBorderWidth: null,
     plotShadow: false,
     type: 'column',
+    width: 400,
+    height: 250,
   },
   title: {
     text: null
@@ -82,8 +84,8 @@ const config = {
     symbolRadius: 0
   },
   tooltip: {
-    pointFormat: '<span>{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-    // shared: true,
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+    shared: true,
     useHTML: true,
     borderColor: null,
     followPointer: true,
