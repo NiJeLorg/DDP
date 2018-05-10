@@ -95,6 +95,17 @@
 .ul-greyedout-text {
   color: grey; }
 
+.sweet-loading {
+  position: absolute;
+  vertical-align: middle;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+  width: inherit; }
+
 .c-main-logo {
   position: absolute;
   padding: 30px 40px; }
