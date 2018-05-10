@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ReactHighcharts from 'react-highcharts';
 import Highcharts from 'highcharts';
 import _ from 'lodash';
+import DataBar from './data_bar';
+
 
 const REGIONS = {
   "DOWNTOWN DETROIT": ["14000US26163520700", "14000US26163517200", "14000US26163520800"],
@@ -98,7 +100,8 @@ class EducationAttainmentBarChart extends Component {
     super(props);
     this.state = {
       config: config,
-      data: []
+      data: [],
+      chart: {}
     };
   }
 
@@ -110,6 +113,8 @@ class EducationAttainmentBarChart extends Component {
         config.series = this.generateChartData(data);
         this.setState({config});
       });
+    let chart = this.refs.chart.getChart();
+    this.setState({chart});
   }
 
   generateChartData(data) {
@@ -140,7 +145,12 @@ class EducationAttainmentBarChart extends Component {
 
     return (
       <div>
-        <ReactHighcharts config={this.state.config} ref="chart"/>
+
+        <div className="chart-container">
+          <ReactHighcharts config={this.state.config} ref="chart"/>
+          <DataBar chart={this.state.chart}/>
+        </div>
+        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
       </div>
 
     );
