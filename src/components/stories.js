@@ -4,6 +4,12 @@ import GeoMap from "./geomap";
 import DataDrawer from "./data_drawer";
 import MobileNavStoryMap from "./mobile_nav_story_map";
 import ReactHighcharts from 'react-highcharts';
+import HighchartsExporting from 'highcharts/modules/exporting';
+import HighchartsExportingData from 'highcharts/modules/export-data';
+import ReactHighstock from 'react-highcharts/ReactHighstock';
+HighchartsExporting(ReactHighstock.Highcharts);
+HighchartsExporting(ReactHighcharts.Highcharts);
+// HighchartsExportingData(ReactHighcharts.Highcharts);
 class Stories extends React.Component {
 
   setHighchartsSettings() {

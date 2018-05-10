@@ -85,7 +85,6 @@ class EducationAttainmentGroupedPieChart extends Component  {
     return (
 
       <div>
-        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
         <div className="chart-container">
           <div className="grouped-pie-chart">
             <EducationAttainmentPieChart legend={false} title={"DOWNTOWN"} total={this.state.totalJobsDowntown} config={_.cloneDeep(ChartConfig.PIE_CHART_CONFIG)} series={this.state.downtownDetroitSeries}/>
@@ -93,6 +92,7 @@ class EducationAttainmentGroupedPieChart extends Component  {
           </div>
           <DataBar/>
         </div>
+        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
       </div>
 
     );

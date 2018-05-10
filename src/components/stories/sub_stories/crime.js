@@ -94,13 +94,15 @@ class Crime extends Component {
     return (
       <div>
         <h1 className="sub-sub-heading__purple"> <span className='ul-yellow-color'>V.</span>CRIME</h1>
-        <p className='main-text__black'>Like all urban areas, it is important to take sensible safety precautions while Downtown, like not leaving valuables visible in cars and being aware of your surroundings. Downtown Detroit is a safe place to be overall, thought there are is room for improvement in some places </p>
+        <p className='main-text__black'>Downtown Detroit is a thriving neighborhood and very safe place to be overall, though there is room for improvement.  As in all urban areas, it is important to take sensible safety precautions while Downtown, like not leaving valuables visible in cars and being aware of your surroundings. With supplemental security, coordination with the Detroit Police, a coalition of companies offering safe havens and Business Improvement Zone Ambassadors walking the streets, the Downtown Detroit Partnership is working to make Downtown as safe as possible.  The graphs below show how Downtown Detroit is doing overall.
+        </p>
         <div>
-          <span className="chart-header">2016 CENSUS CRIME DISTRIBUTION</span>
+
           <div className="chart-container">
             <CrimeAreaChart data={this.state.chartData}/>
             <DataBar/>
           </div>
+          <span className="chart-header">2017 MDDA CRIME DISTRIBUTION</span>
         </div>
 
 

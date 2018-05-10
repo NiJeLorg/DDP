@@ -90,15 +90,16 @@ class IncomeAffordability extends Component {
     });
     return (
       <div>
-        <h1 className="sub-sub-heading__purple"> <span className='ul-yellow-color'>IV.</span>INCOME/AFFORDABILITY/TENURE/HOUSING</h1>
-        <p className='main-text__black'>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
-        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
+        <h1 className="sub-sub-heading__purple"> <span className='ul-yellow-color'>IV.</span>INCOME/AFFORDABILITY/TENURE</h1>
+        <p className='main-text__black'>Downtown Detroit is a desirable place to live and work, and the market price for housing is increasing because of it. As in most downtowns, there are high-end luxury apartments and condominiums available for those who can afford them. However, the Downtown Detroit partnership and the Business Improvement Zone recognize that really great places offer housing for people of all incomes, as well as a mix of housing types for people at different stages of life and circumstances.   Explore the graphs below to see how Downtown is doing and how it compares with other cities’ downtown areas.
+        </p>
+
         <div className="chart-container">
           <div className={"btn-switcher"}>
             <Link to={'#'} onClick={event => this.switchCategory("MEDIAN HOUSEHOLD INCOME")} className={btn1}>MEDIAN
               HOUSEHOLD INCOME</Link>
             <Link to={'#'} onClick={event => this.switchCategory("OWNER VALUE")} className={btn2}>OWNER VALUE</Link>
-            <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>RENT</Link>
+            <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>AVERAGE MONTHLY RENT</Link>
           </div>
           <div className={"grouped"}>
             <IncomeAreaChart data={this.state.detroit} yScale={this.state.maxYScale} title={"DOWNTOWN DETROIT"} color={"#00A0DF"} className={'chart'}/>
@@ -106,14 +107,17 @@ class IncomeAffordability extends Component {
             <IncomeAreaChart data={this.state.baltimore} yScale={this.state.maxYScale} title={"DOWNTOWN BALTIMORE"} color={"#009382"} className={'chart'}/>
             <IncomeAreaChart data={this.state.pittsburgh} yScale={this.state.maxYScale} title={"DOWNTOWN PITTSBURGH"} color={"#D5D654"} className={'chart'}/>
           </div>
-
+          <DataBar />
         </div>
-        <p className='main-text__black'>Something about workers educational attainment Waistcoat normcore trust fund cloud bread asymmetrical
-          neutra. Tacos kickstarter neutra fixie air plant mixtape, raw denim hoodie helvetica offal direct trade.</p>
         <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
+
+        <p className='main-text__black'>Downtown Detroit is a safe, attractive, vibrant place to live, and the demand for housing is high. Occupancy rates for available residential units is near 100%, and the price of housing has increased substantially over the past several years. Despite this trend, it is important that there remains a variety of price-points and affordable options, so that people with fewer economic resources can afford living Downtown without sacrificing too large a percentage of their income.  A standard metric for housing affordability is 30% of income or less. More than that is considered unaffordable for an individual. The following graphs explore income, housing affordability and rental prices for Downtown and how it looks in comparison to our benchmark cities.</p>
+
         <div className="chart-container">
           <IncomeBarChart />
+          <DataBar />
         </div>
+        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
 
       </div>
 

@@ -6,21 +6,12 @@ import DataBar from './../../charts/data_bar';
 const WorkerEducationAttainment = () => {
     return (
         <div>
-            <h1 className='sub-sub-heading__purple'><span className='ul-yellow-color'>I.</span>EDUCATIONAL ATTAINMENT</h1>
-            <p className='main-text__black'>Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. </p>
-             <div>
-                <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
-                <div className="chart-container">
-                    <EducationAttainmentBarChart className={'chart'}/>
-                    <DataBar/>
-                </div>
+            <h1 className='sub-sub-heading__purple'><span className='ul-yellow-color'>I.</span>Educational Attainment, Downtown Detroit in Regional Context</h1>
+            <p className='main-text__black'>The world’s top companies frequently emphasize the need for highly educated people to fill the ranks of their workforces.  Because of this they often locate in places where there are lots of potential employees with a high level of educational attainment and skilled workforce. In order to attract those companies and the jobs they provide an area has a competitive advantage if its population is highly educated. In addition, those people with higher levels of education are likely to earn more over their lifetime. Downtown Detroit encourages an investment in people by supporting efforts to increase levels of education among the residents of the City.
+            </p>
 
-            </div>
-            <p className='main-text__black'>Something about workers educational attainment Waistcoat normcore trust fund cloud bread asymmetrical
-                neutra. Tacos kickstarter neutra fixie air plant mixtape, raw denim hoodie helvetica offal direct trade.
-                Pug blog vexillologist ugh, paleo hoodie yr jianbing. Air plant activated charcoal hoodie waistcoat
-                lo-fi adaptogen. Hashtag pour-over keytar tofu farm-to-table. Synth brunch squid tattooed, pok pok
-                before they sold out etsy whatever bushwick.</p>
+            <EducationAttainmentBarChart className={'chart'}/>
+
            <EducationAttainmentGroupedPieChart />
 
         </div>

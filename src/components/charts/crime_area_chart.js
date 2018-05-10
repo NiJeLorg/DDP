@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactHighcharts from 'react-highcharts';
 import Highcharts from 'highcharts';
 const ReactHighstock = require('react-highcharts/ReactHighstock.src');
+require('highcharts-more')(ReactHighcharts.Highcharts);
 
 
 const config = {
