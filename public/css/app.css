@@ -68,7 +68,8 @@
   font-family: "AvenirLTPro-Black";
   font-size: 20px; }
   .sub-sub-heading__purple {
-    color: #13294b; }
+    color: #13294b;
+    text-transform: uppercase; }
 
 .main-text, .main-text__black, .main-text__white {
   font-family: "PTSerif-Regular", serif;
@@ -392,7 +393,9 @@
       padding-top: 25px;
       display: flex;
       flex-direction: column;
-      width: 100%; }
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 5px; }
       .c-stories .c-story-navigator .story-content .chart-container .grouped {
         display: flex;
         flex-wrap: wrap;
