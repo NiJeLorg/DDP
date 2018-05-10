@@ -23,7 +23,7 @@ const DIVERSITY_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016
 const DIVERSITY_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01001B,B01001C,B01001D,B01001E,B01001F,B01001G,B01001H,B01001I&geo_ids=140|06000US2616322000';
 
 const HTTP_PROXY = 'https://cors-anywhere.herokuapp.com/';
-let CRIME_GEO_API =  HTTP_PROXY + "https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo_id,offense_category,Count&$filter=incident_datetime+ge+datetime'$start'+and+incident_datetime+le+datetime'$end'&$groupby=offense_category,block_geo_id&$format=geojson";
+let CRIME_GEO_API =  "https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo_id,offense_category,Count&$filter=incident_datetime+ge+datetime'$start'+and+incident_datetime+le+datetime'$end'&$groupby=offense_category,block_geo_id&$format=geojson";
 
 
 const VALID_CRIME_CATEGORIES = ["AGGRAVATED ASSAULT", "ASSAULT", "BURGLARY", "HOMICIDE", "LARCENY", "ROBBERY", "SEXUAL ASSAULT", "STOLEN VEHICLE"];
@@ -89,7 +89,7 @@ function aggregateViolentCrimeCount(data, geoid) {
   let totalCrime = 0;
   _.forEach(data, (block, index) => {
     if(block.block_geo_id  === geoid && _.includes(VALID_CRIME_CATEGORIES, block.offense_category)) {
-      totalCrime += block['Count'];
+      totalCrime += parseInt(block['Count']);
     }
   });
   return totalCrime;

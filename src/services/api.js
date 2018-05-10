@@ -64,29 +64,16 @@ export function getDiversityIndexGeoJson() {
 }
 
 export function getCrimeGeoJson() {
-
-  return fetch(mapConfig.CRIME_GEO_API.replace('$start', '2017-01-01').replace('$end', '2017-12-31')).then(function (response) {
+  const crimeValuesReq = fetch('https://cors-anywhere.herokuapp.com/https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo_id,offense_category,Count&$filter=incident_datetime+gt+datetime%272017-01-01%27+and+incident_datetime+lt+datetime%272017-12-31%27&$groupby=offense_category,block_geo_id&$format=geojson$download').then(function (response) {
     return response.json()
-  }).then(data => {
-    console.log(data[0],"Some Data");
-    return  mapConfig.addViolentCrimeDataToGeoJson(data);
   });
-  // let crimeGeoReq = [];
-  // _.forEach(generateDateRanges('2017-01-01', '2017-12-31'), (monthStart) => {
-  //   let end = moment(monthStart).endOf('month').format('YYYY-MM-DD');
-  //   crimeGeoReq.push(
-  //     fetch(mapConfig.CRIME_GEO_API.replace('$start', monthStart).replace('$end', end)).then( response => {
-  //       return response.json();
-  //     }).then(data => {
-  //       console.log(data[0],"Some Data");
-  //       return  mapConfig.addViolentCrimeDataToGeoJson(data);
-  //     })
-  //   );
-  // });
-  // return Promise.all(crimeGeoReq).then((crimeGeoResp) => {
-  //   console.log(crimeGeoResp[0], "CRIMEEMEME DATA");
-  //   const d =  mapConfig.aggregateCrimeData(crimeGeoResp);
-  //   console.log(d, "CRIMEEMEME");
-  //   return d;
-  // })
+  const crimeGeoReq = fetch('https://cors-anywhere.herokuapp.com/https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo_id&$filter=incident_datetime+gt+datetime%272017-01-01%27+and+incident_datetime+lt+datetime%272017-12-31%27&$format=geojson').then(function (response) {
+    return response.json()
+  });
+  return Promise.all([crimeValuesReq, crimeGeoReq]).then(([crimeDataResp, crimeGeoResp]) => {
+    crimeGeoResp['value'] =  crimeDataResp['value'];
+    const d =  mapConfig.addViolentCrimeDataToGeoJson(crimeGeoResp);
+    console.log(d, "CRIMEEMEME");
+    return d;
+  })
 }
