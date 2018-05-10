@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import mapConfig from '../utils/maps';
 import _ from 'lodash';
+import classNames from 'classnames';
+import {PulseLoader} from  'react-spinners';
 import L from 'leaflet';
 import {
   getEducationAttainmentGeoJson,
@@ -26,6 +28,7 @@ const overlayMaps = {
 
 class GeoMap extends Component {
   state = {
+    loading: false,
     lat: mapConfig.DETROIT_POSITION.lat,
     lng: mapConfig.DETROIT_POSITION.lng,
     zoom: mapConfig.ZOOM_LEVEL,
@@ -40,14 +43,6 @@ class GeoMap extends Component {
     bounds: L.latLngBounds(southWest, northEast)
   };
 
-  render() {
-    return (
-      <div className={"map-holder"}>
-        <div className="map" ref={ref => this.container = ref}/>
-      </div>
-
-    )
-  }
 
   setOverlayLayerZoom(overlayName) {
     if (overlayName !== 'Education Attainment') {
@@ -86,6 +81,10 @@ class GeoMap extends Component {
     }
   }
 
+  toggleLoader() {
+
+    this.setState({loading: !this.state.loading});
+  }
   addChoroplethLayer(geoJson, valueProperty, toolTip) {
     this.state.map.eachLayer(function(layer){
       if(layer.options['id'] !== 'mapbox.streets'){
@@ -107,6 +106,7 @@ class GeoMap extends Component {
       overlay: {},
       onEachFeature: toolTip
     }).addTo(this.state.map);
+    this.toggleLoader();
   }
 
 
@@ -130,6 +130,7 @@ class GeoMap extends Component {
     this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
 
     this.map.on('overlayChange', () => {
+      this.toggleLoader();
       this.getChoroplethGeoJson(this.map.selectedOverlayLayerName());
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName());
     });
@@ -142,6 +143,25 @@ class GeoMap extends Component {
 
   componentWillUnmount() {
     this.state.map.remove()
+  }
+
+  render() {
+    let loaderClass = classNames({
+      'sweet-loading': true,
+      'hidden': !this.state.loading
+    });
+    return (
+      <div className={"map-holder"}>
+        <div className={loaderClass}>
+          <PulseLoader
+            color={'#00A0DF'}
+            loading={this.state.loading}
+          />
+        </div>
+        <div className="map" ref={ref => this.container = ref}/>
+      </div>
+
+    )
   }
 
 }
