@@ -1,8 +1,9 @@
 import mapConfig from '../utils/maps';
-import { generateDateRanges} from "../utils/app";
+import {generateDateRanges} from "../utils/app";
 import _ from 'lodash';
 import Moment from 'moment';
-import { extendMoment } from 'moment-range';
+import {extendMoment} from 'moment-range';
+
 const moment = extendMoment(Moment);
 
 export function getEducationAttainmentGeoJson() {
@@ -12,8 +13,7 @@ export function getEducationAttainmentGeoJson() {
   const educationAttainmentApiReq = fetch(mapConfig.EDUCATION_ATTAINMENT_DATA_API).then(function (response) {
     return response.json()
   });
-  return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq]).then((
-    [educationAttainmentGeoData, educationAttainmentApiData]) => {
+  return Promise.all([educationAttainmentGeoReq, educationAttainmentApiReq]).then(([educationAttainmentGeoData, educationAttainmentApiData]) => {
     return mapConfig.addEducationAttainmentDataToGeoJson(educationAttainmentGeoData, educationAttainmentApiData);
   })
 }
@@ -41,9 +41,8 @@ export function getRentIncomeGeoJson() {
     return response.json()
   });
 
-  return Promise.all([rentIncomeGeoReq, rentIncomeApiReq]).then((
-    [rentIncomeGeoData, rentIncomeApiData]) => {
-    return  mapConfig.addRentIncomeDataToGeoJson(rentIncomeGeoData, rentIncomeApiData);
+  return Promise.all([rentIncomeGeoReq, rentIncomeApiReq]).then(([rentIncomeGeoData, rentIncomeApiData]) => {
+    return mapConfig.addRentIncomeDataToGeoJson(rentIncomeGeoData, rentIncomeApiData);
   })
 }
 
@@ -57,9 +56,8 @@ export function getDiversityIndexGeoJson() {
   });
 
 
-  return Promise.all([diversityApiReq, diversityGeoReq]).then((
-    [diversityApiData, diversityGeoData]) => {
-    return  mapConfig.addDiversityIndexToGeoJSon(diversityGeoData, diversityApiData);
+  return Promise.all([diversityApiReq, diversityGeoReq]).then(([diversityApiData, diversityGeoData]) => {
+    return mapConfig.addDiversityIndexToGeoJSon(diversityGeoData, diversityApiData);
   })
 }
 
@@ -71,9 +69,30 @@ export function getCrimeGeoJson() {
     return response.json()
   });
   return Promise.all([crimeValuesReq, crimeGeoReq]).then(([crimeDataResp, crimeGeoResp]) => {
-    crimeGeoResp['value'] =  crimeDataResp['value'];
-    const d =  mapConfig.addViolentCrimeDataToGeoJson(crimeGeoResp);
+    crimeGeoResp['value'] = crimeDataResp['value'];
+    const d = mapConfig.addViolentCrimeDataToGeoJson(crimeGeoResp);
     console.log(d, "CRIMEEMEME");
     return d;
+  })
+}
+
+
+export function getAmenitiesData() {
+  const restaurantsCountReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/Restaurants_GreaterDowntown/FeatureServer/0/query?where=1=1&returnCountOnly=true&f=json").then(function (response) {
+    return response.json()
+  });
+  const retailersCountReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/arcgis/rest/services/DowntownRiverfrontBusinesses_May2017/FeatureServer/0/query?where=1=1&returnCountOnly=true&f=json").then(function (response) {
+    return response.json()
+  });
+  const parksCountReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ParksPlazasDowntown/FeatureServer/0/query?where=BIZ_Maint='yes'&returnCountOnly=true&f=json").then(function (response) {
+    return response.json()
+  });
+  return Promise.all([restaurantsCountReq, retailersCountReq, parksCountReq]).then(([restaurantData, retailerData, parkData]) => {
+    const resp = {
+      'restaurants': restaurantData.count,
+      'retailers': retailerData.count,
+      'parks': parkData.count
+    };
+    return resp;
   })
 }

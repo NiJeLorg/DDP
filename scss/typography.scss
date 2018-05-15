@@ -95,3 +95,21 @@
   margin: 0;
   font-size: 55px;
 }
+
+.c-counter {
+  .img {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .number {
+    font-family: "AvenirLTPro-Black";
+    font-size: 40px;
+    color: #00B3EE;
+    margin-right: 12px;
+  }
+  .label {
+    font-family: "Avenir-Roman";
+    font-size: 18px;
+    color: #2A316C;
+  }
+}
