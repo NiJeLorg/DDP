@@ -30,8 +30,8 @@ class Stories extends React.Component {
     return (
       <div className="c-stories">
         <DataDrawer />
-        <StoryNavigator chapter={this.props.chapter}/>
-        <GeoMap />
+        <StoryNavigator chapter={this.props.chapter} />
+        <GeoMap chapter={this.props.chapter} />
       </div>
     );
   }

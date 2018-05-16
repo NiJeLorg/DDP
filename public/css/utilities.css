@@ -17,3 +17,12 @@
   margin: auto;
   height: 100%;
   width: inherit; }
+
+.dot {
+  height: 11px;
+  width: 11px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 5px; }

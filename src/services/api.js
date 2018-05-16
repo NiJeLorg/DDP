@@ -102,6 +102,50 @@ export function getCleaningWelcomingWorkData() {
   return gsjson({
     spreadsheetId: '1r6-qbuca22jmO3PooE0ElvKaubvoM-l8PwAP7wJ6ASY',
     worksheet: ['Summary']
-    // other options...
   })
+}
+
+
+
+
+export function getAmenitiesServicesGeoJsonLayers() {
+  const restaurantsReq = fetch("https://opendata.arcgis.com/datasets/f32e553f2b8f44258d46fbc7dbee1bf0_0.geojson").then(function (response) {
+    return response.json()
+  });
+  const retailersReq = fetch("https://opendata.arcgis.com/datasets/fbd1487a98d14012acf7bd9cefe5f02e_0.geojson").then(function (response) {
+    return response.json()
+  });
+
+  const parksReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ParksPlazasDowntown/FeatureServer/0/query?outFields=*&where=BIZ_Maint='yes'&returnGeometry=true&outSR=4326&f=geojson"
+  ).then(function (response) {
+    return response.json()
+  });
+  return Promise.all([restaurantsReq, retailersReq, parksReq]).then(([restaurants, retailers, parkData]) => {
+     return {
+       'restaurants': restaurants,
+       'retailers': retailers,
+       'parks': parkData
+     }
+  })
+}
+
+export function getAmenitiesInfrasctructureGeoJsonLayers() {
+  const parkingGaragesReq = fetch("https://opendata.arcgis.com/datasets/1d3252a24eb0497c9a32d2f531f34da6_0.geojson\n").then(function (response) {
+    return response.json()
+  });
+
+  const lighthousesReq = fetch("https://opendata.arcgis.com/datasets/35296f2001f94a37879586e35e8e0717_0.geojson").then(function (response) {
+    return response.json()
+  });
+
+  const mogoStationsReq = fetch("https://opendata.arcgis.com/datasets/aed58cd4930d44db9da8867c5e784efd_0.geojson").then(function (response) {
+    return response.json()
+  });
+  return Promise.all([parkingGaragesReq, lighthousesReq, mogoStationsReq]).then(([parkingGarages, lighthouses, mogoStations]) => {
+    return {
+      'parking garages': parkingGarages,
+      'lighthouses': lighthouses,
+      'MoGo stations': mogoStations
+    }
+  });
 }
