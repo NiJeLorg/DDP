@@ -3,6 +3,7 @@ import {generateDateRanges} from "../utils/app";
 import _ from 'lodash';
 import Moment from 'moment';
 import {extendMoment} from 'moment-range';
+import gsjson from 'google-spreadsheet-to-json';
 
 const moment = extendMoment(Moment);
 
@@ -94,5 +95,13 @@ export function getAmenitiesData() {
       'parks': parkData.count
     };
     return resp;
+  })
+}
+
+export function getCleaningWelcomingWorkData() {
+  return gsjson({
+    spreadsheetId: '1r6-qbuca22jmO3PooE0ElvKaubvoM-l8PwAP7wJ6ASY',
+    worksheet: ['Summary']
+    // other options...
   })
 }

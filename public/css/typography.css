@@ -71,7 +71,8 @@
 
 .c-counter .img {
   margin-left: 12px;
-  margin-right: 12px; }
+  margin-right: 12px;
+  height: 45px; }
 
 .c-counter .number {
   font-family: "AvenirLTPro-Black";

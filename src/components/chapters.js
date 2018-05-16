@@ -14,7 +14,7 @@ const Chapters = () => {
             </h2>
             <div className="c-chapter-markers">
               <Link
-                to="/story"
+                to="/story/1"
                 className="chapter-card c-bevelled-box__chapter-card"
               >
                 <span className="chapter-marker">01</span>
@@ -23,7 +23,7 @@ const Chapters = () => {
                 </div>
               </Link>
               <Link
-                to="/story"
+                to="/story/2"
                 className="chapter-card c-bevelled-box__chapter-card"
               >
                 <span className="chapter-marker">02</span>

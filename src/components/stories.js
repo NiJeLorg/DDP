@@ -20,12 +20,17 @@ class Stories extends React.Component {
           }
         });
   }
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     this.setHighchartsSettings();
     return (
       <div className="c-stories">
         <DataDrawer />
-        <StoryNavigator />
+        <StoryNavigator chapter={this.props.chapter}/>
         <GeoMap />
       </div>
     );
