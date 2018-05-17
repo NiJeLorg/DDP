@@ -6,32 +6,48 @@ L.Control.SubOverlaySelect = L.Control.extend({
     overlays: {},
     subOverlays: {},
     onOverlayChange: {},
-    selected: ""
+    selected: "",
+    enableSwitcher: true
   },
   onAdd: function (map) {
     let className = 'leaflet-control-sub-layer-select', container;
     container = L.DomUtil.create('div', 'leaflet-bar ' + className);
-    let dropDownContainer = L.DomUtil.create('div', 'sub-overlay ', container);
-    let switcherContainer = L.DomUtil.create('div', 'overlay-switcher', dropDownContainer);
-    this.menuContainer = L.DomUtil.create('ul', 'sub-overlay-menu', dropDownContainer);
-    this.currentGroup = this.options.overlays[this.options.selected];
+    this.dropDownContainer = L.DomUtil.create('div', 'sub-overlay ', container);
+    this.switcherContainer = L.DomUtil.create('div', 'overlay-switcher', this.dropDownContainer);
+    this.menuContainer = L.DomUtil.create('ul', 'sub-overlay-menu', this.dropDownContainer);
+    this.currentGroup = this.options.overlays;
+    if(this.options.enableSwitcher){
+      this.currentGroup = this.options.overlays[this.options.selected];
+      this._addSwitcher();
+    }
     this._updateSubMenu();
+
+    return container;
+  },
+
+  _addSwitcher(){
     this.btns = Object.keys(this.options.overlays);
     for(let idx in this.btns){
       let className = "switch-btn ";
       if(this.options.selected === this.btns[idx]){
         className += "active-menu"
       }
-      this._createSwitcher(this.btns[idx],  switcherContainer, this.toggleBtn, this, className);
+      this._createSwitcher(this.btns[idx],  this.switcherContainer, this.toggleBtn, this, className);
     }
-    return container;
   },
-
   _updateSubMenu() {
     this.menuContainer.innerHTML = "";
-    for(let overlay in this.currentGroup){
-      this._createListItem(overlay, this.currentGroup[overlay], 'sub-overlay-menu-item', this.menuContainer)
+    if(this.options.enableSwitcher){
+      for(let overlay in this.currentGroup){
+        this._createListItem(overlay, this.currentGroup[overlay]['color'], 'sub-overlay-menu-item', this.menuContainer)
+      }
+    }else {
+      for(let overlay in this.currentGroup){
+        console.log(overlay, "overa")
+        this._createListItem(this.currentGroup[overlay].label, this.currentGroup[overlay].color, 'sub-overlay-menu-item', this.menuContainer)
+      }
     }
+
   },
   _createListItem(title, color, className, container) {
     this.listItem = L.DomUtil.create('li', className, container);

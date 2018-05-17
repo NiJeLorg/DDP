@@ -205,6 +205,18 @@ const mogoToolTip = (feature, layer) => {
   });
 };
 
+const welcomingToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.ambassadorFullname} - ${feature.properties.zoneTitle}`
+  });
+};
+
+const landscapingToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.LndscpArea} - ${feature.properties.LndscpNum}`
+  });
+};
+
 export default {
   MAPBOX_URL,
   MAPBOX_ATTRIBUTION,
@@ -233,6 +245,8 @@ export default {
   parksToolTip,
   parkingGarageToolTip,
   mogoToolTip,
+  welcomingToolTip,
+  landscapingToolTip,
   EDUCATION_ATTAINMENT_GEO_API,
   WAC_GEO_API,
   EDUCATION_ATTAINMENT_DATA_API,

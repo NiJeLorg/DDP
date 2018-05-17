@@ -4,6 +4,7 @@ import _ from 'lodash';
 import Moment from 'moment';
 import {extendMoment} from 'moment-range';
 import gsjson from 'google-spreadsheet-to-json';
+import GeoJSON from  'geojson';
 
 const moment = extendMoment(Moment);
 
@@ -146,6 +147,43 @@ export function getAmenitiesInfrasctructureGeoJsonLayers() {
       'parking garages': parkingGarages,
       'lighthouses': lighthouses,
       'MoGo stations': mogoStations
+    }
+  });
+}
+
+export function getWelcomingDataGeoJsonLayers() {
+  return gsjson({
+    spreadsheetId: '1r6-qbuca22jmO3PooE0ElvKaubvoM-l8PwAP7wJ6ASY',
+    worksheet: ['March_EverythingReport.csv']
+  }).then(resp => {
+    let dataset = {};
+    _.forEach(resp[0], (val, key) => {
+        if(!dataset.hasOwnProperty(val['type'])){
+          dataset[val['type']] = [];
+        }
+      dataset[val['type']].push(val)
+    });
+    let geoJsonDataset = {};
+    _.forEach(dataset, (val, key) => {
+      geoJsonDataset[key] = GeoJSON.parse(val, {Point: ['latitude', 'longitude']});
+    });
+    return geoJsonDataset;
+  })
+}
+
+export function getWelcomingGeoJsonLayers() {
+  const landscapingReq = fetch("https://opendata.arcgis.com/datasets/0836afc43295419d93d0de55aec712c0_0.geojson ").then(function (response) {
+    return response.json()
+  });
+
+  const ddpParkssReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ParksPlazasDowntown/FeatureServer/0/query?outFields=*&where=BIZ_Maint='yes'&returnGeometry=true&outSR=4326&f=geojson").then(function (response) {
+    return response.json()
+  });
+
+
+  return Promise.all([landscapingReq]).then(([landscapingData]) => {
+    return {
+      'landscaping': landscapingData,
     }
   });
 }

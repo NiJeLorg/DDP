@@ -40,6 +40,7 @@
     "cors-anywhere": "^0.4.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
+    "geojson": "^0.5.0",
     "google-spreadsheet-to-json": "^1.0.0",
     "highcharts": "^6.0.7",
     "highcharts-exporting": "^0.1.7",
