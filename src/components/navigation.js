@@ -35,7 +35,7 @@ class Navigation extends Component {
             </ul>
           </li>
           <li>
-            <p className="menu-item">Contact</p>
+            <a className="menu-item" href="http://downtowndetroit.org/about-ddp/contact/">Contact</a>
           </li>
         </ul>
         <ul className="menu__mobile">

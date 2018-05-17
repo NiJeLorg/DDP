@@ -152,6 +152,7 @@
   .c-navbar .menu {
     display: flex; }
     .c-navbar .menu .menu-item {
+      text-decoration: none;
       font-family: "AvenirLTPro-Black", sans-serif;
       margin: 0;
       text-transform: uppercase;
