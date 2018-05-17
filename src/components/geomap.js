@@ -225,7 +225,7 @@ class GeoMap extends Component {
 
   removeAllLayers() {
     this.state.map.eachLayer(function(layer){
-      if(layer.options['id'] !== 'mapbox.streets'){
+      if(layer.options['id'] !== 'mapbox.light'){
         layer.remove();
       }
 
@@ -279,7 +279,7 @@ class GeoMap extends Component {
 
     }, 100);
     L.tileLayer(mapConfig.MAPBOX_URL, {
-      id: 'mapbox.streets',
+      id: 'mapbox.light',
       attribution: mapConfig.MAPBOX_ATTRIBUTION,
     }).addTo(this.map);
     let defaultLayer = '';
