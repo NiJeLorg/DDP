@@ -176,14 +176,15 @@ export function getWelcomingGeoJsonLayers() {
     return response.json()
   });
 
-  const ddpParkssReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ParksPlazasDowntown/FeatureServer/0/query?outFields=*&where=BIZ_Maint='yes'&returnGeometry=true&outSR=4326&f=geojson").then(function (response) {
-    return response.json()
-  });
-
-
   return Promise.all([landscapingReq]).then(([landscapingData]) => {
     return {
       'landscaping': landscapingData,
     }
+  });
+}
+
+export function getResidentialBuildingGeoJson() {
+  return fetch('https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outFields=*&where=1=1&returnGeometry=true&outSR=4326&f=geojson').then(function (response) {
+    return response.json()
   });
 }

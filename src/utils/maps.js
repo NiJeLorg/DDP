@@ -217,6 +217,14 @@ const landscapingToolTip = (feature, layer) => {
   });
 };
 
+const buildingsToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.Building_Name}. Address: ${feature.properties.Address} 
+    Units: ${feature.properties.Units} Tenure: ${feature.properties.Tenure}`
+  });
+};
+
+
 export default {
   MAPBOX_URL,
   MAPBOX_ATTRIBUTION,
@@ -247,6 +255,8 @@ export default {
   mogoToolTip,
   welcomingToolTip,
   landscapingToolTip,
+  buildingsToolTip,
+
   EDUCATION_ATTAINMENT_GEO_API,
   WAC_GEO_API,
   EDUCATION_ATTAINMENT_DATA_API,

@@ -7,7 +7,7 @@ import L from 'leaflet';
 import {
   getEducationAttainmentGeoJson,
   getWACGeoJson,
-  getDowtownWorkersGeoJson, getDiversityIndexGeoJson, getRentIncomeGeoJson, getCrimeGeoJson, getAmenitiesServicesGeoJsonLayers,getAmenitiesInfrasctructureGeoJsonLayers,getWelcomingGeoJsonLayers, getWelcomingDataGeoJsonLayers
+  getDowtownWorkersGeoJson, getDiversityIndexGeoJson, getRentIncomeGeoJson, getCrimeGeoJson, getAmenitiesServicesGeoJsonLayers,getAmenitiesInfrasctructureGeoJsonLayers,getWelcomingGeoJsonLayers, getWelcomingDataGeoJsonLayers,getResidentialBuildingGeoJson
 } from '../services/api';
 
 require('leaflet-fullscreen');
@@ -151,6 +151,14 @@ class GeoMap extends Component {
     }
     else if (overlayName === 'Clean and Welcoming') {
       this.addWelcomingGeoJson(map)
+    }
+    else if (overlayName === 'Live Downtown') {
+      getResidentialBuildingGeoJson().then((data) => {
+        this.removeAllLayers();
+        console.log("Building data", data);
+        this.addGeoJsonLayer(data, mapConfig.buildingsToolTip, '#F27B21', map);
+        this.toggleLoader();
+      });
     }
   }
 
