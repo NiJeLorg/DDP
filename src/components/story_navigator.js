@@ -5,7 +5,6 @@ import StoryTwo from "./stories/story_two";
 
 const StoryNavigator = ({chapter}) => {
   let  story = "";
-  console.log(chapter, "CHAPTERS");
   if(chapter.id === 1){
      story = <StoryOne />;
   }else if(chapter.id === 2){

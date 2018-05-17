@@ -12,6 +12,10 @@ class StoryBoard extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { match: { params } } = this.props;
+    this.setState({chapter: CHAPTERS[params.id]})
+  }
 
   render() {
     return (

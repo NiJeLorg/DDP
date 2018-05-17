@@ -373,3 +373,12 @@ hr {
     }
   }
 }
+
+.menu-link {
+  text-decoration: none;
+  color: white;
+
+  &:hover{
+    color: #e0e060;
+  }
+}
