@@ -7,7 +7,8 @@ L.Control.SubOverlaySelect = L.Control.extend({
     subOverlays: {},
     onOverlayChange: {},
     selected: "",
-    enableSwitcher: true
+    enableSwitcher: true,
+    enableSubOverlay: true
   },
   onAdd: function (map) {
     let className = 'leaflet-control-sub-layer-select', container;
@@ -20,8 +21,9 @@ L.Control.SubOverlaySelect = L.Control.extend({
       this.currentGroup = this.options.overlays[this.options.selected];
       this._addSwitcher();
     }
-    this._updateSubMenu();
-
+    if(this.options.enableSubOverlay) {
+      this._updateSubMenu();
+    }
     return container;
   },
 

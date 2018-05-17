@@ -82,7 +82,8 @@ const subOverlayMapsStoryTwo = {
        label: "Trash Pickup",
        color: "#00A992"
      }
-  }
+  },
+    "Live Downtown": {'2018':{}, '2019':{}, '2020':{}, '2021':{}, '2022':{}}
 };
 class GeoMap extends Component {
 
@@ -153,12 +154,7 @@ class GeoMap extends Component {
       this.addWelcomingGeoJson(map)
     }
     else if (overlayName === 'Live Downtown') {
-      getResidentialBuildingGeoJson().then((data) => {
-        this.removeAllLayers();
-        console.log("Building data", data);
-        this.addGeoJsonLayer(data, mapConfig.buildingsToolTip, '#F27B21', map);
-        this.toggleLoader();
-      });
+     this.getResidentialGeoJson(map)
     }
   }
 
@@ -220,6 +216,14 @@ class GeoMap extends Component {
           this.toggleLoader();
         });
       }
+  }
+  getResidentialGeoJson(map) {
+      getResidentialBuildingGeoJson(this.state.selectedSublayer).then(resp => {
+        this.removeAllLayers();
+        this.addGeoJsonLayer(resp, mapConfig.buildingsToolTip, '#F27B21', map);
+        this.toggleLoader();
+      });
+
   }
 
   toggleLoader() {
@@ -309,6 +313,10 @@ class GeoMap extends Component {
         this.toggleLoader();
         this.setState({selectedSublayer: this.map.selectedOverlayGroupName()});
         this.getAmenitiesGeoJson(this.map);
+        if(this.map.selectedOverlayLayerName() === 'Live Downtown'){
+          this.getResidentialGeoJson(this.map)
+        }
+
       });
     }
     this.map.on('overlayChange', () => {
@@ -343,6 +351,13 @@ class GeoMap extends Component {
       options = {
         overlays: subOverlayMapsStoryTwo['Clean and Welcoming'],
         enableSwitcher: false
+      }
+    }else if (overlayName === 'Live Downtown') {
+      options = {
+        overlays: subOverlayMapsStoryTwo['Live Downtown'],
+        enableSwitcher: true,
+        enableSubOverlay: false,
+        selected: "2018"
       }
     }
     if(this.state.currentSubLayerControl !== null){

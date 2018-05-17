@@ -183,8 +183,22 @@ export function getWelcomingGeoJsonLayers() {
   });
 }
 
-export function getResidentialBuildingGeoJson() {
-  return fetch('https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outFields=*&where=1=1&returnGeometry=true&outSR=4326&f=geojson').then(function (response) {
+export function getResidentialBuildingGeoJson(year) {
+  let filter = 'where=1=1';
+  if(year === '2018'){
+    filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'"
+  }else if(year === '2019'){ filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'"
+  }else if(year === '2020'){
+    filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'"
+  }
+  else if(year === '2021'){
+    filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'"
+  }
+  else if(year === '2022'){
+   filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'+OR+EstDelivery='2022'"
+  }
+  return fetch(`https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outFields=*&${filter}&returnGeometry=true&outSR=4326&f=geojson`).then(function (response) {
     return response.json()
   });
+
 }
