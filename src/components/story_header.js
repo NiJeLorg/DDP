@@ -1,8 +1,9 @@
 import React from "react";
 
 const StoryHeader = ({chapter}) => {
+  const className = chapter.id === 2 ? "c-story-header c-story-header__public-life": "c-story-header";
   return (
-    <div className="c-story-header">
+    <div className={className}>
       <div className="c-bevelled-box__story-header">
         <div className="c-chapter-card">
           <header>

@@ -172,6 +172,11 @@
   background-position-y: -450px;
   background-position-x: 450px;
   height: 350px;
+  &__public-life {
+    background-image: url("./../img/ambassadors.jpg");
+    background-position-y: -250px;
+    background-position-x: 0px;
+  }
 }
 
 .c-btn {

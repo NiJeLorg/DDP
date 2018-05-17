@@ -110,7 +110,7 @@ class GeoMap extends Component {
       bounds: L.latLngBounds(southWest, northEast)
     };
   }
-  
+
 
   setOverlayLayerZoom(overlayName, map) {
     map.setZoom(14);
