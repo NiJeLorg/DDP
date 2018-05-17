@@ -124,7 +124,7 @@ L.Map.addInitHook(function () {
     });
 
     this.on('unload', function () {
-      L.DomEvent.off(document, overlayGroupChange, overlayGroupChange);
+      L.DomEvent.off(document, overlayGroupChange, onOverlayGroupChange);
     });
   }
 });
