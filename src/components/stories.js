@@ -22,7 +22,7 @@ class Stories extends React.Component {
           },
           chart: {
           style: {
-            fontFamily: 'Avenir-Medium'
+            fontFamily: 'Avenir-Roman'
           }
         }
         });
@@ -30,6 +30,11 @@ class Stories extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+
+    this.setState({chapter: nextProps.chapter})
   }
 
   render() {
