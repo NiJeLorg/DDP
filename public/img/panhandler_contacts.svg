@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="85px" viewBox="0 0 85 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 85 0 85 85 0 85"></polygon>
+    </defs>
+    <g id="Amenities" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-138.000000, -932.000000)">
+        <g id="Page-1" transform="translate(138.000000, 932.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M25.765625,19.34238 C23.9947917,13.131524 21.9583333,8.69519833 18.328125,8.69519833 C17.4427083,8.69519833 16.6458333,8.96137787 15.9375,9.49373695 L6.46354167,0 L0.265625,6.29958246 L11.5104167,17.5678497 C10.1822917,21.6492693 9.11979167,26.6179541 7.61458333,31.7640919 C5.046875,40.4592902 0,49.3319415 0,53.6795407 C0,63.7943633 8.234375,72.045929 18.328125,72.045929 C28.421875,72.045929 36.65625,63.7943633 36.65625,53.6795407 C36.65625,50.2192067 33.46875,43.9196242 30.9010417,37.0876827 L78.7135417,85 L85,85 L85,78.7004175 L25.765625,19.34238 Z" id="Fill-1" fill="#2A316C" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>
