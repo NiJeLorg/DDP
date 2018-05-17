@@ -89,7 +89,6 @@ class GeoMap extends Component {
 
   constructor(props){
     super(props);
-    console.log(props.chapter, "PROPS")
     this.state = {
       loading: false,
       chapter: props.chapter,
@@ -115,11 +114,7 @@ class GeoMap extends Component {
 
 
   setOverlayLayerZoom(overlayName, map) {
-    if (overlayName !== 'Education Attainment') {
-      map.setZoom(14);
-    } else {
-      map.setZoom(12);
-    }
+    map.setZoom(14);
   }
 
   getChoroplethGeoJson(overlayName, map) {
@@ -162,9 +157,7 @@ class GeoMap extends Component {
     const subOverlay = subOverlayMapsStoryTwo['Clean and Welcoming'];
     getWelcomingDataGeoJsonLayers().then(resp => {
       this.removeAllLayers();
-      console.log(resp, "resta")
       _.forEach(resp, (val, key) => {
-        console.log(val, key, "data")
         if(subOverlayMapsStoryTwo['Clean and Welcoming'].hasOwnProperty(key)){
           this.addGeoJsonLayer(val, mapConfig.welcomingToolTip, subOverlay[key]['color'], map);
         }

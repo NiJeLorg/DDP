@@ -202,3 +202,39 @@ export function getResidentialBuildingGeoJson(year) {
   });
 
 }
+
+
+export function getResidentialUnitsData() {
+  const baseUrl = `https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outStatistics=[{"statisticType": "sum","onStatisticField": "units","outStatisticFieldName": "total_units"}]&`;
+  const returnType = "&f=json";
+  const data2018 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'";
+  const data2019 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'";
+  const data2020 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'";
+  const data2021 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'";
+  const data2022 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'+OR+EstDelivery='2022'";
+  const req2018 = fetch(baseUrl + data2018 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2019 = fetch(baseUrl + data2019 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2020 = fetch(baseUrl + data2020 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2021 = fetch(baseUrl + data2021 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2022 = fetch(baseUrl + data2022 + returnType).then(function (response) {
+    return response.json()
+  });
+  return Promise.all([req2018, req2019, req2020, req2021, req2022]).then(([resp2018, resp2019, resp2020, resp2021, resp2022]) => {
+    return {
+      '2018': resp2018['features'][0]['attributes']['total_units'],
+      '2019': resp2019['features'][0]['attributes']['total_units'],
+      '2020': resp2020['features'][0]['attributes']['total_units'],
+      '2021': resp2021['features'][0]['attributes']['total_units'],
+      '2022': resp2022['features'][0]['attributes']['total_units'],
+    }
+  });
+
+}

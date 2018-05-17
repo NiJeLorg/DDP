@@ -29,14 +29,14 @@ const WORKS = [
     id: 'graffiti'
   },
   {
-    img: '/img/panhandler.svg',
+    img: '/img/panhandler_contacts.svg',
     count: 0,
     matcher: 'Panhandling',
     label: 'Panhandler Contacts',
     id: 'panhandler'
   },
   {
-    img: '/img/businesses.svg',
+    img: '/img/business_contacts.svg',
     count: 0,
     matcher: 'Business Contacts',
     label: 'Businesses Contacts',
