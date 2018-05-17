@@ -19,7 +19,12 @@ class Stories extends React.Component {
         {
           lang: {
             thousandsSep: ','
+          },
+          chart: {
+          style: {
+            fontFamily: 'Avenir-Medium'
           }
+        }
         });
   }
 
