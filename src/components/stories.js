@@ -9,7 +9,9 @@ import HighchartsExportingData from 'highcharts/modules/export-data';
 import ReactHighstock from 'react-highcharts/ReactHighstock';
 HighchartsExporting(ReactHighstock.Highcharts);
 HighchartsExporting(ReactHighcharts.Highcharts);
-// HighchartsExportingData(ReactHighcharts.Highcharts);
+HighchartsExportingData(ReactHighcharts.Highcharts);
+HighchartsExportingData(ReactHighstock.Highcharts);
+
 class Stories extends React.Component {
 
   setHighchartsSettings() {

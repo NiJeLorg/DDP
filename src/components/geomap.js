@@ -236,7 +236,7 @@ class GeoMap extends Component {
       radius: 6,
       fillColor: fillColor,
       color: "#000",
-      weight: 1,
+      weight: 0,
       opacity: 1,
       border: 'none',
       fillOpacity: 1

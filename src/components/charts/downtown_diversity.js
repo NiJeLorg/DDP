@@ -73,6 +73,24 @@ const config = {
     text: 'Downtown Diversity',
     align: 'left'
   },
+  exporting: {
+    chartOptions: { // specific options for the exported image
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
+
+    },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
+      }
+    },
+    fallbackToExportServer: false
+  },
   xAxis: {
     categories: COLUMNS,
     title: {

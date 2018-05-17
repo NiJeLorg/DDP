@@ -27,18 +27,24 @@ const config = {
   xAxis: {
     categories: Object.keys(REGIONS)
   },
-  exporting: {
-    chartOptions: { // specific options for the exported image
-      plotOptions: {
-        series: {
-          dataLabels: {
-            enabled: true
+    exporting: {
+      chartOptions: { // specific options for the exported image
+        plotOptions: {
+          series: {
+            dataLabels: {
+              enabled: true
+            }
           }
+        },
+
+      },
+      buttons: {
+        contextButton: {
+          menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
         }
-      }
+      },
+      fallbackToExportServer: false
     },
-    fallbackToExportServer: false
-  },
   chart: {
     plotBackgroundColor: null,
     plotBorderWidth: null,

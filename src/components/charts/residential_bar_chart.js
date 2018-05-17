@@ -21,6 +21,11 @@ const config = {
         }
       }
     },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
+      }
+    },
     fallbackToExportServer: false
   },
   tooltip: {
