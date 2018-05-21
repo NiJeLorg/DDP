@@ -72,9 +72,9 @@
     text-transform: uppercase; }
 
 .main-text, .main-text__black, .main-text__white {
-  font-family: "PTSerif-Regular", serif;
-  font-size: 20px;
-  line-height: 1.3; }
+  font-family: "Avenir-Roman";
+  font-size: 18px;
+  line-height: 1.2; }
   .main-text__black {
     color: #312f2f; }
   .main-text__white {
