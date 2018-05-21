@@ -6,10 +6,10 @@ import DataBar from './data_bar';
 
 
 const REGIONS = {
-  "DOWNTOWN DETROIT": ["14000US26163520700", "14000US26163517200", "14000US26163520800"],
-  "DOWNTOWN DENVER": ["14000US08031001702", "14000US08031001701"],
-  "DOWNTOWN PITTSBURGH": ["14000US42003020100"],
-  "DOWNTOWN BALTIMORE": ["14000US24510040100", "14000US24510220100"]
+  "DETROIT": ["14000US26163520700", "14000US26163517200", "14000US26163520800"],
+  "DENVER": ["14000US08031001702", "14000US08031001701"],
+  "PITTSBURGH": ["14000US42003020100"],
+  "BALTIMORE": ["14000US24510040100", "14000US24510220100"]
 };
 const PREFIX = 'B15003';
 const DATA_CATEGORIES = {
@@ -25,7 +25,12 @@ const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B1500
 const config = {
   colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382', '#ADC8EF'],
   xAxis: {
-    categories: Object.keys(REGIONS)
+    categories: Object.keys(REGIONS),
+    labels: {
+      formatter: function() {
+        return 'DOWNTOWN <br />' + this.value;
+      }
+    }
   },
     exporting: {
       chartOptions: { // specific options for the exported image
