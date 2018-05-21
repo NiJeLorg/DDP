@@ -13,7 +13,7 @@ class StoryBoard extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { match: { params } } = this.props;
+    const { match: { params } } = nextProps;
     this.setState({chapter: CHAPTERS[params.id]})
   }
 
