@@ -17,7 +17,7 @@ const DATA_CATEGORIES = {
   "Bachelor's": ['022'],
   "Some College": ['019', '020'],
   "High School": ['017', '018'],
-  "No Degree": ['016'],
+  "Less than High School Diploma": ['016'],
 };
 const geoIds = _.flatten(Object.values(REGIONS));
 const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B15003&geo_ids=${geoIds}`;
