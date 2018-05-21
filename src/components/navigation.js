@@ -30,12 +30,12 @@ class Navigation extends Component {
                 this.state.subMenuOpen ? "open" : "closed"
               }`}
             >
-              <li>01 Downtown In Context</li>
-              <li>02 Public Life</li>
+              <li><Link className={"menu-link"} to="/story/1">01 Downtown In Context</Link></li>
+              <li><Link className={"menu-link"} to="/story/2">02 Public Life </Link></li>
             </ul>
           </li>
           <li>
-            <p className="menu-item">Contact</p>
+            <a className="menu-item" href="http://downtowndetroit.org/about-ddp/contact/">Contact</a>
           </li>
         </ul>
         <ul className="menu__mobile">

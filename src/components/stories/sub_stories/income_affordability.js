@@ -111,13 +111,13 @@ class IncomeAffordability extends Component {
             <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>AVERAGE MONTHLY RENT</Link>
           </div>
           <div className={"grouped"}>
-            <IncomeAreaChart data={this.state.detroit} yScale={this.state.maxYScale} title={"DOWNTOWN DETROIT"}
+            <IncomeAreaChart data={this.state.detroit} yScale={this.state.maxYScale} title={"DOWNTOWN<br/>DETROIT"}
                              color={"#00A0DF"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.denver} yScale={this.state.maxYScale} title={"DOWNTOWN DENVER"}
+            <IncomeAreaChart data={this.state.denver} yScale={this.state.maxYScale} title={"DOWNTOWN<br/>DENVER"}
                              color={"#FF9E15"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.baltimore} yScale={this.state.maxYScale} title={"DOWNTOWN BALTIMORE"}
+            <IncomeAreaChart data={this.state.baltimore} yScale={this.state.maxYScale} title={"DOWNTOWN<br/>BALTIMORE"}
                              color={"#009382"} className={'chart'}/>
-            <IncomeAreaChart data={this.state.pittsburgh} yScale={this.state.maxYScale} title={"DOWNTOWN PITTSBURGH"}
+            <IncomeAreaChart data={this.state.pittsburgh} yScale={this.state.maxYScale} title={"DOWNTOWN<br/>PITTSBURGH"}
                              color={"#D5D654"} className={'chart'}/>
           </div>
           <DataBar/>

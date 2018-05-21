@@ -3,6 +3,8 @@ import {generateDateRanges} from "../utils/app";
 import _ from 'lodash';
 import Moment from 'moment';
 import {extendMoment} from 'moment-range';
+import gsjson from 'google-spreadsheet-to-json';
+import GeoJSON from  'geojson';
 
 const moment = extendMoment(Moment);
 
@@ -95,4 +97,144 @@ export function getAmenitiesData() {
     };
     return resp;
   })
+}
+
+export function getCleaningWelcomingWorkData() {
+  return gsjson({
+    spreadsheetId: '1r6-qbuca22jmO3PooE0ElvKaubvoM-l8PwAP7wJ6ASY',
+    worksheet: ['Summary']
+  })
+}
+
+
+
+
+export function getAmenitiesServicesGeoJsonLayers() {
+  const restaurantsReq = fetch("https://opendata.arcgis.com/datasets/f32e553f2b8f44258d46fbc7dbee1bf0_0.geojson").then(function (response) {
+    return response.json()
+  });
+  const retailersReq = fetch("https://opendata.arcgis.com/datasets/fbd1487a98d14012acf7bd9cefe5f02e_0.geojson").then(function (response) {
+    return response.json()
+  });
+
+  const parksReq = fetch("https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ParksPlazasDowntown/FeatureServer/0/query?outFields=*&where=BIZ_Maint='yes'&returnGeometry=true&outSR=4326&f=geojson"
+  ).then(function (response) {
+    return response.json()
+  });
+  return Promise.all([restaurantsReq, retailersReq, parksReq]).then(([restaurants, retailers, parkData]) => {
+     return {
+       'restaurants': restaurants,
+       'retailers': retailers,
+       'parks': parkData
+     }
+  })
+}
+
+export function getAmenitiesInfrasctructureGeoJsonLayers() {
+  const parkingGaragesReq = fetch("https://opendata.arcgis.com/datasets/1d3252a24eb0497c9a32d2f531f34da6_0.geojson\n").then(function (response) {
+    return response.json()
+  });
+
+  const lighthousesReq = fetch("https://opendata.arcgis.com/datasets/35296f2001f94a37879586e35e8e0717_0.geojson").then(function (response) {
+    return response.json()
+  });
+
+  const mogoStationsReq = fetch("https://opendata.arcgis.com/datasets/aed58cd4930d44db9da8867c5e784efd_0.geojson").then(function (response) {
+    return response.json()
+  });
+  return Promise.all([parkingGaragesReq, lighthousesReq, mogoStationsReq]).then(([parkingGarages, lighthouses, mogoStations]) => {
+    return {
+      'parking garages': parkingGarages,
+      'lighthouses': lighthouses,
+      'MoGo stations': mogoStations
+    }
+  });
+}
+
+export function getWelcomingDataGeoJsonLayers() {
+  return gsjson({
+    spreadsheetId: '1r6-qbuca22jmO3PooE0ElvKaubvoM-l8PwAP7wJ6ASY',
+    worksheet: ['March_EverythingReport.csv']
+  }).then(resp => {
+    let dataset = {};
+    _.forEach(resp[0], (val, key) => {
+        if(!dataset.hasOwnProperty(val['type'])){
+          dataset[val['type']] = [];
+        }
+      dataset[val['type']].push(val)
+    });
+    let geoJsonDataset = {};
+    _.forEach(dataset, (val, key) => {
+      geoJsonDataset[key] = GeoJSON.parse(val, {Point: ['latitude', 'longitude']});
+    });
+    return geoJsonDataset;
+  })
+}
+
+export function getWelcomingGeoJsonLayers() {
+  const landscapingReq = fetch("https://opendata.arcgis.com/datasets/0836afc43295419d93d0de55aec712c0_0.geojson ").then(function (response) {
+    return response.json()
+  });
+
+  return Promise.all([landscapingReq]).then(([landscapingData]) => {
+    return {
+      'landscaping': landscapingData,
+    }
+  });
+}
+
+export function getResidentialBuildingGeoJson(year) {
+  let filter = 'where=1=1';
+  if(year === '2018'){
+    filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'"
+  }else if(year === '2019'){ filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'"
+  }else if(year === '2020'){
+    filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'"
+  }
+  else if(year === '2021'){
+    filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'"
+  }
+  else if(year === '2022'){
+   filter = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'+OR+EstDelivery='2022'"
+  }
+  return fetch(`https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outFields=*&${filter}&returnGeometry=true&outSR=4326&f=geojson`).then(function (response) {
+    return response.json()
+  });
+
+}
+
+
+export function getResidentialUnitsData() {
+  const baseUrl = `https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outStatistics=[{"statisticType": "sum","onStatisticField": "units","outStatisticFieldName": "total_units"}]&`;
+  const returnType = "&f=json";
+  const data2018 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'";
+  const data2019 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'";
+  const data2020 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'";
+  const data2021 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'";
+  const data2022 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'+OR+EstDelivery='2019'+OR+EstDelivery='2020'+OR+EstDelivery='2021'+OR+EstDelivery='2022'";
+  const req2018 = fetch(baseUrl + data2018 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2019 = fetch(baseUrl + data2019 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2020 = fetch(baseUrl + data2020 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2021 = fetch(baseUrl + data2021 + returnType).then(function (response) {
+    return response.json()
+  });
+  const req2022 = fetch(baseUrl + data2022 + returnType).then(function (response) {
+    return response.json()
+  });
+  return Promise.all([req2018, req2019, req2020, req2021, req2022]).then(([resp2018, resp2019, resp2020, resp2021, resp2022]) => {
+    return {
+      '2018': resp2018['features'][0]['attributes']['total_units'],
+      '2019': resp2019['features'][0]['attributes']['total_units'],
+      '2020': resp2020['features'][0]['attributes']['total_units'],
+      '2021': resp2021['features'][0]['attributes']['total_units'],
+      '2022': resp2022['features'][0]['attributes']['total_units'],
+    }
+  });
+
 }

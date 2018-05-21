@@ -173,6 +173,56 @@ const aggregateCrimeData = (geoJson) =>{
   return aggregateGeoJson;
 };
 
+const restaurantsToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.Name} ${feature.properties.Street_Address} ${feature.properties.Phone_Number}`
+  });
+};
+const retailToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.COMPANYNAME}`
+  });
+};
+const lighthousesToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.PopupInfo}`
+  });
+};
+
+const parksToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.FULLNAME}`
+  });
+};
+const parkingGarageToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.FacilityName}. Total Parking Space: ${feature.properties.TotalSpace}`
+  });
+};
+const mogoToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.Name} - ${feature.properties.Location}`
+  });
+};
+
+const welcomingToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.ambassadorFullname} - ${feature.properties.zoneTitle}`
+  });
+};
+
+const landscapingToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.LndscpArea} - ${feature.properties.LndscpNum}`
+  });
+};
+
+const buildingsToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.Building_Name}. Address: ${feature.properties.Address} 
+    Units: ${feature.properties.Units} Tenure: ${feature.properties.Tenure}`
+  });
+};
 
 
 export default {
@@ -197,6 +247,16 @@ export default {
   educationAttainmentValProperty,
   educationAttainmentToolTip,
   aggregateCrimeData,
+  restaurantsToolTip,
+  retailToolTip,
+  lighthousesToolTip,
+  parksToolTip,
+  parkingGarageToolTip,
+  mogoToolTip,
+  welcomingToolTip,
+  landscapingToolTip,
+  buildingsToolTip,
+
   EDUCATION_ATTAINMENT_GEO_API,
   WAC_GEO_API,
   EDUCATION_ATTAINMENT_DATA_API,

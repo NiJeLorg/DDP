@@ -8,6 +8,24 @@ const PIE_CHART_CONFIG = {
     width: 300,
     height: 300,
   },
+  exporting: {
+    chartOptions: { // specific options for the exported image
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
+
+    },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
+      }
+    },
+    fallbackToExportServer: false
+  },
   title: {
     text: ''
   },
@@ -61,6 +79,24 @@ const AREA_CHART_CONFIG = {
     type: 'area',
     width: 250,
     height: 250,
+  },
+  exporting: {
+    chartOptions: { // specific options for the exported image
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
+
+    },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
+      }
+    },
+    fallbackToExportServer: false
   },
   title: {
     text: ''

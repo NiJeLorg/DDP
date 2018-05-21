@@ -38,6 +38,12 @@ const config = {
             enabled: true
           }
         }
+      },
+
+    },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
       }
     },
     fallbackToExportServer: false
@@ -47,6 +53,9 @@ const config = {
     plotBorderWidth: null,
     plotShadow: false,
     type: 'column',
+    events: {
+      load: Highcharts.drawTable
+    },
   },
   title: {
     text: null

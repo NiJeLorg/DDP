@@ -1,14 +1,20 @@
 import React from "react";
 import StoryHeader from "./story_header";
 import StoryOne from "./stories/story_one";
+import StoryTwo from "./stories/story_two";
 
-const StoryNavigator = () => {
+const StoryNavigator = ({chapter}) => {
+  let  story = "";
+  if(chapter.id === 1){
+     story = <StoryOne />;
+  }else if(chapter.id === 2){
+     story = <StoryTwo />;
+  }
+
+
   return (
     <div className={"c-story-navigator"}>
-      {/* <div className="c-data-drawer-nav">
-        <h1 className="title">Data Drawer</h1>
-      </div> */}
-      <StoryOne />
+      {story}
     </div>
   );
 };

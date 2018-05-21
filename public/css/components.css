@@ -115,6 +115,10 @@
   background-position-y: -450px;
   background-position-x: 450px;
   height: 350px; }
+  .c-story-header__public-life {
+    background-image: url("./../img/ambassadors.jpg");
+    background-position-y: -250px;
+    background-position-x: 0px; }
 
 .c-btn {
   /* Rectangle: */
@@ -148,6 +152,7 @@
   .c-navbar .menu {
     display: flex; }
     .c-navbar .menu .menu-item {
+      text-decoration: none;
       font-family: "AvenirLTPro-Black", sans-serif;
       margin: 0;
       text-transform: uppercase;

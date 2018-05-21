@@ -72,8 +72,8 @@
     text-transform: uppercase; }
 
 .main-text, .main-text__black, .main-text__white {
-  font-family: "PTSerif-Regular", serif;
-  font-size: 20px;
+  font-family: "Avenir-Roman";
+  font-size: 18px;
   line-height: 1.3; }
   .main-text__black {
     color: #312f2f; }
@@ -88,7 +88,8 @@
 
 .c-counter .img {
   margin-left: 12px;
-  margin-right: 12px; }
+  margin-right: 12px;
+  height: 45px; }
 
 .c-counter .number {
   font-family: "AvenirLTPro-Black";
@@ -105,7 +106,8 @@
   height: 100%; }
 
 .ul-yellow-color {
-  color: #E0E060; }
+  color: #E0E060;
+  margin-right: 5px; }
 
 .ul-greyedout-text {
   color: grey; }
@@ -120,6 +122,15 @@
   margin: auto;
   height: 100%;
   width: inherit; }
+
+.dot {
+  height: 11px;
+  width: 11px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 5px; }
 
 .c-main-logo {
   position: absolute;
@@ -238,6 +249,10 @@
   background-position-y: -450px;
   background-position-x: 450px;
   height: 350px; }
+  .c-story-header__public-life {
+    background-image: url("./../img/ambassadors.jpg");
+    background-position-y: -250px;
+    background-position-x: 0px; }
 
 .c-btn {
   /* Rectangle: */
@@ -271,6 +286,7 @@
   .c-navbar .menu {
     display: flex; }
     .c-navbar .menu .menu-item {
+      text-decoration: none;
       font-family: "AvenirLTPro-Black", sans-serif;
       margin: 0;
       text-transform: uppercase;
@@ -777,6 +793,9 @@ hr {
     .btn-switcher a:hover {
       background-color: #13294B;
       color: white; }
+    .btn-switcher a.active {
+      background-color: #13294B;
+      color: white; }
 
 .u-invisible-element {
   visibility: hidden; }
@@ -863,3 +882,46 @@ hr {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px; }
+
+.leaflet-control-sub-layer-select {
+  opacity: 0.9;
+  background: #FFFFFF;
+  border: 2px solid #C5C8CD;
+  padding: 10px; }
+  .leaflet-control-sub-layer-select .overlay-switcher {
+    display: flex;
+    margin: 4px; }
+    .leaflet-control-sub-layer-select .overlay-switcher a.active-menu {
+      background-color: #909DAC; }
+    .leaflet-control-sub-layer-select .overlay-switcher a {
+      background: #C5C8CD;
+      font-family: "AvenirLTPro-Black";
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 4px;
+      text-decoration: none;
+      width: auto !important;
+      height: 20px !important;
+      line-height: normal;
+      border: none !important;
+      border-bottom-left-radius: 0px !important;
+      border-bottom-right-radius: 0px !important; }
+  .leaflet-control-sub-layer-select ul.sub-overlay-menu {
+    margin-left: 10px;
+    margin-right: 10px; }
+    .leaflet-control-sub-layer-select ul.sub-overlay-menu li {
+      /* Parking Garage: */
+      font-family: "AvenirLTPro-Black";
+      font-size: 12px;
+      color: #13294B;
+      text-align: left;
+      text-transform: capitalize;
+      margin-bottom: 5px; }
+
+.menu-link {
+  text-decoration: none;
+  color: white; }
+  .menu-link:hover {
+    color: #e0e060; }

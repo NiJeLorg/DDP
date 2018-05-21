@@ -73,6 +73,24 @@ const config = {
     text: 'Downtown Diversity',
     align: 'left'
   },
+  exporting: {
+    chartOptions: { // specific options for the exported image
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
+
+    },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
+      }
+    },
+    fallbackToExportServer: false
+  },
   xAxis: {
     categories: COLUMNS,
     title: {
@@ -82,6 +100,9 @@ const config = {
   yAxis: {
     title: {
       text: 'People'
+    },
+    labels: {
+      format: '{value:,.0f}'
     },
     min: 0
   },
@@ -99,9 +120,10 @@ const config = {
   series: [],
   legend: {
     verticalAlign: 'top',
-    y: -20,
+    // y: -20,
     backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-    symbolRadius: 0
+    symbolRadius: 0,
+    itemMarginBottom: 4,
   },
 
 };

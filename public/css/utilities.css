@@ -2,7 +2,8 @@
   height: 100%; }
 
 .ul-yellow-color {
-  color: #E0E060; }
+  color: #E0E060;
+  margin-right: 5px; }
 
 .ul-greyedout-text {
   color: grey; }
@@ -17,3 +18,12 @@
   margin: auto;
   height: 100%;
   width: inherit; }
+
+.dot {
+  height: 11px;
+  width: 11px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 5px; }

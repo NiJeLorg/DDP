@@ -15,6 +15,24 @@ const config = {
     enabled: false,
     inputEnabled: false
   },
+  exporting: {
+    chartOptions: { // specific options for the exported image
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
+
+    },
+    buttons: {
+      contextButton: {
+        menuItems:['downloadJPEG', 'downloadPNG', 'downloadCSV', 'downloadXLS', 'downloadPDF']
+      }
+    },
+    fallbackToExportServer: false
+  },
   title: {
     text: null,
   },
