@@ -12,7 +12,7 @@ const Employment = () => {
       <div>
 
         <div>
-          <img className="employment-svg" src="./img/employment.svg" alt=""/>
+          <img className="employment-svg" src="/img/employment.svg" alt=""/>
         </div>
         <span className="chart-header">2016 CENSUS RESIDENTS DIVERSITY </span>
       </div>
