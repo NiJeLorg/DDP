@@ -793,6 +793,9 @@ hr {
     .btn-switcher a:hover {
       background-color: #13294B;
       color: white; }
+    .btn-switcher a.active {
+      background-color: #13294B;
+      color: white; }
 
 .u-invisible-element {
   visibility: hidden; }
