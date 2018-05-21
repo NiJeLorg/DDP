@@ -2,7 +2,8 @@
   height: 100%; }
 
 .ul-yellow-color {
-  color: #E0E060; }
+  color: #E0E060;
+  margin-right: 5px; }
 
 .ul-greyedout-text {
   color: grey; }
