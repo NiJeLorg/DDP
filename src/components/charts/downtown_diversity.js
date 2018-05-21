@@ -101,6 +101,9 @@ const config = {
     title: {
       text: 'People'
     },
+    labels: {
+      format: '{value:,.0f}'
+    },
     min: 0
   },
   plotOptions: {
