@@ -120,9 +120,10 @@ const config = {
   series: [],
   legend: {
     verticalAlign: 'top',
-    y: -20,
+    // y: -20,
     backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-    symbolRadius: 0
+    symbolRadius: 0,
+    itemMarginBottom: 4,
   },
 
 };
