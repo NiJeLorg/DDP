@@ -110,6 +110,7 @@ class GeoMap extends Component {
       lat: mapConfig.DETROIT_POSITION.lat,
       lng: mapConfig.DETROIT_POSITION.lng,
       overlaySelectControl: null,
+      fullScreenControl: null,
       zoom: mapConfig.ZOOM_LEVEL,
       educationAttainmentGeoJson: {},
       rentIncomeMedianGeoJson: {},
@@ -340,7 +341,6 @@ class GeoMap extends Component {
         this.addSubOverlayControl(this.map);
       }
     });
-    this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
     this.loadDefaultLayer(this.state.defaultLayer, this.map);
     this.setState({map: this.map});
 
@@ -359,7 +359,11 @@ class GeoMap extends Component {
     const overlaySelectControl = L.control.overlayselect({
       overlays: this.state.overlayMaps
     }).addTo(map);
-    this.setState({overlaySelectControl});
+    if(this.state.fullScreenControl !== null) {
+      this.state.fullScreenControl.remove();
+    }
+    const fullScreenControl =  new L.Control.Fullscreen({position: 'topright'}).addTo(map);//map.addControl(new L.Control.Fullscreen({position: 'topright'}));
+    this.setState({overlaySelectControl, fullScreenControl});
   }
   addSubOverlayControl(map) {
     let options = null;
