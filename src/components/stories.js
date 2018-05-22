@@ -30,10 +30,12 @@ class Stories extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      chapter: this.props.chapter
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-
     this.setState({chapter: nextProps.chapter})
   }
 
@@ -42,8 +44,8 @@ class Stories extends React.Component {
     return (
       <div className="c-stories">
         <DataDrawer />
-        <StoryNavigator chapter={this.props.chapter} />
-        <GeoMap chapter={this.props.chapter} />
+        <StoryNavigator chapter={this.state.chapter} />
+        <GeoMap chapter={this.state.chapter} />
       </div>
     );
   }
