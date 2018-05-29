@@ -4,6 +4,9 @@ import _ from 'lodash';
 import classNames from 'classnames';
 import {PulseLoader} from 'react-spinners';
 import L from 'leaflet';
+import { setActiveOverlay } from "../actions/index";
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
 import {
   getEducationAttainmentGeoJson,
   getWACGeoJson,
@@ -105,7 +108,7 @@ class GeoMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
       chapter: props.chapter,
       lat: mapConfig.DETROIT_POSITION.lat,
       lng: mapConfig.DETROIT_POSITION.lng,
@@ -120,7 +123,6 @@ class GeoMap extends Component {
       geoJson: {},
       crimeGeoJson: {},
       selectedSublayer: '',
-      defaultLayer: props.chapter.id === 1 ? 'Education Attainment' : 'Clean and Welcoming',
       currentSubLayerControl: null,
       map: {},
       overlayMaps: props.chapter.id === 1 ? overlayMapsStoryOne : overlayMapsStoryTwo,
@@ -301,47 +303,25 @@ class GeoMap extends Component {
       id: 'mapbox.light',
       attribution: mapConfig.MAPBOX_ATTRIBUTION,
     }).addTo(this.map);
-    // let defaultLayer = '';
-    // if (this.state.chapter.id === 1){
-    //   defaultLayer =  'Education Attainment';
-    //   this.setState({overlayMaps: overlayMapsStoryOne})
-    // }else if(this.state.chapter.id === 2){
-    //   defaultLayer = 'Clean and Welcoming';
-    //   this.setState({overlayMaps: overlayMapsStoryTwo});
-    //   this.setState({selectedSublayer: 'services'});
-    // }
 
 
     this.setOverlayMaps();
+
     this.addOverlaySelectControl(this.map);
-    // L.control.overlayselect({
-    //   overlays: this.state.overlayMaps
-    // }).addTo(this.map);
 
     this.setSubOverlayControl(this.map);
-    // if(this.state.chapter.id === 2) {
-    //   this.addSubOverlayControl(this.state.defaultLayer, this.map);
-    //   this.map.zoomControl.setPosition('topright');
-    //   this.map.on('overlayGroupChange', () => {
-    //     this.toggleLoader();
-    //     this.setState({selectedSublayer: this.map.selectedOverlayGroupName()});
-    //     this.getAmenitiesGeoJson(this.map);
-    //     if(this.map.selectedOverlayLayerName() === 'Live Downtown'){
-    //       this.getResidentialGeoJson(this.map)
-    //     }
-    //
-    //   });
-    // }
+    console.log("loading default layer", this.props.activeOverlay);
+    this.loadDefaultLayer(this.props.activeOverlay, this.map);
     this.map.on('overlayChange', () => {
       this.toggleLoader();
-      this.setState({defaultLayer: this.map.selectedOverlayLayerName()});
+      // this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
       this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map);
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName(), this.map);
       if (this.state.chapter.id === 2) {
         this.addSubOverlayControl(this.map);
       }
     });
-    this.loadDefaultLayer(this.state.defaultLayer, this.map);
+
     this.setState({map: this.map});
 
 
@@ -367,17 +347,17 @@ class GeoMap extends Component {
   }
   addSubOverlayControl(map) {
     let options = null;
-    if (this.state.defaultLayer === 'Amenities') {
+    if (this.props.activeOverlay === 'Amenities') {
       options = {
         overlays: subOverlayMapsStoryTwo['Amenities'],
         selected: "services"
       }
-    } else if (this.state.defaultLayer === 'Clean and Welcoming') {
+    } else if (this.props.activeOverlay === 'Clean and Welcoming') {
       options = {
         overlays: subOverlayMapsStoryTwo['Clean and Welcoming'],
         enableSwitcher: false
       }
-    } else if (this.state.defaultLayer === 'Live Downtown') {
+    } else if (this.props.activeOverlay === 'Live Downtown') {
       options = {
         overlays: subOverlayMapsStoryTwo['Live Downtown'],
         enableSwitcher: true,
@@ -400,15 +380,14 @@ class GeoMap extends Component {
   updateMapControls(){
     this.addOverlaySelectControl(this.state.map);
     this.setSubOverlayControl(this.state.map);
-    this.loadDefaultLayer(this.state.defaultLayer, this.map);
+    this.loadDefaultLayer(this.props.activeOverlay, this.map);
   }
 
   setOverlayMaps() {
     if (this.state.chapter.id === 1) {
-      this.setState({defaultLayer: 'Education Attainment', overlayMaps: overlayMapsStoryOne},  function() {this.updateMapControls()});
+      this.setState({overlayMaps: overlayMapsStoryOne},  function() {this.updateMapControls()});
     } else if (this.state.chapter.id === 2) {
       this.setState({
-        defaultLayer: 'Clean and Welcoming',
         overlayMaps: overlayMapsStoryTwo,
         selectedSublayer: 'services'},  function() {this.updateMapControls()});
     }
@@ -434,6 +413,7 @@ class GeoMap extends Component {
 
   componentWillReceiveProps(nextProps) {
     console.log("Chapter changed", nextProps.chapter);
+    console.log("Substory Chapter changed", nextProps.activeOverlay);
     this.setState({chapter: nextProps.chapter}, function(){this.setOverlayMaps()});
   }
 
@@ -458,5 +438,14 @@ class GeoMap extends Component {
 
 }
 
+function mapStateToProps(state) {
+  return {
+    activeOverlay: state.activeOverlay
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setActiveOverlay: setActiveOverlay }, dispatch)
+}
 
-export default GeoMap;
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeoMap);

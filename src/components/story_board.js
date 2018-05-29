@@ -3,18 +3,26 @@ import Navigation from './navigation';
 import StoryHeader from './story_header';
 import Stories from './stories';
 import CHAPTERS from './../utils/content';
+import { setActiveOverlay } from "../actions/index";
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+
+
 class StoryBoard extends Component {
   constructor(props) {
     super(props);
     const { match: { params } } = this.props;
+
     this.state = {
       chapter: CHAPTERS[params.id]
-    }
+    };
+    this.props.setActiveOverlay(CHAPTERS[params.id]['defaultOverlay']);
   }
 
   componentWillReceiveProps(nextProps) {
     const { match: { params } } = nextProps;
-    this.setState({chapter: CHAPTERS[params.id]})
+    this.setState({chapter: CHAPTERS[params.id]});
+    this.props.setActiveOverlay(CHAPTERS[params.id]['defaultOverlay']);
   }
 
   render() {
@@ -29,4 +37,13 @@ class StoryBoard extends Component {
 
 }
 
-export default StoryBoard;
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setActiveOverlay: setActiveOverlay }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StoryBoard);

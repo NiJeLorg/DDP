@@ -5,6 +5,11 @@ import ReactDOM from "react-dom";
 import Home from "./components/home";
 import Chapters from "./components/chapters";
 import StoryBoard from "./components/story_board";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import reducers from './reducers';
+
+
 import {
   BrowserRouter,
   HashRouter,
@@ -12,7 +17,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +36,9 @@ class App extends Component {
 
 ReactDOM.render(
   <BrowserRouter>
+    <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
+    </Provider>
   </BrowserRouter>,
   document.querySelector(".app")
 );
