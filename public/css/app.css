@@ -132,6 +132,9 @@
   vertical-align: baseline;
   margin-right: 5px; }
 
+.fill-height {
+  height: 100vh; }
+
 .c-main-logo {
   position: absolute;
   padding: 30px 40px; }

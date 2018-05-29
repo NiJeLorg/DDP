@@ -5,17 +5,17 @@ const AMENITIES = [
   {
     img: '/img/restaurant.svg',
     count: 0,
-    label: 'NEW Restaurants Since 2015',
+    label: 'Restaurants Downtown',
     id: 'restaurants'
   },{
     img: '/img/retail.svg',
     count: 0,
-    label: 'NEW Restaurants Since 2015',
+    label: 'Retail Downtown',
     id: 'retailers'
   },{
     img: '/img/park.svg',
     count: 0,
-    label: 'NEW Restaurants Since 2015',
+    label: 'Parks Maintained',
     id: 'parks'
   }
 ];

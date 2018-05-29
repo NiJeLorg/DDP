@@ -28,13 +28,13 @@ const WORKS = [
     label: 'Feet of Graffiti Removed',
     id: 'graffiti'
   },
-  {
-    img: '/img/panhandler_contacts.svg',
-    count: 0,
-    matcher: 'Panhandling',
-    label: 'Panhandler Contacts',
-    id: 'panhandler'
-  },
+  // {
+  //   img: '/img/panhandler_contacts.svg',
+  //   count: 0,
+  //   matcher: 'Panhandling',
+  //   label: 'Panhandler Contacts',
+  //   id: 'panhandler'
+  // },
   {
     img: '/img/business_contacts.svg',
     count: 0,

@@ -1,5 +1,5 @@
 import React from 'react';
-import DataBar from  './data_bar';
+import ReadMore from  './read_more';
 
 const Counter = ({counter}) => {
   return (
@@ -9,7 +9,7 @@ const Counter = ({counter}) => {
         <span className={'number'}>{counter.count.toLocaleString()}</span>
         <span className={'label'}>{counter.label}</span>
       </div>
-      <DataBar/>
+      <ReadMore/>
     </div>
 
 

@@ -56,7 +56,7 @@ const subOverlayMapsStoryTwo = {
         color: "#00A992"
       },
       "parks": {
-        label: "parks",
+        label: "Parks Maintained",
         color: "#F27B21"
       }
     },
@@ -66,7 +66,7 @@ const subOverlayMapsStoryTwo = {
         color: "#F27B81"
       },
       "lighthouses": {
-        label: "lighthouses",
+        label: "Project Lighthouse stations",
         color: "#0039B1"
       },
       "MoGo stations": {
@@ -87,10 +87,10 @@ const subOverlayMapsStoryTwo = {
       label: "Motorist Assist",
       color: "#EF4060"
     },
-    "Panhandling": {
-      label: "Panhandler Contacts",
-      color: "#00B3EE"
-    },
+    // "Panhandling": {
+    //   label: "Panhandler Contacts",
+    //   color: "#00B3EE"
+    // },
     "Pedestrian Assistance": {
       label: "Pedestrian Assist",
       color: "#E0E060"

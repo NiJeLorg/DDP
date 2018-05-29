@@ -206,15 +206,15 @@ const mogoToolTip = (feature, layer) => {
 };
 
 const welcomingToolTip = (feature, layer) => {
-  layer.bindTooltip(() => {
-    return `${feature.properties.ambassadorFullname} - ${feature.properties.zoneTitle}`
-  });
+  // layer.bindTooltip(() => {
+  //   return `${feature.properties.ambassadorFullname} - ${feature.properties.zoneTitle}`
+  // });
 };
 
 const landscapingToolTip = (feature, layer) => {
-  layer.bindTooltip(() => {
-    return `${feature.properties.LndscpArea} - ${feature.properties.LndscpNum}`
-  });
+  // layer.bindTooltip(() => {
+  //   return `${feature.properties.LndscpArea} - ${feature.properties.LndscpNum}`
+  // });
 };
 
 const buildingsToolTip = (feature, layer) => {
