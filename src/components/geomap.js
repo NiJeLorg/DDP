@@ -108,7 +108,7 @@ class GeoMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      loading: false,
       chapter: props.chapter,
       lat: mapConfig.DETROIT_POSITION.lat,
       lng: mapConfig.DETROIT_POSITION.lng,
@@ -308,17 +308,14 @@ class GeoMap extends Component {
     this.setOverlayMaps();
 
     this.addOverlaySelectControl(this.map);
-
     this.setSubOverlayControl(this.map);
-    console.log("loading default layer", this.props.activeOverlay);
-    this.loadDefaultLayer(this.props.activeOverlay, this.map);
     this.map.on('overlayChange', () => {
       this.toggleLoader();
-      // this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
+      this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
       this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map);
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName(), this.map);
       if (this.state.chapter.id === 2) {
-        this.addSubOverlayControl(this.map);
+        this.setSubOverlayControl(this.map);
       }
     });
 
@@ -400,8 +397,7 @@ class GeoMap extends Component {
     if (this.state.chapter.id === 2) {
       this.addSubOverlayControl(map);
       map.on('overlayGroupChange', () => {
-        this.toggleLoader();
-        this.setState({selectedSublayer: map.selectedOverlayGroupName()});
+        this.setState({selectedSublayer: map.selectedOverlayGroupName(), loading: !this.state.loading});
         this.getAmenitiesGeoJson(map);
         if (map.selectedOverlayLayerName() === 'Live Downtown') {
           this.getResidentialGeoJson(map)
@@ -412,8 +408,6 @@ class GeoMap extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("Chapter changed", nextProps.chapter);
-    console.log("Substory Chapter changed", nextProps.activeOverlay);
     this.setState({chapter: nextProps.chapter}, function(){this.setOverlayMaps()});
   }
 
