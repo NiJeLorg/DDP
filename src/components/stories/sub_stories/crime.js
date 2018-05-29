@@ -92,7 +92,7 @@ class Crime extends Component {
 
   render() {
     return (
-      <div>
+      <div className={"fill-height"}>
         <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="Crime"><span className='ul-yellow-color'>V.</span>CRIME</h1>
         <p className='main-text__black'>Downtown Detroit is a thriving neighborhood and very safe place to be overall,
           though there is room for improvement. As in all urban areas, it is important to take sensible safety
