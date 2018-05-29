@@ -41,11 +41,10 @@ L.Control.SubOverlaySelect = L.Control.extend({
     this.menuContainer.innerHTML = "";
     if(this.options.enableSwitcher){
       for(let overlay in this.currentGroup){
-        this._createListItem(overlay, this.currentGroup[overlay]['color'], 'sub-overlay-menu-item', this.menuContainer)
+        this._createListItem(this.currentGroup[overlay].label, this.currentGroup[overlay]['color'], 'sub-overlay-menu-item', this.menuContainer)
       }
     }else {
       for(let overlay in this.currentGroup){
-        console.log(overlay, "overa")
         this._createListItem(this.currentGroup[overlay].label, this.currentGroup[overlay].color, 'sub-overlay-menu-item', this.menuContainer)
       }
     }

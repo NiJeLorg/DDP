@@ -93,7 +93,7 @@ class IncomeAffordability extends Component {
     });
     return (
       <div>
-        <h1 className="sub-sub-heading__purple"><span className='ul-yellow-color'>IV.</span>INCOME/AFFORDABILITY/TENURE
+        <h1 className="sub-sub-heading__purple" data-story-id="4" data-story-overlay="Affordability"><span className='ul-yellow-color'>IV.</span>INCOME/AFFORDABILITY/TENURE
         </h1>
         <p className='main-text__black'>Downtown Detroit is a desirable place to live and work, and the market price for
           housing is increasing because of it. As in most downtowns, there are high-end luxury apartments and

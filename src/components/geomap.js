@@ -2,12 +2,23 @@ import React, {Component} from 'react';
 import mapConfig from '../utils/maps';
 import _ from 'lodash';
 import classNames from 'classnames';
-import {PulseLoader} from  'react-spinners';
+import {PulseLoader} from 'react-spinners';
 import L from 'leaflet';
+import { setActiveOverlay } from "../actions/index";
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
 import {
   getEducationAttainmentGeoJson,
   getWACGeoJson,
-  getDowtownWorkersGeoJson, getDiversityIndexGeoJson, getRentIncomeGeoJson, getCrimeGeoJson, getAmenitiesServicesGeoJsonLayers,getAmenitiesInfrasctructureGeoJsonLayers,getWelcomingGeoJsonLayers, getWelcomingDataGeoJsonLayers,getResidentialBuildingGeoJson
+  getDowtownWorkersGeoJson,
+  getDiversityIndexGeoJson,
+  getRentIncomeGeoJson,
+  getCrimeGeoJson,
+  getAmenitiesServicesGeoJsonLayers,
+  getAmenitiesInfrasctructureGeoJsonLayers,
+  getWelcomingGeoJsonLayers,
+  getWelcomingDataGeoJsonLayers,
+  getResidentialBuildingGeoJson
 } from '../services/api';
 
 require('leaflet-fullscreen');
@@ -38,62 +49,71 @@ const subOverlayMapsStoryTwo = {
     "services": {
       "restaurants": {
         label: "restaurants",
-        color: "#EF4060"},
+        color: "#EF4060"
+      },
       "retailers": {
         label: "retailers",
-        color: "#00A992"},
-      "parks":{
-        label: "parks",
-        color: "#F27B21"}
+        color: "#00A992"
+      },
+      "parks": {
+        label: "Parks Maintained",
+        color: "#F27B21"
+      }
     },
     "infrastructure": {
       "parking garages": {
         label: "parking garages",
-        color: "#F27B81"},
-      "lighthouses":{
-        label: "lighthouses",
-        color: "#0039B1"},
+        color: "#F27B81"
+      },
+      "lighthouses": {
+        label: "Project Lighthouse stations",
+        color: "#0039B1"
+      },
       "MoGo stations": {
         label: "lighthouses",
-        color: "#F47F51"}
+        color: "#F47F51"
+      }
     }
-  },"Clean and Welcoming": {
-      "Business Contacts": {
-        label: "Business Contacts",
-        color: "#ADC8E7"
-      },
-      "Graffiti - Removed": {
-        label: "Graffiti Removed",
-        color: "#F27B21"
-      },
-      "Motorist Assist":{
-        label: "Motorist Assist",
-        color: "#EF4060"
-      },
-      "Panhandling": {
-        label: "Panhandler Contacts",
-        color: "#00B3EE"
-      },
-     "Pedestrian Assistance":{
-       label: "Pedestrian Assist",
-       color: "#E0E060"
-     },
-     "Trash (lbs)": {
-       label: "Trash Pickup",
-       color: "#00A992"
-     }
+  }, "Clean and Welcoming": {
+    "Business Contacts": {
+      label: "Business Contacts",
+      color: "#ADC8E7"
+    },
+    "Graffiti - Removed": {
+      label: "Graffiti Removed",
+      color: "#F27B21"
+    },
+    "Motorist Assist": {
+      label: "Motorist Assist",
+      color: "#EF4060"
+    },
+    // "Panhandling": {
+    //   label: "Panhandler Contacts",
+    //   color: "#00B3EE"
+    // },
+    "Pedestrian Assistance": {
+      label: "Pedestrian Assist",
+      color: "#E0E060"
+    },
+    "Trash (lbs)": {
+      label: "Trash Pickup",
+      color: "#00A992"
+    }
   },
-    "Live Downtown": {'2018':{}, '2019':{}, '2020':{}, '2021':{}, '2022':{}}
+  "Live Downtown": {'2018': {}, '2019': {}, '2020': {}, '2021': {}, '2022': {}}
 };
+
 class GeoMap extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       loading: false,
       chapter: props.chapter,
       lat: mapConfig.DETROIT_POSITION.lat,
       lng: mapConfig.DETROIT_POSITION.lng,
+      overlaySelectControl: null,
+      fullScreenControl: null,
       zoom: mapConfig.ZOOM_LEVEL,
       educationAttainmentGeoJson: {},
       rentIncomeMedianGeoJson: {},
@@ -103,7 +123,6 @@ class GeoMap extends Component {
       geoJson: {},
       crimeGeoJson: {},
       selectedSublayer: '',
-      defaultLayer: {},
       currentSubLayerControl: null,
       map: {},
       overlayMaps: props.chapter.id === 1 ? overlayMapsStoryOne : overlayMapsStoryTwo,
@@ -141,29 +160,29 @@ class GeoMap extends Component {
       getCrimeGeoJson().then((data) => {
         this.addChoroplethLayer(data, mapConfig.crimeIndexProperty, mapConfig.crimeIndexToolTip, map);
       });
-    }else if (overlayName === 'Amenities') {
-        this.getAmenitiesGeoJson(map);
+    } else if (overlayName === 'Amenities') {
+      this.getAmenitiesGeoJson(map);
     }
     else if (overlayName === 'Clean and Welcoming') {
       this.addWelcomingGeoJson(map)
     }
     else if (overlayName === 'Live Downtown') {
-     this.getResidentialGeoJson(map)
+      this.getResidentialGeoJson(map)
     }
   }
 
-  addWelcomingGeoJson(map){
+  addWelcomingGeoJson(map) {
     const subOverlay = subOverlayMapsStoryTwo['Clean and Welcoming'];
     getWelcomingDataGeoJsonLayers().then(resp => {
       this.removeAllLayers();
       _.forEach(resp, (val, key) => {
-        if(subOverlayMapsStoryTwo['Clean and Welcoming'].hasOwnProperty(key)){
+        if (subOverlayMapsStoryTwo['Clean and Welcoming'].hasOwnProperty(key)) {
           this.addGeoJsonLayer(val, mapConfig.welcomingToolTip, subOverlay[key]['color'], map);
         }
       });
       getWelcomingGeoJsonLayers().then(geoJson => {
         _.forEach(geoJson, (val, key) => {
-          if(key === 'landscaping'){
+          if (key === 'landscaping') {
             this.addGeoJsonLayer(val, mapConfig.landscapingToolTip, "#F27B21", map);
           }
         });
@@ -175,46 +194,47 @@ class GeoMap extends Component {
   }
 
   getAmenitiesGeoJson(map) {
-      const subOverlay = subOverlayMapsStoryTwo['Amenities'];
-      if(this.state.selectedSublayer === 'services'){
-        getAmenitiesServicesGeoJsonLayers().then(resp => {
-          this.removeAllLayers();
-
-          _.forEach((resp), (val, key) => {
-            if(key === 'restaurants') {
-              this.addGeoJsonLayer(val, mapConfig.restaurantsToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
-            }else if(key === 'retailers'){
-              this.addGeoJsonLayer(val, mapConfig.retailToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
-            }
-            else if(key === 'parks'){
-              this.addGeoJsonLayer(val, mapConfig.parksToolTip , subOverlay[this.state.selectedSublayer][key]['color'], map);
-            }
-          });
-          this.toggleLoader();
-        });
-      }else if(this.state.selectedSublayer === 'infrastructure') {
-        getAmenitiesInfrasctructureGeoJsonLayers().then(resp => {
-          this.removeAllLayers();
-          _.forEach((resp), (val, key) => {
-            if(key === 'parking garages') {
-              this.addGeoJsonLayer(val, mapConfig.parkingGarageToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
-            }else if(key === 'lighthouses'){
-              this.addGeoJsonLayer(val, mapConfig.lighthousesToolTip, subOverlay[this.state.selectedSublayer][key]['color'],map);
-            }
-            else if(key === 'MoGo stations'){
-              this.addGeoJsonLayer(val, mapConfig.mogoToolTip , subOverlay[this.state.selectedSublayer][key]['color'], map);
-            }
-          });
-          this.toggleLoader();
-        });
-      }
-  }
-  getResidentialGeoJson(map) {
-      getResidentialBuildingGeoJson(this.state.selectedSublayer).then(resp => {
+    const subOverlay = subOverlayMapsStoryTwo['Amenities'];
+    if (this.state.selectedSublayer === 'services') {
+      getAmenitiesServicesGeoJsonLayers().then(resp => {
         this.removeAllLayers();
-        this.addGeoJsonLayer(resp, mapConfig.buildingsToolTip, '#F27B21', map);
+
+        _.forEach((resp), (val, key) => {
+          if (key === 'restaurants') {
+            this.addGeoJsonLayer(val, mapConfig.restaurantsToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+          } else if (key === 'retailers') {
+            this.addGeoJsonLayer(val, mapConfig.retailToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+          }
+          else if (key === 'parks') {
+            this.addGeoJsonLayer(val, mapConfig.parksToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+          }
+        });
         this.toggleLoader();
       });
+    } else if (this.state.selectedSublayer === 'infrastructure') {
+      getAmenitiesInfrasctructureGeoJsonLayers().then(resp => {
+        this.removeAllLayers();
+        _.forEach((resp), (val, key) => {
+          if (key === 'parking garages') {
+            this.addGeoJsonLayer(val, mapConfig.parkingGarageToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+          } else if (key === 'lighthouses') {
+            this.addGeoJsonLayer(val, mapConfig.lighthousesToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+          }
+          else if (key === 'MoGo stations') {
+            this.addGeoJsonLayer(val, mapConfig.mogoToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+          }
+        });
+        this.toggleLoader();
+      });
+    }
+  }
+
+  getResidentialGeoJson(map) {
+    getResidentialBuildingGeoJson(this.state.selectedSublayer).then(resp => {
+      this.removeAllLayers();
+      this.addGeoJsonLayer(resp, mapConfig.buildingsToolTip, '#F27B21', map);
+      this.toggleLoader();
+    });
 
   }
 
@@ -223,13 +243,14 @@ class GeoMap extends Component {
   }
 
   removeAllLayers() {
-    this.state.map.eachLayer(function(layer){
-      if(layer.options['id'] !== 'mapbox.light'){
+    this.state.map.eachLayer(function (layer) {
+      if (layer.options['id'] !== 'mapbox.light') {
         layer.remove();
       }
 
     });
   }
+
   addGeoJsonLayer(data, tooltip, fillColor, map) {
     var geojsonMarkerOptions = {
       radius: 6,
@@ -248,6 +269,7 @@ class GeoMap extends Component {
     }).addTo(map);
 
   }
+
   addChoroplethLayer(geoJson, valueProperty, toolTip, map) {
     this.removeAllLayers();
     L.choropleth(geoJson, {
@@ -281,70 +303,58 @@ class GeoMap extends Component {
       id: 'mapbox.light',
       attribution: mapConfig.MAPBOX_ATTRIBUTION,
     }).addTo(this.map);
-    let defaultLayer = '';
-    if (this.state.chapter.id === 1){
-      defaultLayer =  'Education Attainment';
-      this.setState({overlayMaps: overlayMapsStoryOne})
-    }else if(this.state.chapter.id === 2){
-      defaultLayer = 'Clean and Welcoming';
-      this.setState({overlayMaps: overlayMapsStoryTwo});
-      this.setState({selectedSublayer: 'services'});
-    }
 
 
+    this.setOverlayMaps();
 
-
-    L.control.overlayselect({
-      overlays: this.state.overlayMaps
-    }).addTo(this.map);
-    this.map.addControl(new L.Control.Fullscreen({position: 'topright'}));
-    if(this.state.chapter.id === 2) {
-      this.addSubOverlayControl(defaultLayer, this.map);
-      this.map.zoomControl.setPosition('topright');
-      this.map.on('overlayGroupChange', () => {
-        this.toggleLoader();
-        this.setState({selectedSublayer: this.map.selectedOverlayGroupName()});
-        this.getAmenitiesGeoJson(this.map);
-        if(this.map.selectedOverlayLayerName() === 'Live Downtown'){
-          this.getResidentialGeoJson(this.map)
-        }
-
-      });
-    }
+    this.addOverlaySelectControl(this.map);
+    this.setSubOverlayControl(this.map);
     this.map.on('overlayChange', () => {
       this.toggleLoader();
+      this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
       this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map);
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName(), this.map);
-      if(this.state.chapter.id === 2) {
-        this.addSubOverlayControl(this.map.selectedOverlayLayerName(), this.map);
+      if (this.state.chapter.id === 2) {
+        this.setSubOverlayControl(this.map);
       }
     });
 
-    this.loadDefaultLayer(defaultLayer, this.map);
     this.setState({map: this.map});
 
 
   }
 
-  loadDefaultLayer(overlayName, map){
-      this.toggleLoader();
-      this.getChoroplethGeoJson(overlayName, map);
-      this.setOverlayLayerZoom(overlayName, map);
+  loadDefaultLayer(overlayName, map) {
+    this.toggleLoader();
+    this.getChoroplethGeoJson(overlayName, map);
+    this.setOverlayLayerZoom(overlayName, map);
   }
-
-  addSubOverlayControl(overlayName, map){
-    let options = {};
-    if(overlayName === 'Amenities') {
+  addOverlaySelectControl(map){
+    if(this.state.overlaySelectControl !== null) {
+      this.state.overlaySelectControl.remove()
+    }
+    const overlaySelectControl = L.control.overlayselect({
+      overlays: this.state.overlayMaps
+    }).addTo(map);
+    if(this.state.fullScreenControl !== null) {
+      this.state.fullScreenControl.remove();
+    }
+    const fullScreenControl =  new L.Control.Fullscreen({position: 'topright'}).addTo(map);//map.addControl(new L.Control.Fullscreen({position: 'topright'}));
+    this.setState({overlaySelectControl, fullScreenControl});
+  }
+  addSubOverlayControl(map) {
+    let options = null;
+    if (this.props.activeOverlay === 'Amenities') {
       options = {
         overlays: subOverlayMapsStoryTwo['Amenities'],
         selected: "services"
       }
-    }else if (overlayName === 'Clean and Welcoming') {
+    } else if (this.props.activeOverlay === 'Clean and Welcoming') {
       options = {
         overlays: subOverlayMapsStoryTwo['Clean and Welcoming'],
         enableSwitcher: false
       }
-    }else if (overlayName === 'Live Downtown') {
+    } else if (this.props.activeOverlay === 'Live Downtown') {
       options = {
         overlays: subOverlayMapsStoryTwo['Live Downtown'],
         enableSwitcher: true,
@@ -352,14 +362,53 @@ class GeoMap extends Component {
         selected: "2018"
       }
     }
-    if(this.state.currentSubLayerControl !== null){
-      this.state.currentSubLayerControl.remove();
+
+    if(this.state.chapter.id === 2){
+      const subLayerControl = L.control.suboverlayselect(options).addTo(map);
+      this.setState({currentSubLayerControl: subLayerControl})
     }
-    const subLayerControl = L.control.suboverlayselect(options).addTo(map);
-    this.setState({currentSubLayerControl: subLayerControl})
+
   }
+
   componentWillUnmount() {
     this.state.map.remove()
+  }
+
+  updateMapControls(){
+    this.addOverlaySelectControl(this.state.map);
+    this.setSubOverlayControl(this.state.map);
+    this.loadDefaultLayer(this.props.activeOverlay, this.map);
+  }
+
+  setOverlayMaps() {
+    if (this.state.chapter.id === 1) {
+      this.setState({overlayMaps: overlayMapsStoryOne},  function() {this.updateMapControls()});
+    } else if (this.state.chapter.id === 2) {
+      this.setState({
+        overlayMaps: overlayMapsStoryTwo,
+        selectedSublayer: 'services'},  function() {this.updateMapControls()});
+    }
+  }
+
+  setSubOverlayControl(map) {
+    if (this.state.currentSubLayerControl !== null) {
+      this.state.currentSubLayerControl.remove();
+    }
+    if (this.state.chapter.id === 2) {
+      this.addSubOverlayControl(map);
+      map.on('overlayGroupChange', () => {
+        this.setState({selectedSublayer: map.selectedOverlayGroupName(), loading: !this.state.loading});
+        this.getAmenitiesGeoJson(map);
+        if (map.selectedOverlayLayerName() === 'Live Downtown') {
+          this.getResidentialGeoJson(map)
+        }
+
+      });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({chapter: nextProps.chapter}, function(){this.setOverlayMaps()});
   }
 
   render() {
@@ -383,5 +432,14 @@ class GeoMap extends Component {
 
 }
 
+function mapStateToProps(state) {
+  return {
+    activeOverlay: state.activeOverlay
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setActiveOverlay: setActiveOverlay }, dispatch)
+}
 
-export default GeoMap;
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeoMap);
