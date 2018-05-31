@@ -156,12 +156,12 @@ class EducationAttainmentBarChart extends Component {
 
     return (
       <div>
-
+        <span className="chart-header">Educational Attainment, Downtown Detroit in Regional Context</span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar chart={this.state.chart}/>
         </div>
-        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
+
       </div>
 
     );
