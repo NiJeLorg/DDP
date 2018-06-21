@@ -413,7 +413,6 @@
 
 .c-stories {
   position: relative;
-  min-height: 850px;
   display: flex;
   flex: 1;
   height: 100vh; }
@@ -429,6 +428,8 @@
     z-index: 1;
     overflow-y: scroll;
     height: 100vh; }
+    .c-stories .c-story-navigator .story-content .story-margin {
+      margin-bottom: 100px; }
     .c-stories .c-story-navigator .story-content .chapter-marker {
       font-size: 20px;
       margin-right: 4px; }
@@ -928,3 +929,8 @@ hr {
   color: white; }
   .menu-link:hover {
     color: #e0e060; }
+
+.chart-header {
+  font-family: "Avenir-Roman";
+  font-size: 16px;
+  line-height: 1.3; }

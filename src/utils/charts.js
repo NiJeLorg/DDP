@@ -47,7 +47,7 @@ const PIE_CHART_CONFIG = {
   },
   tooltip: {
     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-    shared: true,
+    shared: false,
     useHTML: true,
     borderColor: null,
     followPointer: true,
@@ -123,6 +123,7 @@ const AREA_CHART_CONFIG = {
   },
   tooltip: {
     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>${point.y:,.0f}</b>',
+    shared: false,
     useHTML: true,
     borderColor: null,
     followPointer: true,

@@ -49,7 +49,7 @@ const config = {
   xAxis: {
     type: 'datetime',
     labels: {
-      format: '{value:%Y-%m-%d}'
+      format: '{value:%b %Y}'
     },
     tickInterval: 3 * 30 * 24 * 3600 * 1000,
     minRang: 1 * 30 * 24 * 3600 * 1000,
@@ -84,15 +84,38 @@ const config = {
     area: {
       stacking: 'normal',
       lineColor: '#666666',
-      lineWidth: 1
+      lineWidth: 1,
+      marker: {
+        lineWidth: 1,
+        lineColor: '#666666'
+      }
     }
   },
   series: [],
   legend: {
+    enabled: true,
     verticalAlign: 'top',
-    y: -20,
+    //y: -20,
     backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-    symbolRadius: 0
+    symbolRadius: 0,
+    itemMarginBottom: 4,
+    itemStyle: {
+      textTransform: 'capitalize',
+    },
+  },
+  tooltip: {
+    shared: false,
+    split: false,
+    dateTimeLabelFormats: {
+      millisecond:"%b %Y",
+      second:"%b %Y",
+      minute:"%b %Y",
+      hour:"%b %Y",
+      day:"%b %Y",
+      week:"%b %Y",
+      month:"%b %Y",
+      year:"%b %Y"
+    },
   },
 
 };

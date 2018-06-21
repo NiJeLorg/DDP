@@ -5,7 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com/NiJeLorg/DDP.git",
   "scripts": {
-    "scss": "node-sass --watch scss -o public/css",
+    "css": "node-sass scss -o public/css",
+    "css:watch": "npm run css && node-sass scss -wo public/css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

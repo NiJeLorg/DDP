@@ -92,7 +92,7 @@ class IncomeAffordability extends Component {
       'active': this.state.activeCategory === 'RENT'
     });
     return (
-      <div>
+      <div className='story-margin'>
         <h1 className="sub-sub-heading__purple" data-story-id="4" data-story-overlay="Affordability"><span className='ul-yellow-color'>IV.</span>Downtown Affordability
         </h1>
         <p className='main-text__black'>Downtown Detroit is a desirable place to live and work, and the market price for

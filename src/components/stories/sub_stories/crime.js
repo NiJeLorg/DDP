@@ -66,33 +66,56 @@ class Crime extends Component {
 
   generateChartData(dataset) {
     let chartData = {};
+    let dates = [];
     _.forEach(dataset, (data) => {
       _.forEach(data.data.value, (val) => {
         if (!_.has(chartData, val.offense_category)) {
           chartData[val.offense_category] = {};
         }
         chartData[val.offense_category][data.month_start] = _.add(chartData[val.offense_category][data.month_start], val.Count);
+        dates.push(moment(data.month_start, 'YYYY-MM-DD').valueOf());
       })
     });
+    let uniq_dates = _.uniq(dates);
+    console.log(uniq_dates);
 
     let formattedSeries = [];
     _.forEach(chartData, (data, category) => {
       let d = [];
       _.forEach(data, (v, k) => {
         d.push([moment(k, 'YYYY-MM-DD').valueOf(), v]);
-      });
+      });  
+
       formattedSeries.push({
         name: category,
         data: d,
         showInNavigator: true
       })
     });
+
+
+    _.forEach(formattedSeries, (data) => {
+      let fsDates = [];
+      _.forEach(data.data, (d) => {
+        fsDates.push(d[0])
+      });
+      _.forEach(uniq_dates, (val) => {
+        if (!_.contains(fsDates, val)) {
+          data.data.push([val, 0])
+        }
+      });     
+      
+
+    });
+  
+
+    console.log(formattedSeries);
     return formattedSeries
   }
 
   render() {
     return (
-      <div className={"fill-height"}>
+      <div className='story-margin'>
         <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="Crime"><span className='ul-yellow-color'>V.</span>Safety</h1>
         <p className='main-text__black'>Downtown Detroit is a thriving neighborhood and very safe place to be overall,
           though there is room for improvement. As in all urban areas, it is important to take sensible safety

@@ -51,7 +51,7 @@ class Amenities  extends Component {
         counter={amenity} key={Math.random()}/>
     });
     return (
-      <div>
+      <div className='story-margin'>
         <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Amenities"><span className='ul-yellow-color'>II.</span>Amenities</h1>
         <p className='main-text__black'>Downtown Detroit provides many features to make your experience more enjoyable.
           From places to use the restroom (Lighthouse “stations”), to great spots to enjoy a picnic, the following tools

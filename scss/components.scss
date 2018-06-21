@@ -434,6 +434,9 @@
     overflow-y: scroll;
     height: 100vh;
     .story-content {
+      .story-margin {
+        margin-bottom: 100px;
+      }
       .chapter-marker {
         font-size: 20px;
         margin-right: 4px;

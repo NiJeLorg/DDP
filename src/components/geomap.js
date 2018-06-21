@@ -297,6 +297,7 @@ class GeoMap extends Component {
       maxZoom: 18,
       minZoom: 8,
       maxBounds: this.state.bounds,
+      scrollWheelZoom: false,
 
     }, 100);
     L.tileLayer(mapConfig.MAPBOX_URL, {
