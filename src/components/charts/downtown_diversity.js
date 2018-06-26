@@ -9,14 +9,14 @@ const REGIONS = {
 const PREFIX = 'B01001';
 
 const RACES = {
-  "Black or African American Alone": "B",
-  // "American Indian and Alaska Native Alone": "C",
+  "Two or More Races": "G",
   "Asian Alone": "D",
+  "Hispanic or Latino": "I",
+  // "American Indian and Alaska Native Alone": "C",
   // "Native Hawaiian and Other Pacific Islander Alone": "E",
   // "Some Other Race Alone": "F",
-  "Two or More Races": "G",
   "White Alone, Not Hispanic or Latino": "H",
-  "Hispanic or Latino": "I",
+  "Black or African American Alone": "B",
 }
 const geoIds = _.flatten(Object.values(REGIONS));
 const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=$tableId&geo_ids=${geoIds}`;
@@ -70,8 +70,9 @@ const config = {
     type: 'area'
   },
   title: {
-    text: 'Downtown Diversity',
-    align: 'left'
+    // text: 'Downtown Diversity',
+    // align: 'left'
+    text: null,
   },
   exporting: {
     chartOptions: { // specific options for the exported image

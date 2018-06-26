@@ -12,11 +12,7 @@ const Home = () => {
           <div className="c-card__content l-col-layout">
             <h2 className="main-heading__purple">Downtown is Happening</h2>
             <p className="main-text__black">
-              Lorem ipsum dolor amet drinking vinegar lumbersexual taiyaki
-              knausgaard leggings hella microdosing kitsch hell of green juice
-              hot chicken. Ugh hexagon snackwave offal distillery taiyaki swag
-              twee cliche coloring book irony vegan gastropub. Sartorial four
-              dollar toast
+              Downtown Detroit is home to major regional and international employers, world-class public spaces, arts and entertainment, and the location of all four of the major Detroit professional sports teams. With all of these features and more, Downtown continues to grow in popularity, new residents, and businesses.
             </p>
             <div className="l-flex-center">
               <Link className="c-btn c-btn--primary" to="/chapters">

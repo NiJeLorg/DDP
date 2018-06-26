@@ -59,7 +59,8 @@ const config = {
     // height: 250,
   },
   title: {
-    text: null
+    // text: 'Educational Attainment for the Resident Population 25 years and Older'
+    text: null,
   },
   yAxis: {
     min: 0,
@@ -83,7 +84,7 @@ const config = {
     itemDistance: 10,
     itemWidth: 100,
     align: 'left',
-    y: -25,
+    y: 0,
     itemStyle: {
       textOverflow: null
     },
@@ -156,7 +157,7 @@ class EducationAttainmentBarChart extends Component {
 
     return (
       <div>
-        <span className="chart-header">Educational Attainment, Downtown Detroit in Regional Context</span>
+        <span className="chart-header">Educational Attainment for the Downtown Resident Population 25 years and Older</span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar chart={this.state.chart}/>

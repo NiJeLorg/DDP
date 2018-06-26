@@ -102,12 +102,12 @@ class IncomeAffordability extends Component {
           as a mix of housing types for people at different stages of life and circumstances. Explore the graphs below
           to see how Downtown is doing and how it compares with other cities’ downtown areas.
         </p>
-        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
+        <span className="chart-header">Income, Housing Values and Rent Across Downtown Areas </span>
         <div className="chart-container">
           <div className={"btn-switcher"}>
             <Link to={'#'} onClick={event => this.switchCategory("MEDIAN HOUSEHOLD INCOME")} className={btn1}>MEDIAN
               HOUSEHOLD INCOME</Link>
-            <Link to={'#'} onClick={event => this.switchCategory("OWNER VALUE")} className={btn2}>OWNER VALUE</Link>
+            <Link to={'#'} onClick={event => this.switchCategory("OWNER VALUE")} className={btn2}>AVERAGE VALUE OF AN OWNED HOUSING UNIT</Link>
             <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>AVERAGE MONTHLY RENT</Link>
           </div>
           <div className={"grouped"}>
@@ -124,15 +124,8 @@ class IncomeAffordability extends Component {
         </div>
 
 
-        <p className='main-text__black'>Downtown Detroit is a safe, attractive, vibrant place to live, and the demand
-          for housing is high. Occupancy rates for available residential units is near 100%, and the price of housing
-          has increased substantially over the past several years. Despite this trend, it is important that there
-          remains a variety of price-points and affordable options, so that people with fewer economic resources can
-          afford living Downtown without sacrificing too large a percentage of their income. A standard metric for
-          housing affordability is 30% of income or less. More than that is considered unaffordable for an individual.
-          The following graphs explore income, housing affordability and rental prices for Downtown and how it looks in
-          comparison to our benchmark cities.</p>
-        <span className="chart-header">2016 CENSUS RESIDENTS EDUCATIONAL ATTAINMENT </span>
+        <p className='main-text__black'>Downtown Detroit is an attractive, vibrant place to live and work - with the demand for housing increasing. Occupancy rates are near 100%, housing prices have increased substantially and more businesses moving Downtown over the past several years.</p>
+        <span className="chart-header">Percent of People with Unaffordable Housing Costs, by Income, 2016. </span>
         <div className="chart-container">
           <IncomeBarChart/>
           <DataBar/>

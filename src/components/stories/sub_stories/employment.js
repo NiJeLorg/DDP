@@ -10,9 +10,10 @@ const Employment = () => {
         People come from all over the region every day to work Downtown. The graphs below show the number of people
         working Downtown broken down by where they live.</p>
       <div>
-        <span className="chart-header">2016 CENSUS RESIDENTS DIVERSITY </span>
+        <span className="chart-header">The Ten Largest Contributors of Workers to Downtown Detroit by Municipality</span>
         <div>
-          <img className="employment-svg" src="/img/employment.svg" alt=""/>
+          {/* <img className="employment-svg" src="/img/employment.svg" alt=""/> */}
+          <img className="employment-svg" src="/img/employment.png" alt=""/>
         </div>
 
       </div>
