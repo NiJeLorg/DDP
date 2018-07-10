@@ -1,6 +1,5 @@
 import React from 'react';
 import DiversityAreaChart from './../../charts/downtown_diversity';
-import DataBar from './../../charts/data_bar';
 
 
 const Diversity = () => {
@@ -12,7 +11,6 @@ const Diversity = () => {
               <span className="chart-header">Downtown Detroit Residents, by Race and Ethnicity </span>
                 <div className="chart-container">
                     <DiversityAreaChart className={'chart'}/>
-                    <DataBar/>
                 </div>
 
             </div>

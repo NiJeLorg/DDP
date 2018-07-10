@@ -32,7 +32,8 @@ class IncomeAffordability extends Component {
       pittsburgh: [],
       data: [],
       activeCategory: 'MEDIAN HOUSEHOLD INCOME',
-      maxYScale: DEFAULT_MAX_SCALE
+      maxYScale: DEFAULT_MAX_SCALE,
+      config: {},
     };
   }
 
@@ -52,7 +53,16 @@ class IncomeAffordability extends Component {
   }
 
   updateAreaCharts(categoryData) {
+    let seriesData = [];
     _.forEach(categoryData, (dataset) => {
+      let tableRow = {Category: dataset.downtown};
+      console.log(tableRow);
+      for (var key in dataset) {
+        if (key !== "downtown") {
+          tableRow[key] = "$" + dataset[key].toLocaleString(navigator.language, { maximumFractionDigits: 0 });
+        } 
+      }
+
       if (dataset.downtown.toLowerCase() === 'detroit') {
         this.setState({detroit: this.generateSeriesData(dataset)})
       } else if (dataset.downtown.toLowerCase() === 'denver') {
@@ -64,8 +74,20 @@ class IncomeAffordability extends Component {
       else if (dataset.downtown.toLowerCase() === 'pittsburgh') {
         this.setState({pittsburgh: this.generateSeriesData(dataset)})
       }
+      let series = {
+        tableRow: tableRow,
+      }
+      seriesData.push(series)  
     });
+    let config = Object.assign({}, this.state.config);    //creating copy of object
+    config.series = seriesData;
+    console.log(config);
+    this.setState({config});
   }
+  // var data = [
+  //   { id: 1, Category: 2011, detroit: 50000, denver: 55000,  },
+  //   { id: 2, Category: 2012, detroit: 51000, denver: 56000,  },
+  // ];
 
   generateSeriesData(dataset) {
     let series = _.clone(dataset);
@@ -120,7 +142,7 @@ class IncomeAffordability extends Component {
             <IncomeAreaChart data={this.state.pittsburgh} yScale={this.state.maxYScale} title={"DOWNTOWN<br/>PITTSBURGH"}
                              color={"#D5D654"} className={'chart'}/>
           </div>
-          <DataBar/>
+          <DataBar config={this.state.config}/>
         </div>
 
 

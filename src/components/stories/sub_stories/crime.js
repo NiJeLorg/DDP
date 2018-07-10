@@ -77,7 +77,6 @@ class Crime extends Component {
       })
     });
     let uniq_dates = _.uniq(dates);
-    console.log(uniq_dates);
 
     let formattedSeries = [];
     _.forEach(chartData, (data, category) => {
@@ -107,9 +106,7 @@ class Crime extends Component {
       
 
     });
-  
-
-    console.log(formattedSeries);
+    
     return formattedSeries
   }
 

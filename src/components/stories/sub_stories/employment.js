@@ -12,8 +12,7 @@ const Employment = () => {
       <div>
         <span className="chart-header">The Ten Largest Contributors of Workers to Downtown Detroit by Municipality</span>
         <div>
-          {/* <img className="employment-svg" src="/img/employment.svg" alt=""/> */}
-          <img className="employment-svg" src="/img/employment.png" alt=""/>
+          <img className="employment-svg" src="/img/employment_graphic.svg" alt=""/>
         </div>
 
       </div>

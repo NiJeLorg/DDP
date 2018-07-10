@@ -185,6 +185,27 @@
     color: #fff;
     display: none; }
 
+.c-footer {
+  display: flex;
+  background: #13294b;
+  align-items: center;
+  padding: 4px 34px 0px;
+  justify-content: center;
+  height: 28px; }
+  .c-footer .menu {
+    display: flex; }
+    .c-footer .menu .menu-item {
+      text-decoration: none;
+      font-family: "AvenirLTPro-Black", sans-serif;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #ffffff;
+      text-align: left;
+      cursor: pointer; }
+      .c-footer .menu .menu-item:hover, .c-footer .menu .menu-item:focus {
+        color: #e0e060; }
+
 .c-chapter-card {
   padding: 40px 20px 0 0; }
   .c-chapter-card header:after {
@@ -290,7 +311,7 @@
     background-color: white;
     z-index: 1;
     overflow-y: scroll;
-    height: 100vh; }
+    height: calc(100vh - 28px); }
     .c-stories .c-story-navigator .story-content .story-margin {
       margin-bottom: 100px; }
     .c-stories .c-story-navigator .story-content .chapter-marker {

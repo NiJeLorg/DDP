@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactHighcharts from 'react-highcharts';
 import Highcharts from 'highcharts';
 import _ from 'lodash';
+import DataBar from './data_bar';
 
 const REGIONS = {
   "DETROIT": ["14000US26163520700", "14000US26163517200", "14000US26163520800"],
@@ -148,24 +149,40 @@ class DiversityAreaChart extends Component {
         return  {data: data, "race": key, "tableId": tableId}
       }));
     });
+  
 
     Promise.all(API_REQS).then((API_RESP) => {
       let seriesData = [];
       _.forEach(API_RESP, (resp) => {
           // console.log(resp.data, "SOME DATa");
           let aData = this.aggregateBlockData(resp.data, resp.tableId);
-        // console.log(aData, "A DATa");
+          // console.log(aData, "A DATa");
+
+          let tableRow = {Category: resp.race};
+          // create an object for this category
+          COLUMNS.map((col) => {
+            let column = col.replace(" years", "");
+            column = column.replace("Under " , "<");
+            column = column.replace("85 and over", ">=85");
+            column = column.replace(" to ", "-");
+            column = column.replace(" and ", "-");
+            
+            // console.log(column);
+            tableRow[column] = aData['DETROIT'][col].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+          });
           let series = {
             name: resp.race,
             marker: {
               enabled: false
             },
-            data: this.getDataValue(aData)
+            data: this.getDataValue(aData),
+            tableRow: tableRow,
           }
           seriesData.push(series)
       });
-      let configUpdated = {...this.state.config};
+      let config = Object.assign({}, this.state.config);    //creating copy of object
       config.series = seriesData;
+      //console.log(config);
       this.setState({config});
     }).catch((err) => {
       console.log(err);
@@ -201,7 +218,9 @@ class DiversityAreaChart extends Component {
     return (
       <div>
         <ReactHighcharts config={this.state.config}/>
+        <DataBar config={this.state.config} />
       </div>
+
 
     );
 

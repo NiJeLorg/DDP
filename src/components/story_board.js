@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Navigation from './navigation';
 import StoryHeader from './story_header';
 import Stories from './stories';
+import Footer from './footer';
 import CHAPTERS from './../utils/content';
 import { setActiveOverlay } from "../actions/index";
 import { bindActionCreators } from 'redux';
@@ -31,6 +32,7 @@ class StoryBoard extends Component {
         <Navigation />
         <StoryHeader chapter={this.state.chapter} />
         <Stories chapter={this.state.chapter}/>
+        <Footer />
       </div>
     );
   }

@@ -46,9 +46,13 @@ class EducationAttainmentGroupedPieChart extends Component  {
       delete aggregatedDetroitRegion['C000'];
       const aData = this.mapAggregatedDataToCategories(aggregatedDowntown);
       const dData = this.mapAggregatedDataToCategories(aggregatedDetroitRegion);
-
       this.setState({downtownDetroitSeries: aData});
       this.setState({detroitSeries: dData});
+      const tableData = this.mapAggregatedDataToCategoriesTable(aggregatedDowntown, "DOWNTOWN", aggregatedDetroitRegion, "THE REGION");
+      let config = Object.assign({}, this.state.config);    //creating copy of object
+      config.series = tableData;
+      this.setState({config});
+
     }).catch((err) => {
       console.log(err);
     });
@@ -63,7 +67,19 @@ class EducationAttainmentGroupedPieChart extends Component  {
         });
 
     });
-      return mappedData;
+    return mappedData;
+  }
+
+  mapAggregatedDataToCategoriesTable(aData, aRegion, dData, dRegion) {
+    let tableRows = [];
+    _.forEach(aData, function(value, key) {
+      let row = {Category: CHART_CATEGORIES[key]};
+      row[aRegion] = value.toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+      row[dRegion] = dData[key].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+      let tableRow = {tableRow: row}
+      tableRows.push(tableRow);
+    });
+    return tableRows;
   }
 
   aggregateData(data) {
@@ -91,7 +107,7 @@ class EducationAttainmentGroupedPieChart extends Component  {
             <EducationAttainmentPieChart legend={false} title={"DOWNTOWN"} total={this.state.totalJobsDowntown} config={_.cloneDeep(ChartConfig.PIE_CHART_CONFIG)} series={this.state.downtownDetroitSeries}/>
             <EducationAttainmentPieChart legend={false} title={"THE REGION"} total={this.state.totalDetroitRegion} config={_.cloneDeep(ChartConfig.PIE_CHART_CONFIG)} series={this.state.detroitSeries}/>
           </div>
-          <DataBar/>
+          <DataBar config={this.state.config} />
         </div>
       </div>
 

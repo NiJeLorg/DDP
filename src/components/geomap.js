@@ -312,6 +312,7 @@ class GeoMap extends Component {
     this.setSubOverlayControl(this.map);
     this.map.on('overlayChange', () => {
       this.toggleLoader();
+      console.log("loading new map layer")
       this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
       this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map);
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName(), this.map);

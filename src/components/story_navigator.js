@@ -29,15 +29,36 @@ class StoryNavigator extends Component {
   setCurrentSection() {
     const parent = document.getElementsByClassName('c-story-navigator')[0];
     const elements = document.getElementsByClassName('sub-sub-heading__purple');
+    let els = [];
     let currentActiveElement = '';
     for (let el of elements) {
-      console.log(el.dataset.storyId, el.offsetTop, el.scrollTop, parent.scrollTop);
-      if (Math.abs(parent.scrollTop - el.offsetTop) <= 60){
+      els.push(el.offsetTop);
+    }
+    let closest = Math.min.apply(null, els);
+    for(var i = 0; i < els.length; i++){
+      if(els[i] <= parent.scrollTop && els[i] > closest) {
+        closest = els[i];
+      }
+    }
+    for (let el of elements) {
+      console.log(el.offsetTop, closest);
+
+      if (el.offsetTop == closest) {
         currentActiveElement = el;
         this.props.setActiveOverlay(el.dataset.storyOverlay);
         break;
       }
-    }
+    }   
+  
+    // for (let el of elements) {
+    //   console.log(el.dataset.storyId, el.offsetTop, el.scrollTop, parent.scrollTop);
+    //   if (Math.abs(parent.scrollTop - el.offsetTop) <= 60){
+    //     currentActiveElement = el;
+    //     this.props.setActiveOverlay(el.dataset.storyOverlay);
+    //     break;
+    //   }
+    // }
+    
   }
 
 

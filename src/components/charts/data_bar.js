@@ -9,14 +9,25 @@ class DataBar extends Component {
       downloadOpen: true,
       actionLabel: "VIEW DATA",
       actionDonwloadLabel: "DOWNLOAD",
-      chart: {}
+      chart: {},
+      config: {},
+      cols: [],
+      rows: [],
     };
     this.toggleDataTable = this.toggleDataTable.bind(this);
     this.toggleDownloadBar = this.toggleDownloadBar.bind(this);
+    this.cleanData = this.cleanData.bind(this);
+    this.generateHeaders = this.generateHeaders.bind(this);
+    this.generateRows = this.generateRows.bind(this);
   }
+  static propTypes = {
+    cols : React.PropTypes.array.isRequired,
+    rows : React.PropTypes.array.isRequired
+  }
+
   componentWillReceiveProps(nextProps) {
    this.setState({chart: nextProps.chart});
-
+   this.setState({config: nextProps.config});
   }
   toggleDataTable(e) {
     e.preventDefault();
@@ -25,6 +36,7 @@ class DataBar extends Component {
       this.setState({actionLabel: 'VIEW DATA'});
     } else {
       this.setState({actionLabel: 'HIDE DATA'});
+      console.log(this.state.config);
     }
     this.setState({open: !this.state.open});
   }
@@ -40,7 +52,7 @@ class DataBar extends Component {
     this.setState({downloadOpen: !this.state.downloadOpen});
   }
   export(exportType) {
-    console.log(this.state.chart);
+    //console.log(this.state.chart);
     if(exportType === 'PNG')
     {
       this.state.chart.exportChart({type: 'image/png', filename: 'my-png'}, {subtitle: {text:''}});
@@ -58,6 +70,61 @@ class DataBar extends Component {
       this.state.chart.exportChart({type: 'image/svg+xml', filename: 'my-svg'}, {subtitle: {text:''}});
     }
   }
+
+
+
+  cleanData() {
+    // create columns
+
+    this.state.cols = [];
+    if (typeof this.state.config !== "undefined" && typeof this.state.config.series !== "undefined") {
+      if (this.state.config.series.length > 0 && this.state.config.series[0].tableRow) {
+        Object.keys(this.state.config.series[0].tableRow).map(row => {
+          if (row != 'id') {
+            this.state.cols.push({key: row, label: row});
+          }
+        });
+        // ensure that category object is first in the array
+        let pos = this.state.cols.map(function(e) { return e.key; }).indexOf('Category');
+        let categoryColumn = this.state.cols[pos];
+        this.state.cols.splice(pos,1);
+        this.state.cols.unshift(categoryColumn);
+      }
+    }
+
+    this.state.rows = [];
+    if (typeof this.state.config !== "undefined" && typeof this.state.config.series !== "undefined") {
+      if (this.state.config.series.length > 0 && this.state.config.series[0].tableRow) {
+        for (let i = 0; i < this.state.config.series.length; i++) {
+          this.state.config.series[i].tableRow.id = i + 1;
+          this.state.rows.push(this.state.config.series[i].tableRow);
+          
+        }
+      }
+    }
+  }
+
+  generateHeaders() {
+    let cols = this.state.cols;  // [{key, label}]
+    return cols.map(function(colData) {
+        return <th key={colData.key}>{colData.label}</th>;
+    });
+  }
+  
+  generateRows() {
+    let cols = this.state.cols,  // [{key, label}]
+        data = this.state.rows;
+    if (this.state.rows.length > 0) {
+      return data.map(function(item) {
+        //console.log(item);
+          var cells = cols.map(function(colData) {
+            return <td key={colData.key}>{item[colData.key]}</td>;
+          });
+          return <tr key={item.id}>{cells}</tr>;
+      });
+    }
+  }
+
   render() {
     let openDataTableClasses = classNames({
       'table': true,
@@ -74,6 +141,11 @@ class DataBar extends Component {
     let activeDownloadLabel = classNames({
       'active-label': !this.state.downloadOpen
     });
+
+    this.cleanData();
+    let headers = this.generateHeaders();
+    let rows = this.generateRows();
+
     return (
       <div className="c-data">
         <div className="bar">
@@ -96,49 +168,11 @@ class DataBar extends Component {
           <table>
             <thead>
             <tr>
-              <th></th>
-              <th>Detroit</th>
-              <th>Chicago</th>
-              <th>Pittsburgh</th>
-              <th>Baltimore</th>
+              {headers}
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>No degree</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>High School</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>Some College</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>Bachelors</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>Post Grad</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
-            </tr>
+              {rows}
             </tbody>
           </table>
         </div>

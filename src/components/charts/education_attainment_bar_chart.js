@@ -127,6 +127,7 @@ class EducationAttainmentBarChart extends Component {
       });
     let chart = this.refs.chart.getChart();
     this.setState({chart});
+    
   }
 
   generateChartData(data) {
@@ -148,7 +149,17 @@ class EducationAttainmentBarChart extends Component {
       let data = Object.keys(REGIONS).map(region => {
         return regionData[region][category];
       });
-      return {name: category, data: data};
+      let region = Object.keys(REGIONS).map(region => {
+        return region;
+      });
+
+      let tableRow = {Category: category};
+      // create an object for this category
+      Object.keys(REGIONS).map(region => {
+        tableRow[region] = regionData[region][category].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+      });
+
+      return {name: category, data: data, region: region, tableRow: tableRow};
     });
     return seriesData;
   }
@@ -160,7 +171,7 @@ class EducationAttainmentBarChart extends Component {
         <span className="chart-header">Educational Attainment for the Downtown Resident Population 25 years and Older</span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
-          <DataBar chart={this.state.chart}/>
+          <DataBar chart={this.state.chart} config={this.state.config} />
         </div>
 
       </div>
