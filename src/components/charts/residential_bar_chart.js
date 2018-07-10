@@ -85,17 +85,27 @@ class ResidentialUnitsBarChart extends Component {
   componentWillReceiveProps(nextProps) {
     if(nextProps.data !== undefined){
       let config = {...this.state.config};
+      let config2 = {...this.state.config};
       // config.title.text =`${nextProps.title}`;
       // config.colors = [nextProps.color];
       // if( nextProps.yScale > 0){
       //   config.yAxis['max'] = nextProps.yScale * 1000;
       // }
       config.xAxis.categories = Object.keys(nextProps.data).sort();
+      console.log(nextProps.data);
       config.series = [{
         showInLegend: false,
-        data: this.getValuesSortedByKey(nextProps.data)
+        data: this.getValuesSortedByKey(nextProps.data),
       }];
+      config2.series = [];
+      let tableRow = {Category: "Housing Units Projected"};
+      Object.keys(nextProps.data).map(key => {
+        tableRow[key] = nextProps.data[key].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+      });
+      config2.series.push({tableRow: tableRow});
+      
       this.setState({config});
+      this.setState({config2});
     }
   }
 
@@ -113,7 +123,7 @@ class ResidentialUnitsBarChart extends Component {
         <span className="chart-header">Projected number of housing units in Downtown Detroit </span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
-          <DataBar chart={this.state.chart}/>
+          <DataBar config={this.state.config2} />
         </div>
       </div>
 

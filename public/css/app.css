@@ -699,14 +699,16 @@ ul {
   .c-data .table {
     font-family: "Avenir", sans-serif;
     margin: 5px 5px 5px 10px; }
+    .c-data .table thead tr th:first-child {
+      text-align: left; }
     .c-data .table thead tr th {
-      text-align: left;
-      padding-right: 5px; }
+      text-align: right;
+      padding-right: 10px; }
     .c-data .table td:first-child {
       text-align: left; }
     .c-data .table td {
       text-align: right;
-      padding-right: 5px; }
+      padding-right: 10px; }
 
 .active-label {
   color: #2a316c !important; }

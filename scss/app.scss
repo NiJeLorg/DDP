@@ -50,9 +50,12 @@ ul {
     margin: 5px 5px 5px 10px;
     thead {
       tr {
-        th {
+        th:first-child {
           text-align: left;
-          padding-right: 5px;
+        }
+        th {
+          text-align: right;
+          padding-right: 10px;
         }
       }
     }   
@@ -61,7 +64,7 @@ ul {
     }
     td {
       text-align: right;
-      padding-right: 5px;
+      padding-right: 10px;
     }
   }
 }

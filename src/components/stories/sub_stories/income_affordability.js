@@ -56,7 +56,7 @@ class IncomeAffordability extends Component {
     let seriesData = [];
     _.forEach(categoryData, (dataset) => {
       let tableRow = {Category: dataset.downtown};
-      console.log(tableRow);
+      // console.log(tableRow);
       for (var key in dataset) {
         if (key !== "downtown") {
           tableRow[key] = "$" + dataset[key].toLocaleString(navigator.language, { maximumFractionDigits: 0 });
@@ -81,13 +81,9 @@ class IncomeAffordability extends Component {
     });
     let config = Object.assign({}, this.state.config);    //creating copy of object
     config.series = seriesData;
-    console.log(config);
+    // console.log(config);
     this.setState({config});
   }
-  // var data = [
-  //   { id: 1, Category: 2011, detroit: 50000, denver: 55000,  },
-  //   { id: 2, Category: 2012, detroit: 51000, denver: 56000,  },
-  // ];
 
   generateSeriesData(dataset) {
     let series = _.clone(dataset);
@@ -147,10 +143,9 @@ class IncomeAffordability extends Component {
 
 
         <p className='main-text__black'>Downtown Detroit is an attractive, vibrant place to live and work - with the demand for housing increasing. Occupancy rates are near 100%, housing prices have increased substantially and more businesses moving Downtown over the past several years.</p>
-        <span className="chart-header">Percent of People with Unaffordable Housing Costs, by Income, 2016. </span>
+        <span className="chart-header">Percent of Housing Units with Unaffordable Housing Costs, by Income, 2016. </span>
         <div className="chart-container">
           <IncomeBarChart/>
-          <DataBar/>
         </div>
 
 

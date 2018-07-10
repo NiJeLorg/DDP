@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactHighcharts from 'react-highcharts';
 import Highcharts from 'highcharts';
 import _ from 'lodash';
+import DataBar from './data_bar';
 
 const DATA_CATEGORIES = {
   // "Less than 20,000": {0: ["004", "026"], 1: ["005", "027"], 2: ["006", "028"]},
@@ -146,12 +147,16 @@ class IncomeBarChart extends Component {
 
     _.forEach(Object.keys(labels).sort(), (key) => {
 
-      let series = { name: labels[key], data: []};
+      let series = { name: labels[key], data: [], tableRow: {Category: labels[key]}};
       _.forEach(ORDERED_CATEGORIES, (category) => {
         series.data.push(regionData['DETROIT'][category][key]);
+        let column = "$" + category.replace(" - ", " - $");
+        series.tableRow[column] = regionData['DETROIT'][category][key].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
       });
       seriesData.push(series);
+      console.log(series);
     });
+    
     return seriesData;
   }
 
@@ -160,6 +165,7 @@ class IncomeBarChart extends Component {
     return (
       <div>
         <ReactHighcharts config={this.state.config} ref="chart"/>
+        <DataBar config={this.state.config} />
       </div>
 
     );

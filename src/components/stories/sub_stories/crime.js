@@ -19,7 +19,8 @@ class Crime extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartData: {}
+      chartData: {},
+      config: {},
     };
   }
 
@@ -52,6 +53,12 @@ class Crime extends Component {
       });
       const chartData = this.generateChartData(filteredData);
       this.setState({chartData});
+      console.log(chartData);
+      const seriesData = this.generateTableData(chartData);
+      let config = Object.assign({}, this.state.config);    //creating copy of object
+      config.series = seriesData;
+      //console.log(config);
+      this.setState({config});
     }).catch((err) => {
       console.log(err);
     });
@@ -110,6 +117,25 @@ class Crime extends Component {
     return formattedSeries
   }
 
+
+  generateTableData(dataset) {
+    let seriesData = [];
+    _.forEach(dataset, (category) => {
+      console.log(category);
+      let tableRow = {Category: category.name};
+      for (let i = 0; i < category.data.length; i++) {
+        let date = moment(category.data[i][0]).format("MMM YY");
+        tableRow[date] = category.data[i][1].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+      }
+      let series = {
+        tableRow: tableRow,
+      }
+      seriesData.push(series)
+    });
+
+    return seriesData;
+  }
+
   render() {
     return (
       <div className='story-margin'>
@@ -120,7 +146,7 @@ class Crime extends Component {
           <span className="chart-header">Violent Crime Incidents by Category</span>
           <div className="chart-container">
             <CrimeAreaChart data={this.state.chartData}/>
-            <DataBar/>
+            <DataBar config={this.state.config}/>
           </div>
 
         </div>
