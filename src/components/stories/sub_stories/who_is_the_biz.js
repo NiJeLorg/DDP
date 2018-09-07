@@ -63,7 +63,7 @@ class WhoIsTheBIZ extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">BIZ BOARD MEMBERS</div>
-              <div>
+              <div className="story-slider">
                 <Slider {...settings}>
                   <div>
                     <h3>1</h3>
