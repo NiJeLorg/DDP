@@ -96,7 +96,7 @@
         background-size: 50% 50%;
         background-repeat: no-repeat;
         padding: 20px; }
-      .c-bevelled-box__chapter-card:nth-child(3) {
+      .c-bevelled-box__chapter-card:nth-child(4) {
         background: rgba(39, 39, 39, 0.2);
         background: linear-gradient(30deg, transparent 10px, rgba(39, 39, 39, 0.2) 10px), linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px), linear-gradient(210deg, transparent 10px, rgba(39, 39, 39, 0.2) 10px), linear-gradient(90deg, transparent 0px, rgba(39, 39, 39, 0.2) 0px);
         background-position: bottom left, top left, top right, bottom right;

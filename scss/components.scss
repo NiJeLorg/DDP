@@ -97,7 +97,7 @@
       padding: 20px;
       opacity: 1;
     }
-    &:nth-child(3) {
+    &:nth-child(4) {
       cursor: auto;
       background: rgba(180, 180, 180, 0.2);
       background: linear-gradient(
@@ -459,6 +459,14 @@
     z-index: 1;
     overflow-y: scroll;
     height: calc(100vh - 28px);
+    &__value_of_the_biz {
+      width: 100%;
+      padding: 40px 30px;
+      background-color: white;
+      z-index: 1;
+      overflow-y: auto;
+      height: auto;
+    }    
     .story-content {
       .story-margin {
         margin-bottom: 100px;
@@ -533,4 +541,21 @@
   & >* {
     margin-right: 10px;
   }
+}
+
+.c-story-grid-thumbnail {
+  width: 200px;
+  float: left;
+  margin: 20px 20px 0 0;
+}
+
+h3 {
+  background: #5f9ea0;
+  color: #fff;
+  font-size: 36px;
+  line-height: 200px;
+  margin: 10px;
+  padding: 2%;
+  position: relative;
+  text-align: center;
 }

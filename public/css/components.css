@@ -64,7 +64,7 @@
       background-repeat: no-repeat;
       padding: 20px;
       opacity: 1; }
-    .c-bevelled-box__chapter-card:nth-child(3) {
+    .c-bevelled-box__chapter-card:nth-child(4) {
       cursor: auto;
       background: rgba(180, 180, 180, 0.2);
       background: linear-gradient(28deg, transparent 30px, rgba(180, 180, 180, 0.2) 30px), linear-gradient(90deg, transparent 0px, rgba(180, 180, 180, 0.2) 0px), linear-gradient(208deg, transparent 30px, rgba(180, 180, 180, 0.2) 30px), linear-gradient(90deg, transparent 0px, rgba(180, 180, 180, 0.2) 0px);
@@ -312,6 +312,13 @@
     z-index: 1;
     overflow-y: scroll;
     height: calc(100vh - 28px); }
+    .c-stories .c-story-navigator__value_of_the_biz {
+      width: 100%;
+      padding: 40px 30px;
+      background-color: white;
+      z-index: 1;
+      overflow-y: auto;
+      height: auto; }
     .c-stories .c-story-navigator .story-content .story-margin {
       margin-bottom: 100px; }
     .c-stories .c-story-navigator .story-content .chapter-marker {
@@ -369,3 +376,18 @@
   /* Rectangle: */ }
   .c-map-controls > * {
     margin-right: 10px; }
+
+.c-story-grid-thumbnail {
+  width: 200px;
+  float: left;
+  margin: 20px 20px 0 0; }
+
+h3 {
+  background: #5f9ea0;
+  color: #fff;
+  font-size: 36px;
+  line-height: 200px;
+  margin: 10px;
+  padding: 2%;
+  position: relative;
+  text-align: center; }

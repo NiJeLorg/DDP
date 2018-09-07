@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import StoryOne from "./stories/story_one";
 import StoryTwo from "./stories/story_two";
+import StoryThree from "./stories/story_three";
 import _ from'lodash';
 import { setActiveOverlay } from "../actions/index";
 import { bindActionCreators } from 'redux';
@@ -64,15 +65,23 @@ class StoryNavigator extends Component {
 
   render() {
     let story = "";
+    let story_navigator_class = "";
+    let handleScroll = "";
     if (this.state.chapter.id === 1) {
       story = <StoryOne/>;
+      story_navigator_class = "c-story-navigator";
+      handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
     } else if (this.state.chapter.id === 2) {
       story = <StoryTwo/>;
+      story_navigator_class = "c-story-navigator";
+      handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
+    } else if (this.state.chapter.id === 3) {
+      story = <StoryThree/>;
+      story_navigator_class = "c-story-navigator__value_of_the_biz";
     }
 
-    const handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
     return (
-      <div className={"c-story-navigator"} onScroll={handleScroll}>
+      <div className={story_navigator_class} onScroll={handleScroll}>
         {story}
       </div>
     );

@@ -49,11 +49,24 @@ class Stories extends React.Component {
 
   render() {
     this.setHighchartsSettings();
+    let datadrawer = "";
+    let story_navigator = "";
+    let geomap = "";
+
+    if (this.state.chapter.id === 1 || this.state.chapter.id === 2) {
+      datadrawer = <DataDrawer/>;
+      story_navigator = <StoryNavigator chapter={this.state.chapter} />;
+      geomap = <GeoMap chapter={this.state.chapter}/>;
+    } else if (this.state.chapter.id === 3) {
+      datadrawer = <DataDrawer/>;
+      story_navigator = <StoryNavigator chapter={this.state.chapter} />;
+    } 
+
     return (
       <div className="c-stories">
-        <DataDrawer/>
-        <StoryNavigator chapter={this.state.chapter} />
-        <GeoMap chapter={this.state.chapter}/>
+        {datadrawer}
+        {story_navigator}
+        {geomap}
       </div>
     );
   }

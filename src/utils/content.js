@@ -14,7 +14,13 @@ const CHAPTERS = {
     defaultOverlay: "Clean and Welcoming",
     intro: "Outine eu hexagon mollit cold-pressed cardigan ethical. Conequat vinyl officia excepteur microdosing air plant mollit aliquip quinoa cliche bespoke meditation messenger bag commodo kinfolk. Hell of esse before they sold out neutra. "
   },
-
+  3 : {
+    id: 3,
+    no: "03",
+    title: "The Value of the BIZ",
+    defaultOverlay: "Clean and Welcoming",
+    intro: "Lorem ipsum dolor amet intelligentsia small batch chillwave cardigan DIY chia, tattooed taiyaki pitchfork beard food truck. Freegan keffiyeh kale chips, pickled mumblecore squid everyday carry plaid pok pok shabby chic viral 3 wolf moon. Yuccie tumeric leggings, butcher air plant farm-to-table you probably haven't heard of them."
+  },
 };
 
 export default CHAPTERS;

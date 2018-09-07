@@ -32,6 +32,7 @@ class Navigation extends Component {
             >
               <li><Link className={"menu-link"} to="/story/1">01 Downtown In Context</Link></li>
               <li><Link className={"menu-link"} to="/story/2">02 Public Life </Link></li>
+              <li><Link className={"menu-link"} to="/story/3">03 The Value of the BIZ </Link></li>
             </ul>
           </li>
           <li>

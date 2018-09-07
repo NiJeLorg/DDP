@@ -36,3 +36,7 @@
 .fill-height {
   height: 100vh;
 }
+
+.slick-next::before, .slick-prev::before {
+  color: #000;
+}
