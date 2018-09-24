@@ -377,10 +377,14 @@
   .c-map-controls > * {
     margin-right: 10px; }
 
-.c-story-grid-thumbnail {
+.c-thumbnail {
   width: 200px;
   float: left;
   margin: 20px 20px 0 0; }
+
+.c-full-image {
+  width: 100%;
+  margin: 20px 0; }
 
 .story-slider h3 {
   background: #5f9ea0;

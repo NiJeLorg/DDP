@@ -19,7 +19,7 @@ const CHAPTERS = {
     no: "03",
     title: "The Value of the BIZ",
     defaultOverlay: "Clean and Welcoming",
-    intro: "Lorem ipsum dolor amet intelligentsia small batch chillwave cardigan DIY chia, tattooed taiyaki pitchfork beard food truck. Freegan keffiyeh kale chips, pickled mumblecore squid everyday carry plaid pok pok shabby chic viral 3 wolf moon. Yuccie tumeric leggings, butcher air plant farm-to-table you probably haven't heard of them."
+    intro: "*DDP to provide* sub-title copy underneath the main title. Lorem ipsum dolor amet intelligentsia small batch chillwave cardigan DIY chia, tattooed taiyaki pitchfork beard food truck. Freegan keffiyeh kale chips, pickled mumblecore squid everyday carry plaid pok pok shabby chic viral 3 wolf moon."
   },
 };
 
