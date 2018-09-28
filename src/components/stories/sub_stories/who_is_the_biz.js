@@ -65,40 +65,41 @@ class WhoIsTheBIZ extends Component {
               <div className="sub-sub-heading">BIZ Board Members</div>
               <div className="story-slider">
                 <Slider {...settings}>
-                  <div>
-                    <h3>1</h3>
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
+                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt. 
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3>2</h3>
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
+                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt. 
+                      </p>
+                    </div>
+                  </div>       
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
+                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3>3</h3>
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
+                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt. 
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3>4</h3>
-                  </div>
-                  <div>
-                    <h3>5</h3>
-                  </div>
-                  <div>
-                    <h3>6</h3>
-                  </div>        
-                  <div>
-                    <h3>7</h3>
-                  </div>        
-                  <div>
-                    <h3>8</h3>
-                  </div>        
-                  <div>
-                    <h3>9</h3>
-                  </div>        
-                  <div>
-                    <h3>10</h3>
-                  </div>        
-                  <div>
-                    <h3>11</h3>
-                  </div>        
-                
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
+                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt.
+                      </p>
+                    </div>
+                  </div>                                  
                 </Slider>
               </div>
             </div>

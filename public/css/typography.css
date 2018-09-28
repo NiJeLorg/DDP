@@ -43,9 +43,11 @@
   .main-heading__white {
     color: #fff; }
 
-.sub-heading {
+.sub-heading, .sub-heading__centered {
   font-family: "AvenirLTPro-Black";
   font-size: 22px; }
+  .sub-heading__centered {
+    text-align: center; }
 
 .sub-sub-heading, .sub-sub-heading__purple {
   font-family: "AvenirLTPro-Black";

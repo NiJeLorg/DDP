@@ -63,6 +63,10 @@
 .sub-heading {
   font-family: "AvenirLTPro-Black";
   font-size: 22px;
+  &__centered {
+    @extend .sub-heading;
+    text-align: center;
+  }
 }
 
 .sub-sub-heading {
