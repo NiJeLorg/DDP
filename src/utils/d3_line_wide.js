@@ -3,14 +3,14 @@ import * as d3 from 'd3';
 const D3LineWide = {};
 
 D3LineWide.create = (el, data, config) => {
-    console.log(el);
-    console.log(data);
+    //console.log(el);
+    //console.log(data);
 
     // Setup chart dimensions and margins
 		const margin = { top: 20, right: 20, bottom: 35, left: 60 };
-		const width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
+		const width = parseInt(d3.select('.chart-container').style('width')) - margin.left - margin.right;
 		//const width = 300 - margin.left - margin.right;
-		const height = 200 - margin.top - margin.bottom;
+		const height = parseInt(d3.select('.chart-container').style('width'))/2 - margin.top - margin.bottom;
 
 		// Setup scales
 		const x = d3.scaleLinear().range([0, width]);

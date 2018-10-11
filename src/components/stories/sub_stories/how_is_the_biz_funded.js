@@ -75,7 +75,7 @@ class HowIsTheBIZFunded extends Component {
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <div className="chart-header">Owner-occupied Residentail Properties</div>
+              <div className="chart-header">Owner-occupied Residential Properties</div>
               <img className="c-thumbnail" src="https://farm5.staticflickr.com/4041/4634813321_ba305a23b5_b.jpg" alt=""/>
               <p className='main-text__black'>Chartreuse affogato humblebrag, VHS tumblr salvia umami tilde food truck meggings austin tofu. Post-ironic swag snackwave seitan chambray. Before they sold out farm-to-table four dollar toast man bun. Narwhal pork belly meggings semiotics brooklyn adaptogen art party keffiyeh sriracha. 
               </p>
@@ -90,50 +90,53 @@ class HowIsTheBIZFunded extends Component {
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <table className="c-table">
-                <tbody>
-                <tr>
-                  <td className="c-table__1_3_column">$0.003 <i className="fas fa-times"></i> Assessed Value</td>
-                  <td className="c-table__2_column"><i className="fas fa-plus"></i></td>
-                  <td className="c-table__1_3_column">$0.058 <i className="fas fa-times"></i> Floor area square footage</td>
-                </tr>
-                <tr>
-                  <td className="c-table__1_3_column">
-                    <img className="c-full-image" src="/img/clipbooard_person.png" />
-                  </td>
-                  <td className="c-table__2_column"><i className="fas fa-plus"></i></td>
-                  <td className="c-table__1_3_column">
-                    <img className="c-full-image" src="/img/floor-area.jpg" />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="c-table__1_3_column">
-                    <SEVLineChart />
-                  </td>
-                  <td className="c-table__2_column"><i className="fas fa-plus"></i></td>
-                  <td className="c-table__1_3_column">
-                    <FloorAreaLineChart />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="c-table__1_3_column">For every $417 of assessed value, the BIZ receives $1 in revenue</td>
-                  <td className="c-table__2_column"></td>
-                  <td className="c-table__1_3_column">For every 17 square feet of floor area, the BIZ receives $1 in revenue</td>
-                </tr>
-                <tr>
-                  <td className="c-table__1_3_column"></td>
-                  <td className="c-table__2_column"><i className="fas fa-equals fa-3x"></i></td>
-                  <td className="c-table__1_3_column"></td>
-                </tr>
-                </tbody>
-              </table>
-              <div className="sub-heading__centered">$4,165,972 in total BIZ assessement in 2018</div>
+              <div className="chart-container">
+                <table className="c-table">
+                  <tbody>
+                  <tr>
+                    <td className="c-table__1_3_column">$0.003 <i className="fas fa-times"></i> Assessed Value</td>
+                    <td className="c-table__2_column"><i className="fas fa-plus fa-2x"></i></td>
+                    <td className="c-table__1_3_column">$0.058 <i className="fas fa-times"></i> Floor Area Square Footage</td>
+                  </tr>
+                  <tr>
+                    <td className="c-table__1_3_column">
+                      <img className="c-full-image" src="/img/clipbooard_person.png" />
+                    </td>
+                    <td className="c-table__2_column"><i className="fas fa-plus fa-2x"></i></td>
+                    <td className="c-table__1_3_column">
+                      <img className="c-full-image c-floor-area-image" src="/img/floor-area.jpg" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="c-table__1_3_column">
+                      <SEVLineChart />
+                    </td>
+                    <td className="c-table__2_column"><i className="fas fa-plus fa-2x"></i></td>
+                    <td className="c-table__1_3_column">
+                      <FloorAreaLineChart />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="c-table__1_3_column">For every $417 of assessed value, the BIZ receives $1 in revenue</td>
+                    <td className="c-table__2_column"></td>
+                    <td className="c-table__1_3_column">For every 17 square feet of floor area, the BIZ receives $1 in revenue</td>
+                  </tr>
+                  <tr>
+                    <td className="c-table__1_3_column"></td>
+                    <td className="c-table__2_column"><i className="fas fa-equals fa-2x"></i></td>
+                    <td className="c-table__1_3_column"></td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div className="sub-heading__centered">$4,165,972 in total BIZ assessement in 2018</div>
+              </div>
             </div>
             <div className="l-story-grid-column-half">
-              <p className='main-text__black'>NEW CHART HERE: Line chart on the growth in the BIZ Assessment (2014 - 2018) 
-              </p>
-              <BIZRevenueChart />
+              <div className="chart-container">
+                <BIZRevenueChart />
+              </div>
             </div>
+
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
