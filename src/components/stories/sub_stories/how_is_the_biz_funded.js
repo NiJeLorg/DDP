@@ -2,14 +2,22 @@ import React, {Component} from 'react';
 import SEVLineChart from  '../../charts/sev_line_chart';
 import FloorAreaLineChart from  '../../charts/floor_area_line_chart';
 import BIZRevenueChart from '../../charts/biz_revenue_chart';
+import DistributionOfRevenueChart from '../../charts/distribution_of_revenue_chart';
+import GeoMap from "../../geomap";
+import CHAPTERS from '../../../utils/content';
 
 
-class HowIsTheBIZFunded extends Component {
+class HowIsTheBIZFunded extends React.Component {
+
+
   render() {
+    this.state = {
+      chapter: CHAPTERS[3]
+    };
 
     return (
       <div className='story-margin'>
-        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>III.</span>HOW IS THE BIZ FUNDED?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?"><span className='ul-yellow-color'>III.</span>HOW IS THE BIZ FUNDED?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
@@ -53,7 +61,7 @@ class HowIsTheBIZFunded extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              <div className="chart-header">Publicly Financed Sports Stadiums</div>
+              <div className="chart-header">Stadium Authorities</div>
               <img className="c-thumbnail" src="https://crain-platform-cdb-prod.s3.amazonaws.com/s3fs-public/styles/width_792/public/TigersGame-ComericaPark-main_i.jpg" alt=""/>
               <p className='main-text__black'>Tumblr lyft tilde VHS yr. Pinterest chia iceland cloud bread, man bun twee microdosing DIY master cleanse semiotics kombucha before they sold out. Venmo photo booth authentic irony fanny pack readymade viral yr listicle food truck butcher church-key. 
               </p>
@@ -84,7 +92,7 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">How Are BIZ Properties Assessed?</div>
-              <p className='main-text__black'>Tumblr lyft tilde VHS yr. Pinterest chia iceland cloud bread, man bun twee microdosing DIY master cleanse semiotics kombucha before they sold out. Venmo photo booth authentic irony fanny pack readymade viral yr listicle food truck butcher church-key. 
+              <p className='main-text__black'>Business Improvement Zone special assessments are calculated by applying a percentage of assessed value plus a percentage of building floor area for each commercial property. These percentages were established with the adoption of <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a> by in 2014. In addition, there is a per parcel cap of $150,000 and increases in assessments are limited to 3% per parcel per year. The City of Detroit treasurer collects the special assessment with summer taxes.
               </p>
             </div>
           </div>
@@ -117,7 +125,7 @@ class HowIsTheBIZFunded extends Component {
                     </td>
                   </tr>
                   <tr>
-                    <td className="c-table__1_3_column">For every $417 of assessed value, the BIZ receives $1 in revenue</td>
+                    <td className="c-table__1_3_column">For every $407 of assessed value, the BIZ receives $1 in revenue</td>
                     <td className="c-table__2_column"></td>
                     <td className="c-table__1_3_column">For every 17 square feet of floor area, the BIZ receives $1 in revenue</td>
                   </tr>
@@ -143,6 +151,12 @@ class HowIsTheBIZFunded extends Component {
               <div className="sub-sub-heading">How Are BIZ Assessed Properties Contributing to BIZ Revenue?</div>
               <p className='main-text__black'>Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar. 
               </p>
+              <div className="l-story-grid-left">
+                <DistributionOfRevenueChart />
+              </div>
+              <div className="l-story-grid-right">
+                <GeoMap chapter={this.state.chapter} />
+              </div>
               <img className="c-full-image" src="https://lh3.googleusercontent.com/tlYUf4M5ns3YFoKURlVMPg_AOy0ylt7yiSoOYC0GTJCyjLGRuurewP181D2CQRZOPZ8gyD5CKSoYD0CsD-iX1LGDoAnXJvhzbXe8rLS80Ee80ewT5JMxo_OJGIPlOEP1p7liY4_Y" alt=""/>
             </div>
           </div>
@@ -150,9 +164,9 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Why is there a delay in BIZ assessment for new or renovated buildings?</div>
-              <p className='main-text__black'>*DDP to provide* narrative that describes the delay. Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar. 
+              <p className='main-text__black'>Downtown Detroit BIZ Assessments are based on prior year City of Detroit assessment data, as outlined in The BIZ Plan. Special Assessments which are levied with the current summer tax bill are based on property assessment values set in March of the previous year. This causes a delay in when the BIZ will collect the full value of new construction. Depending on construction schedules, this delay can be between one and two years after construction completion. 
               </p>
-              <img className="c-full-image" src="https://lh4.googleusercontent.com/aEuDOjsmgy3DtBLppMQfrTiIdIJS1DyIZVsnCp9o7jv7KRJ-B16O1OoX_nImOUpSdl93vDwX9P7bdIZ6AEONWqXkjPv3nBluIBgV4bKPmkxBTa8Z4dSiGZAYqDu6cc3AmweEIwyt" alt=""/>
+              <img className="c-full-image" src="/img/valueofbiz_timeline.svg" alt=""/>
             </div>
           </div>
         </div>

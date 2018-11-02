@@ -103,9 +103,21 @@ const subOverlayMapsStoryTwo = {
   "Live Downtown": {'2018': {}, '2019': {}, '2020': {}, '2021': {}, '2022': {}}
 };
 
+const overlayMapsStoryThree = {
+  "How is the BIZ Funded?": "How is the BIZ Funded?"
+};
+
 class GeoMap extends Component {
 
   constructor(props) {
+    let overlayMaps;
+    if (props.chapter.id === 1) {
+      overlayMaps = overlayMapsStoryOne;
+    } else if (props.chapter.id === 2) {
+      overlayMaps = overlayMapsStoryTwo;
+    } else if (props.chapter.id === 3) {
+      overlayMaps = overlayMapsStoryThree;
+    }
     super(props);
     this.state = {
       loading: false,
@@ -125,7 +137,7 @@ class GeoMap extends Component {
       selectedSublayer: '',
       currentSubLayerControl: null,
       map: {},
-      overlayMaps: props.chapter.id === 1 ? overlayMapsStoryOne : overlayMapsStoryTwo,
+      overlayMaps: overlayMaps,
       bounds: L.latLngBounds(southWest, northEast)
     };
   }
@@ -136,6 +148,7 @@ class GeoMap extends Component {
   }
 
   getChoroplethGeoJson(overlayName, map) {
+    console.log(overlayName);
     if (overlayName === 'Education Attainment') {
       getEducationAttainmentGeoJson().then((data) => {
         this.addChoroplethLayer(data, mapConfig.educationAttainmentValProperty, mapConfig.educationAttainmentToolTip, map);
@@ -168,6 +181,10 @@ class GeoMap extends Component {
     }
     else if (overlayName === 'Live Downtown') {
       this.getResidentialGeoJson(map)
+    }
+    else if (overlayName === 'How is the BIZ Funded?') {
+      this.toggleSmallMap();
+      this.addChoroplethLayer(mapConfig.ASSESSMENT_PARCEL_DATA_FILE, mapConfig.assessmentProperty, mapConfig.assessmentToolTip, map);
     }
   }
 
@@ -239,7 +256,12 @@ class GeoMap extends Component {
   }
 
   toggleLoader() {
+    console.log(this.state.loading);
     this.setState({loading: !this.state.loading});
+  }
+
+  toggleSmallMap() {
+    this.setState({smallmap: !this.state.smallmap});
   }
 
   removeAllLayers() {
@@ -389,6 +411,8 @@ class GeoMap extends Component {
       this.setState({
         overlayMaps: overlayMapsStoryTwo,
         selectedSublayer: 'services'},  function() {this.updateMapControls()});
+    } else if (this.state.chapter.id === 3) {
+      this.setState({overlayMaps: overlayMapsStoryThree},  function() {this.updateMapControls()});
     }
   }
 
@@ -407,6 +431,9 @@ class GeoMap extends Component {
 
       });
     }
+    if (this.state.chapter.id === 3) {
+
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -414,12 +441,16 @@ class GeoMap extends Component {
   }
 
   render() {
+    let mapWrapperClass = classNames({
+      'map-holder': !this.state.smallmap,
+      'map-holder-small-map': this.state.smallmap
+    });
     let loaderClass = classNames({
       'sweet-loading': true,
       'hidden': !this.state.loading
     });
     return (
-      <div className={"map-holder"}>
+      <div className={mapWrapperClass}>
         <div className={loaderClass}>
           <PulseLoader
             color={'#00A0DF'}

@@ -25,6 +25,8 @@ const DIVERSITY_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?
 const HTTP_PROXY = 'https://cors-anywhere.herokuapp.com/';
 let CRIME_GEO_API =  "https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo_id,offense_category,Count&$filter=incident_datetime+ge+datetime'$start'+and+incident_datetime+le+datetime'$end'&$groupby=offense_category,block_geo_id&$format=geojson";
 
+const ASSESSMENT_PARCEL_DATA_FILE  = require('../data/assessment_parcels.json');
+
 
 const VALID_CRIME_CATEGORIES = ["AGGRAVATED ASSAULT", "ASSAULT", "BURGLARY", "HOMICIDE", "LARCENY", "ROBBERY", "SEXUAL ASSAULT", "STOLEN VEHICLE"];
 
@@ -224,6 +226,16 @@ const buildingsToolTip = (feature, layer) => {
   });
 };
 
+const assessmentProperty = (feature) => {
+  return feature.properties.assessable_BIZAsmt
+};
+
+const assessmentToolTip = (feature, layer) => {
+  layer.bindTooltip(() => {
+    return `${feature.properties.address}`
+  });
+};
+
 
 export default {
   MAPBOX_URL,
@@ -256,6 +268,7 @@ export default {
   welcomingToolTip,
   landscapingToolTip,
   buildingsToolTip,
+  assessmentToolTip,
 
   EDUCATION_ATTAINMENT_GEO_API,
   WAC_GEO_API,
@@ -265,5 +278,6 @@ export default {
   RENT_INCOME_DATA_API,
   DIVERSITY_GEO_API,
   DIVERSITY_DATA_API,
-  CRIME_GEO_API
+  CRIME_GEO_API,
+  ASSESSMENT_PARCEL_DATA_FILE
 };

@@ -18,8 +18,8 @@ const CHAPTERS = {
     id: 3,
     no: "03",
     title: "The Value of the BIZ",
-    defaultOverlay: "Clean and Welcoming",
-    intro: "*DDP to provide* sub-title copy underneath the main title. Lorem ipsum dolor amet intelligentsia small batch chillwave cardigan DIY chia, tattooed taiyaki pitchfork beard food truck. Freegan keffiyeh kale chips, pickled mumblecore squid everyday carry plaid pok pok shabby chic viral 3 wolf moon."
+    defaultOverlay: "How is the BIZ Funded?",
+    intro: "The Downtown Detroit Business Improvement Zone (BIZ) creates a clean, safe and vibrant Downtown through services provided to property owners, businesses, residents and employees."
   },
 };
 

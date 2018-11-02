@@ -84,7 +84,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
 
     return (
       <div className='story-margin'>
-        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>V.</span>WHAT'S THE IMPACT OF BIZ SERVICES ON THE COMMUNITY?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="What is the impact of BIZ services on the community?"><span className='ul-yellow-color'>V.</span>WHAT'S THE IMPACT OF BIZ SERVICES ON THE COMMUNITY?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">

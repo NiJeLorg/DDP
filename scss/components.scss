@@ -474,6 +474,16 @@
       height: 100%;
     }
   }
+  .map-holder-small-map {
+    height: 400px;
+    width: 400px;
+    .map {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+
 
   .c-story-navigator {
     width: 55%;
@@ -724,4 +734,17 @@ path.line {
 }
 
 
+.axis line {
+  stroke: #eee;
+}
+
+.y.axis path {
+  display: none;
+}
+
+.y.axis text {
+  font-size: 11px;
+  fill: #777;
+  font-weight: bold;
+}
 

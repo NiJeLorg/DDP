@@ -58,7 +58,6 @@ class Stories extends React.Component {
       story_navigator = <StoryNavigator chapter={this.state.chapter} />;
       geomap = <GeoMap chapter={this.state.chapter}/>;
     } else if (this.state.chapter.id === 3) {
-      datadrawer = <DataDrawer/>;
       story_navigator = <StoryNavigator chapter={this.state.chapter} />;
     } 
 

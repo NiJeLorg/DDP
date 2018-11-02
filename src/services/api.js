@@ -106,9 +106,6 @@ export function getCleaningWelcomingWorkData() {
   })
 }
 
-
-
-
 export function getAmenitiesServicesGeoJsonLayers() {
   const restaurantsReq = fetch("https://opendata.arcgis.com/datasets/f32e553f2b8f44258d46fbc7dbee1bf0_0.geojson").then(function (response) {
     return response.json()
