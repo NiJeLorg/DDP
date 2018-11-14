@@ -7,9 +7,9 @@ D3BubbleColumn.create = (el, data, config) => {
     //console.log(data);
 
     // Setup chart dimensions and margins
-    const margin = { top: 20, right: 20, bottom: 35, left: 60 };
-    //const width = parseInt(d3.select('.c-table__1_3_column').style('width')) - margin.left - margin.right;
-    const width = 1000 - margin.left - margin.right;
+    const margin = { top: 20, right: 20, bottom: 35, left: 20 };
+    const width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
+    //const width = 1000 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
     // constants
@@ -17,6 +17,12 @@ D3BubbleColumn.create = (el, data, config) => {
     const tileSize = 10;
     const barPadding = 20;
     const barWidth = (tilesPerRow * tileSize) + barPadding;
+
+    // const tilesPerRow = 10;
+    // const barPadding = 20;
+    // const bars = 5;
+    // const barWidth = width / bars;
+    // const tileSize = (barWidth-barPadding)/tilesPerRow;
 
     // bins
     let bins, bin1 = 0, bin2 = 0, bin3 = 0, bin4 = 0, bin5 = 0;
@@ -67,11 +73,11 @@ D3BubbleColumn.create = (el, data, config) => {
         }
 
         bins = [
-            {name: "$0 - $1,000", value: bin1}, 
-            {name: "$1,000 - $10,000", value: bin2}, 
-            {name: "$10,000 - $25,000", value: bin3}, 
-            {name: "$25,000 - $50,000", value: bin4},
-            {name: "$50,000 - $150,000", value: bin5},  
+            {name: "$0 - $1K", value: bin1}, 
+            {name: "$1K - $10K", value: bin2}, 
+            {name: "$10K - $25K", value: bin3}, 
+            {name: "$25K - $50K", value: bin4},
+            {name: "$50K - $150K", value: bin5},  
         ];
 
         return bins;
@@ -118,22 +124,42 @@ D3BubbleColumn.create = (el, data, config) => {
     }
 
 
+    // function updateLabel(d) {
+    //     let element = d3.select(this)
+    //       .select("text");
+      
+    //     if(element.empty()) {
+    //         element = d3.select(this)
+    //             .append("text")
+    //             .attr("y", -8)
+    //             .attr("x", 6)
+    //             .attr("transform", "rotate(-90)")
+    //             .style("font-family", "Avenir")
+    //             .style("font-size", "12px")
+    //             .style("fill", "#777");
+    //     }
+      
+    //     element.text(d.name);
+    // }
+
+    // Horizontal labels
     function updateLabel(d) {
-        let element = d3.select(this)
-          .select("text");
-      
-        if(element.empty()) {
-            element = d3.select(this)
-                .append("text")
-                .attr("y", -8)
-                .attr("x", 6)
-                .attr("transform", "rotate(-90)")
-                .style("font-family", "Avenir")
-                .style("font-size", "12px")
-                .style("fill", "#777");
-        }
-      
-        element.text(d.name);
+      var el = d3.select(this)
+        .select("text");
+    
+      if(el.empty()) {
+        el = d3.select(this)
+          .append("text")
+          .attr("x", 0.45 * tilesPerRow * tileSize)
+          .attr("y", 15)
+          .style("text-anchor", "middle")
+          .style("font-family", "Avenir")
+          .style("font-size", "12px")
+          .style("fill", "#777");
+      }
+    
+      let label = d.name.length > 12 ? d.name.slice(0, 12) + '...' : d.name;
+      el.text(label);
     }
 
     function updateBars() {

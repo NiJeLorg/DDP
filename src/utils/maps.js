@@ -226,10 +226,6 @@ const buildingsToolTip = (feature, layer) => {
   });
 };
 
-const assessmentProperty = (feature) => {
-  return feature.properties.assessable_BIZAsmt
-};
-
 const assessmentToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
     return `${feature.properties.address}`

@@ -1,20 +1,35 @@
 import React, {Component} from 'react';
 import SEVLineChart from  '../../charts/sev_line_chart';
 import FloorAreaLineChart from  '../../charts/floor_area_line_chart';
-import BIZRevenueChart from '../../charts/biz_revenue_chart';
+// import BIZRevenueChart from '../../charts/biz_revenue_chart';
+import BIZRevenueBarChart from '../../charts/biz_revenue_bar_chart';
+import { getBIZRevenueData } from './../../../services/api';
 import DistributionOfRevenueChart from '../../charts/distribution_of_revenue_chart';
 import GeoMap from "../../geomap";
 import CHAPTERS from '../../../utils/content';
 
 
-class HowIsTheBIZFunded extends React.Component {
+class HowIsTheBIZFunded extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [],
+      chapter: CHAPTERS[3],
+    }
+
+  }
+
+  componentDidMount(){
+    getBIZRevenueData().then(resp => {
+      console.log(resp);
+      this.setState({data: resp})
+    });
+  }
 
   render() {
-    this.state = {
-      chapter: CHAPTERS[3]
-    };
-
+    
     return (
       <div className='story-margin'>
         <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?"><span className='ul-yellow-color'>III.</span>HOW IS THE BIZ FUNDED?</h1>
@@ -140,9 +155,7 @@ class HowIsTheBIZFunded extends React.Component {
               </div>
             </div>
             <div className="l-story-grid-column-half">
-              <div className="chart-container">
-                <BIZRevenueChart />
-              </div>
+              <BIZRevenueBarChart data={this.state.data} />
             </div>
 
           </div>
@@ -151,11 +164,13 @@ class HowIsTheBIZFunded extends React.Component {
               <div className="sub-sub-heading">How Are BIZ Assessed Properties Contributing to BIZ Revenue?</div>
               <p className='main-text__black'>Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar. 
               </p>
-              <div className="l-story-grid-left">
-                <DistributionOfRevenueChart />
-              </div>
-              <div className="l-story-grid-right">
-                <GeoMap chapter={this.state.chapter} />
+              <div>
+                <div className="chart-container">
+                  <div className="row">
+                    <DistributionOfRevenueChart />
+                    <GeoMap chapter={this.state.chapter} />
+                  </div>
+                </div>
               </div>
               <img className="c-full-image" src="https://lh3.googleusercontent.com/tlYUf4M5ns3YFoKURlVMPg_AOy0ylt7yiSoOYC0GTJCyjLGRuurewP181D2CQRZOPZ8gyD5CKSoYD0CsD-iX1LGDoAnXJvhzbXe8rLS80Ee80ewT5JMxo_OJGIPlOEP1p7liY4_Y" alt=""/>
             </div>

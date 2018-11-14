@@ -235,3 +235,25 @@ export function getResidentialUnitsData() {
   });
 
 }
+
+export function getBIZRevenueData() {
+  // set up for future API pulls to get BIZ revenue
+  const baseUrl = `https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outStatistics=[{"statisticType": "sum","onStatisticField": "units","outStatisticFieldName": "total_units"}]&`;
+  const returnType = "&f=json";
+  const data2018 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'";
+  const req2018 = fetch(baseUrl + data2018 + returnType).then(function (response) {
+    return response.json()
+  });
+
+  return Promise.all([req2018]).then(([resp2018]) => {
+    return {
+      '2014': 4002576,
+      '2015': 4008309,
+      '2016': 4014355,
+      '2017': 4077192,
+      '2018': 4165972,
+    }
+  });
+
+}
+

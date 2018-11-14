@@ -184,7 +184,7 @@ class GeoMap extends Component {
     }
     else if (overlayName === 'How is the BIZ Funded?') {
       this.toggleSmallMap();
-      this.addChoroplethLayer(mapConfig.ASSESSMENT_PARCEL_DATA_FILE, mapConfig.assessmentProperty, mapConfig.assessmentToolTip, map);
+      this.addOrdinalPolygonLayer(mapConfig.ASSESSMENT_PARCEL_DATA_FILE, mapConfig.assessmentToolTip, map);
     }
   }
 
@@ -256,7 +256,6 @@ class GeoMap extends Component {
   }
 
   toggleLoader() {
-    console.log(this.state.loading);
     this.setState({loading: !this.state.loading});
   }
 
@@ -301,7 +300,7 @@ class GeoMap extends Component {
       mode: 'q', // q for quantile, e for equidistant, k for k-means
       style: {
         color: '#fff', // border color
-        weight: 2,
+        weight: 1,
         fillOpacity: 0.6
       },
       overlayMaps: {},
@@ -310,6 +309,37 @@ class GeoMap extends Component {
     }).addTo(map);
     this.toggleLoader();
   }
+
+  addOrdinalPolygonLayer(geoJson, toolTip, map) {
+    this.removeAllLayers();
+    L.geoJSON(geoJson, {
+      style: function(feature) {
+        return {
+          fillColor: setOrdinalColor(feature.properties.assessable_BIZAsmt),
+          color: "#fff",
+          weight: 1,
+          fillOpacity: 0.6
+        }
+      },
+      onEachFeature: toolTip
+    }).addTo(map);  
+    this.toggleLoader();
+    this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
+    function setOrdinalColor(d) {
+      if (d) {
+        return  d > 50000  ? '#00A992' :
+                d > 25000  ? '#EF4060' :
+                d > 10000  ? '#F27B21' :
+                d > 1000   ? '#00B3EE' :
+                  '#2A316C';
+      } else {
+        return "#ccc";
+      }
+
+    }  
+  }
+
+
 
 
   componentDidMount() {
@@ -354,12 +384,17 @@ class GeoMap extends Component {
     this.setOverlayLayerZoom(overlayName, map);
   }
   addOverlaySelectControl(map){
-    if(this.state.overlaySelectControl !== null) {
-      this.state.overlaySelectControl.remove()
+    let overlaySelectControl;
+    if (this.state.chapter.id !== 3) {
+      if(this.state.overlaySelectControl !== null) {
+        this.state.overlaySelectControl.remove()
+      }
+      overlaySelectControl = L.control.overlayselect({
+        overlays: this.state.overlayMaps
+      }).addTo(map);
+    } else {
+      overlaySelectControl = false;
     }
-    const overlaySelectControl = L.control.overlayselect({
-      overlays: this.state.overlayMaps
-    }).addTo(map);
     if(this.state.fullScreenControl !== null) {
       this.state.fullScreenControl.remove();
     }
@@ -430,9 +465,6 @@ class GeoMap extends Component {
         }
 
       });
-    }
-    if (this.state.chapter.id === 3) {
-
     }
   }
 
