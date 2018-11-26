@@ -257,3 +257,42 @@ export function getBIZRevenueData() {
 
 }
 
+export function getAssessedValueData() {
+  // set up for future API pulls to get Assessed Value
+  const baseUrl = `https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outStatistics=[{"statisticType": "sum","onStatisticField": "units","outStatisticFieldName": "total_units"}]&`;
+  const returnType = "&f=json";
+  const data2018 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'";
+  const req2018 = fetch(baseUrl + data2018 + returnType).then(function (response) {
+    return response.json()
+  });
+
+  return Promise.all([req2018]).then(([resp2018]) => {
+    return {
+      '2013': 838000000,
+      '2014': 825000000,
+      '2015': 888000000,
+      '2016': 946000000,
+      '2017': 969000000,
+    }
+  });
+
+}
+
+export function getChangeInAssessment() {
+  // set up for future API pulls to get Assessed Value
+  const baseUrl = `https://services6.arcgis.com/kpe5MwFGvZu9ezGW/ArcGIS/rest/services/ResidentialPipeline/FeatureServer/0/query?outStatistics=[{"statisticType": "sum","onStatisticField": "units","outStatisticFieldName": "total_units"}]&`;
+  const returnType = "&f=json";
+  const data2018 = "where=EstDelivery='Before 2010'+OR+EstDelivery='2011'+OR+EstDelivery='2012'+OR+EstDelivery='2013'+OR+EstDelivery='2014'+OR+EstDelivery='2015'+OR+EstDelivery='2016'+OR+EstDelivery='2017'+OR+EstDelivery='2018'";
+  const req2018 = fetch(baseUrl + data2018 + returnType).then(function (response) {
+    return response.json()
+  });
+
+  return Promise.all([req2018]).then(([resp2018]) => {
+    return {
+      'State Equalized Value': 17,
+      'BIZ Assessment': 4,
+    }
+  });
+
+}
+

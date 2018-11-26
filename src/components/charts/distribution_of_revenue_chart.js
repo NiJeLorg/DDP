@@ -18,6 +18,8 @@ class DistributionOfRevenueChart extends Component {
     componentDidMount() {
       let data = mapConfig.ASSESSMENT_PARCEL_DATA_FILE;
 
+      console.log(this.props);
+
       let config = {
           'x_domain_normalize':5,
           'x_axis_format':"$.0s",

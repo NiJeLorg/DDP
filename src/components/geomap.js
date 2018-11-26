@@ -333,10 +333,9 @@ class GeoMap extends Component {
                 d > 1000   ? '#00B3EE' :
                   '#2A316C';
       } else {
-        return "#ccc";
+        return "#aaa";
       }
-
-    }  
+    }
   }
 
 
@@ -374,6 +373,8 @@ class GeoMap extends Component {
     });
 
     this.setState({map: this.map});
+
+    global.geomap = this.map;
 
 
   }

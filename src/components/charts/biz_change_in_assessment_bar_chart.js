@@ -7,7 +7,7 @@ import DataBar from './data_bar';
 
 
 const config = {
-  colors: ['#2A316C'],
+  colors: ['#F27B21', '#00B3EE'],
   xAxis: {
     categories: []
   },
@@ -29,7 +29,7 @@ const config = {
     fallbackToExportServer: false
   },
   tooltip: {
-    pointFormat: '<span>BIZ Assessment</span>: <b>${point.y}</b><br/>',
+    pointFormat: '<span>Percent Change</span>: <b>{point.y}%</b><br/>',
     // shared: true,
     useHTML: true,
     borderColor: null,
@@ -49,9 +49,9 @@ const config = {
       enabled: false
     },
     labels: {
-      format: '${value:,.0f}'
+      format: '{value:,.0f}%'
     },
-    min: 3900000
+    min: 0
   },
   legend: {
     verticalAlign: 'top',
@@ -73,7 +73,7 @@ const config = {
   ]
 };
 
-class BIZRevenueBarChart extends Component {
+class BIZChangeInAssessmentBarChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -101,9 +101,9 @@ class BIZRevenueBarChart extends Component {
         data: this.getValuesSortedByKey(nextProps.data),
       }];
       config2.series = [];
-      let tableRow = {Category: "BIZ Assessment"};
+      let tableRow = {Category: "Percent Change"};
       Object.keys(nextProps.data).map(key => {
-        tableRow[key] = '$' + nextProps.data[key].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
+        tableRow[key] = nextProps.data[key].toLocaleString(navigator.language, { minimumFractionDigits: 0 }) + "%";
       });
       config2.series.push({tableRow: tableRow});
       
@@ -123,7 +123,7 @@ class BIZRevenueBarChart extends Component {
 
     return (
       <div>
-        <span className="chart-header">BIZ Assessment Changes Since 2014</span>
+        <span className="chart-header">Change in Assessed Value and BIZ Assessement Since 2014-15</span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar config={this.state.config2} />
@@ -136,4 +136,4 @@ class BIZRevenueBarChart extends Component {
 
 }
 
-export default BIZRevenueBarChart;
+export default BIZChangeInAssessmentBarChart;

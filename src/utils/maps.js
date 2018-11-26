@@ -9,8 +9,8 @@ const WORKERS_DOWNTOWN_GEO_API = 'https://services2.arcgis.com/HsXtOCMp1Nis1Ogr/
 
 const ZOOM_LEVEL = 13;
 const DETROIT_POSITION = {
-  lat: 42.334165,
-  lng: -83.048754
+  lat: 42.332165,
+  lng: -83.046754
 };
 
 const EDUCATION_ATTAINMENT_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=150|06000US2616322000';

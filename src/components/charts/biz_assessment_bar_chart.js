@@ -29,7 +29,7 @@ const config = {
     fallbackToExportServer: false
   },
   tooltip: {
-    pointFormat: '<span>BIZ Assessment</span>: <b>${point.y}</b><br/>',
+    pointFormat: '<span>Total Assessed Value</span>: <b>${point.y}</b><br/>',
     // shared: true,
     useHTML: true,
     borderColor: null,
@@ -51,7 +51,7 @@ const config = {
     labels: {
       format: '${value:,.0f}'
     },
-    min: 3900000
+    min: 750000000
   },
   legend: {
     verticalAlign: 'top',
@@ -73,7 +73,7 @@ const config = {
   ]
 };
 
-class BIZRevenueBarChart extends Component {
+class BIZAssessmentBarChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -101,7 +101,7 @@ class BIZRevenueBarChart extends Component {
         data: this.getValuesSortedByKey(nextProps.data),
       }];
       config2.series = [];
-      let tableRow = {Category: "BIZ Assessment"};
+      let tableRow = {Category: "Total Assessed Value"};
       Object.keys(nextProps.data).map(key => {
         tableRow[key] = '$' + nextProps.data[key].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
       });
@@ -123,7 +123,7 @@ class BIZRevenueBarChart extends Component {
 
     return (
       <div>
-        <span className="chart-header">BIZ Assessment Changes Since 2014</span>
+        <span className="chart-header">BIZ Total Value of Assessable Properties Since 2013</span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar config={this.state.config2} />
@@ -136,4 +136,4 @@ class BIZRevenueBarChart extends Component {
 
 }
 
-export default BIZRevenueBarChart;
+export default BIZAssessmentBarChart;

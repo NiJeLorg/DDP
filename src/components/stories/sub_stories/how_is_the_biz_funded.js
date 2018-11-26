@@ -3,7 +3,11 @@ import SEVLineChart from  '../../charts/sev_line_chart';
 import FloorAreaLineChart from  '../../charts/floor_area_line_chart';
 // import BIZRevenueChart from '../../charts/biz_revenue_chart';
 import BIZRevenueBarChart from '../../charts/biz_revenue_bar_chart';
+import BIZAssessmentBarChart from '../../charts/biz_assessment_bar_chart';
+import BIZChangeInAssessmentBarChart from '../../charts/biz_change_in_assessment_bar_chart';
 import { getBIZRevenueData } from './../../../services/api';
+import { getAssessedValueData } from './../../../services/api';
+import { getChangeInAssessment } from './../../../services/api';
 import DistributionOfRevenueChart from '../../charts/distribution_of_revenue_chart';
 import GeoMap from "../../geomap";
 import CHAPTERS from '../../../utils/content';
@@ -15,7 +19,9 @@ class HowIsTheBIZFunded extends Component {
     super(props);
 
     this.state = {
-      data: [],
+      data_BIZRevenue: [],
+      data_AssessedValue: [],
+      data_ChangeAssessment: [],
       chapter: CHAPTERS[3],
     }
 
@@ -23,8 +29,13 @@ class HowIsTheBIZFunded extends Component {
 
   componentDidMount(){
     getBIZRevenueData().then(resp => {
-      console.log(resp);
-      this.setState({data: resp})
+      this.setState({data_BIZRevenue: resp})
+    });
+    getAssessedValueData().then(resp => {
+      this.setState({data_AssessedValue: resp})
+    });
+    getChangeInAssessment().then(resp => {
+      this.setState({data_ChangeAssessment: resp})
     });
   }
 
@@ -155,7 +166,9 @@ class HowIsTheBIZFunded extends Component {
               </div>
             </div>
             <div className="l-story-grid-column-half">
-              <BIZRevenueBarChart data={this.state.data} />
+              <BIZRevenueBarChart data={this.state.data_BIZRevenue} />
+              <BIZAssessmentBarChart data={this.state.data_AssessedValue} />
+              <BIZChangeInAssessmentBarChart data={this.state.data_ChangeAssessment} />
             </div>
 
           </div>
@@ -170,6 +183,7 @@ class HowIsTheBIZFunded extends Component {
                     <DistributionOfRevenueChart />
                     <GeoMap chapter={this.state.chapter} />
                   </div>
+                  <span className="chart-header ">The median assessment is $1,207</span>
                 </div>
               </div>
               <img className="c-full-image" src="https://lh3.googleusercontent.com/tlYUf4M5ns3YFoKURlVMPg_AOy0ylt7yiSoOYC0GTJCyjLGRuurewP181D2CQRZOPZ8gyD5CKSoYD0CsD-iX1LGDoAnXJvhzbXe8rLS80Ee80ewT5JMxo_OJGIPlOEP1p7liY4_Y" alt=""/>

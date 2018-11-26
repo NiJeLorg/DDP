@@ -485,6 +485,24 @@
   }
   .c-bubble-column-svg {
     flex-grow: 1;
+    .c-reset-button {
+      vertical-align: top;
+      float: right;
+      margin-right: 10px;
+      background: #00B3EE url(./../img/reset.svg) no-repeat 0 0;
+      border-radius: 50% !important;
+      background-position: center;
+      background-size: 70%;
+      width: 40px !important;
+      height: 40px !important;
+      border: none;
+      &:hover {
+        background: #0091c1 url(./../img/reset.svg) no-repeat 0 0;
+        background-position: center;
+        background-size: 70%;
+      }
+    }
+
   }
 
 
