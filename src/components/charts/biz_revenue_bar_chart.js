@@ -49,7 +49,9 @@ const config = {
       enabled: false
     },
     labels: {
-      format: '${value:,.0f}'
+      formatter: function () {
+        return  '$' + this.value / 1000000 + 'M';
+      }
     },
     min: 3900000
   },

@@ -33,13 +33,6 @@ class WhereDoesBIZInvestmentGo extends Component {
               </div>          
             </div>
           </div>
-          <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">                   
-              <img className="c-full-image" src="https://lh4.googleusercontent.com/uSgdMv6Y2_O8JEXJl9e9dapZY1Ym9SGLmK69iG-l6ovmo6lbTYGplnkt_eBa8Oi7yt0tjI8Vk4DS6q2araO8btvZVvMN8rVJqzv1DILzuol_o5eeV4FPSGClGEGTEb80EpTCuNx2" alt=""/>   
-              <img className="c-full-image" src="https://lh3.googleusercontent.com/KOdn6fdY2f1RQ7SnMpwvSUPa8_Mewnu6IzbWmlhw5CVcbWxyman_tJb8-q6ERb8EiUPnFNFDqCUNSlt8pQ9X7CVMEuKCjbV44OhCc2PxQgW6Xv1VC8ZMt9ST4UKCxghBIz7Wxc3c" alt=""/>  
-                       
-            </div>
-          </div>
         </div>
 
         <div className="l-story-grid">

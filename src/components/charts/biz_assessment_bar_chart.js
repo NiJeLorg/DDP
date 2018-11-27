@@ -29,7 +29,10 @@ const config = {
     fallbackToExportServer: false
   },
   tooltip: {
-    pointFormat: '<span>Total Assessed Value</span>: <b>${point.y}</b><br/>',
+    //pointFormat: '<span>Total Assessed Value</span>: <b>${point.y}</b><br/>',
+    formatter: function() {
+      return '<span>Total Assessed Value</span>: <b>$' + Highcharts.numberFormat(this.y / 1000000, 0, '') + 'M</b><br/>';
+    },
     // shared: true,
     useHTML: true,
     borderColor: null,
@@ -49,7 +52,9 @@ const config = {
       enabled: false
     },
     labels: {
-      format: '${value:,.0f}'
+      formatter: function () {
+        return  '$' + this.value / 1000000 + 'M';
+      }
     },
     min: 750000000
   },

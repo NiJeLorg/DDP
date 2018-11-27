@@ -186,7 +186,6 @@ class HowIsTheBIZFunded extends Component {
                   <span className="chart-header ">The median assessment is $1,207</span>
                 </div>
               </div>
-              <img className="c-full-image" src="https://lh3.googleusercontent.com/tlYUf4M5ns3YFoKURlVMPg_AOy0ylt7yiSoOYC0GTJCyjLGRuurewP181D2CQRZOPZ8gyD5CKSoYD0CsD-iX1LGDoAnXJvhzbXe8rLS80Ee80ewT5JMxo_OJGIPlOEP1p7liY4_Y" alt=""/>
             </div>
           </div>
 

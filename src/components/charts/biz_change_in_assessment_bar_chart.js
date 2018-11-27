@@ -5,12 +5,13 @@ import _ from 'lodash';
 import DataBar from './data_bar';
 
 
+const COLUMNS = [
+  "Under 5 years",
+  "5 to 9 years"
+];
 
 const config = {
   colors: ['#F27B21', '#00B3EE'],
-  xAxis: {
-    categories: []
-  },
   exporting: {
     chartOptions: { // specific options for the exported image
       plotOptions: {
@@ -53,6 +54,12 @@ const config = {
     },
     min: 0
   },
+  xAxis: {
+    categories: COLUMNS,
+    title: {
+      text: false
+    }
+  },
   legend: {
     verticalAlign: 'top',
     itemDistance: 10,
@@ -66,8 +73,11 @@ const config = {
     backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
     symbolRadius: 0
   },
-
-
+  plotOptions: {
+      column: {
+          colorByPoint: true
+      }
+  },
   series: [
     { data: []}
   ]
