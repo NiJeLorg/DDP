@@ -177,14 +177,9 @@ class HowIsTheBIZFunded extends Component {
               <div className="sub-sub-heading">How Are BIZ Assessed Properties Contributing to BIZ Revenue?</div>
               <p className='main-text__black'>Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar. 
               </p>
-              <div>
-                <div className="chart-container">
-                  <div className="row">
-                    <DistributionOfRevenueChart />
-                    <GeoMap chapter={this.state.chapter} />
-                  </div>
-                  <span className="chart-header ">The median assessment is $1,207</span>
-                </div>
+              <div className="distribution-chart-wrapper">
+                <DistributionOfRevenueChart />
+                <GeoMap chapter={this.state.chapter} />
               </div>
             </div>
           </div>

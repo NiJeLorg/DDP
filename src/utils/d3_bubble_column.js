@@ -10,7 +10,7 @@ D3BubbleColumn.create = (el, data, config) => {
     //console.log(data);
 
     // Setup chart dimensions and margins
-    const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+    const margin = { top: 20, right: 20, bottom: 20, left: 70 };
     const width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
     //const width = 1000 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
@@ -27,9 +27,8 @@ D3BubbleColumn.create = (el, data, config) => {
     let barWidth = (width / bars) - barPadding;
     const tileSize = (barWidth - barPadding) / tilesPerRow;
 
-
     // bins
-    let bins, bin1 = 0, bin2 = 0, bin3 = 0, bin4 = 0, bin5 = 0;
+    let bins, bin1 = 0, bin2 = 0, bin3 = 0, bin4 = 0, bin5 = 0, bin6 = 0;
 
     // sub bins
     let bins1, bin1_1 = 0, bin1_2 = 0, bin1_3 = 0, bin1_4 = 0;
@@ -42,7 +41,10 @@ D3BubbleColumn.create = (el, data, config) => {
     let sub_bin_toggle = false;
 
     // colors
-    var colors = ["#2A316C", "#00B3EE", "#F27B21", "#EF4060", "#00A992"];
+    const colors = ["#7278A8", "#484E88", "#2A316C", "#13184E", "#060A31", "#EF4060"];
+
+    // y-axis text
+    let y_axis_label;
     
 	// Setup svg element
     let svg = d3.select(el).append('svg')
@@ -55,8 +57,20 @@ D3BubbleColumn.create = (el, data, config) => {
     // add reset button
     d3.select(el).append('button')
         .classed("c-reset-button", true)
-        .attr("title", "Reset Chart")
+        .attr("title", "Reset map layers")
         .on("click", resetChart);
+    
+    svg.append('g')
+        .append("text")
+        .classed('chart-header', true)
+        .text("Many BIZ assessed parcels are assessed less than"); 
+        
+    svg.append('g')
+        .append("text")
+        .attr("y", 25)
+        .classed('chart-header', true)
+        .text("$1,000, with the median parcel being assessed $1,207.");     
+
 
     let axisG = svg.append('g')
         .classed('y', true)
@@ -64,7 +78,7 @@ D3BubbleColumn.create = (el, data, config) => {
         .attr("id", "yAxis")
         .style("font-family", "Avenir")
         .style("font-size", "12px")
-        .style("fill", "#777");
+        .style("fill", "#312f2f");
 
     let barsG = svg.append('g')
         .classed('bars', true);
@@ -123,7 +137,7 @@ D3BubbleColumn.create = (el, data, config) => {
                 } else if (+d.properties.assessable_BIZAsmt <= 50000) {
                     bin4_4++;
                 }
-            } else {
+            } else if (+d.properties.assessable_BIZAsmt < 150000) {
                 bin5++;
                 if (+d.properties.assessable_BIZAsmt <= 75000) {
                     bin5_1++;
@@ -131,14 +145,16 @@ D3BubbleColumn.create = (el, data, config) => {
                     bin5_2++;
                 } else if (+d.properties.assessable_BIZAsmt <= 125000) {
                     bin5_3++;
-                } else if (+d.properties.assessable_BIZAsmt <= 150000) {
+                } else if (+d.properties.assessable_BIZAsmt < 150000) {
                     bin5_4++;
                 }
-            }            
+            } else if (+d.properties.assessable_BIZAsmt === 150000) {
+                bin6++;
+            }          
         }
 
         bins1 = [
-            {name: "$0 - $250", value: bin1_1, color: colors[0]}, 
+            {name: "$1 - $250", value: bin1_1, color: colors[0]}, 
             {name: "$250 - $500", value: bin1_2, color: colors[0]}, 
             {name: "$500 - $750", value: bin1_3, color: colors[0]}, 
             {name: "$750 - $1K", value: bin1_4, color: colors[0]},
@@ -172,13 +188,24 @@ D3BubbleColumn.create = (el, data, config) => {
             {name: "$125K - $150K", value: bin5_4, color: colors[4]},
         ];
 
+
+        // temporarily adding bins 3 and 4 together until refactor
+        // bins = [
+        //     {name: "$1 - $1K", value: bin1, sub_bins: bins1, color: colors[0]}, 
+        //     {name: "$1K - $10K", value: bin2, sub_bins: bins2, color: colors[1]}, 
+        //     {name: "$10K - $25K", value: bin3, sub_bins: bins3, color: colors[2]}, 
+        //     {name: "$25K - $50K", value: bin4, sub_bins: bins4, color: colors[3]},
+        //     {name: "$50K - $150K", value: bin5, sub_bins: bins5, color: colors[4]},
+        //     {name: "$150K", value: bin6, sub_bins: bins5, color: colors[5]},  
+        // ];
+
         bins = [
-            {name: "$0 - $1K", value: bin1, sub_bins: bins1, color: colors[0]}, 
+            {name: "$1 - $1K", value: bin1, sub_bins: bins1, color: colors[0]}, 
             {name: "$1K - $10K", value: bin2, sub_bins: bins2, color: colors[1]}, 
-            {name: "$10K - $25K", value: bin3, sub_bins: bins3, color: colors[2]}, 
-            {name: "$25K - $50K", value: bin4, sub_bins: bins4, color: colors[3]},
-            {name: "$50K - $150K", value: bin5, sub_bins: bins5, color: colors[4]},  
-        ];
+            {name: "$10K - $50K", value: bin3 + bin4, sub_bins: bins3, color: colors[2]}, 
+            {name: "$50K - $150K", value: bin5, sub_bins: bins5, color: colors[3]},
+            {name: "$150K", value: bin6, sub_bins: bins5, color: colors[5]},  
+        ];        
 
         return bins;
         
@@ -207,12 +234,25 @@ D3BubbleColumn.create = (el, data, config) => {
     function getTiles(d) {
         var tiles = [];
 
-        for (var i = 0; i < d.value; i++) {
-            var rowNumber = Math.floor(i / tilesPerRow);
+        for (let i = 0; i < d.value; i++) {
+            const rowNumber = Math.floor(i / tilesPerRow);
+            let color;
+            if (d.name == "$1 - $1K") {
+                color = colors[0];
+            } else if (d.name == "$1K - $10K") {
+                color = colors[1];
+            } else if (d.name == "$10K - $50K") {
+                color = colors[2];
+            } else if (d.name == "$50K - $150K") {
+                color = colors[3];
+            } else if (d.name == "$150K") {
+                color = colors[5];
+            } 
             tiles.push({
                 x: (i % tilesPerRow) * tileSize,
                 y: -(rowNumber + 1) * tileSize,
                 bin: d.name,
+                color: color
             });
         }
             
@@ -227,6 +267,7 @@ D3BubbleColumn.create = (el, data, config) => {
         let u = d3.select(this)
             .attr("transform", "translate(" + traslateWidth + ", " + height + ")")
             .selectAll("circle")
+            .style("opacity", 0)
             .data(tiles);
 
         u.enter()
@@ -234,6 +275,9 @@ D3BubbleColumn.create = (el, data, config) => {
             .style("stroke", "white")
             .style("stroke-width", "0.5")
             .merge(u)
+            .style("fill", function(d) {
+                return d.color;
+            })
             .attr("cx", function(d) {
                 return d.x;
             })
@@ -248,15 +292,28 @@ D3BubbleColumn.create = (el, data, config) => {
                 updateMap(d);
 
                 // update chart
-                if (sub_bin_toggle) {
-                    resetChart();
-                } else {
-                    updateChart(d);
-                }
+                // if (sub_bin_toggle) {
+                //     resetChart();
+                // } else {
+                //     updateChart(d);
+                // }
 
-            });
+            })
+            .transition()
+            .delay(function(d, i) {
+                return i * 20;
+            })
+            .style("opacity", 1);
            
-        u.exit().remove();
+        u.exit()
+            .transition()
+            .delay(function(d, i) {
+              return (100 - i) * 20;
+            })
+            .style("opacity", 0)
+            .on("end", function() {
+              d3.select(this).remove();
+            });
 
     }
 
@@ -274,21 +331,21 @@ D3BubbleColumn.create = (el, data, config) => {
                 return {
                 fillColor: setOrdinalColor(feature.properties.assessable_BIZAsmt),
                 color: "#fff",
-                weight: 1,
+                weight: 0.2,
                 fillOpacity: 0.6
                 }
             },
             filter: function(feature, layer) {
-                if (d.bin === "$0 - $1K") {
+                if (d.bin === "$1 - $1K") {
                     return (feature.properties.assessable_BIZAsmt <= 1000 && feature.properties.assessable_BIZAsmt);
                 } else if (d.bin === "$1K - $10K") {
                     return (feature.properties.assessable_BIZAsmt > 1000 &&feature.properties.assessable_BIZAsmt <= 10000 && feature.properties.assessable_BIZAsmt);
-                } else if (d.bin === "$10K - $25K") {
-                    return (feature.properties.assessable_BIZAsmt > 10000 &&feature.properties.assessable_BIZAsmt <= 25000 && feature.properties.assessable_BIZAsmt);
-                } else if (d.bin === "$25K - $50K") {
-                    return (feature.properties.assessable_BIZAsmt > 25000 &&feature.properties.assessable_BIZAsmt <= 50000 && feature.properties.assessable_BIZAsmt);
+                } else if (d.bin === "$10K - $50K") {
+                    return (feature.properties.assessable_BIZAsmt > 10000 &&feature.properties.assessable_BIZAsmt <= 50000 && feature.properties.assessable_BIZAsmt);
                 } else if (d.bin === "$50K - $150K") {
-                    return (feature.properties.assessable_BIZAsmt > 50000 &&feature.properties.assessable_BIZAsmt <= 150000 && feature.properties.assessable_BIZAsmt);
+                    return (feature.properties.assessable_BIZAsmt > 50000 &&feature.properties.assessable_BIZAsmt < 150000 && feature.properties.assessable_BIZAsmt);
+                } else if (d.bin === "$150K") {
+                    return (feature.properties.assessable_BIZAsmt == 150000 && feature.properties.assessable_BIZAsmt);
                 } else {
                     return feature
                 }
@@ -296,19 +353,32 @@ D3BubbleColumn.create = (el, data, config) => {
             onEachFeature: mapConfig.assessmentToolTip
         }).addTo(global.geomap);
 
-        global.geomap.fitBounds(geoJsonLayer.getBounds());
+        // previous color function for chloropleth map
+        // function setOrdinalColor(d) {
+        //     if (d) {
+        //         return  d == 150000  ? '#EF4060' :
+        //                 d > 50000    ? '#060A31' :
+        //                 d > 25000    ? '#13184E' :
+        //                 d > 10000    ? '#2A316C' :
+        //                 d > 1000     ? '#484E88' :
+        //                 '#7278A8';
+        //     } else {
+        //         return "#aaa";
+        //     }
+        // }
 
         function setOrdinalColor(d) {
             if (d) {
-                return  d > 50000  ? '#00A992' :
-                        d > 25000  ? '#EF4060' :
-                        d > 10000  ? '#F27B21' :
-                        d > 1000   ? '#00B3EE' :
-                        '#2A316C';
+                return  d == 150000  ? '#EF4060' :
+                        d > 50000    ? '#13184E' :
+                        d > 10000    ? '#2A316C' :
+                        d > 1000     ? '#484E88' :
+                        '#7278A8';
             } else {
-                return "#ccc";
+                return "#aaa";
             }
         }
+
     }
 
 
@@ -343,7 +413,8 @@ D3BubbleColumn.create = (el, data, config) => {
           .style("text-anchor", "middle")
           .style("font-family", "Avenir")
           .style("font-size", "12px")
-          .style("fill", "#777");
+          .style("fill", "#312f2f");
+
       }
     
       //let label = d.name.length > 12 ? d.name.slice(0, 12) + '...' : d.name;
@@ -359,9 +430,6 @@ D3BubbleColumn.create = (el, data, config) => {
         u.enter()
             .append("g")
             .merge(u)
-            .style("fill", function(d) {
-                return d.color;
-            })
             .each(updateBar)
             .each(updateLabel);
          
@@ -376,9 +444,17 @@ D3BubbleColumn.create = (el, data, config) => {
         d3.select("#yAxis").attr('transform', 'translate(0, '+ (height - chartHeight - (tileSize / 2)) + ')')
       
         const yScale = d3.scaleLinear().domain([0, maxValue]).range([chartHeight, 0]);
-        const yAxis = d3.axisRight().scale(yScale).tickSize(chartWidth);
+        const yAxis = d3.axisLeft().scale(yScale).tickSize(-chartWidth);
       
         axisG.call(yAxis);
+
+        axisG.append("text")
+            .attr("y", -35)
+            .attr("x", -90)
+            .attr("transform", "rotate(-90)")
+            .text("Number of parcels")
+        
+
     }
 
     function initialize() {

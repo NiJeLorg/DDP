@@ -317,7 +317,7 @@ class GeoMap extends Component {
         return {
           fillColor: setOrdinalColor(feature.properties.assessable_BIZAsmt),
           color: "#fff",
-          weight: 1,
+          weight: 0.2,
           fillOpacity: 0.6
         }
       },
@@ -327,13 +327,13 @@ class GeoMap extends Component {
     this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
     function setOrdinalColor(d) {
       if (d) {
-        return  d > 50000  ? '#00A992' :
-                d > 25000  ? '#EF4060' :
-                d > 10000  ? '#F27B21' :
-                d > 1000   ? '#00B3EE' :
-                  '#2A316C';
+          return  d == 150000  ? '#EF4060' :
+                  d > 50000    ? '#13184E' :
+                  d > 10000    ? '#2A316C' :
+                  d > 1000     ? '#484E88' :
+                  '#7278A8';
       } else {
-        return "#aaa";
+          return "#aaa";
       }
     }
   }
@@ -385,7 +385,7 @@ class GeoMap extends Component {
     this.setOverlayLayerZoom(overlayName, map);
   }
   addOverlaySelectControl(map){
-    let overlaySelectControl;
+    let overlaySelectControl, fullScreenControl;
     if (this.state.chapter.id !== 3) {
       if(this.state.overlaySelectControl !== null) {
         this.state.overlaySelectControl.remove()
@@ -393,13 +393,14 @@ class GeoMap extends Component {
       overlaySelectControl = L.control.overlayselect({
         overlays: this.state.overlayMaps
       }).addTo(map);
+      if(this.state.fullScreenControl !== null) {
+        this.state.fullScreenControl.remove();
+      } 
+      fullScreenControl =  new L.Control.Fullscreen({position: 'topright'}).addTo(map);//map.addControl(new L.Control.Fullscreen({position: 'topright'}));  
     } else {
       overlaySelectControl = false;
+      fullScreenControl = false;
     }
-    if(this.state.fullScreenControl !== null) {
-      this.state.fullScreenControl.remove();
-    }
-    const fullScreenControl =  new L.Control.Fullscreen({position: 'topright'}).addTo(map);//map.addControl(new L.Control.Fullscreen({position: 'topright'}));
     this.setState({overlaySelectControl, fullScreenControl});
   }
   addSubOverlayControl(map) {
