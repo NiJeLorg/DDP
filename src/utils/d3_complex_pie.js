@@ -35,7 +35,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
         
     const adminArcLabel = d3.arc().innerRadius(adminRadius).outerRadius(adminRadius);
 
-    const adminColor = d3.scaleOrdinal()
+    const adminColor = d3.scaleOrdinal() // colors for smaller pie chart
         .domain(overallBudgetData.map(d => d.name))
         .range(["#00a892", "#00b3ee", "#2a316c"])
 
@@ -111,7 +111,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
 
     const pbColor = d3.scaleOrdinal()
         .domain(programBudgetData.map(d => d.name))
-        .range(["#00a892", "#00b3ee", "#c4c652", "#2a316c", "#e0e060", "#afd5f1", "#a3a0a0"])
+        .range(["#00a892", "#00b3ee", "#c4c652", "#2a316c", "#e0e060", "#afd5f1", "#a3a0a0"]) //larger pie chart
 
 
     const pbG = svg.append("g")
