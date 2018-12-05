@@ -19,51 +19,56 @@ class WhoIsTheBIZ extends Component {
 
     return (
       <div className='story-margin'>
-        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>II.</span>WHO IS THE BIZ?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>II.</span>WHO DOES THE BIZ SERVE?</h1>
         <div className="l-story-grid">
-          <div className="l-story-grid-row">
+        <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-            <div className="chart-header">Property Owners</div>
+            <div className="chart-header">Downtown Detroit BIZ Board of Directors</div>
               <img className="c-thumbnail" src="http://www.fillmurray.com/200/200" alt=""/>
-              <p className='main-text__black'>*DDP to provide* copy for each category of "Who". Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar. 
+              <p className='main-text__black'>The Downtown Detroit BIZ is guided by 14 diverse individuals serving as volunteer board members providing leadership to the organization.
               </p>
             </div>
+            <div className="l-story-grid-column-half">
+              <div className="chart-header">Property Owners</div>
+                <img className="c-thumbnail" src="http://www.fillmurray.com/200/200" alt=""/>
+                <p className='main-text__black'>The BIZ represents 556 properties and individuals who own a building or property, ranging from commercial use to residential. 
+                </p>
+            </div>
+          </div>
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">Businesses</div>
               <img className="c-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
-              <p className='main-text__black'>*DDP to provide* copy for each category of "Who". Intelligentsia edison bulb poke etsy dreamcatcher. Squid humblebrag shabby chic farm-to-table ugh hashtag. You probably haven't heard of them succulents occupy la croix lo-fi freegan. Air plant hoodie fashion axe, tacos shaman gastropub polaroid edison bulb vexillologist offal kinfolk jianbing. 
+              <p className='main-text__black'>The BIZ works directly with Downtown business owners to provide resources, information and services to support their company. 
               </p>
+            </div>
+            <div className="l-story-grid-column-half">
+              <div className="chart-header">Employees</div>
+                <img className="c-thumbnail" src="https://picsum.photos/200" alt=""/>
+                <p className='main-text__black'>With over 70,000 employees in Downtown, the BIZ manages the day-to-day appearance of the urban core and 
+                </p>
             </div>
           </div>
           <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
-            <div className="chart-header">Employees</div>
-              <img className="c-thumbnail" src="https://picsum.photos/200" alt=""/>
-              <p className='main-text__black'>*DDP to provide* copy for each category of "Who". Chartreuse affogato humblebrag, VHS tumblr salvia umami tilde food truck meggings austin tofu. Post-ironic swag snackwave seitan chambray. Semiotics ennui live-edge, fanny pack meh locavore hell of deep v trust fund. Portland taxidermy celiac prism kombucha chillwave literally. 
-              </p>
-            </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Residents</div>
               <img className="c-thumbnail" src="https://www.placecage.com/g/200/200" alt=""/>
-              <p className='main-text__black'>*DDP to provide* copy for each category of "Who". Tumblr lyft tilde VHS yr. Pinterest chia iceland cloud bread, man bun twee microdosing DIY master cleanse semiotics kombucha before they sold out. Venmo photo booth authentic irony fanny pack readymade viral yr listicle food truck butcher church-key. 
+              <p className='main-text__black'>The Downtown neighborhood continues to grow, with nearly 6,500 residents. The BIZ gives residents a clean, safe and vibrant Downtown.  
               </p>
             </div>
-          </div>
-          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-            <div className="chart-header">Visitors</div>
-              <img className="c-thumbnail" src="https://www.placebear.com/200/200" alt=""/>
-              <p className='main-text__black'>*DDP to provide* copy for each category of "Who". Chartreuse affogato humblebrag, VHS tumblr salvia umami tilde food truck meggings austin tofu. Post-ironic swag snackwave seitan chambray. Before they sold out farm-to-table four dollar toast man bun. Narwhal pork belly meggings semiotics brooklyn adaptogen art party keffiyeh sriracha. 
-              </p>
+              <div className="chart-header">Visitors</div>
+                <img className="c-thumbnail" src="https://www.placebear.com/200/200" alt=""/>
+                <p className='main-text__black'>Events Downtown are flourishing and are expanding. The BIZ keeps the Downtown inviting to visitors from around the globe.  
+                </p>
             </div>
           </div>
-
         </div>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <div className="sub-sub-heading">Downtown Detroit BIZ and Downtown Detroit Board of Directors</div>
-              <p className='main-text__black'>The Downtown Detroit BIZ is led by a volunteer Board of Directors, which represents the community of Downtown property owners who decided to invest in a special assessment to supplement city services and advance Downtown. 
+              <div className="sub-sub-heading">Downtown Detroit BIZ Board of Directors</div>
+              <p className='main-text__black'>The Downtown Detroit BIZ is led by a volunteer Board of Directors, which represents the community of Downtown property owners who decided to invest in a special assessment to supplement city services and advance Downtown.
               </p>
               <div className="story-slider">
                 <Slider {...settings}>
