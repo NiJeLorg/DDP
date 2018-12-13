@@ -7,6 +7,7 @@ import CHAPTERS from './../utils/content';
 import { setActiveOverlay } from "../actions/index";
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
+import _ from'lodash';
 
 
 class StoryBoard extends Component {
@@ -18,6 +19,7 @@ class StoryBoard extends Component {
       chapter: CHAPTERS[params.id]
     };
     this.props.setActiveOverlay(CHAPTERS[params.id]['defaultOverlay']);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,9 +28,23 @@ class StoryBoard extends Component {
     this.props.setActiveOverlay(CHAPTERS[params.id]['defaultOverlay']);
   }
 
+  handleScroll(){
+    console.log("hello");
+    this.setCurrentSection()
+  }
+
+  setCurrentSection() {
+    console.log("hello");
+  }
+
   render() {
+    let handleScroll = "";
+    console.log(this.state.chapter);
+    if (this.state.chapter === 3) {
+      handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
+    }
     return (
-      <div className="c-story-board">
+      <div className="c-story-board" onScroll={handleScroll}>
         <Navigation />
         <StoryHeader chapter={this.state.chapter} />
         <Stories chapter={this.state.chapter}/>

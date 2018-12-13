@@ -61,10 +61,17 @@ D3BubbleColumn.create = (el, data, config) => {
         .classed('chart', true);
 
     // add reset button
-    d3.select(el).append('button')
-        .classed("c-reset-button", true)
-        .attr("title", "Reset map layers")
-        .on("click", resetChart);
+    setTimeout(function() { 
+        d3.select('.leaflet-top.leaflet-right').append('div')
+            .classed("leaflet-bar", true)
+            .classed("leaflet-control-layer-select", true)
+            .classed("leaflet-control", true)
+            .append('button')
+            .classed("c-reset-button", true)
+            .attr("title", "Reset map layers")
+            .text("RESET MAP")
+            .on("click", resetChart);
+    }, 1000);
     
     // svg.append('g')
     //     .append("text")

@@ -384,26 +384,24 @@
           .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .map-holder-small-map .map {
             width: 100%;
             height: 100%; }
-        .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .c-bubble-column-svg {
-          flex-grow: 0.1; }
-          .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .c-bubble-column-svg .c-reset-button {
+          .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .map-holder-small-map .c-reset-button {
             position: absolute;
             right: 10px;
             z-index: 10000;
-            vertical-align: top;
-            float: right;
-            margin-top: 10px;
-            background: #00B3EE url(./../img/reset.svg) no-repeat 0 0;
-            border-radius: 50% !important;
-            background-position: center;
-            background-size: 70%;
-            width: 40px !important;
-            height: 40px !important;
-            border: none; }
-            .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .c-bubble-column-svg .c-reset-button:hover {
-              background: #0091c1 url(./../img/reset.svg) no-repeat 0 0;
-              background-position: center;
-              background-size: 70%; }
+            background: #00B3EE;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            width: 120px;
+            align-self: flex-end;
+            margin-bottom: 5px; }
+            .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .map-holder-small-map .c-reset-button:hover {
+              background: #0091c1; }
+        .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .c-bubble-column-svg {
+          flex-grow: 0.1; }
     .c-stories .c-story-navigator .story-content .story-margin {
       margin-bottom: 100px; }
     .c-stories .c-story-navigator .story-content .chapter-marker {
