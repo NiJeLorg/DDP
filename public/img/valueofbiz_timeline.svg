@@ -9,11 +9,9 @@
 	.st3{fill:#E0E061;}
 	.st4{fill:#11294B;}
 	.st5{fill:none;stroke:#139FDA;stroke-width:3;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#00A892;stroke-width:3;stroke-miterlimit:10;}
-	.st7{fill:none;stroke:#E0E061;stroke-width:3;stroke-miterlimit:10;}
-	.st8{opacity:0.22;fill:#139FDA;}
-	.st9{opacity:0.22;fill:#00A892;}
-	.st10{opacity:0.22;fill:#E0E061;}
+	.st6{opacity:0.22;fill:#139FDA;}
+	.st7{opacity:0.22;fill:#00A892;}
+	.st8{opacity:0.22;fill:#E0E061;}
 </style>
 <rect x="10.07" y="106.26" class="st0" width="98.88" height="24.15"/>
 <g>
@@ -28,7 +26,7 @@
 		c-0.13-0.02-0.26-0.03-0.39-0.03h-0.92V118.09z"/>
 	<path class="st1" d="M72.96,116.96l-1.29,1.13l-0.77-0.89l2.09-1.77h1.27v6.42h-1.31V116.96z"/>
 </g>
-<rect x="115.34" y="106.26" class="st2" width="98.88" height="24.15"/>
+<rect x="114.21" y="106.26" class="st2" width="98.88" height="24.15"/>
 <g>
 	<path class="st1" d="M150.99,119.12l-2.41-3.68h1.76l1.36,2.4l1.44-2.4h1.68l-2.41,3.68v2.74h-1.41V119.12z"/>
 	<path class="st1" d="M155.34,115.44h4.36v1.31h-2.95v1.2h2.78v1.31h-2.78v1.31h3.11v1.31h-4.52V115.44z"/>
@@ -264,12 +262,16 @@
 		c0.31,0,0.57-0.05,0.78-0.16c0.21-0.11,0.4-0.27,0.57-0.48L289.81,142.89z M289.21,141.16c-0.01-0.36-0.13-0.65-0.35-0.87
 		s-0.53-0.33-0.92-0.33c-0.39,0-0.71,0.11-0.95,0.33c-0.24,0.22-0.39,0.51-0.44,0.87H289.21z"/>
 </g>
-<line class="st5" x1="10.07" y1="151.52" x2="10.07" y2="106.26"/>
-<line class="st6" x1="115.34" y1="151.52" x2="115.34" y2="106.26"/>
-<line class="st7" x1="220.47" y1="151.52" x2="220.47" y2="106.26"/>
-<rect x="9.08" y="7.97" class="st8" width="100.01" height="98.29"/>
-<rect x="114.21" y="7.97" class="st9" width="100.01" height="98.29"/>
-<rect x="219.34" y="7.97" class="st10" width="100.26" height="98.29"/>
+<path class="st5" d="M10.07,151.52v-45.27V151.52z"/>
+<g>
+	<rect x="113.67" y="106.26" class="st2" width="3" height="45.27"/>
+</g>
+<g>
+	<rect x="218.97" y="106.26" class="st3" width="3" height="45.27"/>
+</g>
+<rect x="8.57" y="7.97" class="st6" width="100.38" height="98.29"/>
+<rect x="113.67" y="7.97" class="st7" width="99.42" height="98.29"/>
+<rect x="218.97" y="7.97" class="st8" width="100.52" height="98.29"/>
 <g>
 	<path class="st4" d="M87.8,74.1H60.07c-0.55,0-0.99,0.44-0.99,0.99v11.88c0,0.55,0.44,0.99,0.99,0.99H87.8
 		c0.55,0,0.99-0.44,0.99-0.99V75.09C88.79,74.55,88.35,74.1,87.8,74.1z M86.81,85.98H61.06v-9.9h25.74V85.98z"/>
