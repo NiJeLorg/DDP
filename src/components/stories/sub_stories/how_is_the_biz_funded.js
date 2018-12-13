@@ -120,13 +120,13 @@ class HowIsTheBIZFunded extends Component {
               <div className="sub-sub-heading">How Are BIZ Properties Assessed?</div>
               <p className='main-text__black'>Business Improvement Zone special assessments are calculated by applying a percentage of assessed value plus a percentage of building floor area for each commercial property. These percentages were established with the adoption of <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a> by in 2014. In addition, there is a per parcel cap of $150,000 and increases in assessments are limited to 3% per parcel per year. The City of Detroit treasurer collects the special assessment with summer taxes.
               </p>
-              <img className="c-full-image" src="/img/assessment.svg" alt="" style="width:800px"/>
+              <img className="c-full-image" src="/img/assessment.svg" alt="" width="800"/>
 
             </div>
           </div>
-          // <div className="l-story-grid-row">
-          //   <div className="l-story-grid-column-half">
-          //     <div className="chart-container">
+          <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half">
+              <div className="chart-container">
                 // <table className="c-table">
 
                   // <tbody>
