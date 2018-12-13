@@ -174,6 +174,9 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
             const modal = d3.select("#chart-modal")
                 .classed("hidden", false); 
 
+            d3.select("#modal-type")
+                .text(d.data.type);
+
             d3.select("#modal-category")
                 .text(d.data.name);
             

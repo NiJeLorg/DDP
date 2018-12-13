@@ -3,7 +3,7 @@ import _ from 'lodash';
 import * as d3 from 'd3'; 
 import D3ComplexPie from "../../utils/d3_complex_pie";
 
-class BIZBudgetChart extends Component {
+class BIZExpendChart extends Component {
 
   constructor(props) {
     super(props);
@@ -20,23 +20,25 @@ class BIZBudgetChart extends Component {
         let overallBudgetData = [
             {
                 name: "Administration",
-                budget: 788020
+                budget: 860665 
+
             },
             {
                 name: "BIZ direct expenses",
-                budget: 53230
+                budget: 14147 
+
             },
             {
                 name: "Programs",
-                budget: 3758710
+                budget: 3694856
             },
         ];
 
         let programBudgetData = [
             {
-                type: "2018-2019 Budget:",
+                type: "2017-2018 Expenditures:",
                 name: "Street landscaping",
-                budget: 400000,
+                budget: 399391,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
                 categories: [
                     {
@@ -74,7 +76,7 @@ class BIZBudgetChart extends Component {
             },
             {
                 name: "Parks and common areas",
-                budget: 678710,
+                budget: 667420,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
                 categories: [
                     {
@@ -85,7 +87,7 @@ class BIZBudgetChart extends Component {
             },
             {
                 name: "Downtown Ambassadors",
-                budget: 1965000,
+                budget: 1950647,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
                 categories: [
                     {
@@ -112,7 +114,7 @@ class BIZBudgetChart extends Component {
             },
             {
                 name: "Communications, marketing, outreach and data",
-                budget: 165000,
+                budget: 161348,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
                 categories: [
                     {
@@ -135,7 +137,7 @@ class BIZBudgetChart extends Component {
             },
             {
                 name: "Infrastructre and planning",
-                budget: 100000,
+                budget: 95690,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
                 categories: [
                     {
@@ -146,7 +148,7 @@ class BIZBudgetChart extends Component {
             },
             {
                 name: "Safety",
-                budget: 275000,
+                budget: 245360,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
                 categories: [
                     {
@@ -206,4 +208,4 @@ class BIZBudgetChart extends Component {
     }
 }
 
-export default BIZBudgetChart;
+export default BIZExpendChart;
