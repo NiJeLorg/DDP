@@ -107,6 +107,35 @@ const overlayMapsStoryThree = {
   "How is the BIZ Funded?": "How is the BIZ Funded?"
 };
 
+const subOverlayMapsStoryThree = {
+  "parcels": {
+    "$1 - $1K": {
+      label: "$1 - $1K",
+      color: "#EF4060"
+    },
+    "$1K - $10K": {
+      label: "$1K - $10K",
+      color: "#B2B5D3"
+    },
+    "$10K - $50K": {
+      label: "$10K - $50K",
+      color: "#5C6298"
+    },
+    "$50K - $150K": {
+      label: "$50K - $150K",
+      color: "#2A316C"
+    },
+    "$150K": {
+      label: "$150K",
+      color: "#0B103F"
+    },
+    "Not Assessed": {
+      label: "Not Assessed",
+      color: "#888"
+    },
+  }
+};
+
 class GeoMap extends Component {
 
   constructor(props) {
@@ -148,7 +177,7 @@ class GeoMap extends Component {
   }
 
   getChoroplethGeoJson(overlayName, map) {
-    console.log(overlayName);
+    //console.log(overlayName);
     if (overlayName === 'Education Attainment') {
       getEducationAttainmentGeoJson().then((data) => {
         this.addChoroplethLayer(data, mapConfig.educationAttainmentValProperty, mapConfig.educationAttainmentToolTip, map);
@@ -327,13 +356,13 @@ class GeoMap extends Component {
     this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
     function setOrdinalColor(d) {
       if (d) {
-          return  d == 150000  ? '#EF4060' :
-                  d > 50000    ? '#13184E' :
-                  d > 10000    ? '#2A316C' :
-                  d > 1000     ? '#484E88' :
-                  '#7278A8';
+          return  d == 150000  ? '#0B103F' :
+                  d > 50000    ? '#2A316C' :
+                  d > 10000    ? '#5C6298' :
+                  d > 1000     ? '#B2B5D3' :
+                  '#EF4060';
       } else {
-          return "#aaa";
+          return "#888";
       }
     }
   }
@@ -342,8 +371,15 @@ class GeoMap extends Component {
 
 
   componentDidMount() {
+    let center;
+    if (this.state.chapter.id !== 3) {
+      center = [this.state.lat, this.state.lng];
+    } else {
+      const lng = this.state.lng - 0.005;
+      center = [this.state.lat, lng];
+    }
     this.map = L.map(this.container, {
-      center: [this.state.lat, this.state.lng],
+      center: center,
       zoom: this.state.zoom,
       maxZoom: 18,
       minZoom: 8,
@@ -367,7 +403,7 @@ class GeoMap extends Component {
       this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
       this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map);
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName(), this.map);
-      if (this.state.chapter.id === 2) {
+      if (this.state.chapter.id === 2 || this.state.chapter.id === 3) {
         this.setSubOverlayControl(this.map);
       }
     });
@@ -405,6 +441,7 @@ class GeoMap extends Component {
   }
   addSubOverlayControl(map) {
     let options = null;
+    //console.log(this.props.activeOverlay);
     if (this.props.activeOverlay === 'Amenities') {
       options = {
         overlays: subOverlayMapsStoryTwo['Amenities'],
@@ -422,11 +459,26 @@ class GeoMap extends Component {
         enableSubOverlay: false,
         selected: "2018"
       }
+    } else if (this.props.activeOverlay === 'How is the BIZ Funded?') {
+      options = {
+        overlays: subOverlayMapsStoryThree['parcels'],
+        enableSwitcher: false
+      }
+      //console.log(options);    
     }
 
-    if(this.state.chapter.id === 2){
-      const subLayerControl = L.control.suboverlayselect(options).addTo(map);
-      this.setState({currentSubLayerControl: subLayerControl})
+    if(this.state.chapter.id === 2 || this.state.chapter.id === 3){
+      if (options) {
+        const subLayerControl = L.control.suboverlayselect(options).addTo(map);
+        this.setState({currentSubLayerControl: subLayerControl})
+      } else {
+        options = {
+          overlays: subOverlayMapsStoryThree['parcels'],
+          enableSwitcher: false
+        }
+        const subLayerControl = L.control.suboverlayselect(options).addTo(map);
+        this.setState({currentSubLayerControl: subLayerControl})       
+      }
     }
 
   }
@@ -467,6 +519,9 @@ class GeoMap extends Component {
         }
 
       });
+    }
+    if (this.state.chapter.id === 3) {
+      this.addSubOverlayControl(map);
     }
   }
 

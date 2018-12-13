@@ -261,3 +261,31 @@
     flex-direction: column;
   }
 }
+
+// specific break point for value of the biz chart
+@media (max-width: 1200px) {
+  .c-stories {
+    .c-story-navigator {
+      &__value_of_the_biz {
+        .story-content {
+          .distribution-chart-wrapper {
+            display: block;
+          }
+          .map-holder-small-map {
+            display: block;
+            border: 1px solid #aaa;
+            margin: 30px 0;
+            height: 400px;
+            .map {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .c-bubble-column-svg {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
