@@ -11,10 +11,16 @@ D3BubbleColumn.create = (el, data, config) => {
 
     // Setup chart dimensions and margins
     const margin = { top: 20, right: 20, bottom: 20, left: 70 };
-    const width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
-    //const width = 1000 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
-
+    let width;
+    let height;
+    if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 1125) {
+        width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
+        height = width/1.8 - margin.top - margin.bottom;
+    } else {
+        width = parseInt(d3.select('.distribution-chart-wrapper').style('width')) - margin.left - margin.right;
+        height = width/1.8 - margin.top - margin.bottom;
+    }
+    
     // constants
     // const tilesPerRow = 10;
     // const tileSize = 10;
@@ -41,7 +47,7 @@ D3BubbleColumn.create = (el, data, config) => {
     let sub_bin_toggle = false;
 
     // colors
-    const colors = ["#7278A8", "#484E88", "#2A316C", "#13184E", "#060A31", "#EF4060"];
+    const colors = ["#EF4060", "#B2B5D3", "#5C6298", "#2A316C", "#0B103F"];
 
     // y-axis text
     let y_axis_label;
@@ -60,16 +66,21 @@ D3BubbleColumn.create = (el, data, config) => {
         .attr("title", "Reset map layers")
         .on("click", resetChart);
     
-    svg.append('g')
-        .append("text")
-        .classed('chart-header', true)
-        .text("Many BIZ assessed parcels are assessed less than"); 
+    // svg.append('g')
+    //     .append("text")
+    //     .classed('chart-header', true)
+    //     .text("Many BIZ assessed parcels are assessed less than"); 
         
-    svg.append('g')
-        .append("text")
-        .attr("y", 25)
-        .classed('chart-header', true)
-        .text("$1,000, with the median parcel being assessed $1,207.");     
+    // svg.append('g')
+    //     .append("text")
+    //     .attr("y", 25)
+    //     .classed('chart-header', true)
+    //     .text("$1,000, with the median parcel being assessed $1,207.");   
+    
+    d3.select(el).append('div')
+        .classed("sub-heading__centered", true)
+        .style("margin-top", "20px")
+        .text("The median parcel is assessed $1,207.");
 
 
     let axisG = svg.append('g')
@@ -224,9 +235,6 @@ D3BubbleColumn.create = (el, data, config) => {
     }
 
     function resetChart() {
-        bars = 5;
-        barWidth = (width / bars) - barPadding;   
-        updateBars(bins);
         updateMap(bins);        
         sub_bin_toggle = false;
     }
@@ -353,29 +361,16 @@ D3BubbleColumn.create = (el, data, config) => {
             onEachFeature: mapConfig.assessmentToolTip
         }).addTo(global.geomap);
 
-        // previous color function for chloropleth map
-        // function setOrdinalColor(d) {
-        //     if (d) {
-        //         return  d == 150000  ? '#EF4060' :
-        //                 d > 50000    ? '#060A31' :
-        //                 d > 25000    ? '#13184E' :
-        //                 d > 10000    ? '#2A316C' :
-        //                 d > 1000     ? '#484E88' :
-        //                 '#7278A8';
-        //     } else {
-        //         return "#aaa";
-        //     }
-        // }
-
+        // color function for choropleth map
         function setOrdinalColor(d) {
             if (d) {
-                return  d == 150000  ? '#EF4060' :
-                        d > 50000    ? '#13184E' :
-                        d > 10000    ? '#2A316C' :
-                        d > 1000     ? '#484E88' :
-                        '#7278A8';
+                return  d == 150000  ? '#0B103F' :
+                        d > 50000    ? '#2A316C' :
+                        d > 10000    ? '#5C6298' :
+                        d > 1000     ? '#B2B5D3' :
+                        '#EF4060';
             } else {
-                return "#aaa";
+                return "#888";
             }
         }
 

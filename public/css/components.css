@@ -335,7 +335,6 @@
       padding: 40px 30px;
       background-color: white;
       z-index: 1;
-      overflow-y: auto;
       height: auto; }
       .c-stories .c-story-navigator__value_of_the_biz .story-content .story-margin {
         margin-bottom: 100px; }
