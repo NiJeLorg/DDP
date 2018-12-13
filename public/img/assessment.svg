@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 431.5 475" style="enable-background:new 0 0 431.5 475;" xml:space="preserve">
 <style type="text/css">
-	.st0{opacity:0.22;fill:#139FDA;}
+	.st0{opacity:0.22;fill:#139FDA;enable-background:new    ;}
 	.st1{fill:#11294B;stroke:#10294B;stroke-miterlimit:10;}
 	.st2{fill:#11294B;}
-	.st3{opacity:0.25;fill:#E0E061;}
+	.st3{opacity:0.25;fill:#E0E061;enable-background:new    ;}
 	.st4{font-family:'Avenir-Black';}
 	.st5{font-size:10px;}
 	.st6{letter-spacing:12;}
@@ -17,75 +17,84 @@
 	.st11{fill:none;stroke:#11294B;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st12{fill:#FFFFFF;}
 	.st13{font-size:12px;}
-	.st14{font-size:8px;}
-	.st15{fill:none;}
+	.st14{fill:none;}
+	.st15{font-size:8px;}
 	.st16{fill:none;stroke:#11294B;stroke-width:3;stroke-miterlimit:10;}
 </style>
-<g>
+<g id="Layer_1">
 	<rect x="88.8" y="60.6" class="st0" width="80" height="73.7"/>
 	<g>
-		<path class="st1" d="M144.6,122.4h-41c-0.4,0-0.7-0.3-0.7-0.7V73.1c0-0.4,0.3-0.7,0.7-0.7h41c0.4,0,0.7,0.3,0.7,0.7
-			c0,0.4-0.3,0.7-0.7,0.7h-40.2V121h39.5v-11.1c0-0.4,0.3-0.7,0.7-0.7s0.7,0.3,0.7,0.7v11.8C145.3,122.1,145,122.4,144.6,122.4z
-			 M134.8,101.9 M143.1,105.5C143.1,105.5,143.1,105.6,143.1,105.5c-0.1,0.3-0.8,1.4-1,1.6l-2.5,1.8l-3.2,2.3
-			c-0.1,0.1-0.3,0.1-0.4,0.1c0,0,0,0,0,0l0,0c0,0,0,0,0,0h0c0,0,0,0,0,0c-0.3,0-0.4-0.1-1.5-0.8c-1.6-1-5.2-3.3-7.2-3.7
-			c0.1,0.4,0.4,0.9,0.6,1.2l0.1,0.2c0.5,1,0.8,1.7,0.6,2.2c-0.1,0.2-0.2,0.4-0.7,0.6c-1.3,0.4-2.8-0.7-4.7-1.9c-1.4-1-3-2.1-4.5-2.5
-			c-1.6-0.4-2.9-0.4-3.8,0c-0.1,0.1-0.3,0.2-0.6,0.3c1.4,1.2,2.7,2.6,2.8,3.6c0,0.5-0.3,1.1-1.1,1.3c-0.2,0-0.5,0.1-0.7,0.1
-			c-1.1,0-2.1-0.5-3.1-1.6c-0.8-0.8-0.8-1.6-0.7-2.2c0.1-0.4,0.3-0.8,0.5-1.1c-0.6-0.4-1.2-0.8-1.5-0.8c-0.4-0.1-0.7-0.4-0.6-0.8
-			c0.1-0.4,0.4-0.7,0.8-0.6c0.5,0.1,1.3,0.5,2.3,1.2c0.6-0.4,1.1-0.7,1.2-0.7c1.2-0.6,2.8-0.6,4.8-0.1c1.8,0.4,3.5,1.6,5,2.7
-			c0.9,0.7,2.2,1.5,2.9,1.7c-0.1-0.3-0.3-0.6-0.3-0.7l-0.1-0.2c-0.7-1.3-1.1-2.3-0.6-2.9c0.2-0.3,0.5-0.5,0.9-0.5
-			c1.9,0,5.1,1.8,8.3,3.9 M113.1,108c-0.1,0.2-0.2,0.3-0.2,0.5c0,0.2,0,0.5,0.3,0.9c0.5,0.5,1.2,1.2,2.2,1.1
-			C115.1,109.9,114.1,108.9,113.1,108z M132.2,97.1h-22.9c-0.4,0-0.7-0.3-0.7-0.7c0-0.4,0.3-0.7,0.7-0.7h22.9c0.4,0,0.7,0.3,0.7,0.7
-			C133,96.8,132.7,97.1,132.2,97.1z M132.2,90.1h-22.9c-0.4,0-0.7-0.3-0.7-0.7c0-0.4,0.3-0.7,0.7-0.7h22.9c0.4,0,0.7,0.3,0.7,0.7
-			C133,89.8,132.7,90.1,132.2,90.1z M132.2,83.2h-22.9c-0.4,0-0.7-0.3-0.7-0.7c0-0.4,0.3-0.7,0.7-0.7h22.9c0.4,0,0.7,0.3,0.7,0.7
-			C133,82.8,132.7,83.2,132.2,83.2z"/>
-		<path class="st2" d="M151.5,80.8c-2.3-1.3-5.4-0.5-6.8,1.7l-10.4,17.5c-0.1,0.2-0.3,0.6-0.2,0.9l0.2,7.4c0.1,0.6,0.3,1,0.8,1.3
-			c0.4,0.2,0.8,0.3,1.3,0.2c0.1,0,0.2,0,0.4-0.1l6.7-3.3c0.3-0.2,0.5-0.3,0.7-0.6l10.3-17.6c0.6-1.1,0.9-2.5,0.6-3.7
-			c-0.3-1.2-1.1-2.3-2.3-3L151.5,80.8z M137.4,101.8l3.6,2.1l-3.4,1.8L137.4,101.8z M151.6,86.6l-8.7,14.6l-4.1-2.4l8.7-14.7
-			c0.4-0.7,1.5-1,2.3-0.6l1.2,0.7c0.4,0.2,0.6,0.5,0.8,1S151.8,86.2,151.6,86.6z"/>
+		<path class="st1" d="M147.2,125.51h-43.53c-0.42,0-0.74-0.32-0.74-0.74V73.17c0-0.42,0.32-0.74,0.74-0.74h43.53
+			c0.42,0,0.74,0.32,0.74,0.74c0,0.42-0.32,0.74-0.74,0.74h-42.68v50.11h41.93v-11.78c0-0.42,0.32-0.74,0.74-0.74
+			s0.74,0.32,0.74,0.74v12.53C147.94,125.19,147.62,125.51,147.2,125.51z M145.61,107.57C145.61,107.57,145.61,107.68,145.61,107.57
+			c-0.11,0.32-0.85,1.49-1.06,1.7l-2.65,1.91l-3.4,2.44c-0.11,0.11-0.32,0.11-0.42,0.11l0,0l0,0l0,0l0,0l0,0
+			c-0.32,0-0.42-0.11-1.59-0.85c-1.7-1.06-5.52-3.5-7.64-3.93c0.11,0.42,0.42,0.96,0.64,1.27l0.11,0.21
+			c0.53,1.06,0.85,1.8,0.64,2.34c-0.11,0.21-0.21,0.42-0.74,0.64c-1.38,0.42-2.97-0.74-4.99-2.02c-1.49-1.06-3.18-2.23-4.78-2.65
+			c-1.7-0.42-3.08-0.42-4.03,0c-0.11,0.11-0.32,0.21-0.64,0.32c1.49,1.27,2.87,2.76,2.97,3.82c0,0.53-0.32,1.17-1.17,1.38
+			c-0.21,0-0.53,0.11-0.74,0.11c-1.17,0-2.23-0.53-3.29-1.7c-0.85-0.85-0.85-1.7-0.74-2.34c0.11-0.42,0.32-0.85,0.53-1.17
+			c-0.64-0.42-1.27-0.85-1.59-0.85c-0.42-0.11-0.74-0.42-0.64-0.85s0.42-0.74,0.85-0.64c0.53,0.11,1.38,0.53,2.44,1.27
+			c0.64-0.42,1.17-0.74,1.27-0.74c1.27-0.64,2.97-0.64,5.1-0.11c1.91,0.42,3.72,1.7,5.31,2.87c0.96,0.74,2.34,1.59,3.08,1.8
+			c-0.11-0.32-0.32-0.64-0.32-0.74l-0.11-0.21c-0.74-1.38-1.17-2.44-0.64-3.08c0.21-0.32,0.53-0.53,0.96-0.53
+			c2.02,0,5.41,1.91,8.81,4.14 M113.76,110.22c-0.11,0.21-0.21,0.32-0.21,0.53s0,0.53,0.32,0.96c0.53,0.53,1.27,1.27,2.34,1.17
+			C115.88,112.24,114.82,111.18,113.76,110.22z M134.04,98.65h-24.31c-0.42,0-0.74-0.32-0.74-0.74c0-0.42,0.32-0.74,0.74-0.74h24.31
+			c0.42,0,0.74,0.32,0.74,0.74C134.89,98.33,134.57,98.65,134.04,98.65z M134.04,91.22h-24.31c-0.42,0-0.74-0.32-0.74-0.74
+			c0-0.42,0.32-0.74,0.74-0.74h24.31c0.42,0,0.74,0.32,0.74,0.74C134.89,90.9,134.57,91.22,134.04,91.22z M134.04,83.9h-24.31
+			c-0.42,0-0.74-0.32-0.74-0.74c0-0.42,0.32-0.74,0.74-0.74h24.31c0.42,0,0.74,0.32,0.74,0.74C134.89,83.47,134.57,83.9,134.04,83.9
+			z"/>
+		<path class="st2" d="M154.53,81.35c-2.44-1.38-5.73-0.53-7.22,1.8l-11.04,18.58c-0.11,0.21-0.32,0.64-0.21,0.96l0.21,7.86
+			c0.11,0.64,0.32,1.06,0.85,1.38c0.42,0.21,0.85,0.32,1.38,0.21c0.11,0,0.21,0,0.42-0.11l7.11-3.5c0.32-0.21,0.53-0.32,0.74-0.64
+			l10.93-18.68c0.64-1.17,0.96-2.65,0.64-3.93c-0.32-1.27-1.17-2.44-2.44-3.18L154.53,81.35z M139.56,103.64l3.82,2.23l-3.61,1.91
+			L139.56,103.64z M154.63,87.51l-9.24,15.5l-4.35-2.55l9.24-15.61c0.42-0.74,1.59-1.06,2.44-0.64l1.27,0.74
+			c0.42,0.21,0.64,0.53,0.85,1.06C155.06,86.55,154.84,87.08,154.63,87.51z"/>
 	</g>
-</g>
-<rect x="234.4" y="60.6" class="st3" width="80" height="73.7"/>
-<text transform="matrix(1 0 0 1 47.1227 51.2788)"><tspan x="0" y="0" class="st2 st4 st5">$0.003 X  Assessed Value</tspan><tspan x="121.8" y="0" class="st2 st4 st5 st6">	</tspan></text>
-<text transform="matrix(1 0 0 1 29.881 152.7787)"><tspan x="0" y="0" class="st2 st7 st8">For every </tspan><tspan x="40.4" y="0" class="st2 st4 st8">$407</tspan><tspan x="61.7" y="0" class="st2 st7 st8"> of assessed value, </tspan><tspan x="17" y="10.8" class="st2 st7 st8">the BIZ receives </tspan><tspan x="83.7" y="10.8" class="st2 st4 st8">$1</tspan><tspan x="94.4" y="10.8" class="st2 st7 st8"> in revenue</tspan></text>
-<g>
-	<path class="st2" d="M217.5,101.7c1.8,0,1.8-8.5,0-8.5h-11.2V82c0-1.8-8.5-1.8-8.5,0v11.2h-11.2c-1.8,0-1.8,8.5,0,8.5h11.2v11.2
-		c0,1.8,8.5,1.8,8.5,0v-11.2H217.5z"/>
-</g>
-<path class="st2" d="M299.2,67l-1.1,1.2l-12.4,12.4h-33.2h-1.6v1.6v42v1.6h1.6h42h1.6v-1.6V90.9l12.4-12.4l1.2-1.1l-1.2-1.1
-	l-8.1-8.1L299.2,67z M299.2,71.5l5.8,5.8l-15.5,15.5l-5.8-5.8L299.2,71.5z M254,83.8h12.1v8.9h3.2v-8.9h13.1l-2.1,2.1l-0.4,0.4
-	l-0.1,0.5l-1.6,9.7l-0.4,2.2l2.2-0.4l9.7-1.6l0.5-0.1l0.4-0.4l2.1-2.1v16.3h-6.5v3.2h6.5v8.9h-23.4v-8.9h7.3v-3.2h-7.3v-8.1h-3.2
-	v20.2H254V83.8z M282.5,90.4l3.6,3.6l-4.4,0.7L282.5,90.4z"/>
-<text transform="matrix(1 0 0 1 235.2465 51.278)" class="st2 st4 st5">$0.058  Floor Area Square Footage</text>
-<text transform="matrix(1 0 0 1 235.1689 152.778)"><tspan x="0" y="0" class="st2 st7 st8">For every </tspan><tspan x="40.4" y="0" class="st2 st4 st8">17</tspan><tspan x="51" y="0" class="st2 st7 st8"> square feet of floor area, </tspan><tspan x="0" y="10.8" class="st2 st7 st8">the BIZ receives </tspan><tspan x="66.7" y="10.8" class="st2 st4 st8">$1</tspan><tspan x="77.4" y="10.8" class="st2 st7 st8"> in revenue</tspan></text>
-<g>
-	<rect x="69.5" y="335.1" class="st0" width="99.7" height="91.9"/>
+	<rect x="234.4" y="60.6" class="st3" width="80" height="73.7"/>
+	<text transform="matrix(1 0 0 1 47.1227 51.2788)" class="st2 st4 st5">$0.003 X  Assessed Value</text>
+	<text transform="matrix(1 0 0 1 168.9227 51.2788)" class="st2 st4 st5 st6"> </text>
+	<text transform="matrix(1 0 0 1 29.881 152.7787)" class="st2 st7 st8">For every </text>
+	<text transform="matrix(1 0 0 1 70.281 152.7787)" class="st2 st4 st8">$407</text>
+	<text transform="matrix(1 0 0 1 91.581 152.7787)" class="st2 st7 st8"> of assessed value, </text>
+	<text transform="matrix(1 0 0 1 46.881 163.5787)" class="st2 st7 st8">the BIZ receives </text>
+	<text transform="matrix(1 0 0 1 113.581 163.5787)" class="st2 st4 st8">$1</text>
+	<text transform="matrix(1 0 0 1 124.281 163.5787)" class="st2 st7 st8"> in revenue</text>
 	<g>
-		<g>
-			<text transform="matrix(6.123234e-17 -1 1 6.123234e-17 86.788 400.075)" class="st2 st7 st9">Assessment ($)</text>
-		</g>
-		<g>
-			<text transform="matrix(1 0 0 1 93.3314 413.4422)" class="st2 st7 st9">Assessed Value ($)</text>
-		</g>
-		<line class="st10" x1="92.9" y1="402.7" x2="156.9" y2="385.4"/>
-		<polyline class="st11" points="92.1,346.6 92.1,403.1 156.9,403.1 		"/>
+		<path class="st2" d="M217.5,101.7c1.8,0,1.8-8.5,0-8.5h-11.2V82c0-1.8-8.5-1.8-8.5,0v11.2h-11.2c-1.8,0-1.8,8.5,0,8.5h11.2v11.2
+			c0,1.8,8.5,1.8,8.5,0v-11.2H217.5z"/>
 	</g>
-</g>
-<g>
-	<rect x="234.9" y="335.1" class="st3" width="99.7" height="91.9"/>
+	<text transform="matrix(1 0 0 1 235.2465 51.278)" class="st2 st4 st5">$0.058  Floor Area Square Footage</text>
+	<text transform="matrix(1 0 0 1 235.1689 152.778)" class="st2 st7 st8">For every </text>
+	<text transform="matrix(1 0 0 1 275.5689 152.778)" class="st2 st4 st8">17</text>
+	<text transform="matrix(1 0 0 1 286.1689 152.778)" class="st2 st7 st8"> square feet of floor area, </text>
+	<text transform="matrix(1 0 0 1 235.1689 163.578)" class="st2 st7 st8">the BIZ receives </text>
+	<text transform="matrix(1 0 0 1 301.8689 163.578)" class="st2 st4 st8">$1</text>
+	<text transform="matrix(1 0 0 1 312.5689 163.578)" class="st2 st7 st8"> in revenue</text>
 	<g>
+		<rect x="69.5" y="335.1" class="st0" width="99.7" height="91.9"/>
 		<g>
-			<text transform="matrix(6.123234e-17 -1 1 6.123234e-17 252.4206 400.0753)" class="st2 st7 st9">Assessment ($)</text>
+			<g>
+				<text transform="matrix(6.123234e-17 -1 1 6.123234e-17 86.788 400.0752)" class="st2 st7 st9">Assessment ($)</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 93.3314 413.4422)" class="st2 st7 st9">Assessed Value ($)</text>
+			</g>
+			<line class="st10" x1="92.9" y1="402.7" x2="156.9" y2="385.4"/>
+			<polyline class="st11" points="92.1,346.6 92.1,403.1 156.9,403.1 			"/>
 		</g>
-		<g>
-			<text transform="matrix(1 0 0 1 258.9641 413.4424)" class="st2 st7 st9">Floor Area (Sq. Ft)</text>
-		</g>
-		<line class="st10" x1="258.5" y1="402.7" x2="313.4" y2="351.5"/>
-		<polyline class="st11" points="257.7,346.6 257.7,403.1 322.6,403.1 		"/>
 	</g>
-</g>
-<g>
-	<path class="st2" d="M373.4,225.1H46.8c-4.9,0-9-4-9-9v-24.8c0-4.9,4-9,9-9h326.7c4.9,0,9,4,9,9v24.8
-		C382.4,221.1,378.4,225.1,373.4,225.1z"/>
+	<g>
+		<rect x="234.9" y="335.1" class="st3" width="99.7" height="91.9"/>
+		<g>
+			<g>
+				<text transform="matrix(6.123234e-17 -1 1 6.123234e-17 252.4206 400.0752)" class="st2 st7 st9">Assessment ($)</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 258.9641 413.4424)" class="st2 st7 st9">Floor Area (Sq. Ft)</text>
+			</g>
+			<line class="st10" x1="258.5" y1="402.48" x2="313.4" y2="351.5"/>
+			<polyline class="st11" points="257.7,346.6 257.7,403.1 322.6,403.1 			"/>
+		</g>
+	</g>
+	<path class="st2" d="M361.3,223.51H58.91c-4.54,0-8.33-3.7-8.33-8.33v-22.96c0-4.54,3.7-8.33,8.33-8.33h302.49
+		c4.54,0,8.33,3.7,8.33,8.33v22.96C369.63,219.81,365.93,223.51,361.3,223.51z"/>
 	<g>
 		<g>
 			<text transform="matrix(1 0 0 1 102.0506 208.2344)" class="st12 st4 st13">$4,165,972 in total BIZ assessement in 2018</text>
@@ -97,21 +106,33 @@
 				C67.4,206.5,68.1,205.8,68.9,205.8z"/>
 		</g>
 	</g>
+	<g>
+		<circle class="st2" cx="176.7" cy="48.1" r="5.2"/>
+		<path class="st12" d="M175.9,48.7c0-0.2,0-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.3c0.1-0.1,0.3-0.3,0.4-0.4c0.1-0.1,0.2-0.2,0.3-0.3
+			s0.2-0.2,0.2-0.3c0.1-0.1,0.1-0.2,0.1-0.3c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.1-0.4-0.1c-0.3,0-0.4,0.1-0.6,0.2
+			c-0.1,0.1-0.2,0.3-0.2,0.5l-1.2-0.1c0.1-0.6,0.3-1,0.6-1.3c0.4-0.3,0.8-0.4,1.4-0.4c0.2,0,0.5,0,0.7,0.1s0.4,0.2,0.6,0.3
+			c0.2,0.1,0.3,0.3,0.4,0.5c0.1,0.2,0.1,0.4,0.1,0.7c0,0.2,0,0.3,0,0.4c0,0.1-0.1,0.2-0.2,0.4c-0.1,0.1-0.2,0.2-0.3,0.4
+			c-0.1,0.1-0.3,0.3-0.5,0.4c-0.1,0.1-0.2,0.2-0.2,0.3s-0.1,0.2-0.1,0.3v0.2h-1.2L175.9,48.7L175.9,48.7z M175.8,50.3
+			c0-0.1,0-0.2,0.1-0.3c0-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.1-0.1,0.2-0.2c0.1,0,0.2-0.1,0.3-0.1s0.2,0,0.3,0.1c0.1,0,0.2,0.1,0.2,0.2
+			c0.1,0.1,0.1,0.1,0.2,0.2c0,0.1,0.1,0.2,0.1,0.3s0,0.2-0.1,0.3c0,0.1-0.1,0.2-0.2,0.2c-0.1,0.1-0.1,0.1-0.2,0.2
+			c-0.1,0-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1c-0.1,0-0.2-0.1-0.2-0.2c-0.1-0.1-0.1-0.1-0.2-0.2S175.8,50.4,175.8,50.3z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 67.1512 247.807)" class="st4 st5">Money grows quicker because....</text>
+	<rect x="67.15" y="251.81" class="st14" width="286" height="59"/>
+	<text transform="matrix(1 0 0 1 67.1512 257.8549)" class="st7 st15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </text>
+	<text transform="matrix(1 0 0 1 67.1512 267.4549)" class="st7 st15">nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi </text>
+	<text transform="matrix(1 0 0 1 67.1512 277.055)" class="st7 st15">enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis </text>
+	<text transform="matrix(1 0 0 1 67.1512 286.6549)" class="st7 st15">nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in </text>
+	<text transform="matrix(1 0 0 1 67.1512 296.2549)" class="st7 st15">hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat </text>
+	<text transform="matrix(1 0 0 1 67.1512 305.8549)" class="st7 st15">nulla facilisis at vero eros et </text>
+	<g>
+		<path class="st2" d="M299.2,67l-1.1,1.2l-12.4,12.4h-33.2h-1.6v1.6v42v1.6h1.6h42h1.6v-1.6V90.9l12.4-12.4l1.2-1.1l-1.2-1.1
+			l-8.1-8.1L299.2,67z M299.2,71.5l5.8,5.8l-15.5,15.5l-5.8-5.8L299.2,71.5z M254,83.8h12.1v8.9h3.2v-8.9h13.1l-2.1,2.1l-0.4,0.4
+			l-0.1,0.5l-1.6,9.7l-0.4,2.2l2.2-0.4l9.7-1.6l0.5-0.1l0.4-0.4l2.1-2.1v16.3h-6.5v3.2h6.5v8.9h-23.4v-8.9h7.3v-3.2h-7.3v-8.1h-3.2
+			v20.2H254V83.8z M282.5,90.4l3.6,3.6l-4.4,0.7L282.5,90.4z"/>
+		<polyline class="st16" points="296.61,72.4 252.4,72.4 252.4,82.4 		"/>
+	</g>
 </g>
-<g>
-	<circle class="st2" cx="176.7" cy="48.1" r="5.2"/>
-	<path class="st12" d="M175.9,48.7c0-0.2,0-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.3c0.1-0.1,0.3-0.3,0.4-0.4c0.1-0.1,0.2-0.2,0.3-0.3
-		c0.1-0.1,0.2-0.2,0.2-0.3c0.1-0.1,0.1-0.2,0.1-0.3c0-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.1-0.4-0.1c-0.3,0-0.4,0.1-0.6,0.2
-		c-0.1,0.1-0.2,0.3-0.2,0.5l-1.2-0.1c0.1-0.6,0.3-1,0.6-1.3c0.4-0.3,0.8-0.4,1.4-0.4c0.2,0,0.5,0,0.7,0.1c0.2,0.1,0.4,0.2,0.6,0.3
-		c0.2,0.1,0.3,0.3,0.4,0.5c0.1,0.2,0.1,0.4,0.1,0.7c0,0.2,0,0.3,0,0.4c0,0.1-0.1,0.2-0.2,0.4c-0.1,0.1-0.2,0.2-0.3,0.4
-		c-0.1,0.1-0.3,0.3-0.5,0.4c-0.1,0.1-0.2,0.2-0.2,0.3c0,0.1-0.1,0.2-0.1,0.3v0.2h-1.2V48.7z M175.8,50.3c0-0.1,0-0.2,0.1-0.3
-		c0-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.1-0.1,0.2-0.2c0.1,0,0.2-0.1,0.3-0.1c0.1,0,0.2,0,0.3,0.1c0.1,0,0.2,0.1,0.2,0.2
-		c0.1,0.1,0.1,0.1,0.2,0.2c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2-0.1,0.3c0,0.1-0.1,0.2-0.2,0.2c-0.1,0.1-0.1,0.1-0.2,0.2
-		c-0.1,0-0.2,0.1-0.3,0.1c-0.1,0-0.2,0-0.3-0.1c-0.1,0-0.2-0.1-0.2-0.2c-0.1-0.1-0.1-0.1-0.2-0.2S175.8,50.4,175.8,50.3z"/>
+<g id="Layer_2">
 </g>
-<text transform="matrix(1 0 0 1 34.1012 256)" class="st4 st14">Money grows quicker because....</text>
-<rect x="34.1" y="260" class="st15" width="286" height="59"/>
-<text transform="matrix(1 0 0 1 34.1012 266.0479)"><tspan x="0" y="0" class="st7 st14">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </tspan><tspan x="0" y="9.6" class="st7 st14">nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi </tspan><tspan x="0" y="19.2" class="st7 st14">enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis </tspan><tspan x="0" y="28.8" class="st7 st14">nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in </tspan><tspan x="0" y="38.4" class="st7 st14">hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat </tspan><tspan x="0" y="48" class="st7 st14">nulla facilisis at vero eros et </tspan></text>
-<line class="st16" x1="252.4" y1="82.4" x2="252.4" y2="71.5"/>
-<line class="st16" x1="296.2" y1="72.4" x2="252.4" y2="72.4"/>
 </svg>
