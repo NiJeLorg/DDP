@@ -51,7 +51,7 @@ class StoryNavigator extends Component {
       }
     }  
     
-    console.log(this.state.chapter.id);
+    
   
     // for (let el of elements) {
     //   console.log(el.dataset.storyId, el.offsetTop, el.scrollTop, parent.scrollTop);
@@ -81,7 +81,6 @@ class StoryNavigator extends Component {
       story = <StoryThree/>;
       story_navigator_class = "c-story-navigator__value_of_the_biz";
       handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
-      console.log(handleScroll);
     }
 
     return (
