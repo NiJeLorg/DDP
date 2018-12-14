@@ -128,7 +128,7 @@ class BIZAssessmentBarChart extends Component {
 
     return (
       <div>
-        <span className="chart-header">BIZ Total Value of Assessable Properties Since 2013</span>
+        <span className="chart-header">Value of Assessable Properties</span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar config={this.state.config2} />

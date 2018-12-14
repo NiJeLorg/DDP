@@ -19,6 +19,7 @@ D3BubbleColumn.create = (el, data, config) => {
                 opacity = 1;
                 updateBars(bins);
                 showing = true;
+                global.geomap.invalidateSize();
             }
         }     
     }, true);
@@ -31,8 +32,8 @@ D3BubbleColumn.create = (el, data, config) => {
     let opacity = 0;
     let showing = false;
 
-    if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 1125) {
-        width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
+    if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 770) {
+        width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right + 300;
         height = width/1.8 - margin.top - margin.bottom;
     } else {
         width = parseInt(d3.select('.distribution-chart-wrapper').style('width')) - margin.left - margin.right;

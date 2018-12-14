@@ -482,14 +482,15 @@
     overflow-y: scroll;
     height: calc(100vh - 28px);
     &__value_of_the_biz {
-      width: 100%;
+      width: 70%;
       padding: 40px 30px;
+      margin-left: 15%;
       background-color: white;
       z-index: 1;
       height: auto;
       .story-content {
         .story-margin {
-          margin-bottom: 100px;
+          margin-bottom: 70px;
         }
         .chapter-marker {
           font-size: 20px;
@@ -535,10 +536,8 @@
           margin-top: 40px;
           margin-bottom: 40px;
           .map-holder-small-map {
-            border-top: 1px solid #aaa;
-            border-bottom: 1px solid #aaa;
-            border-left: 1px solid #aaa;
-            margin-right: -30px;
+            border: 1px solid #aaa;
+            margin-right: -150px;
             height: 400px;
             flex-grow: 1;
             .map {
@@ -565,7 +564,8 @@
             }
           }
           .c-bubble-column-svg {
-            flex-grow: 0.1;
+            flex-grow: 0;
+            margin-left: -150px;
           }
         }
       }
@@ -610,6 +610,8 @@
     }
   }
 }
+
+
 
 .c-mobile-nav-story-map {
   padding: 15px 0;
@@ -702,7 +704,6 @@ path.line {
 
 .c-tabinator {
   background: #fff;
-  padding: 40px;
   font-family: "Avenir-Roman";
   font-size: 18px;
   line-height: 1.3;
@@ -840,5 +841,10 @@ path.line {
   font-size: 11px;
   fill: #777;
   font-weight: bold;
+}
+
+.c-bullets {
+  list-style: inherit;
+  padding: inherit;
 }
 

@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .main-text {
     font-size: 18px; }
   .main-heading {
@@ -9,9 +9,12 @@
   .c-main-logo img {
     width: 150px; }
   .c-btn--primary {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .c-stories .c-story-navigator__value_of_the_biz {
+    width: 100%;
+    margin-left: 0; } }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   .main-heading {
     font-size: 22px; }
   .main-text {
@@ -152,7 +155,10 @@
       height: 100%;
       width: 100%; }
   .l-flex-center-center {
-    flex-direction: column; } }
+    flex-direction: column; }
+  .l-story-grid .l-story-grid-row .l-story-grid-column-half-centered {
+    max-width: 100%;
+    margin-left: 0; } }
 
 @media (max-width: 1200px) {
   .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper {

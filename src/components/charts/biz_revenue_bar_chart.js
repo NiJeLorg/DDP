@@ -3,6 +3,7 @@ import ReactHighcharts from 'react-highcharts';
 import Highcharts from 'highcharts';
 import _ from 'lodash';
 import DataBar from './data_bar';
+import * as d3 from 'd3';
 
 
 

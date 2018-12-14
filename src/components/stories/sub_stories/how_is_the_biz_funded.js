@@ -124,16 +124,26 @@ class HowIsTheBIZFunded extends Component {
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-                <img className="c-full-image" src="/img/assessment.svg" alt="" />
-                <div className="sub-heading__centered">$4,165,972 in total BIZ assessement in 2018</div>
+              <img className="c-full-image" src="/img/assessment.svg" alt="" />
             </div>
+          </div>      
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <BIZRevenueBarChart data={this.state.data_BIZRevenue} />
+            </div>
+            <div className="l-story-grid-column-half">
               <BIZAssessmentBarChart data={this.state.data_AssessedValue} />
+            </div>
+          </div>
+          <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half-centered">
               <BIZChangeInAssessmentBarChart data={this.state.data_ChangeAssessment} />
             </div>
-
           </div>
+
+          
+
+          
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">How Are BIZ Properties Contributing to Revenue?</div>
@@ -152,14 +162,6 @@ class HowIsTheBIZFunded extends Component {
               <p className='main-text__black'>Downtown Detroit BIZ Assessments are based on prior year City of Detroit assessment data, as outlined in <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a>. Special Assessments which are levied with the current summer tax bill are based on property assessment values set in March of the previous year. This causes a delay in when the BIZ will collect the full value of new construction. Depending on construction schedules, this delay can be between one and two years after construction completion. 
               </p>
               <img className="c-full-image" src="/img/valueofbiz_timeline.svg" alt=""/>
-            </div>
-          </div>
-        </div>
-
-        <div className="l-story-grid">
-          <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
-
             </div>
           </div>
         </div>

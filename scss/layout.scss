@@ -31,6 +31,14 @@
       padding-right: 15px;
       padding-left: 15px;
     }
+    .l-story-grid-column-half-centered {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 60%;
+      margin-left: 20%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }    
     .l-story-grid-left {
       width: 50%;
       height: 400px;
