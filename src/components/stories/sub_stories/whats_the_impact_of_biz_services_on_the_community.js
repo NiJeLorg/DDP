@@ -117,7 +117,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="https://farm3.staticflickr.com/2909/13992812641_900e4bd1a7_k.jpg" alt=""/>
+              <img className="c-full-image" src="/img/ambassadors.png" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
@@ -138,12 +138,12 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="https://farm5.staticflickr.com/4281/35348166215_de56d1bad3_k.jpg" alt=""/>
+              <img className="c-full-image" src="/img/infrastructure.png" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Daffodils_in_Downtown_Detroit.jpg" alt=""/>
+              <img className="c-full-image" src="/img/landscaping.png" alt=""/>
             </div>
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Park and Street Landscaping</div>
@@ -158,7 +158,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="https://farm3.staticflickr.com/2922/13992844271_19c81d980a_k.jpg" alt=""/>
+              <img className="c-full-image" src="/img/safety.png" alt=""/>
             </div>
           </div>
         </div>
