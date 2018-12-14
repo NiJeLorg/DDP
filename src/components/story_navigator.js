@@ -49,9 +49,7 @@ class StoryNavigator extends Component {
         this.props.setActiveOverlay(el.dataset.storyOverlay);
         break;
       }
-    }  
-    
-    
+    }   
   
     // for (let el of elements) {
     //   console.log(el.dataset.storyId, el.offsetTop, el.scrollTop, parent.scrollTop);
@@ -80,7 +78,6 @@ class StoryNavigator extends Component {
     } else if (this.state.chapter.id === 3) {
       story = <StoryThree/>;
       story_navigator_class = "c-story-navigator__value_of_the_biz";
-      handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
     }
 
     return (

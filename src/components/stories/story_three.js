@@ -6,7 +6,7 @@ import WhereDoesBIZInvestmentGo from './sub_stories/where_does_biz_investment_go
 import WhatsTheImpactOfBIZServicesOnTheCommunity from './sub_stories/whats_the_impact_of_biz_services_on_the_community';
 import StoryThreeConclusions from './sub_stories/story_three_conclusions';
 
-const StoryThree = () => {
+const StoryThree = () => {  
   return (
     <div className={'story-content'}>
       <WhatIsTheBIZ />

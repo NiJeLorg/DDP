@@ -58,6 +58,7 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
+                type: "2018-2019 Budget:",
                 name: "Supplemental lighting",
                 budget: 175000,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
@@ -73,6 +74,7 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
+                type: "2018-2019 Budget:",
                 name: "Parks and common areas",
                 budget: 678710,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
@@ -84,6 +86,7 @@ class BIZBudgetChart extends Component {
                 ]                
             },
             {
+                type: "2018-2019 Budget:",
                 name: "Downtown Ambassadors",
                 budget: 1965000,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
@@ -111,6 +114,7 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
+                type: "2018-2019 Budget:",
                 name: "Communications, marketing, outreach and data",
                 budget: 165000,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
@@ -134,6 +138,7 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
+                type: "2018-2019 Budget:",
                 name: "Infrastructre and planning",
                 budget: 100000,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
@@ -145,6 +150,7 @@ class BIZBudgetChart extends Component {
                 ]                
             },
             {
+                type: "2018-2019 Budget:",
                 name: "Safety",
                 budget: 275000,
                 description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",

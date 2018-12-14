@@ -6,13 +6,31 @@ import mapConfig from '../utils/maps';
 const D3BubbleColumn = {};
 
 D3BubbleColumn.create = (el, data, config) => {
-    //console.log(el);
-    //console.log(data);
+    // listen for element to scroll into view and then fire the 
+    document.addEventListener('scroll', function(e){ 
+        function elementScrolled(elem) {
+            var docViewTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            var docViewBottom = docViewTop + document.body.clientHeight;
+            var elemTop = elem.offsetTop + 700;
+            return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+        }
+        if(elementScrolled(el)) {
+            if (!showing) {
+                opacity = 1;
+                updateBars(bins);
+                showing = true;
+            }
+        }     
+    }, true);
+
 
     // Setup chart dimensions and margins
     const margin = { top: 20, right: 20, bottom: 20, left: 70 };
     let width;
     let height;
+    let opacity = 0;
+    let showing = false;
+
     if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 1125) {
         width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right;
         height = width/1.8 - margin.top - margin.bottom;
@@ -282,8 +300,14 @@ D3BubbleColumn.create = (el, data, config) => {
         let u = d3.select(this)
             .attr("transform", "translate(" + traslateWidth + ", " + height + ")")
             .selectAll("circle")
-            .style("opacity", 0)
+            
             .data(tiles);
+
+        u.transition()
+        .delay(function(d, i) {
+            return i * 10;
+        })
+        .style("opacity", opacity)
 
         u.enter()
             .append("circle")
@@ -316,14 +340,14 @@ D3BubbleColumn.create = (el, data, config) => {
             })
             .transition()
             .delay(function(d, i) {
-                return i * 20;
+                return i * 10;
             })
-            .style("opacity", 1);
+            .style("opacity", opacity);
            
         u.exit()
             .transition()
             .delay(function(d, i) {
-              return (100 - i) * 20;
+              return i * 10;
             })
             .style("opacity", 0)
             .on("end", function() {

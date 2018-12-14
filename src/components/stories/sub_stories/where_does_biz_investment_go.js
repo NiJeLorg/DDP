@@ -2,7 +2,49 @@ import React, {Component} from 'react';
 import BIZBudgetChart from '../../charts/biz_budget_chart';
 import BIZExpendChart from '../../charts/biz_expend_chart';
 
+
+
 class WhereDoesBIZInvestmentGo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      radios: {
+        tab1: '2018-2019 Budget',
+        tab2: '2017-2018 Expenditures',
+      },
+      selectedOption: 'tab1',
+      tab1Active: true,
+      tab2Active: false,
+    };
+    this.handleOptionChange = this.handleOptionChange.bind(this);
+  }
+
+  handleOptionChange(e) {
+    if (e.target.value === 'tab1') {
+      this.setState({ 
+        tab1Active: true,
+        tab2Active: false
+      });
+    } else {
+      this.setState({ 
+        tab1Active: false,
+        tab2Active: true
+      });     
+    }
+    this.setState({
+      selectedOption: e.target.value
+    });
+  }
+
+  renderRadioWithLabel(key) { 
+    return (
+      <label key={key} htmlFor={key} className={`${this.state.selectedOption === {key}.key ? "active" : ""}`}>
+        <input id={key} type="radio" name="tabs" checked={this.state.selectedOption === {key}.key} onChange={this.handleOptionChange} value={key} />
+        {this.state.radios[key]}
+      </label>
+    );
+  }
+  
   render() {
 
     return (
@@ -17,13 +59,19 @@ class WhereDoesBIZInvestmentGo extends Component {
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              
-              <div id="BIZBudgetChartDiv" className="chart-container">
-                <BIZBudgetChart />
-              </div>
-              <div id="BIZExpendChartDiv" className="chart-container">
-                <BIZExpendChart />
-              </div>              
+              <div className="c-tabinator">
+                {Object.keys(this.state.radios).map(key => this.renderRadioWithLabel(key))}
+                <div id="content1" className={`${this.state.tab1Active ? "active" : ""}`}>
+                  <div id="BIZBudgetChartDiv">
+                    <BIZBudgetChart />
+                  </div>
+                </div>
+                <div id="content2" className={`${this.state.tab2Active ? "active" : ""}`}>
+                  <div id="BIZExpendChartDiv">
+                    <BIZExpendChart />
+                  </div> 
+                </div>
+              </div>             
               <div id="chart-tooltip" className="c-chart-tooltip hidden">
                 <p><strong><span id="tooltip-category"></span></strong></p>
                 <p><span id="tooltip-budget"></span></p>
