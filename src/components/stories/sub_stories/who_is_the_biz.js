@@ -30,7 +30,7 @@ class WhoIsTheBIZ extends Component {
             </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Property Owners</div>
-                <img className="c-thumbnail" src="http://www.fillmurray.com/200/200" alt=""/>
+                <img className="c-thumbnail" src="/img/property_owners.svg" alt=""/>
                 <p className='main-text__black'>The BIZ represents 556 properties and individuals who own a building or property, ranging from commercial use to residential. 
                 </p>
             </div>
@@ -38,13 +38,13 @@ class WhoIsTheBIZ extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">Businesses</div>
-              <img className="c-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
+              <img className="c-thumbnail" src="/img/businesses.svg" alt=""/>
               <p className='main-text__black'>The BIZ works directly with Downtown business owners to provide resources, information and services to support their company. 
               </p>
             </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Employees</div>
-                <img className="c-thumbnail" src="https://picsum.photos/200" alt=""/>
+                <img className="c-thumbnail" src="/img/employees.svg" alt=""/>
                 <p className='main-text__black'>With over 70,000 employees in Downtown, the BIZ manages the day-to-day appearance of the urban core and 
                 </p>
             </div>
@@ -52,13 +52,13 @@ class WhoIsTheBIZ extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">Residents</div>
-              <img className="c-thumbnail" src="https://www.placecage.com/g/200/200" alt=""/>
+              <img className="c-thumbnail" src="/img/residents.svg" alt=""/>
               <p className='main-text__black'>The Downtown neighborhood continues to grow, with nearly 6,500 residents. The BIZ gives residents a clean, safe and vibrant Downtown.  
               </p>
             </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Visitors</div>
-                <img className="c-thumbnail" src="https://www.placebear.com/200/200" alt=""/>
+                <img className="c-thumbnail" src="/img/visitors.svg" alt=""/>
                 <p className='main-text__black'>Events Downtown are flourishing and are expanding. The BIZ keeps the Downtown inviting to visitors from around the globe.  
                 </p>
             </div>
