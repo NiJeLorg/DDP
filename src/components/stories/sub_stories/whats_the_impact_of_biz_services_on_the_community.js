@@ -119,7 +119,8 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Data</div>
-              <p className='main-text__black'>Following up with Josh/Gina 
+              <p className='main-text__black'>The BIZ data program provides data and metrics to track the progress of downtown and provide information to internal staff and partners to gain better insights and plan appropriate strategies for improvement. It collects primary and compiles secondary data on such topics as housing, commercial property, land use, value, demographics, demand and more. 
+ 
               </p>
             </div>
             <div className="l-story-grid-column-half">
@@ -140,7 +141,8 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Infrastructure and Planning</div>
-              <p className='main-text__black'>Following up with Josh/Gina 
+              <p className='main-text__black'>Working collaboratively with the City of Detroit and other governmental partners, the BIZ coordinates plans for important infrastructure and special projects downtown. These projects aim to improve Downtown in areas such as non-motorized transit, parking, public spaces, community outreach, environmental stewardship and more. 
+
               </p>
             </div>
             <div className="l-story-grid-column-half">
