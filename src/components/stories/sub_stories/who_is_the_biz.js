@@ -24,7 +24,7 @@ class WhoIsTheBIZ extends Component {
         <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
             <div className="chart-header">Downtown Detroit BIZ Board of Directors</div>
-              <img className="c-thumbnail" src="http://www.fillmurray.com/200/200" alt=""/>
+              <img className="c-thumbnail" src="/img/board.svg" alt=""/>
               <p className='main-text__black'>The Downtown Detroit BIZ is guided by 14 diverse individuals serving as volunteer board members providing leadership to the organization.
               </p>
             </div>
