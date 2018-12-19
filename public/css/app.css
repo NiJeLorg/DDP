@@ -93,7 +93,7 @@
 
 .sub-sub-heading, .sub-sub-heading__purple {
   font-family: "AvenirLTPro-Black";
-  font-size: 20px; }
+  font-size: 24px; }
   .sub-sub-heading__purple {
     color: #13294b;
     text-transform: uppercase; }
@@ -635,7 +635,7 @@
     margin-right: 10px; }
 
 .c-thumbnail {
-  width: 200px;
+  width: 100px;
   float: left;
   margin: 20px 20px 0 0; }
 
