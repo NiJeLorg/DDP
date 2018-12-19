@@ -61,13 +61,13 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">           
               <div className="chart-header">Commercial Properties</div>
-              <img className="c-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Broadway_Avenue_Historic_District_-_Detroit%2C_Michigan.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/businesses.svg" alt=""/>
               <p className='main-text__black'>Properties with businesses conducting for-profit business, such as retail stores, markets, offices, parking, and restaurants and providing other services. 
               </p>
             </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Renter Occupied Residential Properties</div>
-              <img className="c-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Row_of_buildings_in_downtown_Detroit.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/property_owners.svg" alt=""/>
               <p className='main-text__black'>Residential properties where the owner of the property charges residents rent. 
               </p>
             </div>
@@ -82,13 +82,13 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">Government</div>
-              <img className="c-thumbnail" src="https://farm1.staticflickr.com/778/21560434809_8308cd2ad9_k.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/government.svg" alt=""/>
               <p className='main-text__black'>Property owned by public, governmental entities such as city, county, state and federal offices, parks, plazas and roads.
               </p>
             </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Stadium Authorities</div>
-              <img className="c-thumbnail" src="https://crain-platform-cdb-prod.s3.amazonaws.com/s3fs-public/styles/width_792/public/TigersGame-ComericaPark-main_i.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/stadium.svg" alt=""/>
               <p className='main-text__black'>The Stadium Authority owns the land for both Comerica Park and Ford Field. Neither are assessable. 
               </p>
             </div>
@@ -96,13 +96,13 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">Religious and Charitable Organizations</div>
-              <img className="c-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/4/48/GreektownCasinohotelandStMaryRCChurchDetroit.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/religion.svg" alt=""/>
               <p className='main-text__black'>Churches, Mosque, Synagogues and other properties owned by religious, or other non-profit and charitable organizations, and used for non-commercial purposes. 
               </p>
             </div>
             <div className="l-story-grid-column-half">
               <div className="chart-header">Educational Institutions</div>
-              <img className="c-thumbnail" src="http://www.law-school-tutor.com/wp-content/uploads/2016/05/University_of_Detroit_Mercy_Law_Tutoring-e1463554014255.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/school.svg" alt=""/>
               <p className='main-text__black'>Public or private organizations providing education, such as primary and secondary schools and universities. 
               </p>
             </div>
@@ -110,7 +110,7 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="chart-header">Owner Occupied Residential Properties</div>
-              <img className="c-thumbnail" src="https://farm5.staticflickr.com/4041/4634813321_ba305a23b5_b.jpg" alt=""/>
+              <img className="c-thumbnail" src="/img/owner_occupied.svg" alt=""/>
               <p className='main-text__black'>Properties used for residential purposes and owned and occupied by the taxpayer. Downtown this is primarily condominiums.  
               </p>
             </div>
