@@ -106,6 +106,12 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               <div className="sub-sub-heading">Community and Business Engagement</div>
               <p className='main-text__black'>As part of the continued effort to provide information and engage Downtown businesses regularly, the BIZ provides access to resources, events and information through the Downtown BIZ Connect network.  
               </p>
+              <div className="l-story-grid-column-half">
+              <img className="c-full-image" width="500" src="/img/community1.jpg" alt=""/>
+            </div>
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" width="500" src="/img/community2.jpg" alt=""/>
+            </div>
 
             </div>
           </div>

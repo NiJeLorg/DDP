@@ -66,7 +66,7 @@ D3BubbleColumn.create = (el, data, config) => {
     let sub_bin_toggle = false;
 
     // colors
-    const colors = ["#EF4060", "#B2B5D3", "#5C6298", "#2A316C", "#0B103F"];
+    const colors = ["#F27B20", "#B2B5D3", "#5C6298", "#2A316C", "#0B103F"];
 
     // y-axis text
     let y_axis_label;

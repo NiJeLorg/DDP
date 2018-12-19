@@ -37,7 +37,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
 
     const adminColor = d3.scaleOrdinal() // colors for smaller pie chart
         .domain(overallBudgetData.map(d => d.name))
-        .range(["#00a892", "#00b3ee", "#2a316c"])
+        .range(["#B1B1B1", "#ACACAC", "#2a316c"])
 
 
 	// Setup svg element
@@ -111,7 +111,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
 
     const pbColor = d3.scaleOrdinal()
         .domain(programBudgetData.map(d => d.name))
-        .range(["#ADC7EE", "#7180B9", "#94B0DA", "#4049a8", "#363f94", "#41B1EC", "#A0DDFF"]) //larger pie chart
+        .range(["#ADC7EE", "#7180B9", "#94B0DA", "#29306D", "#363f94", "#41B1EC", "#A0DDFF"]) //larger pie chart
 
 
     const pbG = svg.append("g")
