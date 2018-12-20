@@ -128,10 +128,10 @@ class HowIsTheBIZFunded extends Component {
             </div>
           </div>      
           <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half-max-width">
               <BIZRevenueBarChart data={this.state.data_BIZRevenue} />
             </div>
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half-max-width">
               <BIZAssessmentBarChart data={this.state.data_AssessedValue} />
             </div>
           </div>

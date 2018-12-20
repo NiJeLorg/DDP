@@ -106,67 +106,94 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               <div className="sub-sub-heading">Community and Business Engagement</div>
               <p className='main-text__black'>As part of the continued effort to provide information and engage Downtown businesses regularly, the BIZ provides access to resources, events and information through the Downtown BIZ Connect network.  
               </p>
-              <div className="l-story-grid-column-half">
-              <img className="c-full-image" width="500" src="/img/community1.jpg" alt=""/>
             </div>
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" width="500" src="/img/community2.jpg" alt=""/>
-            </div>
-
+                <img className="c-full-image" src="/img/community2.jpg" alt=""/>
             </div>
           </div>
-
           <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/community1.jpg" alt=""/>
+            </div>
+          </div>
+          <br />
+          <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/vehicle1.jpg" alt=""/>
+            </div>
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Data</div>
               <p className='main-text__black'>The BIZ data program provides data and metrics to track the progress of downtown and provide information to internal staff and partners to gain better insights and plan appropriate strategies for improvement. It collects primary and compiles secondary data on such topics as housing, commercial property, land use, value, demographics, demand and more. 
- 
               </p>
-            </div>
-            <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/ambassadors.png" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <p>Use stats from annual report below:</p>
-              {counters}
+              <img className="c-full-image" src="/img/skyline1.jpg" alt=""/>
             </div>
+          </div>
+          <br />
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Downtown Ambassadors</div>
               <p className='main-text__black'>The Downtown Detroit Ambassador, established in 2006, has transformed the appearance of Downtown Detroit. The Ambassadors are the proactive and friendly individuals who clean public areas and serve as information resources for Downtown’s businesses, residents, and visitors.
               </p>
             </div>
+            <div className="l-story-grid-column-half">
+              {counters}
+            </div>
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <div className="sub-sub-heading">Infrastructure and Planning</div>
-              <p className='main-text__black'>Working collaboratively with the City of Detroit and other governmental partners, the BIZ coordinates plans for important infrastructure and special projects downtown. These projects aim to improve Downtown in areas such as non-motorized transit, parking, public spaces, community outreach, environmental stewardship and more. 
-
-              </p>
+              <img className="c-full-image" src="/img/ambassadors.png" alt=""/>
             </div>
+          </div>
+          <br />
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <img className="c-full-image" src="/img/infrastructure.png" alt=""/>
             </div>
+            <div className="l-story-grid-column-half">
+              <div className="sub-sub-heading">Infrastructure and Planning</div>
+              <p className='main-text__black'>Working collaboratively with the City of Detroit and other governmental partners, the BIZ coordinates plans for important infrastructure and special projects downtown. These projects aim to improve Downtown in areas such as non-motorized transit, parking, public spaces, community outreach, environmental stewardship and more. 
+              </p>
+            </div>
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/landscaping.png" alt=""/>
+              <img className="c-full-image" src="/img/infrastructure2.jpg" alt=""/>
             </div>
+          </div>
+          <br />
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Park and Street Landscaping</div>
               <p className='main-text__black'>The BIZ supports a healthy and green Downtown through beautiful trees, plants and flowers help create a welcoming environment. The BIZ contributes to four downtown parks maintained by the DDP, medians in key corridors, sidewalk planters and highway entrances. 
               </p>
             </div>
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/landscaping.png" alt=""/>
+            </div>
           </div>
           <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/landscaping2.jpg" alt=""/>
+            </div>
+          </div>
+          <br />
+          <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/safety.png" alt=""/>
+            </div>
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Safety</div>
               <p className='main-text__black'>Offering security services for the core Downtown, the BIZ works collaboratively with community partners to provide resources and implementation to ensure a safe and secure environment. The BIZ safety efforts also serves as an extension of Project Lighthouse, the Downtown Central Business District neighborhood watch.  
               </p>
             </div>
+          </div>
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/safety.png" alt=""/>
+              <img className="c-full-image" src="/img/safety2.jpg" alt=""/>
             </div>
           </div>
         </div>

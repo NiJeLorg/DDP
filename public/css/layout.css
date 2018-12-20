@@ -25,11 +25,17 @@
     max-width: 100%;
     padding-right: 15px;
     padding-left: 15px; }
+  .l-story-grid .l-story-grid-row .l-story-grid-column-half-max-width {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px; }
   .l-story-grid .l-story-grid-row .l-story-grid-column-half-centered {
     flex-basis: 0;
     flex-grow: 1;
-    max-width: 60%;
-    margin-left: 20%;
+    max-width: 50%;
+    margin-left: 25%;
     padding-right: 15px;
     padding-left: 15px; }
   .l-story-grid .l-story-grid-row .l-story-grid-left {

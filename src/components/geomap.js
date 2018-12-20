@@ -111,7 +111,7 @@ const subOverlayMapsStoryThree = {
   "parcels": {
     "$1 - $1K": {
       label: "$1 - $1K",
-      color: "#EF4060"
+      color: "#F27B1F"
     },
     "$1K - $10K": {
       label: "$1K - $10K",
@@ -347,7 +347,7 @@ class GeoMap extends Component {
           fillColor: setOrdinalColor(feature.properties.assessable_BIZAsmt),
           color: "#fff",
           weight: 0.2,
-          fillOpacity: 0.6
+          fillOpacity: 0.9
         }
       },
       onEachFeature: toolTip
@@ -360,7 +360,7 @@ class GeoMap extends Component {
                   d > 50000    ? '#2A316C' :
                   d > 10000    ? '#5C6298' :
                   d > 1000     ? '#B2B5D3' :
-                  '#EF4060';
+                  '#F27B1F';
       } else {
           return "#888";
       }

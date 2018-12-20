@@ -39,7 +39,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Street landscaping",
                 budget: 399391,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "The BIZ provides landscaping services for designated parks, medians and curbside planters and other green spaces to make Downtown a more beautiful destination. This includes mowing, weeding, seasonal planting and more. ",
                 categories: [
                     {
                         name: "Lawn mowing",
@@ -63,7 +63,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Supplemental lighting",
                 budget: 175000,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "While the City provides basic lighting for visibility, the BIZ provides supplemental lighting to improve safety as well as seasonal lighting around the winter holidays.",
                 categories: [
                     {
                         name: "Winter seasonal decorative lighting",
@@ -79,7 +79,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Parks and common areas",
                 budget: 667420,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "The BIZ works in collaboration with other DDP departments to create wonderful downtown parks. Specifically, it provides landscape maintenance in Capitol and Grand Circus parks and ambassador services in Campus Martius, Cadillac Square, Capitol Park, Grand Circus Park, Rivard Plaza and Along the Detroit RiverFront.",
                 categories: [
                     {
                         name: "Supplemental beautification in Downtown parks",
@@ -91,7 +91,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Downtown Ambassadors",
                 budget: 1950647,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "The Downtown Ambassadors are a vital part of Downtown’s vibrancy. In addition to removing trash from sidewalks and streets and collecting it from receptacles, our ambassador team is there to provide information to visitors, provide an extra layer of security, and help solve everyday problems downtown.",
                 categories: [
                     {
                         name: "Litter pick up and street cleaning",
@@ -119,7 +119,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Communications, marketing, outreach and data",
                 budget: 161348,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "The BIZ operates a robust marketing and outreach program geared toward disseminating important information to residents, businesses, visitors and other stakeholders. Additionally it coordinates networking and learning opportunities to businesses, and provides data and analysis on the state of Downtown and surrounding areas.",
                 categories: [
                     {
                         name: "BIZ Connect community events",
@@ -143,7 +143,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Infrastructre and planning",
                 budget: 95690,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "The BIZ works closely with the City to help coordinate and plan important special projects and infrastructure enhancements.",
                 categories: [
                     {
                         name: "Planning for transformational downtown projects",
@@ -155,7 +155,7 @@ class BIZExpendChart extends Component {
                 type: "2017-2018 Expenditures:",
                 name: "Safety",
                 budget: 245360,
-                description: "Lorem ipsum dolor amet helvetica brunch readymade mumblecore la croix, pop-up yr kombucha vice. Stumptown austin typewriter williamsburg XOXO banjo kitsch, gentrify kale chips humblebrag drinking vinegar whatever mustache keytar.",
+                description: "The BIZ provides for security personnel to patrol Downtown and the Detroit RiverFront. It also coordinates monthly inter-agency safety and security strategy meetings and provides security for special events.",
                 categories: [
                     {
                         name: "Park security guards",

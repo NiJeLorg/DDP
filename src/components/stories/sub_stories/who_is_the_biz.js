@@ -5,10 +5,11 @@ import Slider from "react-slick";
 class WhoIsTheBIZ extends Component {
   render() {
     const settings = {
-      className: "center",
+      dots: true,
+      speed: 500,
       infinite: true,
-      centerPadding: "60px",
-      slidesToShow: 3,
+      centerPadding: "6px",
+      slidesToShow: 2,
       swipeToSlide: true,
       afterChange: function(index) {
         console.log(
@@ -74,39 +75,177 @@ class WhoIsTheBIZ extends Component {
                 <Slider {...settings}>
                   <div className="c-card__board-members-card">
                     <div className="c-card__content">
-                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
-                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt. 
+                      <img className="c-card-thumbnail" src="/img/Tricia_Keith.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Chair<br /> 
+                        Tricia A. Keith
+                      </div>
+                      <div className="header-text__subtitle">
+                        Executive Vice President, Chief of Staff and Corporate Secretary, Blue Cross Blue Shield of Michigan
+                      </div>
+                      <p className='main-text__black'>Tricia A. Keith is executive vice president, chief of staff and corporate secretary for Blue Cross Blue Shield of Michigan. Keith is responsible for the administration and management of all things related to the BCBSM Board of Directors and selection councils. Keith's current priority is supporting BCBSM's Board of Directors through its transition of becoming a nonprofit mutual insurer and further demonstrating BCBSM's...
                       </p>
                     </div>
                   </div>
                   <div className="c-card__board-members-card">
                     <div className="c-card__content">
-                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
-                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt. 
-                      </p>
-                    </div>
-                  </div>       
-                  <div className="c-card__board-members-card">
-                    <div className="c-card__content">
-                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
-                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="c-card__board-members-card">
-                    <div className="c-card__content">
-                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
-                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt. 
+                      <img className="c-card-thumbnail" src="/img/GeorgeBarnes.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Vice Chair<br /> 
+                        George P. Barnes, Jr.
+                      </div>
+                      <div className="header-text__subtitle">
+                        Founder, Heritage Optical
+                      </div>
+                      <p className='main-text__black'>Active in the Detroit community since 1975, George P. Barnes, Jr. is the founder of Heritage Optical Center, Inc. and Heritage Vision Plans, Inc. Heritage Optical Center, Inc. is Michigan’s first African-American-owned and operated full service optical dispensary and today comprises three Detroit retail locations. Heritage Vision Plans, Inc. (HVP) is a full-service vision benefit plan management company which manages and administers vision programs for a range of national public and private clients utilizing the HVP national provider...
                       </p>
                     </div>
                   </div>
                   <div className="c-card__board-members-card">
                     <div className="c-card__content">
-                      <img className="c-card-thumbnail" src="http://www.fillmurray.com/g/200/200" alt=""/>
-                      <p className='main-text__black'>Banh mi readymade pabst glossier vexillologist pug hashtag hammock brunch blog schlitz shoreditch. Migas man braid vaporware four dollar toast artisan raw denim fixie swag chicharrones. Raclette shaman tacos, pok pok woke neutra pop-up before they sold out seitan. Prism 3 wolf moon irony snackwave deep v schlitz YOLO gochujang fixie paleo. Vice tumeric direct trade tilde meh disrupt.
+                      <img className="c-card-thumbnail" src="/img/MikeMcLauchlan.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Secretary<br /> 
+                        Mike McLauchlan
+                      </div>
+                      <div className="header-text__subtitle">
+                        Vice President of Government Relations, Ilitch Holdings, Inc.
+                      </div>
+                      <p className='main-text__black'>Mike McLauchlan, Vice President of Government Relations, joined Ilitch Holdings, Inc. in 2008. McLauchlan has spent more than 26 years building strong relationships at all levels of the community. Previously, he was senior vice president and manager of government relations for Comerica Incorporated. There he was responsible for the strategic planning and implementation of Comerica’s local, state and federal government relations ...
                       </p>
                     </div>
-                  </div>                                  
+                  </div> 
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Richard_Hosey.jpeg" alt=""/>
+                      <div className="header-text__title">
+                        Treasurer<br /> 
+                        Richard J. Hosey III
+                      </div>
+                      <div className="header-text__subtitle">
+                        Hosey Development LLC
+                      </div>
+                      <p className='main-text__black'>Richard J. Hosey III's real estate experience entails development, consulting, financing and asset management of more than 80 projects totaling over $2.75 billion in development costs. Hosey Development is currently developing a 25-unit market rate multifamily loft development in Midtown Detroit in the former Tushiyah United Hebrew School and co-developing 1212 Griswold, 1145 Griswold and 1249 Griswold into 240 units of market rate loft apartments and 80,000 square feet of office and commercial space in Downtown...
+                      </p>
+                    </div>
+                  </div>  
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Charles_Beckham.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Charles Beckham
+                      </div>
+                      <div className="header-text__subtitle">
+                        Group Executive for Neighborhoods, City of Detroit
+                      </div>
+                      <p className='main-text__black'>As Group Executive for Neighborhoods, Charles Beckham oversees the Detroit’s Buildings, Safety Engineering &amp; Environmental Department and the Department of Neighborhoods. Having served at an executive level over five administrations over the last 40+ years, Beckham has also run his own management consulting firm, held numerous engineering management positions at General Motors Company and co-founded and served as Executive Director of the African American Association of Businesses &amp; ...
+                      </p>
+                    </div>
+                  </div>
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/David_Di-Rita.jpg" alt=""/>
+                      <div className="header-text__title">
+                        David Di Rita
+                      </div>
+                      <div className="header-text__subtitle">
+                        Principal, Roxbury Group
+                      </div>
+                      <p className='main-text__black'>David Di Rita has 25 years experience as a transactional attorney and real estate professional. He is actively involved in the Roxbury Group's real estate development projects as well as its advisory work with corporate, governmental and non-profit clients. Roxbury has advanced numerous development projects in greater Downtown Detroit, including the Auburn, the David Whitney Building, the Michigan Department of Natural Resources Outdoor Activity Center, and the ...
+                      </p>
+                    </div>
+                  </div>  
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Chris_Ferchill.jpg" alt=""/>
+                      <div className="header-text__title">
+                        J. Christopher Ferchill
+                      </div>
+                      <div className="header-text__subtitle">
+                        Vice President of Development, Ferchill Group
+                      </div>
+                      <p className='main-text__black'>As the President of Development for The Ferchill Group, J. Christopher Ferchill partnered with his father to complete the $180 million rehabilitation of the Westin Book Cadillac Detroit Hotel and Residences in 2008. As an owner of the hotel, Ferchill maintains direct involvement in hotel operations. In addition, Ferchill opens and operates Michael Symon's Roast in the Westin Book Cadillac Hotel, noted as one of the country’s best steak ...
+                      </p>
+                    </div>
+                  </div> 
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Linda_Forte.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Linda D. Forte
+                      </div>
+                      <div className="header-text__subtitle">
+                        Senior Vice President of Business Affairs, and Chief Diversity Officer, Comerica Bank
+                      </div>
+                      <p className='main-text__black'>*Retired Linda D. Forte served as the senior vice president of Business Affairs and chief diversity officer for Comerica Bank. She was responsible for defining and driving business strategies that establish Comerica as a leader in diversity and work life practices and has achieved national recognition for the bank’s diversity efforts. Forte also was responsible for the Comerica Charitable Foundation, Corporate Contributions and Civic Affairs, overseeing corporate giving and community involvement ...
+                      </p>
+                    </div>
+                  </div> 
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Kenneth_Harris.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Kenneth L. Harris
+                      </div>
+                      <div className="header-text__subtitle">
+                        President and CEO, National Business League, Inc.
+                      </div>
+                      <p className='main-text__black'>Born and raised in the City of Detroit, Kenneth L. Harris is a passionate pioneer in helping African-Americans and other minorities attain economic equality through entrepreneurship and economic empowerment. He currently serves as president and CEO of the National Business League, Inc. and has worked to advance minority and black-owned businesses throughout Michigan. Harris serves on the U.S. Black Chamber of Commerce Board of Directors and as Midwest director for the U.S. Black Chamber of Commerce. In June 2017, the Michigan Black Chamber of Commerce, Inc., the nation’s largest African American chamber in the country, acquired and merged the National Business League (NBL), Inc., an organization founded by Booker T. Washington in ...
+                      </p>
+                    </div>
+                  </div>   
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Debra_Hoge.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Debra Homic Hoge
+                      </div>
+                      <div className="header-text__subtitle">
+                        Global Director of Real Estate, General Motors Company
+                      </div>
+                      <p className='main-text__black'>Debra Homic Hoge is the global director of real estate at GM and is responsible for the acquisition, disposition and redevelopment of corporate real estate throughout the world. GM’s portfolio consists of over 335 million square feet. She maintains a State of Michigan Brokers License, and has also received a Master of Corporate Real Estate (MCR) designation from CoreNet, a global real estate consortium where she now serves on the Global Board of  ...
+                      </p>
+                    </div>
+                  </div>   
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Nancy_Moody.png" alt=""/>
+                      <div className="header-text__title">
+                        Nancy J. Moody
+                      </div>
+                      <div className="header-text__subtitle">
+                        Vice President of Public Affairs, DTE Energy
+                      </div>
+                      <p className='main-text__black'>Nancy J. Moody is vice president of Public Affairs for DTE Energy (NYSE: DTE), a Detroit-based diversified energy company involved in the development and management of energy-related businesses and services nationwide. Moody is responsible for Force for Growth and Prosperity work with DTE Energy’s community-facing activities, including philanthropy through the DTE Energy Foundation, volunteerism, education and employment initiatives, environmental leadership, policy leadership, community outreach, and economic ...
+                      </p>
+                    </div>
+                  </div> 
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Dwight_Phillips.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Dwight W. Phillips
+                      </div>
+                      <div className="header-text__subtitle">
+                        Member and Shareholder, Phifer, Phillips &amp; White, PC
+                      </div>
+                      <p className='main-text__black'>A native Detroiter, Dwight W. Phillips is a practicing attorney and a shareholder in the law firm of Phifer, Phillips &amp; White, P.C. The firm has been located in downtown Detroit since its inception in 1981. It is presently housed in the historic L.B. King Building at 1274 Library Street. Phillips is also the managing partner of Annis Historic Properties, P. C, which purchased and developed the L.B. King Building in  ...
+                      </p>
+                    </div>
+                  </div> 
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Dwight_Pierce.jpg" alt=""/>
+                      <div className="header-text__title">
+                        Phillip Pierce
+                      </div>
+                      <div className="header-text__subtitle">
+                        Managing Member, Pierce, Monroe &amp; Associates LLC
+                      </div>
+                      <p className='main-text__black'>Phillip Pierce is the managing member of Pierce, Monroe &amp; Associates, which provides financial, management and information technology consulting services. He has extensive experience in financial and information systems consulting beginning with his employment with Arthur Andersen &amp; Company. In 1985 he joined Loren Monroe, former treasurer of the State of Michigan, to form Pierce, Monroe &amp; Associates, LLC. Pierce is nationally known for his expertise as he has led strategic planning efforts for more than forty different  ...
+                      </p>
+                    </div>
+                  </div>                       
                 </Slider>
               </div>
             </div>
