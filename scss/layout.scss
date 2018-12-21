@@ -24,6 +24,14 @@
     display: flex;
     flex-wrap: wrap;
     margin: 30px -15px;
+    &__no-margin-top {
+      @extend .l-story-grid-row;
+      margin-top: 0;
+    }
+    &__no-margin-bottom {
+      @extend .l-story-grid-row;
+      margin-bottom: 0;
+    }    
     .l-story-grid-column-half {
       flex-basis: 0;
       flex-grow: 1;

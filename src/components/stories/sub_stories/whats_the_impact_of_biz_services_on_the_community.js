@@ -140,7 +140,9 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              {counters}
+              <div className="l-story-grid-column-half">
+                <img className="c-full-image" src="/img/ambassador_indicators.svg" alt=""/>
+              </div>               
             </div>
           </div>
           <div className="l-story-grid-row">
@@ -172,12 +174,12 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/landscaping.png" alt=""/>
+              <img className="c-full-image" src="/img/landscaping2.jpg" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/landscaping2.jpg" alt=""/>
+              <img className="c-full-image" src="/img/BIZLandscapeMap.png" alt=""/>
             </div>
           </div>
           <br />

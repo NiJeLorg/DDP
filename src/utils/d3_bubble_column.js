@@ -33,7 +33,7 @@ D3BubbleColumn.create = (el, data, config) => {
     let showing = false;
 
     if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 770) {
-        width = parseInt(d3.select('.l-story-grid-column-half').style('width')) - margin.left - margin.right + 300;
+        width = parseInt(d3.select('.l-story-grid-column-half-max-width').style('width')) - margin.left - margin.right + 300;
         height = width/1.8 - margin.top - margin.bottom;
     } else {
         width = parseInt(d3.select('.distribution-chart-wrapper').style('width')) - margin.left - margin.right;
@@ -114,7 +114,7 @@ D3BubbleColumn.create = (el, data, config) => {
         .classed('axis', true)
         .attr("id", "yAxis")
         .style("font-family", "Avenir")
-        .style("font-size", "12px")
+        .style("font-size", "14px")
         .style("fill", "#312f2f");
 
     let barsG = svg.append('g')
@@ -439,7 +439,7 @@ D3BubbleColumn.create = (el, data, config) => {
           .attr("y", 15)
           .style("text-anchor", "middle")
           .style("font-family", "Avenir")
-          .style("font-size", "12px")
+          .style("font-size", "14px")
           .style("fill", "#312f2f");
 
       }
@@ -476,8 +476,8 @@ D3BubbleColumn.create = (el, data, config) => {
         axisG.call(yAxis);
 
         axisG.append("text")
-            .attr("y", -35)
-            .attr("x", -90)
+            .attr("y", -40)
+            .attr("x", -100)
             .attr("transform", "rotate(-90)")
             .text("Number of parcels")
         

@@ -289,7 +289,7 @@ export function getChangeInAssessment() {
 
   return Promise.all([req2018]).then(([resp2018]) => {
     return {
-      'State Equalized Value': 17,
+      'Assessed Value (SEV)': 17,
       'BIZ Assessment': 4,
     }
   });

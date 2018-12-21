@@ -629,8 +629,8 @@ path.line {
   display: none; }
 
 .y.axis text {
-  font-size: 11px;
-  fill: #777;
+  font-size: 14px;
+  fill: #0c0c0c;
   font-weight: bold; }
 
 .c-bullets {
