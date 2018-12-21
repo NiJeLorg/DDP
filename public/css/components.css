@@ -39,6 +39,7 @@
     height: auto;
     margin: 10px 0; }
     .c-card__board-members-card .c-card__content {
+      min-height: 315px;
       margin: auto;
       padding: 10px;
       background: rgba(255, 255, 255, 0.9);
@@ -60,7 +61,8 @@
       text-transform: capitalize;
       font-weight: bold; }
     .c-card__board-members-card .main-text__black {
-      font-size: 14px; }
+      font-size: 14px;
+      margin-bottom: 4px; }
 
 .c-bevelled-box {
   background: linear-gradient(30deg, transparent 100px, white 10px), linear-gradient(90deg, transparent 0px, white 0px), linear-gradient(210deg, transparent 100px, white 10px), linear-gradient(90deg, transparent 0px, white 0px);
