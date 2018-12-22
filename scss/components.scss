@@ -50,6 +50,7 @@
     height: auto;
     margin: 10px 0;
     .c-card__content {
+      min-height: 315px;
       margin: auto;
       padding: 10px;
       background: rgba(255, 255, 255, 0.9);
@@ -76,6 +77,7 @@
     }
     .main-text__black {
       font-size: 14px;
+      margin-bottom: 4px;
     }
   }
 }
@@ -850,8 +852,8 @@ path.line {
 }
 
 .y.axis text {
-  font-size: 11px;
-  fill: #777;
+  font-size: 14px;
+  fill: #0c0c0c;
   font-weight: bold;
 }
 

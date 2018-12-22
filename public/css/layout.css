@@ -15,33 +15,37 @@
   justify-content: center;
   align-items: center; }
 
-.l-story-grid .l-story-grid-row {
+.l-story-grid .l-story-grid-row, .l-story-grid .l-story-grid-row__no-margin-top, .l-story-grid .l-story-grid-row__no-margin-bottom {
   display: flex;
   flex-wrap: wrap;
   margin: 30px -15px; }
-  .l-story-grid .l-story-grid-row .l-story-grid-column-half {
+  .l-story-grid .l-story-grid-row__no-margin-top {
+    margin-top: 0; }
+  .l-story-grid .l-story-grid-row__no-margin-bottom {
+    margin-bottom: 0; }
+  .l-story-grid .l-story-grid-row .l-story-grid-column-half, .l-story-grid .l-story-grid-row__no-margin-top .l-story-grid-column-half, .l-story-grid .l-story-grid-row__no-margin-bottom .l-story-grid-column-half {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
     padding-right: 15px;
     padding-left: 15px; }
-  .l-story-grid .l-story-grid-row .l-story-grid-column-half-max-width {
+  .l-story-grid .l-story-grid-row .l-story-grid-column-half-max-width, .l-story-grid .l-story-grid-row__no-margin-top .l-story-grid-column-half-max-width, .l-story-grid .l-story-grid-row__no-margin-bottom .l-story-grid-column-half-max-width {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 50%;
     padding-right: 15px;
     padding-left: 15px; }
-  .l-story-grid .l-story-grid-row .l-story-grid-column-half-centered {
+  .l-story-grid .l-story-grid-row .l-story-grid-column-half-centered, .l-story-grid .l-story-grid-row__no-margin-top .l-story-grid-column-half-centered, .l-story-grid .l-story-grid-row__no-margin-bottom .l-story-grid-column-half-centered {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 50%;
     margin-left: 25%;
     padding-right: 15px;
     padding-left: 15px; }
-  .l-story-grid .l-story-grid-row .l-story-grid-left {
+  .l-story-grid .l-story-grid-row .l-story-grid-left, .l-story-grid .l-story-grid-row__no-margin-top .l-story-grid-left, .l-story-grid .l-story-grid-row__no-margin-bottom .l-story-grid-left {
     width: 50%;
     height: 400px;
     float: left; }
-  .l-story-grid .l-story-grid-row .l-story-grid-right {
+  .l-story-grid .l-story-grid-row .l-story-grid-right, .l-story-grid .l-story-grid-row__no-margin-top .l-story-grid-right, .l-story-grid .l-story-grid-row__no-margin-bottom .l-story-grid-right {
     height: 400px;
     float: right; }
