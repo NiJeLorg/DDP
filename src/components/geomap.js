@@ -212,7 +212,6 @@ class GeoMap extends Component {
       this.getResidentialGeoJson(map)
     }
     else if (overlayName === 'How is the BIZ Funded?') {
-      this.toggleSmallMap();
       this.addOrdinalPolygonLayer(mapConfig.ASSESSMENT_PARCEL_DATA_FILE, mapConfig.assessmentToolTip, map);
     }
   }
@@ -289,6 +288,7 @@ class GeoMap extends Component {
   }
 
   toggleSmallMap() {
+    console.log("toggle");
     this.setState({smallmap: !this.state.smallmap});
   }
 
@@ -409,6 +409,11 @@ class GeoMap extends Component {
     });
 
     this.setState({map: this.map});
+
+    if (this.state.chapter.id === 3) {
+      this.toggleSmallMap();
+    }
+
 
     global.geomap = this.map;
 

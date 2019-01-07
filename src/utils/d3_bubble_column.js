@@ -33,7 +33,7 @@ D3BubbleColumn.create = (el, data, config) => {
     let showing = false;
 
     if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 770) {
-        width = parseInt(d3.select('.l-story-grid-column-half-max-width').style('width')) - margin.left - margin.right + 300;
+        width = parseInt(d3.select('.l-story-grid-column-half-max-width').style('width')) - margin.left - margin.right + 225;
         height = width/1.8 - margin.top - margin.bottom;
     } else {
         width = parseInt(d3.select('.distribution-chart-wrapper').style('width')) - margin.left - margin.right;

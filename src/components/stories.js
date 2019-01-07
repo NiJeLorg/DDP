@@ -7,6 +7,7 @@ import ReactHighcharts from 'react-highcharts';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import HighchartsExportingData from 'highcharts/modules/export-data';
 import ReactHighstock from 'react-highcharts/ReactHighstock';
+import RailMenu from "../utils/rail_menu";
 
 import _ from 'lodash';
 
@@ -52,17 +53,20 @@ class Stories extends React.Component {
     let datadrawer = "";
     let story_navigator = "";
     let geomap = "";
+    let rail_menu = "";
 
     if (this.state.chapter.id === 1 || this.state.chapter.id === 2) {
       datadrawer = <DataDrawer/>;
       story_navigator = <StoryNavigator chapter={this.state.chapter} />;
       geomap = <GeoMap chapter={this.state.chapter}/>;
     } else if (this.state.chapter.id === 3) {
+      rail_menu = <RailMenu/>;
       story_navigator = <StoryNavigator chapter={this.state.chapter} />;
     } 
 
     return (
       <div className="c-stories">
+        {rail_menu}
         {datadrawer}
         {story_navigator}
         {geomap}

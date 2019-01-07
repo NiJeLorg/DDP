@@ -30,7 +30,7 @@ class WhoIsTheBIZ extends Component {
     };
 
     return (
-      <div className='story-margin'>
+      <div className='story-margin' id="whodoesthebizserve">
         <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>II.</span>WHO DOES THE BIZ SERVE?</h1>
         <div className="l-story-grid">
         <div className="l-story-grid-row">
