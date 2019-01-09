@@ -12,22 +12,22 @@ const RailMenu = () => {
         </div>
         <div className="menu-item">
           <Link smooth to="#whodoesthebizserve">
-            <h4>II. Who does the BIZ serve?</h4>
+            <h4>II. Who Does the BIZ Serve?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#howisthebizfunded">
-            <h4>III. How is the BIZ funded?</h4>
+            <h4>III. How is the BIZ Funded?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#wheredoesbizinvestmentgo">
-            <h4>IV. Where does BIZ investment go?</h4>
+            <h4>IV. Where Does BIZ Investment Go?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#whatstheimpactofbizservicesonthecommunity">
-            <h4>V. What's the impact of BIZ services on the community?</h4>
+            <h4>V. What's the Impact of BIZ Services on the Community?</h4>
           </Link>
         </div>
       </div>

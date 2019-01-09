@@ -26,14 +26,14 @@ D3BubbleColumn.create = (el, data, config) => {
 
 
     // Setup chart dimensions and margins
-    const margin = { top: 20, right: 20, bottom: 20, left: 70 };
+    const margin = { top: 10, right: 0, bottom: 20, left: 50 };
     let width;
     let height;
     let opacity = 0;
     let showing = false;
 
     if (parseInt(d3.select('.distribution-chart-wrapper').style('width')) > 770) {
-        width = parseInt(d3.select('.l-story-grid-column-half-max-width').style('width')) - margin.left - margin.right + 225;
+        width = parseInt(d3.select('.l-story-grid-column-half-max-width').style('width')) - margin.left - margin.right + 200;
         height = width/1.8 - margin.top - margin.bottom;
     } else {
         width = parseInt(d3.select('.distribution-chart-wrapper').style('width')) - margin.left - margin.right;
@@ -46,7 +46,7 @@ D3BubbleColumn.create = (el, data, config) => {
     // const barPadding = 20;
     // const barWidth = (tilesPerRow * tileSize) + barPadding;
 
-    const barPadding = 10;
+    const barPadding = 6;
     const tilesPerRow = 10;
     let bars = 5;
     let barWidth = (width / bars) - barPadding;
@@ -66,7 +66,7 @@ D3BubbleColumn.create = (el, data, config) => {
     let sub_bin_toggle = false;
 
     // colors
-    const colors = ["#F27B20", "#B2B5D3", "#5C6298", "#2A316C", "#0B103F"];
+    const colors = ["#F27B20", "#B2B5D3", "#5C6298", "#2A316C", "#010314"];
 
     // y-axis text
     let y_axis_label;
@@ -396,7 +396,7 @@ D3BubbleColumn.create = (el, data, config) => {
         // color function for choropleth map
         function setOrdinalColor(d) {
             if (d) {
-                return  d == 150000  ? '#0B103F' :
+                return  d == 150000  ? '#010314' :
                         d > 50000    ? '#2A316C' :
                         d > 10000    ? '#5C6298' :
                         d > 1000     ? '#B2B5D3' :

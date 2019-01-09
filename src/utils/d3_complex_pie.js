@@ -48,7 +48,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
     const adminG = svg.append("g")
         .attr("transform", 'translate(' + width / 6 + ', ' + height / 4 + ')')
         .attr("text-anchor", "middle")
-        .style("font", "12px \"Avenir-Roman\"");
+        .style("font", "14px \"Avenir-Roman\"");
 
     adminG.selectAll("path")
         .data(adminArcs)
@@ -69,8 +69,8 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
         
     adminText.append("tspan")
         .attr("x", function (d) { 
-            if (d.data.name === 'BIZ direct expenses') {
-                return '2.5em';
+            if (d.data.name === 'BIZ Direct Expenses') {
+                return '3em';
             } else {
                 return 0;
             }
@@ -81,8 +81,8 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
     
     adminText.append("tspan")
         .attr("x", function (d) { 
-            if (d.data.name === 'BIZ direct expenses') {
-                return '2.5em';
+            if (d.data.name === 'BIZ Direct Expenses') {
+                return '3em';
             } else {
                 return 0;
             }
@@ -117,7 +117,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
     const pbG = svg.append("g")
         .attr("transform", 'translate(' + width / 2.2 + ', ' + height / 1.5 + ')')
         .attr("text-anchor", "middle")
-        .style("font", "12px \"Avenir-Roman\"");
+        .style("font", "14px \"Avenir-Roman\"");
 
     pbG.selectAll("path")
         .data(pbArcs)
@@ -207,7 +207,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
     const legendSpacing = 4;
     const legendG = svg.append("g")
         .attr("transform", 'translate(' + width / 1.3 + ', ' + height / 1.5 + ')')
-        .style("font", "12px \"Avenir-Roman\"");
+        .style("font", "14px \"Avenir-Roman\"");
 
     const legend = legendG.selectAll('.legend')
         .data(pbColor.domain())
