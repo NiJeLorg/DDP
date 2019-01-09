@@ -1,5 +1,4 @@
 import React from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
 import { HashLink as Link } from 'react-router-hash-link';
 const RailMenu = () => {
   return (

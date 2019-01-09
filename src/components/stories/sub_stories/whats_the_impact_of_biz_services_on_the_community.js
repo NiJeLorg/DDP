@@ -141,13 +141,13 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
             </div>
             <div className="l-story-grid-column-half">
               <div className="l-story-grid-column-half">
-                <img className="c-full-image" src="/img/ambassador_indicators_v2.svg" alt=""/>
+                <img className="c-full-image" src="/img/ambassadors.png" alt=""/>
               </div>               
             </div>
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/ambassadors.png" alt=""/>
+              <img className="c-full-image" src="/img/ambassador_indicators_v2.png" alt=""/>
             </div>
           </div>
           <br />
