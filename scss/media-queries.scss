@@ -264,6 +264,10 @@
     }
   }
 
+  .c-data-drawer-nav__sticky {
+    display: none;
+  }
+
   // layout styles
   .l-flex-center-center {
     flex-direction: column;
@@ -277,6 +281,7 @@
       }
     }
   }
+
 }
 
 // specific break point for value of the biz chart

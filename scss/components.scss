@@ -425,6 +425,9 @@
   font-family: "Avenir-Medium", sans-serif;
   .menu-container {
     padding: 20px;
+    &__sticky {
+      padding: 0;
+    }
   }
   .menu-item {
     padding: 20px 0;
@@ -432,6 +435,13 @@
       font-size: 20px;
       color: #d9dde2;
       margin: 0;
+      &:hover,
+      &:focus {
+        color: #e0e060;
+      }
+    }
+    a {
+      text-decoration: none;
     }
   }
   .sub-menu {
@@ -448,6 +458,14 @@
   &__open {
     @extend .c-data-drawer-nav;
     display: block;
+  }
+  &__sticky {
+    @extend .c-data-drawer-nav;
+    display: block;
+    height: 100vh;
+    width: 15%;
+    position: sticky;
+    top: 0;
   }
 }
 .btn-drawer-open {
@@ -497,7 +515,7 @@
     &__value_of_the_biz {
       width: 70%;
       padding: 40px 30px;
-      margin-left: 15%;
+      margin-left: 5px;
       background-color: white;
       z-index: 1;
       height: auto;
@@ -550,7 +568,7 @@
           margin-bottom: 40px;
           .map-holder-small-map {
             border: 1px solid #aaa;
-            margin-right: -150px;
+            margin-right: -25%;
             height: 400px;
             flex-grow: 1;
             .map {
@@ -578,7 +596,7 @@
           }
           .c-bubble-column-svg {
             flex-grow: 0;
-            margin-left: -150px;
+            margin-left: 0px;
           }
         }
       }

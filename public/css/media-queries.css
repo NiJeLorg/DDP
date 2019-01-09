@@ -154,6 +154,8 @@
       max-width: inherit;
       height: 100%;
       width: 100%; }
+  .c-data-drawer-nav__sticky {
+    display: none; }
   .l-flex-center-center {
     flex-direction: column; }
   .l-story-grid .l-story-grid-row .l-story-grid-column-half-centered {

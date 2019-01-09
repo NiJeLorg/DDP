@@ -3,7 +3,7 @@ import React from 'react';
 
 const WhatIsTheBIZ = () => {
     return (
-      <div className='story-margin'>
+      <div className='story-margin' id="whatisthebiz">
         <h1 className="sub-sub-heading__purple" data-story-id="1" data-story-overlay="What is the BIZ?"><span className='ul-yellow-color'>I.</span>WHAT IS THE BIZ?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row__no-margin-bottom">

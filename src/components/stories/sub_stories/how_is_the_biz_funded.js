@@ -42,7 +42,7 @@ class HowIsTheBIZFunded extends Component {
   render() {
     
     return (
-      <div className='story-margin'>
+      <div className='story-margin' id="howisthebizfunded">
         <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?"><span className='ul-yellow-color'>III.</span>HOW IS THE BIZ FUNDED?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
