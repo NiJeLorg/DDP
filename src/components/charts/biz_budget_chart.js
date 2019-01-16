@@ -23,7 +23,7 @@ class BIZBudgetChart extends Component {
                 budget: 788020
             },
             {
-                name: "BIZ direct expenses",
+                name: "BIZ Direct Expenses",
                 budget: 53230
             },
             {
@@ -35,52 +35,52 @@ class BIZBudgetChart extends Component {
         let programBudgetData = [
             {
                 type: "2018-2019 Budget:",
-                name: "Street landscaping",
+                name: "Street Landscaping",
                 budget: 400000,
                 description: "The BIZ provides landscaping services for designated parks, medians and curbside planters and other green spaces to make Downtown a more beautiful destination. This includes mowing, weeding, seasonal planting and more.",
                 categories: [
                     {
-                        name: "Lawn mowing",
+                        name: "Lawn Mowing",
                         description: ""
                     },
                     {
-                        name: "Tree pruning",
+                        name: "Tree Pruning",
                         description: ""
                     },
                     {
-                        name: "Seasonal planting",
+                        name: "Seasonal Planting",
                         description: ""
                     },
                     {
-                        name: "Maintenance of sidewalk planters and boulevard medians",
+                        name: "Maintenance of Sidewalk Planters and Boulevard Medians",
                         description: ""
                     },
                 ]
             },
             {
                 type: "2018-2019 Budget:",
-                name: "Supplemental lighting",
+                name: "Supplemental Lighting",
                 budget: 175000,
                 description: "While the City provides basic lighting for visibility, the BIZ provides supplemental lighting to improve safety as well as seasonal lighting around the winter holidays.",
                 categories: [
                     {
-                        name: "Winter seasonal decorative lighting",
+                        name: "Winter Seasonal Decorative Lighting",
                         description: ""
                     },
                     {
-                        name: "Accent lighting",
+                        name: "Accent Lighting",
                         description: ""
                     },
                 ]
             },
             {
                 type: "2018-2019 Budget:",
-                name: "Parks and common areas",
+                name: "Parks and Common Areas",
                 budget: 678710,
                 description: "The BIZ works in collaboration with other DDP departments to create wonderful downtown parks. Specifically, it provides landscape maintenance in Capitol and Grand Circus parks and ambassador services in Campus Martius, Cadillac Square, Capitol Park, Grand Circus Park, Rivard Plaza and Along the Detroit RiverFront.",
                 categories: [
                     {
-                        name: "Supplemental beautification in Downtown parks",
+                        name: "Supplemental Beautification in Downtown Parks",
                         description: ""
                     },
                 ]                
@@ -92,59 +92,59 @@ class BIZBudgetChart extends Component {
                 description: "The Downtown Ambassadors are a vital part of Downtown’s vibrancy. In addition to removing trash from sidewalks and streets and collecting it from receptacles, our ambassador team is there to provide information to visitors, provide an extra layer of security, and help solve everyday problems downtown.",
                 categories: [
                     {
-                        name: "Litter pick up and street cleaning",
+                        name: "Litter Pick Up and Street Cleaning",
                         description: ""
                     },
                     {
-                        name: "Visitor assistance",
+                        name: "Visitor Assistance",
                         description: ""
                     },
                     {
-                        name: "Trash receptacle maintenance",
+                        name: "Trash Receptacle Maintenance",
                         description: ""
                     },
                     {
-                        name: "Graffiti removal",
+                        name: "Graffiti Removal",
                         description: ""
                     },
                     {
-                        name: "Winter snow tidying",
+                        name: "Winter Snow Tidying",
                         description: ""
                     },
                 ]
             },
             {
                 type: "2018-2019 Budget:",
-                name: "Communications, marketing, outreach and data",
+                name: "Communications, Outreach and Data",
                 budget: 165000,
                 description: "The BIZ operates a robust marketing and outreach program geared toward disseminating important information to residents, businesses, visitors and other stakeholders. Additionally it coordinates networking and learning opportunities to businesses, and provides data and analysis on the state of Downtown and surrounding areas.",
                 categories: [
                     {
-                        name: "BIZ Connect community events",
+                        name: "BIZ Connect Community Events",
                         description: ""
                     },
                     {
-                        name: "Reports and research",
+                        name: "Reports and Research",
                         description: ""
                     },
                     {
-                        name: "Newsletters and updates",
+                        name: "Newsletters and Updates",
                         description: ""
                     },
                     {
-                        name: "Data analysis and benchmarking",
+                        name: "Data Analysis and Benchmarking",
                         description: ""
                     },
                 ]
             },
             {
                 type: "2018-2019 Budget:",
-                name: "Infrastructre and planning",
+                name: "Infrastructre and Planning",
                 budget: 100000,
                 description: "The BIZ works closely with the City to help coordinate and plan important special projects and infrastructure enhancements.",
                 categories: [
                     {
-                        name: "Planning for transformational downtown projects",
+                        name: "Planning for Transformational Downtown Projects",
                         description: ""
                     },
                 ]                
@@ -156,15 +156,15 @@ class BIZBudgetChart extends Component {
                 description: "The BIZ provides for security personnel to patrol Downtown and the Detroit RiverFront. It also coordinates monthly inter-agency safety and security strategy meetings and provides security for special events.",
                 categories: [
                     {
-                        name: "Park security guards",
+                        name: "Park Security Guards",
                         description: ""
                     },
                     {
-                        name: "Security patrols",
+                        name: "Security Patrols",
                         description: ""
                     },
                     {
-                        name: "Regular coordination meetings with DPD",
+                        name: "Regular Coordination Meetings with DPD",
                         description: ""
                     },
                 ]                  

@@ -15,13 +15,17 @@ L.Control.SubOverlaySelect = L.Control.extend({
     container = L.DomUtil.create('div', 'leaflet-bar ' + className);
     this.dropDownContainer = L.DomUtil.create('div', 'sub-overlay ', container);
     this.switcherContainer = L.DomUtil.create('div', 'overlay-switcher', this.dropDownContainer);
+    this.titleContainer = L.DomUtil.create('div', 'sub-overlay-menu-title', this.dropDownContainer);
+    this.titleContainer.innerHTML = this.options.title;
     this.menuContainer = L.DomUtil.create('ul', 'sub-overlay-menu', this.dropDownContainer);
+
     this.currentGroup = this.options.overlays;
     if(this.options.enableSwitcher){
       this.currentGroup = this.options.overlays[this.options.selected];
       this._addSwitcher();
     }
     if(this.options.enableSubOverlay) {
+
       this._updateSubMenu();
     }
     return container;

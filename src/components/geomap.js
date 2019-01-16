@@ -127,10 +127,10 @@ const subOverlayMapsStoryThree = {
     },
     "$150K": {
       label: "$150K",
-      color: "#0B103F"
+      color: "#010314"
     },
-    "Not Assessed": {
-      label: "Not Assessed",
+    "Exempt from Assessment": {
+      label: "Exempt<br />from Assessment",
       color: "#888"
     },
   }
@@ -356,7 +356,7 @@ class GeoMap extends Component {
     this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
     function setOrdinalColor(d) {
       if (d) {
-          return  d == 150000  ? '#0B103F' :
+          return  d == 150000  ? '#010314' :
                   d > 50000    ? '#2A316C' :
                   d > 10000    ? '#5C6298' :
                   d > 1000     ? '#B2B5D3' :
@@ -467,19 +467,23 @@ class GeoMap extends Component {
     } else if (this.props.activeOverlay === 'How is the BIZ Funded?') {
       options = {
         overlays: subOverlayMapsStoryThree['parcels'],
-        enableSwitcher: false
+        enableSwitcher: false,
+        position: 'topright',
+        title: 'BIZ Assessment',
       }
-      //console.log(options);    
     }
 
     if(this.state.chapter.id === 2 || this.state.chapter.id === 3){
+      console.log(options);    
       if (options) {
         const subLayerControl = L.control.suboverlayselect(options).addTo(map);
         this.setState({currentSubLayerControl: subLayerControl})
       } else {
         options = {
           overlays: subOverlayMapsStoryThree['parcels'],
-          enableSwitcher: false
+          enableSwitcher: false,
+          position: 'bottomleft',
+          title: 'BIZ Assessment',
         }
         const subLayerControl = L.control.suboverlayselect(options).addTo(map);
         this.setState({currentSubLayerControl: subLayerControl})       
