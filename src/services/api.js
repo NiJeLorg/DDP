@@ -296,3 +296,14 @@ export function getChangeInAssessment() {
 
 }
 
+export function getBIZAreaGeoJson() {
+  return fetch(mapConfig.BIZ_AREA_API).then(function (response) {
+    return response.json()
+  });
+}
+
+export function getLandscapeAreasGeoJson() {
+  return fetch(mapConfig.LANDSCAPE_AREAS_API).then(function (response) {
+    return response.json()
+  });
+}

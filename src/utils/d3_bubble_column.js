@@ -9,6 +9,7 @@ D3BubbleColumn.create = (el, data, config) => {
     // listen for element to scroll into view and then fire the 
     document.addEventListener('scroll', function(e){ 
         function elementScrolled(elem) {
+            global.landscapingmap.invalidateSize();
             var docViewTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
             var docViewBottom = docViewTop + document.body.clientHeight;
             var elemTop = elem.offsetTop + 700;
@@ -20,7 +21,7 @@ D3BubbleColumn.create = (el, data, config) => {
                 updateBars(bins);
                 showing = true;
                 global.geomap.invalidateSize();
-            }
+            } 
         }     
     }, true);
 

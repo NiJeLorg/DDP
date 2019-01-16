@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import CounterImpact from  './../../charts/counter_impact';
 import _ from 'lodash';
 import { getCleaningWelcomingWorkData } from './../../../services/api';
+import GeoMap from "../../geomap";
+import CHAPTERS from '../../../utils/content';
 
 const WORKS = [
   {
@@ -51,6 +53,8 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
 
     this.state = {
       data: [],
+      chapter: CHAPTERS[3],
+      landscaping: true,
     }
 
   }
@@ -178,9 +182,8 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
             </div>
           </div>
           <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/BIZLandscapeMap.png" alt=""/>
-            </div>
+            {/* <img className="c-full-image" src="/img/BIZLandscapeMap.png" alt=""/> */}
+            <GeoMap chapter={this.state.chapter} landscaping={this.state.landscaping} />
           </div>
           <br />
           <div className="l-story-grid-row">

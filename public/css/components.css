@@ -430,6 +430,14 @@
         .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .c-bubble-column-svg {
           flex-grow: 0;
           margin-left: 0px; }
+      .c-stories .c-story-navigator__value_of_the_biz .story-content .map-holder-landscaping-map {
+        border: 1px solid #aaa;
+        height: 650px;
+        flex-grow: 1;
+        margin: 0 15px; }
+        .c-stories .c-story-navigator__value_of_the_biz .story-content .map-holder-landscaping-map .map {
+          width: 100%;
+          height: 100%; }
     .c-stories .c-story-navigator .story-content .story-margin {
       margin-bottom: 100px; }
     .c-stories .c-story-navigator .story-content .chapter-marker {

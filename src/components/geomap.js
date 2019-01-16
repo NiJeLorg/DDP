@@ -18,7 +18,9 @@ import {
   getAmenitiesInfrasctructureGeoJsonLayers,
   getWelcomingGeoJsonLayers,
   getWelcomingDataGeoJsonLayers,
-  getResidentialBuildingGeoJson
+  getResidentialBuildingGeoJson,
+  getBIZAreaGeoJson,
+  getLandscapeAreasGeoJson
 } from '../services/api';
 
 require('leaflet-fullscreen');
@@ -107,6 +109,10 @@ const overlayMapsStoryThree = {
   "How is the BIZ Funded?": "How is the BIZ Funded?"
 };
 
+const overlayMapsLandscaping = {
+  "Landscaping": "Landscaping"
+};
+
 const subOverlayMapsStoryThree = {
   "parcels": {
     "$1 - $1K": {
@@ -136,6 +142,19 @@ const subOverlayMapsStoryThree = {
   }
 };
 
+const subOverlayMapsLandscaping = {
+  "layers": {
+    "BIZ Landscape Maintenance Areas": {
+      label: "BIZ Landscape Maintenance Areas",
+      color: "#98e600"
+    },
+    "BIZ Area": {
+      label: "BIZ Area",
+      color: "#e6e6e6"
+    },
+  }
+};
+
 class GeoMap extends Component {
 
   constructor(props) {
@@ -144,13 +163,18 @@ class GeoMap extends Component {
       overlayMaps = overlayMapsStoryOne;
     } else if (props.chapter.id === 2) {
       overlayMaps = overlayMapsStoryTwo;
+    } else if (props.chapter.id === 3 && props.landscaping) {
+      console.log("props landscaping");
+      overlayMaps = overlayMapsLandscaping;
     } else if (props.chapter.id === 3) {
+      console.log("props BIZ");
       overlayMaps = overlayMapsStoryThree;
     }
     super(props);
     this.state = {
       loading: false,
       chapter: props.chapter,
+      landscaping: props.landscaping,
       lat: mapConfig.DETROIT_POSITION.lat,
       lng: mapConfig.DETROIT_POSITION.lng,
       overlaySelectControl: null,
@@ -173,11 +197,15 @@ class GeoMap extends Component {
 
 
   setOverlayLayerZoom(overlayName, map) {
-    map.setZoom(14);
+    if (this.props.landscaping) {
+      map.setZoom(15);
+    } else {
+      map.setZoom(14);
+    }
+    
   }
 
   getChoroplethGeoJson(overlayName, map) {
-    //console.log(overlayName);
     if (overlayName === 'Education Attainment') {
       getEducationAttainmentGeoJson().then((data) => {
         this.addChoroplethLayer(data, mapConfig.educationAttainmentValProperty, mapConfig.educationAttainmentToolTip, map);
@@ -212,7 +240,16 @@ class GeoMap extends Component {
       this.getResidentialGeoJson(map)
     }
     else if (overlayName === 'How is the BIZ Funded?') {
-      this.addOrdinalPolygonLayer(mapConfig.ASSESSMENT_PARCEL_DATA_FILE, mapConfig.assessmentToolTip, map);
+      if (this.props.landscaping){
+        getBIZAreaGeoJson().then((data) => {
+          this.addPolygonLayer(data, null, map);
+          getLandscapeAreasGeoJson().then((data) => {
+            this.addPolygonLayer(data, null, map);
+          });
+        });
+      } else {
+        this.addOrdinalPolygonLayer(mapConfig.ASSESSMENT_PARCEL_DATA_FILE, mapConfig.assessmentToolTip, map);  
+      }
     }
   }
 
@@ -288,8 +325,11 @@ class GeoMap extends Component {
   }
 
   toggleSmallMap() {
-    console.log("toggle");
     this.setState({smallmap: !this.state.smallmap});
+  }
+
+  toggleLandscapingMap() {
+    this.setState({landscapingmap: !this.state.landscapingmap});
   }
 
   removeAllLayers() {
@@ -367,20 +407,50 @@ class GeoMap extends Component {
     }
   }
 
+  addPolygonLayer(geoJson, toolTip, map) {
+    let fillColor = "#e6e6e6";
+    let color = "#333";
+    let weight = 2;
+    let fillOpacity = 0.3;
+    L.geoJSON(geoJson, {
+      style: function(feature) {
+        if (feature.properties.LndscpNum) {
+          fillColor = "#98e600";
+          color = "#fff";
+          weight = 0.2;
+          fillOpacity = 0.9;
+        }
+        return {
+          fillColor: fillColor,
+          color: color,
+          weight: weight,
+          fillOpacity: fillOpacity
+        }
+      },
+      //onEachFeature: toolTip
+    }).addTo(map);  
+    this.toggleLoader();
+    this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
+  }
 
 
 
   componentDidMount() {
-    let center;
+    let center, zoom;
     if (this.state.chapter.id !== 3) {
       center = [this.state.lat, this.state.lng];
     } else {
       const lng = this.state.lng - 0.005;
       center = [this.state.lat, lng];
     }
+    if (this.props.landscaping) {
+      zoom = 16;
+    } else {
+      zoom = this.state.zoom
+    }
     this.map = L.map(this.container, {
       center: center,
-      zoom: this.state.zoom,
+      zoom: zoom,
       maxZoom: 18,
       minZoom: 8,
       maxBounds: this.state.bounds,
@@ -410,17 +480,24 @@ class GeoMap extends Component {
 
     this.setState({map: this.map});
 
-    if (this.state.chapter.id === 3) {
+    if (this.state.chapter.id === 3 && this.props.landscaping) {
+      this.toggleLandscapingMap();
+    } else if (this.state.chapter.id === 3) {
       this.toggleSmallMap();
     }
 
-
-    global.geomap = this.map;
+    if (this.props.landscaping) {
+      global.landscapingmap = this.map;
+    } else {
+      global.geomap = this.map;
+    }
+    
 
 
   }
 
   loadDefaultLayer(overlayName, map) {
+    console.log("load default layer: ", overlayName);
     this.toggleLoader();
     this.getChoroplethGeoJson(overlayName, map);
     this.setOverlayLayerZoom(overlayName, map);
@@ -446,7 +523,7 @@ class GeoMap extends Component {
   }
   addSubOverlayControl(map) {
     let options = null;
-    //console.log(this.props.activeOverlay);
+    console.log(this.props.activeOverlay);
     if (this.props.activeOverlay === 'Amenities') {
       options = {
         overlays: subOverlayMapsStoryTwo['Amenities'],
@@ -468,16 +545,32 @@ class GeoMap extends Component {
       options = {
         overlays: subOverlayMapsStoryThree['parcels'],
         enableSwitcher: false,
-        position: 'topright',
+        position: 'bottomleft',
         title: 'BIZ Assessment',
+      }
+    } else if (this.props.activeOverlay === 'Landscaping') {
+      options = {
+        overlays: subOverlayMapsLandscaping['layers'],
+        enableSwitcher: false,
+        position: 'bottomleft',
+        title: 'Landscape Maintainance Areas',
       }
     }
 
     if(this.state.chapter.id === 2 || this.state.chapter.id === 3){
-      console.log(options);    
+      //console.log(options);    
       if (options) {
         const subLayerControl = L.control.suboverlayselect(options).addTo(map);
         this.setState({currentSubLayerControl: subLayerControl})
+      } else if (this.props.landscaping) {
+        options = {
+          overlays: subOverlayMapsLandscaping['layers'],
+          enableSwitcher: false,
+          position: 'bottomleft',
+          title: 'Landscape Maintainance Areas',
+        } 
+        const subLayerControl = L.control.suboverlayselect(options).addTo(map);
+        this.setState({currentSubLayerControl: subLayerControl})         
       } else {
         options = {
           overlays: subOverlayMapsStoryThree['parcels'],
@@ -497,6 +590,7 @@ class GeoMap extends Component {
   }
 
   updateMapControls(){
+    console.log(this.state.overlayMaps);
     this.addOverlaySelectControl(this.state.map);
     this.setSubOverlayControl(this.state.map);
     this.loadDefaultLayer(this.props.activeOverlay, this.map);
@@ -509,6 +603,9 @@ class GeoMap extends Component {
       this.setState({
         overlayMaps: overlayMapsStoryTwo,
         selectedSublayer: 'services'},  function() {this.updateMapControls()});
+    } else if (this.state.chapter.id === 3 && this.state.landscaping) {
+      this.setState({overlayMaps: overlayMapsLandscaping},  function() {this.updateMapControls()});
+      console.log(this.state.overlayMaps);
     } else if (this.state.chapter.id === 3) {
       this.setState({overlayMaps: overlayMapsStoryThree},  function() {this.updateMapControls()});
     }
@@ -541,7 +638,8 @@ class GeoMap extends Component {
   render() {
     let mapWrapperClass = classNames({
       'map-holder': !this.state.smallmap,
-      'map-holder-small-map': this.state.smallmap
+      'map-holder-small-map': this.state.smallmap,
+      'map-holder-landscaping-map': this.state.landscapingmap
     });
     let loaderClass = classNames({
       'sweet-loading': true,
