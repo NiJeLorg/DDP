@@ -344,8 +344,7 @@
 .c-stories {
   position: relative;
   display: flex;
-  flex: 1;
-  height: 100vh; }
+  flex: 1; }
   .c-stories .map-holder {
     width: 45%; }
     .c-stories .map-holder .map {
