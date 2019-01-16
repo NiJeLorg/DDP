@@ -157,12 +157,28 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <br />
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/infrastructure.png" alt=""/>
+              <img className="c-full-image" src="/img/lighting.jpg" alt=""/>
             </div>
+            <div className="l-story-grid-column-half">
+              <div className="sub-sub-heading">Downtown Supplemental Lighting</div>
+              <p className='main-text__black'>Each winter, with support from Detroit’s Downtown Development Authority, and the Public Lighting Authority, the BIZ illuminates Downtown with seasonal lighting on light poles and trees. These lighting elements enhance the physical characteristics  of the Downtown parks and streets by brightening the streetscape, complementing the overall atmosphere of Downtown Detroit. In addition, the BIZ has identified dark spots throughout Downtown and added lighting to those areas for increased safety. 
+              </p>
+            </div>
+          </div>
+          <div className="l-story-grid-row">
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/lighting2.jpg" alt=""/>
+            </div>
+          </div>
+          <br />
+          <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Infrastructure and Planning</div>
               <p className='main-text__black'>Working collaboratively with the City of Detroit and other governmental partners, the BIZ coordinates plans for important infrastructure and special projects downtown. These projects aim to improve Downtown in areas such as non-motorized transit, parking, public spaces, community outreach, environmental stewardship and more. 
               </p>
+            </div>
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/infrastructure.png" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
@@ -173,12 +189,12 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <br />
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/landscaping2.jpg" alt=""/>
+            </div>
+            <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Park and Street Landscaping</div>
               <p className='main-text__black'>The BIZ supports a healthy and green Downtown through beautiful trees, plants and flowers help create a welcoming environment. The BIZ contributes to four downtown parks maintained by the DDP, medians in key corridors, sidewalk planters and highway entrances. 
               </p>
-            </div>
-            <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/landscaping2.jpg" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
@@ -188,12 +204,12 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <br />
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/safety.png" alt=""/>
-            </div>
-            <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Safety</div>
               <p className='main-text__black'>Offering security services for the core Downtown, the BIZ works collaboratively with community partners to provide resources and implementation to ensure a safe and secure environment. The BIZ safety efforts also serves as an extension of Project Lighthouse, the Downtown Central Business District neighborhood watch.  
               </p>
+            </div>
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/safety.png" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">

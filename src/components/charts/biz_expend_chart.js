@@ -177,7 +177,8 @@ class BIZExpendChart extends Component {
         let config = {
             'x_domain_normalize':1,
             'x_axis_format':"",
-            'x_axis_text':"BIZ Assessment by Year"
+            'x_axis_text':"BIZ Assessment by Year",
+            'large_pie_title': "Program Expenditure Categories"
         }
         // D3 Code to create the chart
         this._chart = D3ComplexPie.create(

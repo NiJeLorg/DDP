@@ -65,7 +65,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
           .data(adminArcs)
           .enter().append("text")
             .attr("transform", d => `translate(${adminArcLabel.centroid(d)})`)
-            .attr("dy", "0.35em");
+            .attr("dy", "0.25em");
         
     adminText.append("tspan")
         .attr("x", function (d) { 
@@ -87,7 +87,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
                 return 0;
             }
         })
-        .attr("y", "0.7em")
+        .attr("y", "0.5em")
         .attr("fill-opacity", 0.7)
         .text(function (d) { 
             const budget = d.data.budget.toLocaleString('us-US', { style: 'currency', currency: 'USD' }).slice(0, -3);
@@ -111,7 +111,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
 
     const pbColor = d3.scaleOrdinal()
         .domain(programBudgetData.map(d => d.name))
-        .range(["#ABCAE9", "#00A3E0", "#13294B", "#009681", "#D2D756", "#FF9E1B", "#e5e5e5"]) //larger pie chart
+        .range(["#ABCAE9", "#00A3E0", "#009681", "#D2D756", "#13294B", "#FF9E1B", "#e5e5e5"]) //larger pie chart
 
 
     const pbG = svg.append("g")
@@ -249,6 +249,16 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
         .attr('y', legendRectSize - legendSpacing)              
         .text(function(d) { return d; });                       
 
+    // title for program pie chart
+    svg.append("g")
+        .attr("transform", 'translate(' + width / 1.4 + ', ' + height / 2.25 + ')')
+        .style("font", "14px \"Avenir-Roman\"")
+        .style("font-weight", "bold")
+        .classed("program_budget_title", true)
+        .append('text')                                     
+        .attr('x', 0)              
+        .attr('y', 0)              
+        .text(config.large_pie_title);  
 
 
 };
