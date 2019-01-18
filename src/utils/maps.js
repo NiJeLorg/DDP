@@ -27,6 +27,10 @@ let CRIME_GEO_API =  "https://mdda.azure-api.net/api/567b-f2cf?$select=block_geo
 
 const ASSESSMENT_PARCEL_DATA_FILE  = require('../data/assessment_parcels.json');
 
+const BIZ_AREA_API = 'https://services6.arcgis.com/kpe5MwFGvZu9ezGW/arcgis/rest/services/BIZBoundary/FeatureServer/0/query?outFields=InBIZ&where=STATEFP10=26&returnGeometry=true&outSR=4326&f=geojson';
+
+const LANDSCAPE_AREAS_API = 'https://services6.arcgis.com/kpe5MwFGvZu9ezGW/arcgis/rest/services/BIZLandscapeMaintenance/FeatureServer/0/query?outFields=LndscpNum&where=LndscpNum>0&returnGeometry=true&outSR=4326&f=geojson';
+
 
 const VALID_CRIME_CATEGORIES = ["AGGRAVATED ASSAULT", "ASSAULT", "BURGLARY", "HOMICIDE", "LARCENY", "ROBBERY", "SEXUAL ASSAULT", "STOLEN VEHICLE"];
 
@@ -275,5 +279,7 @@ export default {
   DIVERSITY_GEO_API,
   DIVERSITY_DATA_API,
   CRIME_GEO_API,
-  ASSESSMENT_PARCEL_DATA_FILE
+  ASSESSMENT_PARCEL_DATA_FILE,
+  BIZ_AREA_API,
+  LANDSCAPE_AREAS_API
 };

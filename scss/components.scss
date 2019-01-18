@@ -503,7 +503,7 @@
   // min-height: 850px;
   display: flex;
   flex: 1;
-  height: 100vh;
+  // height: 100vh;
   .map-holder {
     width: 45%;
     .map {
@@ -603,6 +603,16 @@
           .c-bubble-column-svg {
             flex-grow: 0;
             margin-left: 0px;
+          }
+        }
+        .map-holder-landscaping-map {
+          border: 1px solid #aaa;
+          height: 650px;
+          flex-grow: 1;
+          margin: 0 15px;
+          .map {
+            width: 100%;
+            height: 100%;
           }
         }
       }
