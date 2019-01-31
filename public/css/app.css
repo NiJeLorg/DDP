@@ -330,7 +330,11 @@
   height: 350px; }
   .c-story-header__public-life {
     background-image: url("./../img/ambassadors.jpg");
-    background-position-y: -250px;
+    background-position-y: 0px;
+    background-position-x: 0px; }
+  .c-story-header__value-of-biz {
+    background-image: url("./../img/statue-sandbox.jpg");
+    background-position-y: 0px;
     background-position-x: 0px; }
   .c-story-header__value-of-biz {
     background-image: url("./../img/statue-sandbox.jpg");
