@@ -7,7 +7,7 @@ const StoryHeader = ({chapter}) => {
   } else if (chapter.id === 2) {
     className = "c-story-header c-story-header__public-life";
   } else if (chapter.id === 3) {
-    className = "c-story-header c-story-header__public-life";
+    className = "c-story-header c-story-header__value-of-biz";
   }
   return (
     <div className={className}>

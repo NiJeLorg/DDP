@@ -204,13 +204,19 @@
 .c-story-header {
   background-image: url("./../img/dadandkid_original.jpg");
   background-size: cover;
-  background-position-y: -450px;
-  background-position-x: 450px;
+  background-position-y: 0px;
+  background-position-x: 0px;
   height: 350px;
   &__public-life {
     background-image: url("./../img/ambassadors.jpg");
     background-position-y: -250px;
     background-position-x: 0px;
+  }
+  &__value-of-biz {
+  background-image: url("./../img/statue-sandbox.jpg");
+  background-size: cover;
+  background-position-y: 0px;
+  background-position-x: 0px;
   }
 }
 
