@@ -80,9 +80,9 @@ const config = {
   },
   legend: {
     verticalAlign: 'top',
-    itemDistance: 10,
-    itemWidth: 100,
-    align: 'left',
+    itemDistance: 20,
+    itemWidth: 120,
+    align: 'center',
     y: -25,
     itemStyle: {
       textOverflow: null

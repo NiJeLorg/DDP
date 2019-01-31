@@ -49,7 +49,7 @@ class WhereDoesBIZInvestmentGo extends Component {
 
     return (
       <div className='story-margin' id="wheredoesbizinvestmentgo">
-        <h1 className="sub-sub-heading__purple" data-story-id="4" data-story-overlay="Where does BIZ investment go?"><span className='ul-yellow-color'>IV.</span>WHERE DOES BIZ INVESTMENT GO?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="4" data-story-overlay="Where does BIZ investment go?"><span className='ul-yellow-color'>4.</span>WHERE DOES BIZ INVESTMENT GO?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">

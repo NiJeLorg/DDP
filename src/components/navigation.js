@@ -18,7 +18,7 @@ class Navigation extends Component {
     return (
       <nav className="c-navbar">
         <Link to="/" className="logo">
-          <img src="../../img/logo-white.svg" alt="" />
+          <img src="../../img/BIZ_Logo_White.svg" alt="" />
         </Link>
         <ul className="menu" role="navigation">
           <li>

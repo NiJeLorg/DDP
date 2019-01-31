@@ -7,27 +7,27 @@ const RailMenu = () => {
       <div className="menu-container__sticky">
         <div className="menu-item">
           <Link smooth to="#whatisthebiz">
-            <h4>I. What is the BIZ?</h4>
+            <h4>1. What is the BIZ?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#whodoesthebizserve">
-            <h4>II. Who Does the BIZ Serve?</h4>
+            <h4>2. Who Does the BIZ Serve?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#howisthebizfunded">
-            <h4>III. How is the BIZ Funded?</h4>
+            <h4>3. How is the BIZ Funded?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#wheredoesbizinvestmentgo">
-            <h4>IV. Where Does BIZ Investment Go?</h4>
+            <h4>4. Where Does BIZ Investment Go?</h4>
           </Link>
         </div>
         <div className="menu-item">
           <Link smooth to="#whatstheimpactofbizservicesonthecommunity">
-            <h4>V. What's the Impact of BIZ Services on the Community?</h4>
+            <h4>5. What's the Impact of BIZ Services on the Community?</h4>
           </Link>
         </div>
       </div>

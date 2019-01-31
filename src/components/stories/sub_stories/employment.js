@@ -4,7 +4,7 @@ import React from 'react';
 const Employment = () => {
   return (
     <div className='story-margin'>
-      <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="Worker - Downtown"><span className='ul-yellow-color'>III.</span>EMPLOYMENT</h1>
+      <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="Worker - Downtown"><span className='ul-yellow-color'>3.</span>EMPLOYMENT</h1>
       <p className='main-text__black'>Downtown Detroit is a major draw for employees throughout the region, with a
         number of large, fortune 500 companies calling Downtown home. More than 70,000 people work Downtown daily.
         People come from all over the region every day to work Downtown. The graphs below show the number of people
