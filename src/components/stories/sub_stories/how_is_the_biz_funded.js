@@ -124,7 +124,7 @@ class HowIsTheBIZFunded extends Component {
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/assessment.svg" alt="" />
+              <img className="c-full-image" src="/img/assessment.png" alt="" />
             </div>
           </div>      
           <div className="l-story-grid-row">
