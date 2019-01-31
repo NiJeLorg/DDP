@@ -88,7 +88,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
 
     return (
       <div className='story-margin' id="whatstheimpactofbizservicesonthecommunity">
-        <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="What is the impact of BIZ services on the community?"><span className='ul-yellow-color'>V.</span>WHAT'S THE IMPACT OF BIZ SERVICES ON THE COMMUNITY?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="What is the impact of BIZ services on the community?"><span className='ul-yellow-color'>5.</span>WHAT'S THE IMPACT OF BIZ SERVICES ON THE COMMUNITY?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
@@ -157,11 +157,11 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <br />
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/lighting.jpg" alt=""/>
+              <img className="c-full-image" src="/img/lighting3.jpg" alt=""/>
             </div>
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Downtown Supplemental Lighting</div>
-              <p className='main-text__black'>Each winter, with support from Detroit’s Downtown Development Authority, and the Public Lighting Authority, the BIZ illuminates Downtown with seasonal lighting on light poles and trees. These lighting elements enhance the physical characteristics  of the Downtown parks and streets by brightening the streetscape, complementing the overall atmosphere of Downtown Detroit. In addition, the BIZ has identified dark spots throughout Downtown and added lighting to those areas for increased safety. 
+              <p className='main-text__black'>Each winter, with support from Detroit’s Downtown Development Authority, and the Public Lighting Authority the BIZ illuminates Downtown with seasonal lighting on light poles and trees. These lighting elements enhance the physical characteristics  of the Downtown parks and streets by brightening the streetscape. Specifically, we focus on pedestrian, cyclist and vehicular gateways in Downtown Detroit to make dark winter traveling brighter and safer. 
               </p>
             </div>
           </div>
@@ -189,11 +189,11 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <br />
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/landscaping2.jpg" alt=""/>
+              <img className="c-full-image" src="/img/landscaping.png" alt=""/>
             </div>
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Park and Street Landscaping</div>
-              <p className='main-text__black'>The BIZ supports a healthy and green Downtown through beautiful trees, plants and flowers help create a welcoming environment. The BIZ contributes to four downtown parks maintained by the DDP, medians in key corridors, sidewalk planters and highway entrances. 
+              <p className='main-text__black'>The BIZ supports a healthy and green Downtown through beautiful trees, plants and flowers that help create a welcoming environment. The BIZ contributes to four downtown parks maintained by the DDP, medians in key corridors, sidewalk planters and highway entrances. 
               </p>
             </div>
           </div>

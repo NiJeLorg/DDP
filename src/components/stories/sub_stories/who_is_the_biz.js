@@ -31,13 +31,13 @@ class WhoIsTheBIZ extends Component {
 
     return (
       <div className='story-margin' id="whodoesthebizserve">
-        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>II.</span>WHO DOES THE BIZ SERVE?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>2.</span>WHO DOES THE BIZ SERVE?</h1>
         <div className="l-story-grid">
         <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
             <div className="chart-header">Downtown Detroit BIZ Board of Directors</div>
               <img className="c-thumbnail" src="/img/board.svg" alt=""/>
-              <p className='main-text__black'>The Downtown Detroit BIZ is guided by 14 diverse individuals serving as volunteer board members providing leadership to the organization.
+              <p className='main-text__black'>The Downtown Detroit BIZ is guided by 15 diverse individuals serving as volunteer board members providing leadership to the organization.
               </p>
             </div>
             <div className="l-story-grid-column-half">

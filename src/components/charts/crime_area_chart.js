@@ -42,8 +42,8 @@ const config = {
   navigator: {
     maskFill: "rgba(183,190,200,0.3)",
     handles: {
-      backgroundColor: 'yellow',
-      borderColor: 'red'
+      backgroundColor: 'white',
+      borderColor: '#00adf2'
     }
   },
   xAxis: {

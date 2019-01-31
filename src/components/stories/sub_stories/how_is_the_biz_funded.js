@@ -43,7 +43,7 @@ class HowIsTheBIZFunded extends Component {
     
     return (
       <div className='story-margin' id="howisthebizfunded">
-        <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?"><span className='ul-yellow-color'>III.</span>HOW IS THE BIZ FUNDED?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?"><span className='ul-yellow-color'>3.</span>HOW IS THE BIZ FUNDED?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
@@ -118,7 +118,7 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">How Are BIZ Properties Assessed?</div>
-              <p className='main-text__black'>Business Improvement Zone special assessments are calculated by applying a percentage of assessed value plus a percentage of building floor area for each commercial property. These percentages were established with the adoption of <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a> by in 2014. In addition, there is a per parcel cap of $150,000 and increases in assessments are limited to 3% per parcel per year. The City of Detroit treasurer collects the special assessment with summer taxes.
+              <p className='main-text__black'>Business Improvement Zone special assessments are calculated by applying a percentage of assessed value plus a percentage of building floor area for each commercial property. These percentages were established with the adoption of <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a> in 2014. In addition, there is a per parcel cap of $150,000 and increases in assessments are limited to 3% per parcel per year. The City of Detroit treasurer collects the special assessment with summer taxes.
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">How Are BIZ Properties Contributing to Revenue?</div>
-              <p className='main-text__black'>Properties are assessed differently depending on their assessed value and floor area. Of the 566 properties that contribute to the BIZ, about half (46%) pay $1,000 or less. The graph below shows how many properties fall within various ranges of assessment. 
+              <p className='main-text__black'>Properties are assessed differently depending on their assessed value and floor area. Of the 556 properties that contribute to the BIZ, about half (46%) pay $1,000 or less. The graph below shows how many properties fall within various ranges of assessment. 
               </p>
               <div className="distribution-chart-wrapper">
                 <DistributionOfRevenueChart />
