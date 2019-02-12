@@ -120,7 +120,7 @@ class ResidentialUnitsBarChart extends Component {
 
     return (
       <div>
-        <span className="chart-header">Projected number of housing units in Downtown Detroit </span>
+        <span className="chart-header">Projected Number of Housing Units in Downtown Detroit </span>
         <div className="chart-container">
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar config={this.state.config2} />

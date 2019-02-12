@@ -43,11 +43,11 @@ class HowIsTheBIZFunded extends Component {
     
     return (
       <div className='story-margin' id="howisthebizfunded">
-        <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?"><span className='ul-yellow-color'>3.</span>HOW IS THE BIZ FUNDED?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="3" data-story-overlay="How is the BIZ Funded?">HOW IS THE BIZ FUNDED?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <p className='main-text__black'>The Downtown Detroit Business Improvement Zone is funded completely through a modest special assessment paid by owners of assessable property within the BIZ boundaries. Defined in <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a>, assessable properties are exclusively taxable properties. Tax-exempt, non-commercial properties are not assessable. 
+              <p className='main-text__black'>The Downtown Detroit Business Improvement Zone is funded completely through a special assessment paid by owners of assessable property within the BIZ boundaries. Defined in <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a>, assessable properties are exclusively taxable properties. Tax-exempt, non-commercial properties are not assessable. 
               </p>              
             </div>
           </div>
@@ -74,7 +74,7 @@ class HowIsTheBIZFunded extends Component {
           </div>
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <div className="sub-sub-heading">Non Assessable Properties</div>
+              <div className="sub-sub-heading">Non-Assessable Properties</div>
               <p className='main-text__black'>The following types of properties are not assessable under the BIZ Plan:
               </p>
             </div>
@@ -83,7 +83,7 @@ class HowIsTheBIZFunded extends Component {
             <div className="l-story-grid-column-half">
               <div className="chart-header">Government</div>
               <img className="c-thumbnail" src="/img/government.svg" alt=""/>
-              <p className='main-text__black'>Property owned by public, governmental entities such as city, county, state and federal offices, parks, plazas and roads.
+              <p className='main-text__black'>Property owned by public, governmental entities, such as city, county, state and federal offices, parks, plazas and roads.
               </p>
             </div>
             <div className="l-story-grid-column-half">
@@ -118,7 +118,7 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">How Are BIZ Properties Assessed?</div>
-              <p className='main-text__black'>Business Improvement Zone special assessments are calculated by applying a percentage of assessed value plus a percentage of building floor area for each commercial property. These percentages were established with the adoption of <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a> in 2014. In addition, there is a per parcel cap of $150,000 and increases in assessments are limited to 3% per parcel per year. The City of Detroit treasurer collects the special assessment with summer taxes.
+              <p className='main-text__black'>The BIZ special assessments are calculated by applying a percentage of assessed value plus a percentage of building floor area for each commercial property. These percentages were established with the adoption of <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a> in 2014. In addition, there is a per parcel cap of $150,000 and increases in assessments are limited to 3% per parcel per year. The City of Detroit treasurer collects the special assessment with summer taxes.
               </p>
             </div>
           </div>
@@ -159,7 +159,7 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Why is There a Delay in BIZ Assessment for New or Renovated Buildings?</div>
-              <p className='main-text__black'>Downtown Detroit BIZ Assessments are based on prior year City of Detroit assessment data, as outlined in <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a>. Special Assessments which are levied with the current summer tax bill are based on property assessment values set in March of the previous year. This causes a delay in when the BIZ will collect the full value of new construction. Depending on construction schedules, this delay can be between one and two years after construction completion. 
+              <p className='main-text__black'>The BIZ assessments are based on prior year City of Detroit assessment data, as outlined in <a href="http://downtowndetroit.org/wp-content/uploads/2015/06/BIZ_Zone-Plan-legal-format.pdf">The BIZ Plan</a>. Special assessments which are levied with the current summer tax bill are based on property assessment values set in March of the previous year. This causes a delay in when the BIZ will collect the full value of new construction. Depending on construction schedules, this delay can be between one and two years after construction completion. 
               </p>
               <img className="c-full-image" src="/img/valueofbiz_timeline.svg" alt=""/>
             </div>

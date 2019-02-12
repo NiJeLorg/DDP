@@ -88,7 +88,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
 
     return (
       <div className='story-margin' id="whatstheimpactofbizservicesonthecommunity">
-        <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="What is the impact of BIZ services on the community?"><span className='ul-yellow-color'>5.</span>WHAT'S THE IMPACT OF BIZ SERVICES ON THE COMMUNITY?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="What is the impact of BIZ services on the community?">WHAT'S THE IMPACT OF BIZ SERVICES ON THE COMMUNITY?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
@@ -112,7 +112,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-                <img className="c-full-image" src="/img/community2.jpg" alt=""/>
+                <img className="c-full-image" src="/img/community3.png" alt=""/>
             </div>
           </div>
           <div className="l-story-grid-row">
@@ -140,7 +140,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Downtown Ambassadors</div>
-              <p className='main-text__black'>The Downtown Detroit Ambassador, established in 2006, has transformed the appearance of Downtown Detroit. The Ambassadors are the proactive and friendly individuals who clean public areas and serve as information resources for Downtown’s businesses, residents, and visitors.
+              <p className='main-text__black'>The Downtown Detroit Ambassador, established in 2006, has transformed the appearance of Downtown Detroit. The Ambassadors are the proactive and friendly individuals who clean public areas and serve as information resources for Downtown’s businesses, residents and visitors.
               </p>
             </div>
             <div className="l-story-grid-column-half">
@@ -157,7 +157,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           <br />
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/lighting3.jpg" alt=""/>
+              <img className="c-full-image" src="/img/lighting4.jpg" alt=""/>
             </div>
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">Downtown Supplemental Lighting</div>

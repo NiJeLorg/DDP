@@ -49,11 +49,11 @@ class WhereDoesBIZInvestmentGo extends Component {
 
     return (
       <div className='story-margin' id="wheredoesbizinvestmentgo">
-        <h1 className="sub-sub-heading__purple" data-story-id="4" data-story-overlay="Where does BIZ investment go?"><span className='ul-yellow-color'>4.</span>WHERE DOES BIZ INVESTMENT GO?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="4" data-story-overlay="Where does BIZ investment go?">WHERE DOES BIZ INVESTMENT GO?</h1>
         <div className="l-story-grid">
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
-              <p className='main-text__black'>As a matter of policy, the Downtown Detroit BIZ allocates less than 20% of revenue on administration. More than 80% of the funds collected from property owners goes directly to providing services to our stakeholders. 
+              <p className='main-text__black'>As a matter of policy, the BIZ allocates less than 20% of revenue on administration. More than 80% of the funds collected from property owners goes directly to providing services to our stakeholders. 
               </p>
             </div>
           </div>

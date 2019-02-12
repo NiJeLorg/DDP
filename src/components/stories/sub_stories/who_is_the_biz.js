@@ -31,7 +31,7 @@ class WhoIsTheBIZ extends Component {
 
     return (
       <div className='story-margin' id="whodoesthebizserve">
-        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?"><span className='ul-yellow-color'>2.</span>WHO DOES THE BIZ SERVE?</h1>
+        <h1 className="sub-sub-heading__purple" data-story-id="2" data-story-overlay="Who is the BIZ?">WHO DOES THE BIZ SERVE?</h1>
         <div className="l-story-grid">
         <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
@@ -43,7 +43,7 @@ class WhoIsTheBIZ extends Component {
             <div className="l-story-grid-column-half">
               <div className="chart-header">Property Owners</div>
                 <img className="c-thumbnail" src="/img/property_owners.svg" alt=""/>
-                <p className='main-text__black'>The BIZ represents 556 properties and individuals who own a building or property, ranging from commercial use to residential. 
+                <p className='main-text__black'>The BIZ represents 556 properties and individuals, who own a building or property, ranging from commercial to residential. 
                 </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ class WhoIsTheBIZ extends Component {
             <div className="l-story-grid-column-half">
               <div className="chart-header">Employees</div>
                 <img className="c-thumbnail" src="/img/employees.svg" alt=""/>
-                <p className='main-text__black'>With over 70,000 employees in Downtown, the BIZ manages the day-to-day appearance of the urban core and 
+                <p className='main-text__black'>With over 70,000 employees in Downtown, the BIZ manages the day-to-day appearance of the urban core. 
                 </p>
             </div>
           </div>
@@ -231,6 +231,32 @@ class WhoIsTheBIZ extends Component {
                       </p>
                     </div>
                   </div> 
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Mike_Neubecker.png" alt=""/>
+                      <div className="header-text__title">
+                        Michael Neubecker
+                      </div>
+                      <div className="header-text__subtitle">
+                        President and Chief Operating Officer, MGM Grand Detroit
+                      </div>
+                      <p className='main-text__black'>Michael (Mike) Neubecker is the President and Chief Operating Officer of MGM Grand Detroit. Neubecker brings extensive knowledge and experience to his new role, having successfully achieved significant leadership positions throughout MGM Resorts. A native of Michigan, Neubecker joined MGM Resorts in 1993 in the Accounting Department at MGM Grand Las Vegas. During his 7 year tenure there he served in various positions, including Director of Finance, Construction Controller, and Senior Accountant.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="c-card__board-members-card">
+                    <div className="c-card__content">
+                      <img className="c-card-thumbnail" src="/img/Steve_Ogden.png" alt=""/>
+                      <div className="header-text__title">
+                        Steve Ogden
+                      </div>
+                      <div className="header-text__subtitle">
+                        Vice President of State and Local Government Affairs, Quicken Loans
+                      </div>
+                      <p className='main-text__black'>Steve Ogden is the Vice President of State and Local Government Affairs at Quicken Loans. Ogden leads a small team of people focused on strategy development, policy creation and engagement for the organization. Prior to his current role, Ogden played a significant role, leading initiatives throughout the family of companies, specifically as a Director of Corporate &amp; Government Affairs at Rock Ventures and as the Director of Real Estate Development for Bedrock Real Estate Services (Bedrock). 
+                      </p>
+                    </div>
+                  </div>
                   <div className="c-card__board-members-card">
                     <div className="c-card__content">
                       <img className="c-card-thumbnail" src="/img/Dwight_Phillips.jpg" alt=""/>
