@@ -115,20 +115,20 @@ const overlayMapsLandscaping = {
 
 const subOverlayMapsStoryThree = {
   "parcels": {
-    "$1 - $1K": {
-      label: "$1 - $1K",
+    "$1-$1K": {
+      label: "$1-$1K",
       color: "#F27B1F"
     },
-    "$1K - $10K": {
-      label: "$1K - $10K",
+    "$1K-$10K": {
+      label: "$1K-$10K",
       color: "#B2B5D3"
     },
-    "$10K - $50K": {
-      label: "$10K - $50K",
+    "$10K-$50K": {
+      label: "$10K-$50K",
       color: "#5C6298"
     },
-    "$50K - $150K": {
-      label: "$50K - $150K",
+    "$50K-$150K": {
+      label: "$50K-$150K",
       color: "#2A316C"
     },
     "$150K": {
@@ -197,12 +197,7 @@ class GeoMap extends Component {
 
 
   setOverlayLayerZoom(overlayName, map) {
-    if (this.props.landscaping) {
-      map.setZoom(15);
-    } else {
-      map.setZoom(14);
-    }
-    
+    map.setZoom(14);
   }
 
   getChoroplethGeoJson(overlayName, map) {

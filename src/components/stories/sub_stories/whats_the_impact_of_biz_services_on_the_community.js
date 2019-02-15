@@ -122,10 +122,10 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           </div>
           <br />
           <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half__bottom">
               <img className="c-full-image" src="/img/data.jpg" alt=""/>
             </div>
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half__top">
               <div className="sub-sub-heading">Data</div>
               <p className='main-text__black'>The BIZ data program provides data and metrics to track the progress of downtown and provide information to internal staff and partners to gain better insights and plan appropriate strategies for improvement. It collects primary and compiles secondary data on such topics as housing, commercial property, land use, value, demographics, demand and more. 
               </p>
@@ -144,9 +144,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
               </p>
             </div>
             <div className="l-story-grid-column-half">
-              <div className="l-story-grid-column-half">
-                <img className="c-full-image" src="/img/ambassadors.png" alt=""/>
-              </div>               
+              <img className="c-full-image" src="/img/ambassadors.png" alt=""/>             
             </div>
           </div>
           <div className="l-story-grid-row">
@@ -156,10 +154,10 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           </div>
           <br />
           <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half__bottom">
               <img className="c-full-image" src="/img/lighting4.jpg" alt=""/>
             </div>
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half__top">
               <div className="sub-sub-heading">Downtown Supplemental Lighting</div>
               <p className='main-text__black'>Each winter, with support from Detroit’s Downtown Development Authority, and the Public Lighting Authority the BIZ illuminates Downtown with seasonal lighting on light poles and trees. These lighting elements enhance the physical characteristics  of the Downtown parks and streets by brightening the streetscape. Specifically, we focus on pedestrian, cyclist and vehicular gateways in Downtown Detroit to make dark winter traveling brighter and safer. 
               </p>
@@ -188,18 +186,19 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
           </div>
           <br />
           <div className="l-story-grid-row">
-            <div className="l-story-grid-column-half">
-              <img className="c-full-image" src="/img/landscaping3.jpg" alt=""/>
+            <div className="l-story-grid-column-half__bottom">
+              <GeoMap chapter={this.state.chapter} landscaping={this.state.landscaping} />
             </div>
-            <div className="l-story-grid-column-half">
+            <div className="l-story-grid-column-half__top">
               <div className="sub-sub-heading">Park and Street Landscaping</div>
               <p className='main-text__black'>The BIZ supports a healthy and green Downtown through beautiful trees, plants and flowers that help create a welcoming environment. The BIZ contributes to four downtown parks maintained by the DDP, medians in key corridors, sidewalk planters and highway entrances. 
               </p>
             </div>
           </div>
           <div className="l-story-grid-row">
-            {/* <img className="c-full-image" src="/img/BIZLandscapeMap.png" alt=""/> */}
-            <GeoMap chapter={this.state.chapter} landscaping={this.state.landscaping} />
+            <div className="l-story-grid-column-half">
+              <img className="c-full-image" src="/img/landscaping3.jpg" alt=""/>
+            </div>
           </div>
           <br />
           <div className="l-story-grid-row">

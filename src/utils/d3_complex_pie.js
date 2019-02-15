@@ -3,8 +3,8 @@ import * as d3 from 'd3';
 const D3ComplexPie = {};
 
 D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
-    console.log(overallBudgetData);
-    console.log(programBudgetData);
+    // console.log(overallBudgetData);
+    // console.log(programBudgetData);
 
     // calculate total overall budget for use later to calculate percentages
     let totalBudget = 0;
@@ -18,8 +18,34 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
     //const width = 300 - margin.left - margin.right;
     const height = Math.min(width, 500);
 
-    // admin pie
+    // set up variables for pie widths and sizes
+    let adminTranslatePieWidth, 
+        adminTranslatePieHeight,
+        pbTranslatePieWidth,
+        pbTranslatePieHeight,
+        hideLegend,
+        adminRadius,
+        pbRadius;
 
+    if (width > 500) {
+        adminTranslatePieWidth = width / 6;
+        adminTranslatePieHeight = height / 4;
+        pbTranslatePieWidth = width / 2.2;
+        pbTranslatePieHeight = height / 1.5;
+        hideLegend = 'block';
+        adminRadius = Math.min(width, height) / 8 * 1.4;
+        pbRadius = Math.min(width, height) / 3 - 1;
+    } else {
+        adminTranslatePieWidth = width / 3;
+        adminTranslatePieHeight = height / 4;
+        pbTranslatePieWidth = width / 1.3;
+        pbTranslatePieHeight = height / 1.3;
+        hideLegend = 'none';
+        adminRadius = Math.min(width, height) / 8 * 1.6;
+        pbRadius = Math.min(width, height) / 2.3;
+    }
+
+    // admin pie
     // Setup pie generator
     const pie = d3.pie()
         .sort(null)
@@ -30,25 +56,24 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
         .outerRadius(Math.min(width, height) / 8 - 1);
     
     const adminArcs = pie(overallBudgetData);
-    
-    const adminRadius = Math.min(width, height) / 8 * 1.4;
         
     const adminArcLabel = d3.arc().innerRadius(adminRadius).outerRadius(adminRadius);
 
     const adminColor = d3.scaleOrdinal() // colors for smaller pie chart
         .domain(overallBudgetData.map(d => d.name))
-        .range(["#B1B1B1", "#ACACAC", "#2a316c"])
+        .range(["#B1B1B1", "#ACACAC", "#2a316c"]);
 
 
-	// Setup svg element
+    // Setup svg element
+
     const svg = d3.select(el).append('svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom);
 
     const adminG = svg.append("g")
-        .attr("transform", 'translate(' + width / 6 + ', ' + height / 4 + ')')
+        .attr("transform", 'translate(' + adminTranslatePieWidth + ', ' + adminTranslatePieHeight + ')')
         .attr("text-anchor", "middle")
-        .style("font", "14px \"Avenir-Roman\"");
+        .classed("admin-pie-text", true);
 
     adminG.selectAll("path")
         .data(adminArcs)
@@ -100,7 +125,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
     // constants
     const pbArc = d3.arc()
         .innerRadius(0)
-        .outerRadius(Math.min(width, height) / 3 - 1);
+        .outerRadius(pbRadius);
     
     const pbArcs = pie(programBudgetData);
     
@@ -115,7 +140,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
 
 
     const pbG = svg.append("g")
-        .attr("transform", 'translate(' + width / 2.2 + ', ' + height / 1.5 + ')')
+        .attr("transform", 'translate(' + pbTranslatePieWidth + ', ' + pbTranslatePieHeight + ')')
         .attr("text-anchor", "middle")
         .style("font", "14px \"Avenir-Roman\"");
 
@@ -214,6 +239,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
         .enter()
         .append('g')
         .classed("legend", true)
+        .attr("display", hideLegend)
         .attr("id", function (d, i) { 
             return "legend_" + i; 
         }) 
@@ -251,6 +277,7 @@ D3ComplexPie.create = (el, overallBudgetData, programBudgetData, config) => {
 
     // title for program pie chart
     svg.append("g")
+        .attr("display", hideLegend)
         .attr("transform", 'translate(' + width / 1.4 + ', ' + height / 2.25 + ')')
         .style("font", "14px \"Avenir-Roman\"")
         .style("font-weight", "bold")

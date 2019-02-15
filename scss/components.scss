@@ -214,9 +214,9 @@
     background-position-x: 0px;
   }
   &__value-of-biz {
-  background-image: url("./../img/statue-sandbox.jpg");
-  background-position-y: 0px;
-  background-position-x: 0px;
+    background-image: url("./../img/statue-sandbox.jpg");
+    background-position-y: 0px;
+    background-position-x: 0px;
   }
 }
 
@@ -308,11 +308,10 @@
   display: flex;
   background: #13294b;
   align-items: center;
-  padding: 4px 34px 0px;
+  padding: 0px 34px;
   justify-content: center;
   height: 48px;
   z-index: 2;
-  margin-top: -4px;
 
   .menu {
     display: flex;
@@ -505,7 +504,7 @@
 }
 
 .c-stories {
-  position: relative;
+  // position: relative;
   // min-height: 850px;
   display: flex;
   flex: 1;
@@ -523,7 +522,7 @@
     background-color: white;
     z-index: 1;
     overflow-y: scroll;
-    height: calc(100vh - 28px);
+    height: calc(100vh - 48px);
     &__value_of_the_biz {
       width: 70%;
       padding: 40px 30px;
@@ -581,7 +580,7 @@
           .map-holder-small-map {
             border: 1px solid #aaa;
             margin-right: -180px;
-            height: 400px;
+            height: 450px;
             flex-grow: 1;
             .map {
               width: 100%;
@@ -613,9 +612,9 @@
         }
         .map-holder-landscaping-map {
           border: 1px solid #aaa;
-          height: 650px;
+          height: 450px;
           flex-grow: 1;
-          margin: 0 15px;
+          width: 100%;
           .map {
             width: 100%;
             height: 100%;
@@ -882,7 +881,12 @@ path.line {
   }
 }
 
+.c-bullets {
+  list-style: inherit;
+  padding: inherit;
+}
 
+// d3 viz classes
 .axis line {
   stroke: #eee;
 }
@@ -897,8 +901,17 @@ path.line {
   font-weight: bold;
 }
 
-.c-bullets {
-  list-style: inherit;
-  padding: inherit;
+.x.axis {
+  font-size: 14px;
+  text-anchor: middle;
+  font-family: "Avenir";
+  fill: #312f2f;
 }
+
+.admin-pie-text {
+  font-size: 14px;
+  font-family: "Avenir-Roman";
+}
+
+
 
