@@ -654,21 +654,7 @@
         align-items: center; }
 
 .c-mobile-nav-story-map {
-  padding: 15px 0;
-  background: #eceeef;
-  display: flex;
-  justify-content: center; }
-  .c-mobile-nav-story-map button {
-    padding: 8px 12px;
-    font-family: "AvenirLTPro-Black", sans-serif;
-    text-transform: uppercase;
-    color: #fff;
-    border: none;
-    cursor: pointer; }
-  .c-mobile-nav-story-map .nav-story-button__active {
-    background: #7f8b9d; }
-  .c-mobile-nav-story-map .nav-story-button__inactive {
-    background: #bdc1c7; }
+  display: none; }
 
 .c-map-controls {
   display: flex;
@@ -1006,11 +992,37 @@ path.line {
       max-width: inherit;
       width: 100%;
       overflow-y: inherit;
-      padding: 10px 15px; }
-    .c-stories .map {
-      max-width: inherit;
-      height: 100%;
+      padding: 10px 15px;
+      height: auto; }
+      .c-stories .c-story-navigator .btn-switcher {
+        display: flex;
+        flex-direction: column; }
+        .c-stories .c-story-navigator .btn-switcher a {
+          height: 24px; }
+          .c-stories .c-story-navigator .btn-switcher a:not(last) {
+            border-right: solid 2px #13294B; }
+    .c-stories .map-holder {
       width: 100%; }
+      .c-stories .map-holder .map {
+        max-width: inherit;
+        height: 100%;
+        width: 100%; }
+  .c-mobile-nav-story-map {
+    padding: 15px 0;
+    background: #eceeef;
+    display: flex;
+    justify-content: center; }
+    .c-mobile-nav-story-map button {
+      padding: 8px 12px;
+      font-family: "AvenirLTPro-Black", sans-serif;
+      text-transform: uppercase;
+      color: #fff;
+      border: none;
+      cursor: pointer; }
+    .c-mobile-nav-story-map .nav-story-button__active {
+      background: #7f8b9d; }
+    .c-mobile-nav-story-map .nav-story-button__inactive {
+      background: #bdc1c7; }
   .c-data-drawer-nav__sticky {
     display: none; }
   .c-thumbnail {

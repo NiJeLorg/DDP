@@ -33,7 +33,7 @@ class StoryNavigator extends Component {
     let els = [];
     let currentActiveElement = '';
     for (let el of elements) {
-      els.push(el.offsetTop);
+      els.push(el.offsetTop - 490);
     }
     let closest = Math.min.apply(null, els);
     for(var i = 0; i < els.length; i++){
@@ -42,10 +42,11 @@ class StoryNavigator extends Component {
       }
     }
     for (let el of elements) {
-      console.log(el.offsetTop, closest);
+      console.log(el.offsetTop - 490, closest);
 
-      if (el.offsetTop == closest) {
+      if ((el.offsetTop - 490) == closest) {
         currentActiveElement = el;
+        console.log(el.dataset.storyOverlay);
         this.props.setActiveOverlay(el.dataset.storyOverlay);
         break;
       }

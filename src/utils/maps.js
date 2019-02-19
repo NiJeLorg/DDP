@@ -13,13 +13,13 @@ const DETROIT_POSITION = {
   lng: -83.043754
 };
 
-const EDUCATION_ATTAINMENT_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=150|06000US2616322000';
+const EDUCATION_ATTAINMENT_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2017?geo_ids=150|06000US2616322000';
 const EDUCATION_ATTAINMENT_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B15003&geo_ids=150%7C06000US2616322000';
 
-const RENT_INCOME_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=150|06000US2616322000';
+const RENT_INCOME_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2017?geo_ids=150|06000US2616322000';
 const RENT_INCOME_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B19013,B25058&geo_ids=150|06000US2616322000 ';
 
-const DIVERSITY_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2016?geo_ids=140|06000US2616322000';
+const DIVERSITY_GEO_API = 'https://api.censusreporter.org/1.0/geo/show/tiger2017?geo_ids=140|06000US2616322000';
 const DIVERSITY_DATA_API = 'https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01001B,B01001C,B01001D,B01001E,B01001F,B01001G,B01001H,B01001I&geo_ids=140|06000US2616322000';
 
 const HTTP_PROXY = 'https://cors-anywhere.herokuapp.com/';
@@ -109,7 +109,7 @@ const wacValProperty = (feature) => {
 const wacToolTip = (feature, layer)=> {
   layer.bindTooltip(() => {
     let percentage = feature.properties.CD04 / parseFloat(feature.properties.C000) * 100;
-    return `Workers with Bachelor's Degeree: ${_.floor(percentage, 2)}%`
+    return `Percentage of workers with a<br />Bachelor's degeree: ${_.floor(percentage, 1)}%`
   });
 };
 
@@ -119,7 +119,7 @@ const workersDowntownProperty = (feature) => {
 
 const workersDowntownToolTip = (feature, layer)=> {
   layer.bindTooltip(() => {
-    return `Total workers downtown: ${feature.properties.C000}`
+    return `Total number of workers<br />downtown: ${feature.properties.C000}`
   });
 }
 
@@ -129,7 +129,7 @@ const rentIncomeProperty = (feature) => {
 
 const rentIncomeToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `Percentage ratio of rent to median household income: ${_.floor(feature.properties.rent_income_ratio, 2)}%`
+    return `Percentage ratio of rent to<br />median household income: ${_.floor(feature.properties.rent_income_ratio, 1)}%`
   });
 };
 
@@ -139,7 +139,7 @@ const diversityIndexProperty = (feature) => {
 
 const diversityIndexToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `${feature.properties.name} Diversity Index: ${_.floor(feature.properties.diversity_index, 2)}`
+    return `Diversity index: ${_.floor(feature.properties.diversity_index, 1)}`
   });
 };
 
@@ -149,7 +149,7 @@ const crimeIndexProperty = (feature) => {
 
 const crimeIndexToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `Total Crime: ${feature.properties.crime}`
+    return `Total number of crimes: ${feature.properties.crime}`
   });
 };
 
@@ -160,7 +160,7 @@ const educationAttainmentValProperty = (feature) => {
 const educationAttainmentToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
     let percentage = feature.properties.bachelors_population / parseFloat(feature.properties.total_population) * 100;
-    return `Workers with Bachelor's Degeree: ${_.floor(percentage, 2)}%`
+    return `Percentage of workers with a<br />Bachelor's degeree: ${_.floor(percentage, 1)}%`
   });
 };
 

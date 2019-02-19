@@ -40,6 +40,7 @@ const overlayMapsStoryOne = {
   "Crime": "Crime",
 };
 
+
 const overlayMapsStoryTwo = {
   "Clean and Welcoming": "Clean and Welcoming",
   "Amenities": "Amenities",
@@ -59,7 +60,7 @@ const subOverlayMapsStoryTwo = {
       },
       "parks": {
         label: "Parks Maintained",
-        color: "#F27B21"
+        color: "#88c659"
       }
     },
     "infrastructure": {
@@ -78,7 +79,7 @@ const subOverlayMapsStoryTwo = {
     }
   }, "Clean and Welcoming": {
     "Business Contacts": {
-      label: "Business Contacts",
+      label: "Business Contact",
       color: "#ADC8E7"
     },
     "Graffiti - Removed": {
@@ -89,10 +90,6 @@ const subOverlayMapsStoryTwo = {
       label: "Motorist Assist",
       color: "#EF4060"
     },
-    // "Panhandling": {
-    //   label: "Panhandler Contacts",
-    //   color: "#00B3EE"
-    // },
     "Pedestrian Assistance": {
       label: "Pedestrian Assist",
       color: "#E0E060"
@@ -100,7 +97,11 @@ const subOverlayMapsStoryTwo = {
     "Trash (lbs)": {
       label: "Trash Pickup",
       color: "#00A992"
-    }
+    },
+    "Parks Maintained": {
+      label: "Parks Maintained",
+      color: "#88c659"
+    },
   },
   "Live Downtown": {'2018': {}, '2019': {}, '2020': {}, '2021': {}, '2022': {}}
 };
@@ -159,6 +160,7 @@ class GeoMap extends Component {
 
   constructor(props) {
     let overlayMaps;
+    let overlayLayers = {};
     if (props.chapter.id === 1) {
       overlayMaps = overlayMapsStoryOne;
     } else if (props.chapter.id === 2) {
@@ -180,17 +182,19 @@ class GeoMap extends Component {
       overlaySelectControl: null,
       fullScreenControl: null,
       zoom: mapConfig.ZOOM_LEVEL,
-      educationAttainmentGeoJson: {},
-      rentIncomeMedianGeoJson: {},
-      wacGeoJson: {},
-      workersDowntownGeoData: {},
-      diversityIndexGeoJson: {},
+      educationAttainmentGeoJson: null,
+      rentIncomeMedianGeoJson: null,
+      wacGeoJson: null,
+      workersDowntownGeoJson: null,
+      diversityIndexGeoJson: null,
       geoJson: {},
-      crimeGeoJson: {},
+      crimeGeoJson: null,
       selectedSublayer: '',
       currentSubLayerControl: null,
       map: {},
       overlayMaps: overlayMaps,
+      overlayLayers: overlayLayers,
+      choroplethLayer: null,
       bounds: L.latLngBounds(southWest, northEast)
     };
   }
@@ -200,31 +204,87 @@ class GeoMap extends Component {
     map.setZoom(14);
   }
 
-  getChoroplethGeoJson(overlayName, map) {
+
+  getChoroplethGeoJson(overlayName, map, addToMap) {
     if (overlayName === 'Education Attainment') {
-      getEducationAttainmentGeoJson().then((data) => {
-        this.addChoroplethLayer(data, mapConfig.educationAttainmentValProperty, mapConfig.educationAttainmentToolTip, map);
-      });
+      console.log(this.state.educationAttainmentGeoJson);
+      if (!this.state.educationAttainmentGeoJson) {
+        getEducationAttainmentGeoJson().then((data) => {
+          this.setState({educationAttainmentGeoJson: data});
+          if (addToMap) {
+            this.addChoroplethLayer(this.state.educationAttainmentGeoJson, mapConfig.educationAttainmentValProperty, mapConfig.educationAttainmentToolTip, map); 
+          }   
+        });        
+      } else {
+        if (addToMap) {
+          this.addChoroplethLayer(this.state.educationAttainmentGeoJson, mapConfig.educationAttainmentValProperty, mapConfig.educationAttainmentToolTip, map);
+        }
+      }
     } else if (overlayName === "Worker - Bachelor's") {
-      getWACGeoJson().then((data) => {
-        this.addChoroplethLayer(data, mapConfig.wacValProperty, mapConfig.wacToolTip, map);
-      });
+      if (!this.state.wacGeoJson) {
+        getWACGeoJson().then((data) => {
+          this.setState({wacGeoJson: data});
+          if (addToMap) {
+            this.addChoroplethLayer(this.state.wacGeoJson, mapConfig.wacValProperty, mapConfig.wacToolTip, map);
+          }
+        });
+      } else {
+        if (addToMap) {
+          this.addChoroplethLayer(this.state.wacGeoJson, mapConfig.wacValProperty, mapConfig.wacToolTip, map);
+        }
+      }
     } else if (overlayName === "Worker - Downtown") {
-      getDowtownWorkersGeoJson().then((data) => {
-        this.addChoroplethLayer(data, mapConfig.workersDowntownProperty, mapConfig.workersDowntownToolTip, map);
-      });
+      if (!this.state.workersDowntownGeoJson) {
+        getDowtownWorkersGeoJson().then((data) => {
+          this.setState({workersDowntownGeoJson: data});
+          if (addToMap) {
+            this.addChoroplethLayer(this.state.workersDowntownGeoJson, mapConfig.workersDowntownProperty, mapConfig.workersDowntownToolTip, map);
+          }
+        });
+      } else {
+        if (addToMap) {
+          this.addChoroplethLayer(this.state.workersDowntownGeoJson, mapConfig.workersDowntownProperty, mapConfig.workersDowntownToolTip, map);
+        }
+      }
     } else if (overlayName === "Diversity Index") {
-      getDiversityIndexGeoJson().then((data) => {
-        this.addChoroplethLayer(data, mapConfig.diversityIndexProperty, mapConfig.diversityIndexToolTip, map);
-      });
+      if (!this.state.diversityIndexGeoJson) {
+        getDiversityIndexGeoJson().then((data) => {
+          this.setState({diversityIndexGeoJson: data});
+          if (addToMap) {
+            this.addChoroplethLayer(this.state.diversityIndexGeoJson, mapConfig.diversityIndexProperty, mapConfig.diversityIndexToolTip, map);
+          }
+        });
+      } else {
+        if (addToMap) {
+          this.addChoroplethLayer(this.state.diversityIndexGeoJson, mapConfig.diversityIndexProperty, mapConfig.diversityIndexToolTip, map);
+        }
+      }
     } else if (overlayName === 'Affordability') {
-      getRentIncomeGeoJson().then((data) => {
-        this.addChoroplethLayer(data, mapConfig.rentIncomeProperty, mapConfig.rentIncomeToolTip, map);
-      });
+      if (!this.state.rentIncomeMedianGeoJson) {
+        getRentIncomeGeoJson().then((data) => {
+          this.setState({rentIncomeMedianGeoJson: data});
+          if (addToMap) {
+            this.addChoroplethLayer(this.state.rentIncomeMedianGeoJson, mapConfig.rentIncomeProperty, mapConfig.rentIncomeToolTip, map);
+          }
+        });
+      } else {
+        if (addToMap) {
+          this.addChoroplethLayer(this.state.rentIncomeMedianGeoJson, mapConfig.rentIncomeProperty, mapConfig.rentIncomeToolTip, map);
+        }
+      }
     } else if (overlayName === 'Crime') {
-      getCrimeGeoJson().then((data) => {
-        this.addChoroplethLayer(data, mapConfig.crimeIndexProperty, mapConfig.crimeIndexToolTip, map);
-      });
+      if (!this.state.crimeGeoJson) {
+        getCrimeGeoJson().then((data) => {
+          this.setState({crimeGeoJson: data});
+          if (addToMap) {
+            this.addChoroplethLayer(this.state.crimeGeoJson, mapConfig.crimeIndexProperty, mapConfig.crimeIndexToolTip, map);
+          }
+        });
+      } else {
+        if (addToMap) {
+          this.addChoroplethLayer(this.state.crimeGeoJson, mapConfig.crimeIndexProperty, mapConfig.crimeIndexToolTip, map);
+        }
+      }
     } else if (overlayName === 'Amenities') {
       this.getAmenitiesGeoJson(map);
     }
@@ -260,10 +320,10 @@ class GeoMap extends Component {
       getWelcomingGeoJsonLayers().then(geoJson => {
         _.forEach(geoJson, (val, key) => {
           if (key === 'landscaping') {
-            this.addGeoJsonLayer(val, mapConfig.landscapingToolTip, "#F27B21", map);
+            this.addGeoJsonPolygonLayer(val, mapConfig.landscapingToolTip, "#88c659", map);
           }
         });
-        this.toggleLoader();
+        //this.toggleLoader();
       })
 
     });
@@ -283,17 +343,17 @@ class GeoMap extends Component {
             this.addGeoJsonLayer(val, mapConfig.retailToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
           }
           else if (key === 'parks') {
-            this.addGeoJsonLayer(val, mapConfig.parksToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+            this.addGeoJsonPolygonLayer(val, mapConfig.parksToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
           }
         });
-        this.toggleLoader();
+        //this.toggleLoader();
       });
     } else if (this.state.selectedSublayer === 'infrastructure') {
       getAmenitiesInfrasctructureGeoJsonLayers().then(resp => {
         this.removeAllLayers();
         _.forEach((resp), (val, key) => {
           if (key === 'parking garages') {
-            this.addGeoJsonLayer(val, mapConfig.parkingGarageToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
+            this.addGeoJsonPolygonLayer(val, mapConfig.parkingGarageToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
           } else if (key === 'lighthouses') {
             this.addGeoJsonLayer(val, mapConfig.lighthousesToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
           }
@@ -301,7 +361,7 @@ class GeoMap extends Component {
             this.addGeoJsonLayer(val, mapConfig.mogoToolTip, subOverlay[this.state.selectedSublayer][key]['color'], map);
           }
         });
-        this.toggleLoader();
+        //this.toggleLoader();
       });
     }
   }
@@ -310,7 +370,7 @@ class GeoMap extends Component {
     getResidentialBuildingGeoJson(this.state.selectedSublayer).then(resp => {
       this.removeAllLayers();
       this.addGeoJsonLayer(resp, mapConfig.buildingsToolTip, '#F27B21', map);
-      this.toggleLoader();
+      //this.toggleLoader();
     });
 
   }
@@ -338,7 +398,7 @@ class GeoMap extends Component {
 
   addGeoJsonLayer(data, tooltip, fillColor, map) {
     var geojsonMarkerOptions = {
-      radius: 6,
+      radius: 4,
       fillColor: fillColor,
       color: "#000",
       weight: 0,
@@ -355,9 +415,25 @@ class GeoMap extends Component {
 
   }
 
+  addGeoJsonPolygonLayer(data, tooltip, fillColor, map) {
+    var geojsonPolygonOptions = {
+      color: "#000",
+      weight: 0,
+      opacity: 1,
+      fillColor: fillColor,
+      fillOpacity: 0.8,
+    };
+    L.geoJSON(data, {
+      style: geojsonPolygonOptions,
+      onEachFeature: tooltip
+    }).addTo(map);
+
+  } 
+
   addChoroplethLayer(geoJson, valueProperty, toolTip, map) {
     this.removeAllLayers();
-    L.choropleth(geoJson, {
+
+    let choroplethLayer = L.choropleth(geoJson, {
       valueProperty: valueProperty,
       scale: ['white', 'green'], // chroma.js scale - include as many as you like
       steps: 5, // number of breaks or steps in range
@@ -371,7 +447,32 @@ class GeoMap extends Component {
       overlay: {},
       onEachFeature: toolTip
     }).addTo(map);
-    this.toggleLoader();
+    this.setState({choroplethLayer: choroplethLayer});
+    this.addChoroplethLegend(map);
+    //this.toggleLoader();
+  }
+
+  addChoroplethLegend(map) {
+    const legend = L.control({ position: 'topleft' })
+    legend.onAdd = function (map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      var limits = this.state.choroplethLayer.options.limits;
+      var colors = this.state.choroplethLayer.options.colors;
+      var labels = [];
+  
+      // Add min & max
+      div.innerHTML = '<div class="labels"><div class="min">' + limits[0] + '</div> \
+        <div class="max">' + limits[limits.length - 1] + '</div></div>';
+  
+      limits.forEach(function (limit, index) {
+        labels.push('<li style="background-color: ' + colors[index] + '"></li>')
+      });
+  
+      div.innerHTML += '<ul>' + labels.join('') + '</ul>';
+      console.log(div);
+      return div
+    }
+    legend.addTo(map);
   }
 
   addOrdinalPolygonLayer(geoJson, toolTip, map) {
@@ -387,7 +488,7 @@ class GeoMap extends Component {
       },
       onEachFeature: toolTip
     }).addTo(map);  
-    this.toggleLoader();
+    //this.toggleLoader();
     this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
     function setOrdinalColor(d) {
       if (d) {
@@ -424,7 +525,7 @@ class GeoMap extends Component {
       },
       //onEachFeature: toolTip
     }).addTo(map);  
-    this.toggleLoader();
+    //this.toggleLoader();
     this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
   }
 
@@ -463,10 +564,10 @@ class GeoMap extends Component {
     this.addOverlaySelectControl(this.map);
     this.setSubOverlayControl(this.map);
     this.map.on('overlayChange', () => {
-      this.toggleLoader();
+      //this.toggleLoader();
       console.log("loading new map layer")
       this.props.setActiveOverlay(this.map.selectedOverlayLayerName());
-      this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map);
+      this.getChoroplethGeoJson(this.map.selectedOverlayLayerName(), this.map, true);
       this.setOverlayLayerZoom(this.map.selectedOverlayLayerName(), this.map);
       if (this.state.chapter.id === 2 || this.state.chapter.id === 3) {
         this.setSubOverlayControl(this.map);
@@ -493,8 +594,8 @@ class GeoMap extends Component {
 
   loadDefaultLayer(overlayName, map) {
     console.log("load default layer: ", overlayName);
-    this.toggleLoader();
-    this.getChoroplethGeoJson(overlayName, map);
+    //this.toggleLoader();
+    this.getChoroplethGeoJson(overlayName, map, true);
     this.setOverlayLayerZoom(overlayName, map);
   }
   addOverlaySelectControl(map){
@@ -522,12 +623,14 @@ class GeoMap extends Component {
     if (this.props.activeOverlay === 'Amenities') {
       options = {
         overlays: subOverlayMapsStoryTwo['Amenities'],
-        selected: "services"
+        selected: "services",
+        title: "",
       }
     } else if (this.props.activeOverlay === 'Clean and Welcoming') {
       options = {
         overlays: subOverlayMapsStoryTwo['Clean and Welcoming'],
-        enableSwitcher: false
+        enableSwitcher: false,
+        title: "Clean and Welcoming",
       }
     } else if (this.props.activeOverlay === 'Live Downtown') {
       options = {
@@ -585,7 +688,12 @@ class GeoMap extends Component {
   }
 
   updateMapControls(){
-    console.log(this.state.overlayMaps);
+    //console.log(this.state.overlayMaps);
+    if (this.state.chapter.id === 1) {
+      _.forEach(this.state.overlayMaps, (val, key) => {
+        this.getChoroplethGeoJson(val, this.state.map, false);
+      });
+    }    
     this.addOverlaySelectControl(this.state.map);
     this.setSubOverlayControl(this.state.map);
     this.loadDefaultLayer(this.props.activeOverlay, this.map);
@@ -613,7 +721,7 @@ class GeoMap extends Component {
     if (this.state.chapter.id === 2) {
       this.addSubOverlayControl(map);
       map.on('overlayGroupChange', () => {
-        this.setState({selectedSublayer: map.selectedOverlayGroupName(), loading: !this.state.loading});
+        this.setState({selectedSublayer: map.selectedOverlayGroupName()});
         this.getAmenitiesGeoJson(map);
         if (map.selectedOverlayLayerName() === 'Live Downtown') {
           this.getResidentialGeoJson(map)

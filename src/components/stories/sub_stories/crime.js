@@ -121,7 +121,6 @@ class Crime extends Component {
   generateTableData(dataset) {
     let seriesData = [];
     _.forEach(dataset, (category) => {
-      console.log(category);
       let tableRow = {Category: category.name};
       for (let i = 0; i < category.data.length; i++) {
         let date = moment(category.data[i][0]).format("MMM YY");

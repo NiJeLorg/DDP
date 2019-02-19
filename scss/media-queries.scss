@@ -254,11 +254,48 @@
       width: 100%;
       overflow-y: inherit;
       padding: 10px 15px;
+      height: auto;
+      .btn-switcher {
+        display: flex;
+        flex-direction: column;
+        a {
+          height: 24px;
+          &:not(last) {
+            border-right: solid 2px #13294B;
+          }
+        }
+      }
     }
-    .map {
-      max-width: inherit;
-      height: 100%;
+    .map-holder {
       width: 100%;
+      .map {
+        max-width: inherit;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .c-mobile-nav-story-map {
+    padding: 15px 0;
+    background: #eceeef;
+    display: flex;
+    justify-content: center;
+    button {
+      padding: 8px 12px;
+      font-family: "AvenirLTPro-Black", sans-serif;
+      text-transform: uppercase;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-story-button {
+      &__active {
+        background: #7f8b9d;
+      }
+      &__inactive {
+        background: #bdc1c7;
+      }
     }
   }
 

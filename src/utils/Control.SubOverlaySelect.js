@@ -2,7 +2,7 @@ let L = require('leaflet');
 L.Control.SubOverlaySelect = L.Control.extend({
   options: {
     position: 'topleft',
-    title: 'Layers',
+    title: '',
     overlays: {},
     subOverlays: {},
     onOverlayChange: {},
