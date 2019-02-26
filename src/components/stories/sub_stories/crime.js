@@ -53,7 +53,7 @@ class Crime extends Component {
       });
       const chartData = this.generateChartData(filteredData);
       this.setState({chartData});
-      console.log(chartData);
+      //console.log(chartData);
       const seriesData = this.generateTableData(chartData);
       let config = Object.assign({}, this.state.config);    //creating copy of object
       config.series = seriesData;

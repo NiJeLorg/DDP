@@ -71,11 +71,11 @@ class StoryNavigator extends Component {
     if (this.state.chapter.id === 1) {
       story = <StoryOne/>;
       story_navigator_class = "c-story-navigator";
-      handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
+      handleScroll = _.debounce(() => {this.handleScroll()}, 100);
     } else if (this.state.chapter.id === 2) {
       story = <StoryTwo/>;
       story_navigator_class = "c-story-navigator";
-      handleScroll = _.debounce(() => {this.handleScroll()}, 1000);
+      handleScroll = _.debounce(() => {this.handleScroll()}, 100);
     } else if (this.state.chapter.id === 3) {
       story = <StoryThree/>;
       story_navigator_class = "c-story-navigator__value_of_the_biz";

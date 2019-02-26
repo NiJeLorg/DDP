@@ -211,14 +211,14 @@
   .c-navbar {
     padding: 10px 15px;
     img {
-      width: 65px;
+      width: 90px;
       height: auto;
     }
     .menu {
-      display: none;
+      display: flex;
     }
     .menu__mobile {
-      display: block;
+      display: none;
     }
   }
 

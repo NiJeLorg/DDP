@@ -14,7 +14,7 @@ const StoryThree = () => {
       <HowIsTheBIZFunded />
       <WhereDoesBIZInvestmentGo />
       <WhatsTheImpactOfBIZServicesOnTheCommunity />
-      <StoryThreeConclusions />
+      {/* <StoryThreeConclusions /> */}
     </div>
 
   );

@@ -142,7 +142,7 @@ class IncomeBarChart extends Component {
       });
     });
 
-    console.log(regionData);
+    //console.log(regionData);
     let seriesData = [];
 
     _.forEach(Object.keys(labels).sort(), (key) => {
@@ -154,7 +154,7 @@ class IncomeBarChart extends Component {
         series.tableRow[column] = regionData['DETROIT'][category][key].toLocaleString(navigator.language, { minimumFractionDigits: 0 });
       });
       seriesData.push(series);
-      console.log(series);
+      //console.log(series);
     });
     
     return seriesData;

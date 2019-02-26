@@ -46,7 +46,7 @@ class DataDrawer extends Component {
             <div className="menu-item">
               <h4>Detroit In Context</h4>
               <ul className="sub-menu">
-                <li>Education Attainment</li>
+                <li>Educational Attainment</li>
                 <li>Diversity</li>
                 <li>Employment</li>
                 <li>Housing</li>

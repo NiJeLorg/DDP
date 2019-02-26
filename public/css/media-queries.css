@@ -119,12 +119,12 @@
   .c-navbar {
     padding: 10px 15px; }
     .c-navbar img {
-      width: 65px;
+      width: 90px;
       height: auto; }
     .c-navbar .menu {
-      display: none; }
+      display: flex; }
     .c-navbar .menu__mobile {
-      display: block; }
+      display: none; }
   .c-story-header {
     height: 200px; }
   .c-chapter-card {

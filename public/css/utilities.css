@@ -26,7 +26,8 @@
   border-radius: 50%;
   display: inline-block;
   vertical-align: baseline;
-  margin-right: 5px; }
+  margin-right: 5px;
+  border: solid 1px grey; }
 
 .fill-height {
   height: 100vh; }

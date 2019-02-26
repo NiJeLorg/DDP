@@ -109,7 +109,7 @@ const wacValProperty = (feature) => {
 const wacToolTip = (feature, layer)=> {
   layer.bindTooltip(() => {
     let percentage = feature.properties.CD04 / parseFloat(feature.properties.C000) * 100;
-    return `Percentage of workers with a<br />Bachelor's degeree: ${_.floor(percentage, 1)}%`
+    return `${_.floor(percentage, 1)}%`
   });
 };
 
@@ -119,7 +119,7 @@ const workersDowntownProperty = (feature) => {
 
 const workersDowntownToolTip = (feature, layer)=> {
   layer.bindTooltip(() => {
-    return `Total number of workers<br />downtown: ${feature.properties.C000}`
+    return `${feature.properties.C000}`
   });
 }
 
@@ -129,7 +129,7 @@ const rentIncomeProperty = (feature) => {
 
 const rentIncomeToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `Percentage ratio of rent to<br />median household income: ${_.floor(feature.properties.rent_income_ratio, 1)}%`
+    return `${_.floor(feature.properties.rent_income_ratio, 1)}%`
   });
 };
 
@@ -139,7 +139,7 @@ const diversityIndexProperty = (feature) => {
 
 const diversityIndexToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `Diversity index: ${_.floor(feature.properties.diversity_index, 1)}`
+    return `${_.floor(feature.properties.diversity_index, 1)}`
   });
 };
 
@@ -149,7 +149,7 @@ const crimeIndexProperty = (feature) => {
 
 const crimeIndexToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `Total number of crimes: ${feature.properties.crime}`
+    return `${feature.properties.crime}`
   });
 };
 
@@ -160,7 +160,7 @@ const educationAttainmentValProperty = (feature) => {
 const educationAttainmentToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
     let percentage = feature.properties.bachelors_population / parseFloat(feature.properties.total_population) * 100;
-    return `Percentage of workers with a<br />Bachelor's degeree: ${_.floor(percentage, 1)}%`
+    return `${_.floor(percentage, 1)}%`
   });
 };
 
@@ -202,7 +202,7 @@ const parksToolTip = (feature, layer) => {
 };
 const parkingGarageToolTip = (feature, layer) => {
   layer.bindTooltip(() => {
-    return `${feature.properties.FacilityName}. Total Parking Space: ${feature.properties.TotalSpace}`
+    return `${feature.properties.FacilityName}. Total Parking Spaces: ${feature.properties.TotalSpace}`
   });
 };
 const mogoToolTip = (feature, layer) => {
