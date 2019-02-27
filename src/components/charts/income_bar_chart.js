@@ -6,17 +6,17 @@ import DataBar from './data_bar';
 
 const DATA_CATEGORIES = {
   // "Less than 20,000": {0: ["004", "026"], 1: ["005", "027"], 2: ["006", "028"]},
-  "20,000 - 34,999": {0: ["008", "030"], 1: ["009", "031"], 2: ["010", "032"]},
-  "35,000 - 49,999": {0: ["012", "034"], 1: ["013", "035"], 2: ["014", "036"]},
-  "50,000 - 74,999": {0: ["016", "038"], 1: ["017", "039"], 2: ["018", "040"]},
-  "75,000 or more": {0: ["020", "042"], 1: ["021", "043"], 2: ["022", "044"]}
+  "$20,000 - $34,999": {0: ["008", "030"], 1: ["009", "031"], 2: ["010", "032"]},
+  "$35,000 - $49,999": {0: ["012", "034"], 1: ["013", "035"], 2: ["014", "036"]},
+  "$50,000 - $74,999": {0: ["016", "038"], 1: ["017", "039"], 2: ["018", "040"]},
+  "$75,000 or more": {0: ["020", "042"], 1: ["021", "043"], 2: ["022", "044"]}
 };
 
-const ORDERED_CATEGORIES = ["20,000 - 34,999", "35,000 - 49,999", "50,000 - 74,999", "75,000 or more"];
+const ORDERED_CATEGORIES = ["$20,000 - $34,999", "$35,000 - $49,999", "$50,000 - $74,999", "$75,000 or more"];
 const labels = {
-  0: "Less than 20%",
-  1: "20-29%",
-  2: "30% or more",
+  0: "Less than 20% of  income to housing",
+  1: "20-29% of income to housing",
+  2: "30% or more of  income to housing",
 };
 
 const REGIONS = {
@@ -29,7 +29,10 @@ const API = `https://api.censusreporter.org/1.0/data/show/latest?table_ids=B2510
 const config = {
   colors: ['#00A0DF', '#D5D654', '#FF9E15', '#009382','#ADC8EF'],
   xAxis: {
-    categories: ORDERED_CATEGORIES
+    categories: ORDERED_CATEGORIES,
+    title: {
+      text: "Household Income"
+    }
   },
   exporting: {
     chartOptions: { // specific options for the exported image
@@ -65,7 +68,7 @@ const config = {
     min: 0,
     tickInterval: 25,
     title: {
-      text: null
+      text: "Percent of housing units"
     },
     labels: {
       format: '{value}%'
@@ -81,7 +84,7 @@ const config = {
   legend: {
     verticalAlign: 'top',
     itemDistance: 20,
-    itemWidth: 120,
+    itemWidth: 150,
     align: 'center',
     y: -25,
     itemStyle: {

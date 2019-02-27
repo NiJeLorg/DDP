@@ -719,11 +719,11 @@ class GeoMap extends Component {
 
   updateMapControls(){
     //console.log(this.state.overlayMaps);
-    if (this.state.chapter.id === 1) {
-      _.forEach(this.state.overlayMaps, (val, key) => {
-        this.getChoroplethGeoJson(val, this.state.map, false);
-      });
-    }    
+    // if (this.state.chapter.id === 1) {
+    //   _.forEach(this.state.overlayMaps, (val, key) => {
+    //     this.getChoroplethGeoJson(val, this.state.map, false);
+    //   });
+    // }    
     this.addOverlaySelectControl(this.state.map);
     this.setSubOverlayControl(this.state.map);
     this.loadDefaultLayer(this.props.activeOverlay, this.map);

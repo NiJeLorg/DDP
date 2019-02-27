@@ -22,7 +22,7 @@ class HowIsTheBIZFunded extends Component {
       data_BIZRevenue: [],
       data_AssessedValue: [],
       data_ChangeAssessment: [],
-      chapter: CHAPTERS[3],
+      chapter: CHAPTERS[2],
     }
 
   }

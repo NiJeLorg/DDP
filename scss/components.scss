@@ -203,19 +203,21 @@
 }
 
 .c-story-header {
-  background-image: url("./../img/dadandkid_original.jpg");
+  // background-image: url("./../img/dadandkid.jpg");
+  background-image: url("./../img/statue-sandbox-narrow.jpg");
   background-size: cover;
   background-position-y: 0px;
   background-position-x: 0px;
-  height: 350px;
+  height: 250px;
   &__public-life {
     background-image: url("./../img/ambassadors.jpg");
     background-position-y: 0px;
     background-position-x: 0px;
   }
   &__value-of-biz {
-    background-image: url("./../img/statue-sandbox.jpg");
-    background-position-y: 0px;
+    background-image: url("./../img/ambassadors-narrow.jpg");
+    // background-image: url("./../img/statue-sandbox-narrow.jpg");
+    background-position-y: 50%;
     background-position-x: 0px;
   }
 }

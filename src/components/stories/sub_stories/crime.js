@@ -9,7 +9,7 @@ import {generateDateRanges} from '../../../utils/app';
 const moment = extendMoment(Moment);
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 const START_DATE = '2017-01-01';
-const END_DATE = moment().format('YYYY-MM-DD').toString();
+const END_DATE = '2017-12-31';
 const VALID_CENSUS_TRACTS_IDS = ["26163520800", "26163520700", "26163517200"];
 const VALID_CRIME_CATEGORIES = ["AGGRAVATED ASSAULT", "ASSAULT", "BURGLARY", "HOMICIDE", "LARCENY", "ROBBERY", "SEXUAL ASSAULT", "STOLEN VEHICLE"];
 

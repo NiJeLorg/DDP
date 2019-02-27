@@ -22,7 +22,7 @@ const Chapters = () => {
                   <h3 className='sub-heading'>Downtown in Context</h3>
                 </div>
               </Link>
-              <Link
+              {/* <Link
                 to="/story/2"
                 className="chapter-card c-bevelled-box__chapter-card"
               >
@@ -30,18 +30,18 @@ const Chapters = () => {
                 <div className="chapter-title">
                   <h3 className='sub-heading'>Public Life</h3>
                 </div>
-              </Link>
+              </Link> */}
               <Link
-                to="/story/3"
+                to="/story/2"
                 className="chapter-card c-bevelled-box__chapter-card"
               >
-                <span className="chapter-marker">03</span>
+                <span className="chapter-marker">02</span>
                 <div className="chapter-title">
                   <h3 className='sub-heading'>The Value of the BIZ</h3>
                 </div>
               </Link>
               <div className="chapter-card c-bevelled-box__chapter-card">
-                <span className="chapter-marker ul-greyedout-text">04</span>
+                <span className="chapter-marker ul-greyedout-text">03</span>
                 <div className="chapter-title">
                   <h3 className='sub-heading ul-greyedout-text'>Coming Soon</h3>
                 </div>

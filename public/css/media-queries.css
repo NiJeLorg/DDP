@@ -126,7 +126,8 @@
     .c-navbar .menu__mobile {
       display: none; }
   .c-story-header {
-    height: 200px; }
+    height: 200px;
+    background-position-x: 60%; }
   .c-chapter-card {
     padding: 10px 0 0 10px; }
     .c-chapter-card header:after {

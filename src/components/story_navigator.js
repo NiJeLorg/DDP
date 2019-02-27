@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import StoryOne from "./stories/story_one";
-import StoryTwo from "./stories/story_two";
+//import StoryTwo from "./stories/story_two";
 import StoryThree from "./stories/story_three";
 import _ from'lodash';
 import { setActiveOverlay } from "../actions/index";
@@ -72,10 +72,10 @@ class StoryNavigator extends Component {
       story = <StoryOne/>;
       story_navigator_class = "c-story-navigator";
       handleScroll = _.debounce(() => {this.handleScroll()}, 100);
-    } else if (this.state.chapter.id === 2) {
-      story = <StoryTwo/>;
-      story_navigator_class = "c-story-navigator";
-      handleScroll = _.debounce(() => {this.handleScroll()}, 100);
+    // } else if (this.state.chapter.id === 2) {
+    //   story = <StoryTwo/>;
+    //   story_navigator_class = "c-story-navigator";
+    //   handleScroll = _.debounce(() => {this.handleScroll()}, 100);
     } else if (this.state.chapter.id === 3) {
       story = <StoryThree/>;
       story_navigator_class = "c-story-navigator__value_of_the_biz";

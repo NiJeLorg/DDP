@@ -53,7 +53,7 @@ class WhatsTheImpactOfBIZServicesOnTheCommunity extends Component {
 
     this.state = {
       data: [],
-      chapter: CHAPTERS[3],
+      chapter: CHAPTERS[2],
       landscaping: true,
     }
 

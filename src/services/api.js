@@ -73,7 +73,7 @@ export function getCrimeGeoJson() {
   return Promise.all([crimeValuesReq, crimeGeoReq]).then(([crimeDataResp, crimeGeoResp]) => {
     crimeGeoResp['value'] = crimeDataResp['value'];
     const d = mapConfig.addViolentCrimeDataToGeoJson(crimeGeoResp);
-    // console.log(d, "CRIMEEMEME");
+    //console.log(d, "CRIMEEMEME");
     return d;
   })
 }
