@@ -216,6 +216,11 @@
     }
     .menu {
       display: flex;
+      .menu-item {
+        &:not(last) {
+          padding-right: 10px;
+        }
+      }      
     }
     .menu__mobile {
       display: none;

@@ -184,6 +184,9 @@
   align-items: center;
   padding: 15px 34px 15px 34px;
   justify-content: space-between; }
+  .c-navbar .logo img {
+    width: 150px;
+    height: auto; }
   .c-navbar .menu {
     display: flex; }
     .c-navbar .menu .menu-item {

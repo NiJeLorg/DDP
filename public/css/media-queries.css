@@ -123,6 +123,8 @@
       height: auto; }
     .c-navbar .menu {
       display: flex; }
+      .c-navbar .menu .menu-item:not(last) {
+        padding-right: 10px; }
     .c-navbar .menu__mobile {
       display: none; }
   .c-story-header {

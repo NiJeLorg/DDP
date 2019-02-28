@@ -258,6 +258,12 @@
   align-items: center;
   padding: 15px 34px 15px 34px;
   justify-content: space-between;
+  .logo {
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
   .menu {
     display: flex;
     .menu-item {
