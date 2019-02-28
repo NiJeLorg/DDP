@@ -14,7 +14,7 @@ const Employment = () => {
         <div>
           <img className="employment-svg" src="/img/employment_graphic.svg" alt=""/>
         </div>
-
+        <div className="chart-footer">Source: Longitudinal Employer-Household Dynamics (LEHD), 2015. Data Driven Detroit, April 2018.</div>
       </div>
       <p className='main-text__black'>By county, the five largest contributors of workers to Downtown Detroit are: 
         <ol>

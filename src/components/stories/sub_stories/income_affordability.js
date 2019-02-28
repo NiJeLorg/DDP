@@ -140,6 +140,7 @@ class IncomeAffordability extends Component {
           </div>
           <DataBar config={this.state.config}/>
         </div>
+        <div className="chart-footer">Source: U.S. Census Bureau, American Community Survey, 2017</div>
 
 
         <p className='main-text__black'>Downtown Detroit is an attractive, vibrant place to live and work - with the demand for housing increasing. Occupancy rates are near 100%, housing prices have increased substantially and more businesses moving Downtown over the past several years.</p>
@@ -147,6 +148,7 @@ class IncomeAffordability extends Component {
         <div className="chart-container">
           <IncomeBarChart/>
         </div>
+        <div className="chart-footer">Source: U.S. Census Bureau, American Community Survey, 2017</div>
 
 
       </div>

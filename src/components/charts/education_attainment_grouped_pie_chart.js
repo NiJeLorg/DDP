@@ -109,6 +109,7 @@ class EducationAttainmentGroupedPieChart extends Component  {
           </div>
           <DataBar config={this.state.config} />
         </div>
+        <div className="chart-footer">Source: Longitudinal Employer-Household Dynamics (LEHD), 2015. Data Driven Detroit, April 2018.</div>
       </div>
 
     );

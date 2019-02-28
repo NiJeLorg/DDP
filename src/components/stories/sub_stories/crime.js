@@ -147,6 +147,7 @@ class Crime extends Component {
             <CrimeAreaChart data={this.state.chartData}/>
             <DataBar config={this.state.config}/>
           </div>
+          <div className="chart-footer">Source: Detroit Police Department, 2018</div>
 
         </div>
 

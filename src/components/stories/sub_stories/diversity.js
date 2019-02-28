@@ -12,7 +12,7 @@ const Diversity = () => {
                 <div className="chart-container">
                     <DiversityAreaChart className={'chart'}/>
                 </div>
-
+                <div className="chart-footer">Source: U.S. Census Bureau, American Community Survey, 2017</div>
             </div>
 
 

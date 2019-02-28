@@ -53,12 +53,12 @@ class DataDrawer extends Component {
                 <li>Crime</li>
               </ul>
             </div>
-            <div className="menu-item">
+            {/* <div className="menu-item">
               <h4>Public Life</h4>
               <ul className="sub-menu">
                 <li>Another Category</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

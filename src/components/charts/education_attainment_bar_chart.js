@@ -173,6 +173,7 @@ class EducationAttainmentBarChart extends Component {
           <ReactHighcharts config={this.state.config} ref="chart"/>
           <DataBar chart={this.state.chart} config={this.state.config} />
         </div>
+        <div className="chart-footer">Source: U.S. Census Bureau, American Community Survey, 2017</div>
 
       </div>
 
