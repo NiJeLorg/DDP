@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="ul-height-100">
       <div className="c-main-logo">
-        <img src="./../img/BIZ_Logo.svg" alt="" />
+        <img src="./../img/BIZ_Logo_2_28_19.png" alt="" />
       </div>
       <div className="c-main-jumbotron l-flex-center-center">
         <div className="c-bevelled-box c-card__home">

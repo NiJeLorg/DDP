@@ -4,7 +4,7 @@ const Chapters = () => {
   return (
     <div className="ul-height-100">
       <div className="c-main-logo">
-        <img src="./../img/BIZ_Logo.svg" alt="" />
+        <img src="./../img/BIZ_Logo_2_28_19.png" alt="" />
       </div>
       <div className="c-main-jumbotron l-flex-flex-end">
         <div className="c-card__chapters-card c-bevelled-box__chapters l-flex-center-center">

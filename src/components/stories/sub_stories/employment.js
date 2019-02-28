@@ -16,6 +16,17 @@ const Employment = () => {
         </div>
 
       </div>
+      <p className='main-text__black'>By county, the five largest contributors of workers to Downtown Detroit are: 
+        <ol>
+          <li>Wayne County (34,811)</li>
+          <li>Oakland County (17,358)</li>
+          <li>Macomb County (11,558)</li>
+          <li>St. Clair County (952)</li>
+          <li>Livingston County (546)</li>
+        </ol>
+      
+      
+      </p>   
 
 
     </div>
