@@ -603,7 +603,7 @@
         flex-direction: row;
         width: 100%;
         margin-top: 40px;
-        margin-bottom: 40px; }
+        margin-bottom: 10px; }
         .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .map-holder-small-map {
           border: 1px solid #aaa;
           margin-right: -180px;
@@ -1016,9 +1016,9 @@ path.line {
       .c-stories .c-story-navigator .btn-switcher {
         display: flex;
         flex-direction: column; }
-        .c-stories .c-story-navigator .btn-switcher a {
+        .c-stories .c-story-navigator .btn-switcher span {
           height: 24px; }
-          .c-stories .c-story-navigator .btn-switcher a:not(last) {
+          .c-stories .c-story-navigator .btn-switcher span:not(last) {
             border-right: solid 2px #13294B; }
     .c-stories .map-holder {
       width: 100%; }
@@ -1257,20 +1257,21 @@ hr {
 .btn-switcher {
   align-self: center;
   margin-bottom: 20px; }
-  .btn-switcher a {
+  .btn-switcher span {
     height: 33px;
     border: solid 2px #13294B;
     text-decoration: none;
     color: #13294B;
-    padding: 5px; }
-    .btn-switcher a:not(last) {
+    padding: 5px;
+    cursor: pointer; }
+    .btn-switcher span:not(last) {
       border-right: none; }
-    .btn-switcher a:last-child {
+    .btn-switcher span:last-child {
       border-right: solid 2px #13294B; }
-    .btn-switcher a:hover {
+    .btn-switcher span:hover {
       background-color: #13294B;
       color: white; }
-    .btn-switcher a.active {
+    .btn-switcher span.active {
       background-color: #13294B;
       color: white; }
 

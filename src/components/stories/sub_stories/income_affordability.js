@@ -123,10 +123,10 @@ class IncomeAffordability extends Component {
         <span className="chart-header">Income, Housing Values and Rent Across Downtown Areas </span>
         <div className="chart-container">
           <div className={"btn-switcher"}>
-            <Link to={'#'} onClick={event => this.switchCategory("MEDIAN HOUSEHOLD INCOME")} className={btn1}>MEDIAN
-              HOUSEHOLD INCOME</Link>
-            <Link to={'#'} onClick={event => this.switchCategory("OWNER VALUE")} className={btn2}>AVERAGE VALUE OF AN OWNED HOUSING UNIT</Link>
-            <Link to={'#'} onClick={event => this.switchCategory("RENT")} className={btn3}>AVERAGE MONTHLY RENT</Link>
+            <span onClick={event => this.switchCategory("MEDIAN HOUSEHOLD INCOME")} className={btn1}>MEDIAN
+              HOUSEHOLD INCOME</span>
+            <span onClick={event => this.switchCategory("OWNER VALUE")} className={btn2}>MEDIAN VALUE OF AN OWNED HOUSING UNIT</span>
+            <span onClick={event => this.switchCategory("RENT")} className={btn3}>MEDIAN MONTHLY RENT</span>
           </div>
           <div className={"grouped"}>
             <IncomeAreaChart data={this.state.detroit} yScale={this.state.maxYScale} title={"DOWNTOWN<br/>DETROIT"}

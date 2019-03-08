@@ -218,12 +218,13 @@ hr {
 .btn-switcher {
   align-self: center;
   margin-bottom: 20px;
-  a {
+  span {
     height: 33px;
     border: solid 2px #13294B ;
     text-decoration: none;
     color: #13294B;
     padding: 5px;
+    cursor: pointer;
     &:not(last) {
       border-right: none;
     }

@@ -409,7 +409,7 @@
         flex-direction: row;
         width: 100%;
         margin-top: 40px;
-        margin-bottom: 40px; }
+        margin-bottom: 10px; }
         .c-stories .c-story-navigator__value_of_the_biz .story-content .distribution-chart-wrapper .map-holder-small-map {
           border: 1px solid #aaa;
           margin-right: -180px;

@@ -267,7 +267,7 @@ class GeoMap extends Component {
         }
       }
     } else if (overlayName === 'Affordability') {
-      const title = "Percentage Ratio of<br />Rent to Median<br />Household Income"
+      const title = "Monthly Rent as a<br />Percentage of Median<br />Household Income"
       const suffix = "%";
       if (!this.state.rentIncomeMedianGeoJson) {
         getRentIncomeGeoJson().then((data) => {
@@ -442,12 +442,16 @@ class GeoMap extends Component {
   } 
 
   addChoroplethLayer(geoJson, valueProperty, toolTip, map, overlayName, suffix) {
+    var mode = 'q';
+    if (overlayName === 'Number of Crimes') {
+      mode = 'k';
+    }
     this.removeAllLayers();
     let choroplethLayer = L.choropleth(geoJson, {
       valueProperty: valueProperty,
       scale: ['#edf8e9', '#bae4b3', '#74c476', '#31a354', '#006d2c'], // chroma.js scale - include as many as you like
       steps: 5, // number of breaks or steps in range
-      mode: 'q', // q for quantile, e for equidistant, k for k-means
+      mode: mode, // q for quantile, e for equidistant, k for k-means
       style: {
         color: '#fff', // border color
         weight: 1,

@@ -155,9 +155,9 @@
       .c-stories .c-story-navigator .btn-switcher {
         display: flex;
         flex-direction: column; }
-        .c-stories .c-story-navigator .btn-switcher a {
+        .c-stories .c-story-navigator .btn-switcher span {
           height: 24px; }
-          .c-stories .c-story-navigator .btn-switcher a:not(last) {
+          .c-stories .c-story-navigator .btn-switcher span:not(last) {
             border-right: solid 2px #13294B; }
     .c-stories .map-holder {
       width: 100%; }

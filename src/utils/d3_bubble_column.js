@@ -12,7 +12,7 @@ D3BubbleColumn.create = (el, data, config) => {
             global.landscapingmap.invalidateSize();
             var docViewTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
             var docViewBottom = docViewTop + document.body.clientHeight;
-            var elemTop = elem.offsetTop + 700;
+            var elemTop = elem.offsetTop + 500;
             return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
         }
         if(elementScrolled(el)) {

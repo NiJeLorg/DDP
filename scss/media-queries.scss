@@ -264,7 +264,7 @@
       .btn-switcher {
         display: flex;
         flex-direction: column;
-        a {
+        span {
           height: 24px;
           &:not(last) {
             border-right: solid 2px #13294B;
