@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import Home from "./components/home";
 import Chapters from "./components/chapters";
 import StoryBoard from "./components/story_board";
+import StoryBoardNoHeader from "./components/story_board_no_header";
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
@@ -29,6 +30,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/chapters" component={Chapters} />
         <Route path="/story/:id" component={StoryBoard} />
+        <Route path="/story-no-header/:id" component={StoryBoardNoHeader} />
       </Switch>
     );
   }

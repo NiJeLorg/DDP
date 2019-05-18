@@ -56,12 +56,20 @@ class Stories extends React.Component {
     let geomap = "";
     let rail_menu = "";
 
-    if (this.state.chapter.id === 1 || this.state.chapter.id === 2) {
+    console.log(this.state);
+
+    if ((this.state.chapter.id === 1 || this.state.chapter.id === 2) && this.state.chapter.showdatadrawer === true) {
       datadrawer = <DataDrawer/>;
       mobile_nav_story_map = <MobileNavStoryMap view='story'/>;
       story_navigator = <StoryNavigator chapter={this.state.chapter} />;
       geomap = <GeoMap chapter={this.state.chapter}/>;
-    } else if (this.state.chapter.id === 3) {
+    } 
+    else if ((this.state.chapter.id === 1 || this.state.chapter.id === 2) && this.state.chapter.showdatadrawer === false) {
+      mobile_nav_story_map = <MobileNavStoryMap view='story'/>;
+      story_navigator = <StoryNavigator chapter={this.state.chapter} />;
+      geomap = <GeoMap chapter={this.state.chapter}/>;
+    }
+    else if (this.state.chapter.id === 3) {
       rail_menu = <RailMenu/>;
       story_navigator = <StoryNavigator chapter={this.state.chapter} />;
     } 
