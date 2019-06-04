@@ -115,8 +115,7 @@ class IncomeAffordability extends Component {
         </h1>
         <p className='main-text__black'>Downtown Detroit is a desirable place to live and work, and the market price for
           housing is increasing because of it. As in most downtowns, there are high-end luxury apartments and
-          condominiums available for those who can afford them. However, the Downtown Detroit Partnership and the
-          <a href="https://downtowndetroit.org/business-improvement-zone/">Business Improvement Zone</a> recognize that really great places offer housing for people of all incomes, as well
+          condominiums available for those who can afford them. However, the Downtown Detroit Partnership and the <a href="https://downtowndetroit.org/business-improvement-zone/">Business Improvement Zone</a> recognize that really great places offer housing for people of all incomes, as well
           as a mix of housing types for people at different stages of life and circumstances. Explore the graphs below
           to see how Downtown is doing and how it compares with other cities’ downtown areas.
         </p>

@@ -8,7 +8,7 @@ const WhatIsTheBIZ = () => {
         <div className="l-story-grid">
           <div className="l-story-grid-row__no-margin-bottom">
             <div className="l-story-grid-column-half">
-              <p className='main-text__black'>The Downtown Detroit Business Improvement Zone (BIZ) creates a clean, safe and vibrant Downtown through services provided to property owners, businesses, residents and employees. The BIZ, in collaboration with Downtown Detroit Partnership (DDP), is dedicated to enhancing the attractiveness and overall appeal of the Downtown Detroit Central Business District. 
+              <p className='main-text__black'>The Downtown Detroit <a href="https://downtowndetroit.org/business-improvement-zone/">Business Improvement Zone</a> (BIZ) creates a clean, safe and vibrant Downtown through services provided to property owners, businesses, residents and employees. The BIZ, in collaboration with Downtown Detroit Partnership (DDP), is dedicated to enhancing the attractiveness and overall appeal of the Downtown Detroit Central Business District. 
               </p>
             </div>
           </div>

@@ -1026,22 +1026,6 @@ path.line {
         max-width: inherit;
         height: 100%;
         width: 100%; }
-  .c-mobile-nav-story-map {
-    padding: 15px 0;
-    background: #eceeef;
-    display: flex;
-    justify-content: center; }
-    .c-mobile-nav-story-map button {
-      padding: 8px 12px;
-      font-family: "AvenirLTPro-Black", sans-serif;
-      text-transform: uppercase;
-      color: #fff;
-      border: none;
-      cursor: pointer; }
-    .c-mobile-nav-story-map .nav-story-button__active {
-      background: #7f8b9d; }
-    .c-mobile-nav-story-map .nav-story-button__inactive {
-      background: #bdc1c7; }
   .c-data-drawer-nav__sticky {
     display: none; }
   .c-thumbnail {

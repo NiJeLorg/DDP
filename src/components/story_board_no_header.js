@@ -25,6 +25,30 @@ class StoryBoardNoHeader extends Component {
     this.props.setActiveOverlay(CHAPTERS[params.id]['defaultOverlay']);
   }
 
+  componentDidMount(){
+    window.addEventListener('load', function () {
+      if (window.self === window.top) return; // We're not in an iframe
+
+      const sendFrameHeight = function () {
+        const height = document.getElementById('container').clientHeight + 28;
+        window.parent.postMessage({ height: height }, '*');
+      };
+
+      sendFrameHeight();  // Initially notify the embedding page what the height should be
+
+      window.addEventListener('resize', sendFrameHeight);  // Notify the embedding page any time we are resized
+
+      const observer = new MutationObserver(sendFrameHeight);
+      const config = {
+        attributes: true,
+        childList: true,
+        characterData: true,
+        subtree: true,
+      };
+      observer.observe(window.document, config);
+    });
+  }
+
   render() {
     return (
       <div className="c-story-board">
