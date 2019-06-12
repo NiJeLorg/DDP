@@ -82,7 +82,7 @@ class Welcoming  extends Component {
     return (
       <div className='story-margin'>
         <h1 className="sub-sub-heading__purple" data-story-id="1" data-story-overlay="Clean and Welcoming">CLEAN AND WELCOMING</h1>
-        <p className='main-text__black'>The Downtown Detroit Partnership with its contract with the <a href="https://downtowndetroit.org/business-improvement-zone/">Business Improvement Zone</a> provides many services that improve the experience of outdoor public space in the Downtown area.  With just a modest budget, the DDP and the BIZ provide daily entertainment, landscape medians, maintain parks, pick up litter, clean up streets and sidewalks, remove stickers and graffiti from the right of way, provide information for visitors, provide supplemental lighting and security services and help people get around.
+        <p className='main-text__black'>The Downtown Detroit Partnership with its contract with the <a href="https://downtowndetroit.org/business-improvement-zone/" target="_top">Business Improvement Zone</a> provides many services that improve the experience of outdoor public space in the Downtown area.  With just a modest budget, the DDP and the BIZ provide daily entertainment, landscape medians, maintain parks, pick up litter, clean up streets and sidewalks, remove stickers and graffiti from the right of way, provide information for visitors, provide supplemental lighting and security services and help people get around.
 
         </p>
         {counters}

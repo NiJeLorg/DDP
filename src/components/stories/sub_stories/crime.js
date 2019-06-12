@@ -139,7 +139,7 @@ class Crime extends Component {
     return (
       <div className='story-margin'>
         <h1 className="sub-sub-heading__purple" data-story-id="5" data-story-overlay="Crime">Safety</h1>
-        <p className='main-text__black'>Downtown Detroit is a thriving neighborhood and very safe area overall, with key partnerships between the public and private sectors. With supplemental security, coordination with the Detroit Police Department, a coalition of companies offering safe havens and the <a href="https://downtowndetroit.org/business-improvement-zone/">Business Improvement Zone</a> Ambassadors walking the streets, Downtown continues to improve in this area.
+        <p className='main-text__black'>Downtown Detroit is a thriving neighborhood and very safe area overall, with key partnerships between the public and private sectors. With supplemental security, coordination with the Detroit Police Department, a coalition of companies offering safe havens and the <a href="https://downtowndetroit.org/business-improvement-zone/" target="_top">Business Improvement Zone</a> Ambassadors walking the streets, Downtown continues to improve in this area.
         </p>
         <div>
           <span className="chart-header">Violent Crime Incidents by Category</span>
