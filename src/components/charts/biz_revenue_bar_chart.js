@@ -54,7 +54,7 @@ const config = {
         return  '$' + this.value / 1000000 + 'M';
       }
     },
-    min: 3900000
+    min: 0
   },
   legend: {
     verticalAlign: 'top',
