@@ -252,6 +252,8 @@ export function getBIZRevenueData() {
       '2016': 4014355,
       '2017': 4077192,
       '2018': 4165972,
+      '2019': 4453888,
+      '2020': 4842355,
     }
   });
 
@@ -273,6 +275,8 @@ export function getAssessedValueData() {
       '2015': 888000000,
       '2016': 946000000,
       '2017': 969000000,
+      '2018': 1137000000,
+      '2019': 2209000000,
     }
   });
 
@@ -289,8 +293,8 @@ export function getChangeInAssessment() {
 
   return Promise.all([req2018]).then(([resp2018]) => {
     return {
-      'Assessed Value (SEV)': 17,
-      'BIZ Assessment': 4,
+      'Assessed Value (SEV)': 168,
+      'BIZ Assessment': 21,
     }
   });
 
