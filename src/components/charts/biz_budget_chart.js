@@ -20,23 +20,19 @@ class BIZBudgetChart extends Component {
         let overallBudgetData = [
             {
                 name: "Administration",
-                budget: 788020
-            },
-            {
-                name: "BIZ Direct Expenses",
-                budget: 53230
+                budget: 941000
             },
             {
                 name: "Programs",
-                budget: 3758710
+                budget: 3990000
             },
         ];
 
         let programBudgetData = [
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Street Landscaping",
-                budget: 400000,
+                budget: 420000,
                 description: "The BIZ provides landscaping services for designated parks, medians and curbside planters and other green spaces to make Downtown a more beautiful destination. This includes mowing, weeding, seasonal planting and more.",
                 categories: [
                     {
@@ -58,7 +54,7 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Supplemental Lighting",
                 budget: 175000,
                 description: "While the City provides basic lighting for visibility, the BIZ provides supplemental lighting to improve safety as well as seasonal lighting around the winter holidays.",
@@ -74,9 +70,9 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Parks and Common Areas",
-                budget: 678710,
+                budget: 700000,
                 description: "The BIZ works in collaboration with other DDP departments to create wonderful downtown parks. Specifically, it provides landscape maintenance in Capitol and Grand Circus parks and ambassador services in Campus Martius, Cadillac Square, Capitol Park, Grand Circus Park, Rivard Plaza and Along the Detroit RiverFront.",
                 categories: [
                     {
@@ -86,9 +82,9 @@ class BIZBudgetChart extends Component {
                 ]                
             },
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Downtown Ambassadors",
-                budget: 1965000,
+                budget: 2145000,
                 description: "The Downtown Ambassadors are a vital part of Downtown’s vibrancy. In addition to removing trash from sidewalks and streets and collecting it from receptacles, our ambassador team is there to provide information to visitors, provide an extra layer of security, and help solve everyday problems downtown.",
                 categories: [
                     {
@@ -114,9 +110,9 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Communications, Outreach and Data",
-                budget: 165000,
+                budget: 180000,
                 description: "The BIZ operates a robust marketing and outreach program geared toward disseminating important information to residents, businesses, visitors and other stakeholders. Additionally it coordinates networking and learning opportunities to businesses, and provides data and analysis on the state of Downtown and surrounding areas.",
                 categories: [
                     {
@@ -138,9 +134,9 @@ class BIZBudgetChart extends Component {
                 ]
             },
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Infrastructre and Planning",
-                budget: 100000,
+                budget: 70000,
                 description: "The BIZ works closely with the City to help coordinate and plan important special projects and infrastructure enhancements.",
                 categories: [
                     {
@@ -150,9 +146,9 @@ class BIZBudgetChart extends Component {
                 ]                
             },
             {
-                type: "2018-2019 Budget:",
+                type: "2020-2021 Budget:",
                 name: "Safety",
-                budget: 275000,
+                budget: 300000,
                 description: "The BIZ provides for security personnel to patrol Downtown and the Detroit RiverFront. It also coordinates monthly inter-agency safety and security strategy meetings and provides security for special events.",
                 categories: [
                     {
