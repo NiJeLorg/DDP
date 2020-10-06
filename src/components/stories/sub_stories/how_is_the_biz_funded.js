@@ -147,13 +147,13 @@ class HowIsTheBIZFunded extends Component {
           <div className="l-story-grid-row">
             <div className="l-story-grid-column-half">
               <div className="sub-sub-heading">How Are BIZ Properties Contributing to Revenue?</div>
-              <p className='main-text__black'>Properties are assessed differently depending on their assessed value and floor area. Of the 556 properties that contribute to the BIZ, about half (46%) pay $1,000 or less. The graph below shows how many properties fall within various ranges of assessment in 2018. 
+              <p className='main-text__black'>Properties are assessed differently depending on their assessed value and floor area. Of the 582 properties that contribute to the BIZ, about half (44%) pay $1,000 or less. The graph below shows how many properties fall within various ranges of assessment in 2020. 
               </p>
               <div className="distribution-chart-wrapper">
                 <DistributionOfRevenueChart />
                 <GeoMap chapter={this.state.chapter} />
               </div>
-              <div className="chart-footer">Source: Downtown Detroit Partnership, 2018 Assessment</div>
+              <div className="chart-footer">Source: Downtown Detroit Partnership, 2020 Assessment</div>
             </div>
           </div>
 
