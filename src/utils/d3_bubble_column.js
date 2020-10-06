@@ -109,7 +109,7 @@ D3BubbleColumn.create = (el, data, config) => {
     d3.select(el).append('div')
         .classed("sub-heading__centered", true)
         .style("margin-top", "20px")
-        .text("The median parcel is assessed $1,207.");
+        .text("The median parcel is assessed $1,384.");
 
 
     let axisG = svg.append('g')
