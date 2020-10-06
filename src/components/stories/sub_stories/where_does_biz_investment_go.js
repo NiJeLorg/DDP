@@ -9,8 +9,8 @@ class WhereDoesBIZInvestmentGo extends Component {
     super(props);
     this.state = {
       radios: {
-        tab1: '2018-2019 Budget',
-        tab2: '2017-2018 Expenditures',
+        tab1: '2020-2021 Budget',
+        tab2: '2019-2020 Expenditures',
       },
       selectedOption: 'tab1',
       tab1Active: true,
