@@ -588,7 +588,7 @@ class GeoMap extends Component {
 
     }, 100);
     L.tileLayer(mapConfig.MAPBOX_URL, {
-      id: 'mapbox.light',
+      style: 'light_all',
       attribution: mapConfig.MAPBOX_ATTRIBUTION,
     }).addTo(this.map);
 
