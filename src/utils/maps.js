@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoia2FzaGJvc3MiLCJhIjoiY2pjYnZiOXNyMG1iMjMzbzJlaTQ3dGFqbyJ9.Fe3wRj0zktbL6zxsTNk2DQ';
-const MAPBOX_URL = 'https://{s}.basemaps.cartocdn.com/{z}/{x}/{y}@2x.png';
+const MAPBOX_URL = 'https://{s}.basemaps.cartocdn.com/{style}/{z}/{x}/{y}@2x.png';
 const MAPBOX_ATTRIBUTION = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
 const WAC_GEO_API = 'https://services2.arcgis.com/HsXtOCMp1Nis1Ogr/arcgis/rest/services/WorkerAreaCharacteristics_2015_DetroitMSA_20180409/FeatureServer/0/query?outFields=C000,CD04&where=DtownFlag=1&returnGeometry=true&outSR=4326&f=geojson\n';
