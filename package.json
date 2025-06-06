@@ -30,7 +30,7 @@
     "style-loader": "^0.20.3",
     "watchman": "^1.0.0",
     "webpack": "3.11.0",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^5.2.1"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
